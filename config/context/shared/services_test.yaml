@@ -1,0 +1,7 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  Whalar\Tests\Shared\Core\:
+    resource: '%kernel.project_dir%/tests/Shared/Core/*'

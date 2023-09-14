@@ -1,5 +1,8 @@
-controllers:
-    resource:
-        path: ../src/Controller/
-        namespace: App\Controller
-    type: attribute
+# Core context
+whalar.core:
+    resource: ./routes/core_routes.yaml
+    prefix: /v1
+
+# Shared context
+whalar.shared:
+    resource: ./routes/shared_routes.yaml

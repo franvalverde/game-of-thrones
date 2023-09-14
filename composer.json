@@ -1,37 +1,73 @@
 {
+    "name": "fvalverde/whalar-game-of-thrones",
+    "description": "API to manage the list of the characters present on Game of Thrones",
     "type": "project",
     "license": "proprietary",
     "minimum-stability": "stable",
     "prefer-stable": true,
     "require": {
-        "php": ">=8.1",
+        "php": ">=8.1.18",
         "ext-ctype": "*",
         "ext-iconv": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "ext-pdo": "*",
+        "beberlei/assert": "^3.3",
+        "doctrine/annotations": "^1.0",
+        "doctrine/doctrine-bundle": "^2.6",
+        "doctrine/doctrine-migrations-bundle": "^3.2",
+        "doctrine/orm": "^2.11",
+        "friendsofsymfony/rest-bundle": "^3.3",
+        "illuminate/support": "^9.9",
+        "lambdish/phunctional": "^2.1",
+        "nelmio/cors-bundle": "^2.2",
+        "nesbot/carbon": "^2.57",
+        "phpdocumentor/reflection-docblock": "^5.3",
+        "phpstan/phpdoc-parser": "^1.4",
         "symfony/console": "6.3.*",
+        "symfony/doctrine-messenger": "6.3.*",
         "symfony/dotenv": "6.3.*",
         "symfony/flex": "^2",
         "symfony/framework-bundle": "6.3.*",
+        "symfony/http-foundation": "6.3.*",
+        "symfony/messenger": "6.3.*",
+        "symfony/mime": "6.3.*",
+        "symfony/monolog-bundle": "^3.7",
+        "symfony/property-access": "6.3.*",
+        "symfony/property-info": "6.3.*",
+        "symfony/proxy-manager-bridge": "6.3.*",
         "symfony/runtime": "6.3.*",
+        "symfony/serializer": "6.3.*",
+        "symfony/uid": "6.3.*",
         "symfony/yaml": "6.3.*"
     },
-    "require-dev": {
-    },
     "config": {
+        "bin-dir": "bin",
+        "platform": {
+            "php": "8.1.18"
+        },
         "allow-plugins": {
-            "php-http/discovery": true,
+            "composer/package-versions-deprecated": true,
             "symfony/flex": true,
-            "symfony/runtime": true
+            "symfony/runtime": true,
+            "infection/extension-installer": true,
+            "phpstan/extension-installer": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        },
+        "optimize-autoloader": true,
+        "preferred-install": {
+            "*": "dist"
         },
         "sort-packages": true
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src/"
+            "Whalar\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "App\\Tests\\": "tests/"
+            "Whalar\\Tests\\": "tests/"
         }
     },
     "replace": {
@@ -40,8 +76,7 @@
         "symfony/polyfill-php72": "*",
         "symfony/polyfill-php73": "*",
         "symfony/polyfill-php74": "*",
-        "symfony/polyfill-php80": "*",
-        "symfony/polyfill-php81": "*"
+        "symfony/polyfill-php80": "*"
     },
     "scripts": {
         "auto-scripts": {
@@ -61,7 +96,33 @@
     "extra": {
         "symfony": {
             "allow-contrib": false,
-            "require": "6.3.*"
+            "require": "6.3.*",
+            "docker": true
         }
+    },
+    "require-dev": {
+        "behat/behat": "^3.13",
+        "dama/doctrine-test-bundle": "^7.2",
+        "doctrine/doctrine-fixtures-bundle": "^3.4",
+        "fakerphp/faker": "^1.19",
+        "friends-of-behat/mink": "^1.10",
+        "friends-of-behat/mink-browserkit-driver": "^1.6",
+        "friends-of-behat/mink-extension": "^2.7",
+        "friends-of-behat/symfony-extension": "^2.4",
+        "friendsofphp/php-cs-fixer": "^3.8",
+        "infection/infection": "^0.26.6",
+        "jetbrains/phpstorm-attributes": "^1.0",
+        "mockery/mockery": "^1.5",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan": "^1.5",
+        "phpstan/phpstan-beberlei-assert": "^1.0",
+        "phpstan/phpstan-deprecation-rules": "^1.0",
+        "phpstan/phpstan-doctrine": "^1.3",
+        "phpstan/phpstan-strict-rules": "^1.1",
+        "phpstan/phpstan-symfony": "^1.1",
+        "phpunit/phpunit": "^9.5",
+        "slevomat/coding-standard": "^7.1",
+        "squizlabs/php_codesniffer": "^3.6",
+        "symfony/maker-bundle": "^1.38"
     }
 }

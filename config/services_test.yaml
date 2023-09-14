@@ -1,0 +1,2 @@
+imports:
+  - { resource: ./context/shared/services_test.yaml }
