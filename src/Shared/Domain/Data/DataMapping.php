@@ -7,6 +7,7 @@ namespace Whalar\Shared\Domain\Data;
 use Whalar\Shared\Domain\Exception\InvalidDataMappingException;
 use Illuminate\Support\Arr;
 
+use Whalar\Shared\Domain\ValueObject\AggregateId;
 use function is_bool;
 
 use const FILTER_NULL_ON_FAILURE;
@@ -89,6 +90,18 @@ trait DataMapping
         }
 
         return filter_var($value, FILTER_VALIDATE_FLOAT, FILTER_NULL_ON_FAILURE);
+    }
+
+    /* @param array<mixed> $data */
+    private static function getId(array $data): string
+    {
+        $value = Arr::get($data, 'id');
+
+        if (!is_scalar($value)) {
+            $value = AggregateId::random()->id();
+        }
+
+        return $value;
     }
 
     /* @param array<mixed> $data */
