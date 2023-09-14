@@ -2,8 +2,7 @@
 # Files in the packages/ subdirectory configure your dependencies.
 
 # Put parameters here that don't need to change on each machine where the app is deployed
-# https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
-parameters:
+# https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 
 services:
     # default configuration for services in *this* file
@@ -11,14 +10,114 @@ services:
         autowire: true      # Automatically injects dependencies in your services.
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
 
-    # makes classes in src/ available to be used as services
-    # this creates a service per class whose id is the fully-qualified class name
-    App\:
-        resource: '../src/'
+    Whalar\:
+        resource: '%kernel.project_dir%/src/*'
         exclude:
-            - '../src/DependencyInjection/'
-            - '../src/Entity/'
-            - '../src/Kernel.php'
+            - '%kernel.project_dir%/src/*/Entity/'
+            - '%kernel.project_dir%/src/*/Mapping/'
+            - '%kernel.project_dir%/src/Kernel.php'
 
-    # add more service definitions when explicit configuration is needed
-    # please note that last definitions always *replace* previous ones
+    Whalar\Tests\Shared\:
+        resource: '%kernel.project_dir%/tests/Shared/*'
+
+    # Core context controllers
+    Whalar\Core\Infrastructure\Delivery\Rest\:
+        autowire: true
+        autoconfigure: true
+        resource: '%kernel.project_dir%/src/Core/Infrastructure/Delivery/Rest'
+        tags: [ 'controller.service_arguments' ]
+
+    # Shared context controllers
+    Whalar\Shared\Infrastructure\Delivery\Rest\:
+        autowire: true
+        autoconfigure: true
+        resource: '%kernel.project_dir%/src/Shared/Infrastructure/Delivery/Rest'
+        tags: [ 'controller.service_arguments' ]
+
+    # Error handler
+    whalar.error_handler:
+        class: Whalar\Shared\Infrastructure\ErrorHandler\ErrorHandler
+        tags:
+            - { name: kernel.event_listener, event: kernel.exception, method: onKernelException }
+
+    # UUID generator
+    Whalar\Shared\Infrastructure\Generator\UuidGenerator:
+        class: Whalar\Shared\Infrastructure\Generator\SymfonyUuidGenerator
+        public: true
+
+    # Event repository
+    Whalar\Shared\Domain\Event\Repository\StoredEventRepository:
+        class: Whalar\Shared\Infrastructure\Persistence\InMemory\DoctrineStoredEventRepository
+        arguments: [ '@doctrine.orm.entity_manager','@Whalar\Shared\Infrastructure\Generator\UuidGenerator' ]
+        public: true
+
+    # Event middleware
+    Whalar\Shared\Infrastructure\Messaging\Bus\DomainEventMiddleware:
+        class: Whalar\Shared\Infrastructure\Messaging\Bus\DomainEventMiddleware
+        arguments: [ '@Whalar\Shared\Domain\Event\Repository\StoredEventRepository' ]
+        public: true
+
+    _instanceof:
+        # all services implementing the CommandHandler interface
+        # will be registered on the command.bus bus
+        \Whalar\Shared\Application\Command\CommandHandler:
+            tags:
+                - { name: messenger.message_handler, bus: command.bus }
+
+        # while those implementing QueryHandler interface
+        # will be registered on the query.bus bus
+        \Whalar\Shared\Application\Query\QueryHandler:
+            tags:
+                - { name: messenger.message_handler, bus: query.bus }
+
+        # and those extending MessageEventHandler class
+        # will be registered on the event.bus bus
+        \Whalar\Shared\Application\Event\MessageEventHandler:
+            tags:
+                - { name: messenger.message_handler, bus: event.bus }
+
+        \Whalar\Shared\Application\Event\EventHandler:
+            tags: [ 'whalar.event_handler' ]
+
+    Whalar\Shared\Infrastructure\Messaging\Transport\Serialization\DomainEventMapping:
+        arguments: [ !tagged whalar.event_handler ]
+
+    Whalar\Shared\Domain\Messaging\Serialization\MessageMapping: '@whalar.message_mapping'
+
+    Monolog\Processor\IntrospectionProcessor:
+        class: Monolog\Processor\IntrospectionProcessor
+        tags:
+            - { name: monolog.processor }
+
+    Monolog\Processor\MemoryPeakUsageProcessor:
+        class: Monolog\Processor\MemoryPeakUsageProcessor
+        tags:
+            - { name: monolog.processor }
+
+    Monolog\Processor\MemoryUsageProcessor:
+        class: Monolog\Processor\MemoryUsageProcessor
+        tags:
+            - { name: monolog.processor }
+
+    Monolog\Processor\WebProcessor:
+        class: Monolog\Processor\WebProcessor
+        tags:
+            - { name: monolog.processor }
+
+    Monolog\Processor\UidProcessor:
+        class: Monolog\Processor\UidProcessor
+        tags:
+            - { name: monolog.processor }
+
+    Monolog\Processor\PsrLogMessageProcessor:
+        class: Monolog\Processor\PsrLogMessageProcessor
+        tags:
+            - { name: monolog.processor }
+
+    Monolog\Processor\TagProcessor:
+        class: Monolog\Processor\TagProcessor
+        arguments:
+            - [ 'bff-fincas-service' ]
+        tags:
+            - { name: monolog.processor }
+

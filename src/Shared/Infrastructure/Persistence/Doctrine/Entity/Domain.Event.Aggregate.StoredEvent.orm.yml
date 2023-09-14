@@ -1,0 +1,26 @@
+Whalar\Shared\Domain\Event\Aggregate\StoredEvent:
+  type: entity
+  table: stored_event
+  id:
+    messageId:
+      type: message_id
+      column: message_id
+      id: true
+
+  fields:
+    messageName:
+      column: message_name
+      type: string
+      length: 255
+
+    messageBody:
+      column: message_body
+      type: json
+
+    aggregateId:
+      column: aggregate_id
+      type: guid
+
+    occurredAt:
+      column: occurred_at
+      type: carbontz_immutable
