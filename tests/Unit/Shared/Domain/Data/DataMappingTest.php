@@ -6,6 +6,7 @@ namespace Whalar\Tests\Unit\Shared\Domain\Data;
 
 use Whalar\Shared\Domain\Data\DataMapping;
 use Whalar\Shared\Domain\Exception\InvalidDataMappingException;
+use Whalar\Tests\Shared\Shared\Domain\ValueObject\AggregateIdMother;
 use Whalar\Tests\Shared\Shared\Infrastructure\PHPUnit\UnitTestCase;
 
 final class DataMappingTest extends UnitTestCase
@@ -128,6 +129,36 @@ final class DataMappingTest extends UnitTestCase
         $this->assertSame($output, self::getIntOrNull($foo, 'bar'));
     }
 
+    /** @dataProvider getFloatDataProvider */
+    public function testShouldGetFloat(mixed $input, float $output): void
+    {
+        $foo = [
+            'bar' => $input,
+        ];
+
+        $this->assertSame($output, self::getFloat($foo, 'bar'));
+    }
+
+    /** @return array<array<mixed>> */
+    public function getFloatDataProvider(): array
+    {
+        return [
+            // Valid values
+            [true, 1.0],
+            [false, 0.0],
+            [0, 0.0],
+            [1, 1.0],
+            [123, 123.0],
+            ['123', 123.0],
+
+            // Invalid values
+            [null, 0.0],
+            ['a string', 0.0],
+            [[], 0.0],
+        ];
+    }
+
+
     /** @return array<array<mixed>> */
     public function getIntOrNullDataProvider(): array
     {
@@ -146,6 +177,47 @@ final class DataMappingTest extends UnitTestCase
             ['a string', null],
             [[], null],
         ];
+    }
+
+    /** @dataProvider getFloatOrNullDataProvider */
+    public function testShouldGetFloatOrNull(mixed $input, ?float $output): void
+    {
+        $foo = [
+            'bar' => $input,
+        ];
+
+        $this->assertSame($output, self::getFloatOrNull($foo, 'bar'));
+    }
+
+    /** @return array<array<mixed>> */
+    public function getFloatOrNullDataProvider(): array
+    {
+        return [
+            // Valid values
+            [true, 1.0],
+            [false, 0.0],
+            [0, 0.0],
+            [1, 1.0],
+            [123, 123.0],
+            ['123', 123.0],
+
+            // Invalid values
+            [null, null],
+            [1.23, 1.23],
+            ['a string', null],
+            [[], null],
+        ];
+    }
+
+    public function testShouldGetIntegerOfArray(): void
+    {
+        $foo = [
+            'bar' => 1,
+        ];
+
+        $this->assertSame(1, self::integerOfArray('bar', $foo));
+        $this->assertSame(0, self::integerOfArray('undefined', $foo));
+
     }
 
     /** @dataProvider getStringDataProvider */
@@ -184,6 +256,17 @@ final class DataMappingTest extends UnitTestCase
         ];
 
         $this->assertSame($output, self::getNonEmptyStringOrNull($foo, 'bar'));
+    }
+
+    public function testShouldGetId(): void
+    {
+        $id = AggregateIdMother::random()->id();
+        $foo = [
+            'id' => $id,
+        ];
+
+        $this->assertSame($id, self::getId($foo));
+        $this->assertSame(36, strlen(self::getId([])));
     }
 
     /** @return array<array<mixed>> */
