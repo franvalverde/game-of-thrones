@@ -15,4 +15,5 @@ report/
 .DS_Store
 .ash_history
 .phpunit.result.cache
+.php-cs-fixer.cache
 ###< symfony/framework-bundle ###

@@ -7,8 +7,6 @@ namespace Whalar\Shared\Infrastructure\Persistence\Doctrine\Type;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\GuidType;
 
-use function is_string;
-
 abstract class DoctrineEntityIdType extends GuidType
 {
     public function requiresSQLCommentHint(AbstractPlatform $platform): bool
@@ -16,19 +14,13 @@ abstract class DoctrineEntityIdType extends GuidType
         return true;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function convertToDatabaseValue($value, AbstractPlatform $platform)
     {
-        return null === $value || is_string($value)
+        return null === $value || \is_string($value)
             ? $value
             : (string) $value->id();
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function convertToPHPValue($value, AbstractPlatform $platform)
     {
         $className = $this->getClassName();

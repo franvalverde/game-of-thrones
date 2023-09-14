@@ -6,9 +6,8 @@ namespace Whalar\Shared\Infrastructure\Persistence\Doctrine\Type;
 
 use Assert\AssertionFailedException;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
-use Whalar\Shared\Domain\ValueObject\Name;
 use Doctrine\DBAL\Types\StringType as BaseStringType;
-use function is_scalar;
+use Whalar\Shared\Domain\ValueObject\Name;
 
 final class NameType extends BaseStringType
 {
@@ -26,7 +25,7 @@ final class NameType extends BaseStringType
     /** @throws AssertionFailedException */
     public function convertToPHPValue($value, AbstractPlatform $platform)
     {
-        if (!is_scalar($value)) {
+        if (!\is_scalar($value)) {
             return null;
         }
 

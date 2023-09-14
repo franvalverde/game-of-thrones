@@ -1,11 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Whalar\Tests\Shared\Core\Infrastructure\Behat\Context;
 
-use Behat\Behat\Tester\Exception\PendingException;
 use Behat\Behat\Context\Context;
 use Behat\Gherkin\Node\PyStringNode;
-use Behat\Gherkin\Node\TableNode;
 
 /**
  * Defines application features from the specific context.
@@ -13,6 +13,8 @@ use Behat\Gherkin\Node\TableNode;
 class FeatureContext implements Context
 {
     private string $directory;
+
+    private string $output;
 
     /**
      * Initializes context.
@@ -25,33 +27,27 @@ class FeatureContext implements Context
     {
     }
 
-    /**
-     * @Given I am in a directory :arg1
-     */
-    public function iAmInADirectory($directoryName)
+    /** @Given I am in a directory :arg1 */
+    public function iAmInADirectory($directoryName): void
     {
-        $this->directory = __DIR__ . '/../../tmp/' . $directoryName;
+        $this->directory = __DIR__.'/../../tmp/'.$directoryName;
+
         if (file_exists($this->directory)) {
             exec("rm -r {$this->directory}");
         }
+
         mkdir($this->directory, recursive: true);
         chdir($this->directory);
     }
 
-    /**
-     * @Given I have a file named :arg1
-     */
-    public function iHaveAFileNamed($filename)
+    /** @Given I have a file named :arg1 */
+    public function iHaveAFileNamed($filename): void
     {
         touch($filename);
     }
 
-    private string $output;
-
-    /**
-     * @When I run :arg1
-     */
-    public function iRun($commandName)
+    /** @When I run :arg1 */
+    public function iRun($commandName): void
     {
         exec("$commandName", $output);
         // PHP store array lines in an array
@@ -59,10 +55,8 @@ class FeatureContext implements Context
         $this->output = implode("\n", $output);
     }
 
-    /**
-     * @Then I should get:
-     */
-    public function iShouldGet(PyStringNode $expectedOutput)
+    /** @Then I should get: */
+    public function iShouldGet(PyStringNode $expectedOutput): void
     {
         assert($this->output === $expectedOutput->getRaw());
     }

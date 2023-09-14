@@ -6,17 +6,9 @@ namespace Whalar\Shared\Domain\Messaging;
 
 use Assert\AssertionFailedException;
 use Carbon\CarbonImmutable;
-use DateTimeInterface;
-use Whalar\Shared\Domain\Messaging\AsyncApi\AsyncApiChannel;
 use Illuminate\Support\Str;
-use InvalidArgumentException;
 use JetBrains\PhpStorm\ArrayShape;
-use JsonSerializable;
-use LogicException;
-use RuntimeException;
-
-use function is_array;
-use function is_object;
+use Whalar\Shared\Domain\Messaging\AsyncApi\AsyncApiChannel;
 
 /**
  * @phpstan-type RawMessage array{
@@ -29,7 +21,7 @@ use function is_object;
  *
  * @phpstan-type RawPayload array<string, mixed>
  */
-abstract class Message implements JsonSerializable
+abstract class Message implements \JsonSerializable
 {
     private const BUSINESS = 'whalar';
 
@@ -44,10 +36,10 @@ abstract class Message implements JsonSerializable
     /** @var array<mixed> */
     private array $messagePayload;
 
-    private DateTimeInterface $messageOccurredOn;
+    private \DateTimeInterface $messageOccurredOn;
 
     /** @param array<string, mixed> $payload */
-    final private function __construct(MessageId $messageId, array $payload, DateTimeInterface $occurredOn)
+    final private function __construct(MessageId $messageId, array $payload, \DateTimeInterface $occurredOn)
     {
         $this->setMessageId($messageId);
         $this->setMessagePayload($payload);
@@ -62,7 +54,7 @@ abstract class Message implements JsonSerializable
     final public static function fromPayload(
         MessageId $messageId,
         array $payload,
-        ?DateTimeInterface $occurredOn = null,
+        ?\DateTimeInterface $occurredOn = null,
     ): self {
         $message = new static($messageId, $payload, $occurredOn ?? CarbonImmutable::now('utc'));
         $message->assertPayload();
@@ -72,28 +64,28 @@ abstract class Message implements JsonSerializable
 
     public static function messageVersion(): int
     {
-        throw new RuntimeException(
+        throw new \RuntimeException(
             'This method acts as an abstract one, should be override and should not be called directly.',
         );
     }
 
     public static function messageType(): string
     {
-        throw new RuntimeException(
+        throw new \RuntimeException(
             'This method acts as an abstract one, should be override and should not be called directly.',
         );
     }
 
     public static function messageAggregate(): string
     {
-        throw new RuntimeException(
+        throw new \RuntimeException(
             'This method acts as an abstract one, should be override and should not be called directly.',
         );
     }
 
     public static function messageAction(): string
     {
-        throw new RuntimeException(
+        throw new \RuntimeException(
             'This method acts as an abstract one, should be override and should not be called directly.',
         );
     }
@@ -105,7 +97,7 @@ abstract class Message implements JsonSerializable
         $messageService = self::MESSAGE_SERVICE_MAP[$boundedContextNamespace] ?? null;
 
         if (null === $messageService) {
-            throw new LogicException('Message service mapping not found');
+            throw new \LogicException('Message service mapping not found');
         }
 
         return $messageService;
@@ -135,7 +127,7 @@ abstract class Message implements JsonSerializable
         return $this->messagePayload;
     }
 
-    final public function messageOccurredOn(): DateTimeInterface
+    final public function messageOccurredOn(): \DateTimeInterface
     {
         return $this->messageOccurredOn;
     }
@@ -200,7 +192,7 @@ abstract class Message implements JsonSerializable
         $this->messagePayload = $payload;
     }
 
-    private function setMessageOccurredOn(DateTimeInterface $occurredOn): void
+    private function setMessageOccurredOn(\DateTimeInterface $occurredOn): void
     {
         $this->messageOccurredOn = $occurredOn;
     }
@@ -208,7 +200,7 @@ abstract class Message implements JsonSerializable
     /**
      * @param array<string, mixed> $payload
      *
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      */
     private function ensureThatPayloadHasOnlyPrimitives(array $payload, string $index = 'payload'): void
     {
@@ -225,13 +217,13 @@ abstract class Message implements JsonSerializable
     /* @throws InvalidArgumentException */
     private function ensureThatValueIsPrimitive(mixed $value, string $fieldName): void
     {
-        if (is_object($value)) {
+        if (\is_object($value)) {
             $message = sprintf('Provided "%s" is an object. Payload parameters only can be primitive.', $fieldName);
 
-            throw new InvalidArgumentException($message);
+            throw new \InvalidArgumentException($message);
         }
 
-        if (true !== is_array($value)) {
+        if (true !== \is_array($value)) {
             return;
         }
 

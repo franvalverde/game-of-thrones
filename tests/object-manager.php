@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use Whalar\Kernel;
 use Symfony\Component\Dotenv\Dotenv;
+use Whalar\Kernel;
 
 require dirname(__DIR__).'/vendor/autoload.php';
 

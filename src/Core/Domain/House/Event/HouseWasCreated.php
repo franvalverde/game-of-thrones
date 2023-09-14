@@ -47,7 +47,6 @@ final class HouseWasCreated extends DomainEvent
         return $this->houseId;
     }
 
-
     public function name(): string
     {
         return $this->name;

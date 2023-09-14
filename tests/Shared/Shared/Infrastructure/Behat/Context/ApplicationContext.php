@@ -42,7 +42,7 @@ final class ApplicationContext implements Context
 
         $result = $queryBuilder->fetchOne();
 
-        if ($result === false) {
+        if (false === $result) {
             throw new \RuntimeException(
                 sprintf('The resource with ID "%s" does not exist in the "%s" table.', $id, $table),
             );

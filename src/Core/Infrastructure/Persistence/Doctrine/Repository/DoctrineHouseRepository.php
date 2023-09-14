@@ -35,7 +35,6 @@ final class DoctrineHouseRepository implements HouseRepository
         return $this->houses->findOneBy(['name' => $name->name()]);
     }
 
-
     public function save(House $house): void
     {
         $this->entityManager->persist($house);

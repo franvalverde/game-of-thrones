@@ -7,7 +7,6 @@ namespace Whalar\Shared\Infrastructure\Persistence\Doctrine\Type;
 use Carbon\CarbonImmutable;
 use Carbon\Doctrine\CarbonDoctrineType;
 use Carbon\Doctrine\CarbonTypeConverter;
-use DateTimeInterface;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\ConversionException;
 use Doctrine\DBAL\Types\DateTimeTzImmutableType;
@@ -30,7 +29,7 @@ final class CarbonTzImmutableType extends DateTimeTzImmutableType implements Car
             return null;
         }
 
-        if ($value instanceof DateTimeInterface) {
+        if ($value instanceof \DateTimeInterface) {
             return $value->format('Y-m-d H:i:s.uO');
         }
 

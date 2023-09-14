@@ -7,14 +7,14 @@ namespace Whalar\Tests\Shared\Shared\Infrastructure\Behat\Context;
 use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
 use Behat\MinkExtension\Context\RawMinkContext;
+use Illuminate\Support\Arr;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Whalar\Tests\Shared\Shared\Infrastructure\Behat\Assert\Assertions;
 use Whalar\Tests\Shared\Shared\Infrastructure\Behat\Json\Json;
 use Whalar\Tests\Shared\Shared\Infrastructure\Behat\Json\JsonInspector;
 use Whalar\Tests\Shared\Shared\Infrastructure\Behat\Mink\MinkHelper;
 use Whalar\Tests\Shared\Shared\Infrastructure\Behat\Mink\MinkRequestHelper;
 use Whalar\Tests\Shared\Shared\Infrastructure\Behat\Utils;
-use Illuminate\Support\Arr;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 final class ApiContext extends RawMinkContext
 {
@@ -118,7 +118,7 @@ final class ApiContext extends RawMinkContext
     {
         $response = trim($this->mink->getResponse());
 
-        if ($response !== '' && $response !== '{}') {
+        if ('' !== $response && '{}' !== $response) {
             throw new \RuntimeException("The response is not empty.\n\n-- Actual:\n$response");
         }
     }
@@ -146,7 +146,7 @@ final class ApiContext extends RawMinkContext
 
         $actual = $this->jsonInspector->evaluate($response, $node);
 
-        if ($actual === null) {
+        if (null === $actual) {
             throw new \RuntimeException("The response node <$node> is null.");
         }
     }
@@ -191,7 +191,7 @@ final class ApiContext extends RawMinkContext
     /** @Then /^print last response$/ */
     public function printLastResponse(): void
     {
-        if ($this->mink->getResponse() === '') {
+        if ('' === $this->mink->getResponse()) {
             print_r('The response is empty.');
 
             return;

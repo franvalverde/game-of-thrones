@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace Whalar\Tests\Shared\Shared\Infrastructure\Behat\Assert;
 
+use Illuminate\Support\Arr;
+use PHPUnit\Framework\Assert;
 use Whalar\Tests\Shared\Shared\Infrastructure\Behat\Assert\Assertion\FalseAssertion;
 use Whalar\Tests\Shared\Shared\Infrastructure\Behat\Assert\Assertion\NullAssertion;
 use Whalar\Tests\Shared\Shared\Infrastructure\Behat\Assert\Assertion\TrueAssertion;
 use Whalar\Tests\Shared\Shared\Infrastructure\Behat\Json\Json;
 use Whalar\Tests\Shared\Shared\Infrastructure\Behat\Json\JsonInspector;
 use Whalar\Tests\Shared\Shared\Infrastructure\Behat\Utils;
-use Illuminate\Support\Arr;
-use PHPUnit\Framework\Assert;
 
 trait Assertions
 {
@@ -71,19 +71,19 @@ trait Assertions
                 return;
             }
 
-            if ($expected === 'null') {
+            if ('null' === $expected) {
                 (new NullAssertion())($actual);
 
                 return;
             }
 
-            if ($expected === 'true') {
+            if ('true' === $expected) {
                 (new TrueAssertion())($actual);
 
                 return;
             }
 
-            if ($expected === 'false') {
+            if ('false' === $expected) {
                 (new FalseAssertion())($actual);
 
                 return;

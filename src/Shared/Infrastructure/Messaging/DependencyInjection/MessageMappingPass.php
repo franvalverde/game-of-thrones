@@ -4,17 +4,13 @@ declare(strict_types=1);
 
 namespace Whalar\Shared\Infrastructure\Messaging\DependencyInjection;
 
-use Whalar\Shared\Domain\Messaging\Message;
-use Whalar\Shared\Infrastructure\Messaging\Transport\Serialization\InMemoryMessageMapping;
 use Illuminate\Support\Arr;
-use ReflectionClass;
-use ReflectionException;
-use RuntimeException;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
+use Whalar\Shared\Domain\Messaging\Message;
+use Whalar\Shared\Infrastructure\Messaging\Transport\Serialization\InMemoryMessageMapping;
 
-use function in_array;
 use function Lambdish\Phunctional\reduce;
 
 final class MessageMappingPass implements CompilerPassInterface
@@ -38,7 +34,7 @@ final class MessageMappingPass implements CompilerPassInterface
     private function getFilesFromDirectory(string $path): array
     {
         if (false === is_dir($path)) {
-            throw new RuntimeException('Could not get files from directory: The path is not valid');
+            throw new \RuntimeException('Could not get files from directory: The path is not valid');
         }
 
         $files = [];
@@ -47,7 +43,7 @@ final class MessageMappingPass implements CompilerPassInterface
             while (false !== ($filename = readdir($dh))) {
                 $isDirectory = is_dir($path.$filename);
 
-                if (true === $isDirectory && false === in_array($filename, ['.', '..'], true)) {
+                if (true === $isDirectory && false === \in_array($filename, ['.', '..'], true)) {
                     $files = array_merge(
                         $files,
                         $this->getFilesFromDirectory($path.$filename.'/'),
@@ -99,8 +95,8 @@ final class MessageMappingPass implements CompilerPassInterface
             static function (array $classes, string $class): array {
                 try {
                     // @phpstan-ignore-next-line
-                    $reflection = new ReflectionClass($class);
-                } catch (ReflectionException) {
+                    $reflection = new \ReflectionClass($class);
+                } catch (\ReflectionException) {
                     return $classes;
                 }
 

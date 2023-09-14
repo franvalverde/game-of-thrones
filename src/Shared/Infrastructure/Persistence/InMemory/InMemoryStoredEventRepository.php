@@ -4,21 +4,17 @@ declare(strict_types=1);
 
 namespace Whalar\Shared\Infrastructure\Persistence\InMemory;
 
-use ArrayIterator;
 use Assert\Assertion;
 use Assert\AssertionFailedException;
 use Carbon\CarbonImmutable;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\Criteria;
-use Exception;
 use Whalar\Shared\Domain\Event\Aggregate\StoredEvent;
 use Whalar\Shared\Domain\Event\Exception\StoredEventNotFoundException;
 use Whalar\Shared\Domain\Event\Repository\StoredEventRepository;
 use Whalar\Shared\Domain\Event\ValueObject\MessageId;
 use Whalar\Shared\Infrastructure\Generator\UuidGenerator;
-
-use function assert;
 
 final class InMemoryStoredEventRepository implements StoredEventRepository
 {
@@ -35,7 +31,7 @@ final class InMemoryStoredEventRepository implements StoredEventRepository
 
     /**
      * @return array<StoredEvent>
-     * @throws Exception|AssertionFailedException
+     * @throws \Exception|AssertionFailedException
      */
     public function search(
         ?string $from,
@@ -90,7 +86,7 @@ final class InMemoryStoredEventRepository implements StoredEventRepository
         }
 
         $storedEvent = $this->storedEvents->get($messageId->id());
-        assert($storedEvent instanceof StoredEvent);
+        \assert($storedEvent instanceof StoredEvent);
 
         return StoredEvent::create(
             $storedEvent->messageId(),
@@ -130,7 +126,7 @@ final class InMemoryStoredEventRepository implements StoredEventRepository
      */
     private function sortResultsByUrl(Collection $resultPaginated, string $orderBy): array
     {
-        /** @var ArrayIterator<int, StoredEvent> $iterator */
+        /** @var \ArrayIterator<int, StoredEvent> $iterator */
         $iterator = $resultPaginated->getIterator();
         $iterator->uasort(static function (StoredEvent $a, StoredEvent $b) use ($orderBy) {
             $query = 'desc' === $orderBy

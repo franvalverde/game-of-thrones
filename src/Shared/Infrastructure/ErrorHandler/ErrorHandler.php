@@ -9,17 +9,16 @@ use Assert\AssertionFailedException;
 use Assert\InvalidArgumentException;
 use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
 use Doctrine\ORM\OptimisticLockException;
-use Whalar\Shared\Domain\DomainException;
-use Whalar\Shared\Domain\Exception\Http\BadRequestException;
-use Whalar\Shared\Domain\Exception\Http\ConflictException;
-use Whalar\Shared\Domain\Exception\Http\NotFoundException;
-use Whalar\Shared\Domain\Utils;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\ExceptionEvent;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 use Symfony\Component\Routing\Exception\ResourceNotFoundException;
-use Throwable;
+use Whalar\Shared\Domain\DomainException;
+use Whalar\Shared\Domain\Exception\Http\BadRequestException;
+use Whalar\Shared\Domain\Exception\Http\ConflictException;
+use Whalar\Shared\Domain\Exception\Http\NotFoundException;
+use Whalar\Shared\Domain\Utils;
 
 final class ErrorHandler
 {
@@ -65,7 +64,7 @@ final class ErrorHandler
         ));
     }
 
-    private function httpStatusCodeFor(Throwable $exception): int
+    private function httpStatusCodeFor(\Throwable $exception): int
     {
         if ($exception instanceof HttpExceptionInterface) {
             return $exception->getStatusCode();
@@ -82,7 +81,7 @@ final class ErrorHandler
         return self::DEFAULT_STATUS;
     }
 
-    private function titleFor(Throwable $exception): string
+    private function titleFor(\Throwable $exception): string
     {
         if ($exception instanceof DomainException) {
             return $exception->title();
@@ -91,7 +90,7 @@ final class ErrorHandler
         return self::DEFAULT_TITLE;
     }
 
-    private function detailFor(Throwable $exception): string
+    private function detailFor(\Throwable $exception): string
     {
         if ($exception instanceof DomainException) {
             return $exception->detail();
@@ -100,12 +99,12 @@ final class ErrorHandler
         return $exception->getMessage();
     }
 
-    private function typeFor(Throwable $exception): string
+    private function typeFor(\Throwable $exception): string
     {
         return self::BASE_PROBLEM_TYPE_URI.$this->codeFor($exception);
     }
 
-    private function codeFor(Throwable $exception): string
+    private function codeFor(\Throwable $exception): string
     {
         if ($exception instanceof DomainException) {
             return $exception->code();

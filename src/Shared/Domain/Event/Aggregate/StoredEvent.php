@@ -7,13 +7,11 @@ namespace Whalar\Shared\Domain\Event\Aggregate;
 use Assert\Assertion;
 use Assert\AssertionFailedException;
 use Carbon\CarbonImmutable;
-use DateTimeInterface;
-use Whalar\Shared\Domain\Event\ValueObject\MessageId;
 use JetBrains\PhpStorm\ArrayShape;
 use JetBrains\PhpStorm\Pure;
-use JsonSerializable;
+use Whalar\Shared\Domain\Event\ValueObject\MessageId;
 
-final class StoredEvent implements JsonSerializable
+final class StoredEvent implements \JsonSerializable
 {
     private MessageId $messageId;
 
@@ -36,7 +34,7 @@ final class StoredEvent implements JsonSerializable
         string $messageName,
         array $messageBody,
         string $aggregateId,
-        DateTimeInterface $occurredAt,
+        \DateTimeInterface $occurredAt,
     ) {
         $this->setMessageId($messageId);
         $this->setMessageName($messageName);
@@ -55,7 +53,7 @@ final class StoredEvent implements JsonSerializable
         string $messageName,
         array $messageBody,
         string $aggregateId,
-        DateTimeInterface $occurredAt,
+        \DateTimeInterface $occurredAt,
     ): self {
         return new self($messageId, $messageName, $messageBody, $aggregateId, $occurredAt);
     }
@@ -136,7 +134,7 @@ final class StoredEvent implements JsonSerializable
         $this->aggregateId = $aggregateId;
     }
 
-    private function setOccurredAt(DateTimeInterface $occurredAt): void
+    private function setOccurredAt(\DateTimeInterface $occurredAt): void
     {
         $this->occurredAt = CarbonImmutable::instance($occurredAt);
     }

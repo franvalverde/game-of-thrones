@@ -1,4 +1,4 @@
-FROM php:8.2.10-fpm-alpine3.18 as base
+FROM php:8.1.18-fpm-alpine3.17 as base
 
 ENV PROJECT_DIR=/var/www/html
 ENV PATH $PROJECT_DIR/bin:$PROJECT_DIR/vendor/bin:$PATH

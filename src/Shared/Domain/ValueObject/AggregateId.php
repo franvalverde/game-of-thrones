@@ -6,11 +6,9 @@ namespace Whalar\Shared\Domain\ValueObject;
 
 use Assert\Assertion;
 use Assert\AssertionFailedException;
-use JsonSerializable;
-use Stringable;
 use Symfony\Component\Uid\Uuid;
 
-final class AggregateId implements JsonSerializable, Stringable
+final class AggregateId implements \JsonSerializable, \Stringable
 {
     private string $value;
 

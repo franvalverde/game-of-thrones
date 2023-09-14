@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Whalar\Core\Domain\House\Repository;
 
 use Whalar\Core\Domain\House\Aggregate\House;

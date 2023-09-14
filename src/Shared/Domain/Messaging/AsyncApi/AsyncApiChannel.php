@@ -7,9 +7,8 @@ namespace Whalar\Shared\Domain\Messaging\AsyncApi;
 use Assert\Assertion;
 use Assert\AssertionFailedException;
 use JetBrains\PhpStorm\Pure;
-use Stringable;
 
-final class AsyncApiChannel implements Stringable
+final class AsyncApiChannel implements \Stringable
 {
     private string $organization;
     private string $service;

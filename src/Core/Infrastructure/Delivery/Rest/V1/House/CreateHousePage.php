@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace Whalar\Core\Infrastructure\Delivery\Rest\V1\House;
 
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Whalar\Core\Application\Command\House\CreateHouse\CreateHouseCommand;
 use Whalar\Shared\Domain\Data\DataMapping;
 use Whalar\Shared\Infrastructure\Delivery\Rest\ApiCommandPage;
-use Symfony\Component\HttpFoundation\Request;
 
 final class CreateHousePage extends ApiCommandPage
 {

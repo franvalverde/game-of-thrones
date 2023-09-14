@@ -17,6 +17,7 @@ final class Name
     public static function from(string $name): self
     {
         Assertion::notEmpty($name);
+
         return new self($name);
     }
 

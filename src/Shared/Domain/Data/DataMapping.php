@@ -4,15 +4,9 @@ declare(strict_types=1);
 
 namespace Whalar\Shared\Domain\Data;
 
-use Whalar\Shared\Domain\Exception\InvalidDataMappingException;
 use Illuminate\Support\Arr;
-
+use Whalar\Shared\Domain\Exception\InvalidDataMappingException;
 use Whalar\Shared\Domain\ValueObject\AggregateId;
-use function is_bool;
-
-use const FILTER_NULL_ON_FAILURE;
-use const FILTER_VALIDATE_BOOLEAN;
-use const FILTER_VALIDATE_INT;
 
 trait DataMapping
 {
@@ -37,7 +31,7 @@ trait DataMapping
             return null;
         }
 
-        return filter_var($value, FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE);
+        return filter_var($value, \FILTER_VALIDATE_BOOLEAN, \FILTER_NULL_ON_FAILURE);
     }
 
     /* @param array<mixed> $data */
@@ -61,11 +55,11 @@ trait DataMapping
             return null;
         }
 
-        if (is_bool($value)) {
+        if (\is_bool($value)) {
             return (int) $value;
         }
 
-        return filter_var($value, FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE);
+        return filter_var($value, \FILTER_VALIDATE_INT, \FILTER_NULL_ON_FAILURE);
     }
 
     /* @param array<mixed> $data */
@@ -85,11 +79,11 @@ trait DataMapping
             return null;
         }
 
-        if (is_bool($value)) {
+        if (\is_bool($value)) {
             return (float) $value;
         }
 
-        return filter_var($value, FILTER_VALIDATE_FLOAT, FILTER_NULL_ON_FAILURE);
+        return filter_var($value, \FILTER_VALIDATE_FLOAT, \FILTER_NULL_ON_FAILURE);
     }
 
     /* @param array<mixed> $data */

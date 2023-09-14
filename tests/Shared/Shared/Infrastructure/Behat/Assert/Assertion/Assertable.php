@@ -8,9 +8,6 @@ use Assert\AssertionFailedException;
 
 interface Assertable
 {
-    /**
-     * @param mixed $actual
-     * @throws AssertionFailedException
-     */
+    /** @throws AssertionFailedException */
     public function __invoke($actual): void;
 }

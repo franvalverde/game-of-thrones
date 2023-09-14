@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Whalar\Tests\Shared\Shared\Infrastructure\Behat\Assert;
 
+use Illuminate\Support\Arr;
 use Whalar\Tests\Shared\Shared\Infrastructure\Behat\Assert\Assertion\ArrayAssertion;
 use Whalar\Tests\Shared\Shared\Infrastructure\Behat\Assert\Assertion\Assertable;
 use Whalar\Tests\Shared\Shared\Infrastructure\Behat\Assert\Assertion\DateTimeAssertion;
@@ -13,7 +14,6 @@ use Whalar\Tests\Shared\Shared\Infrastructure\Behat\Assert\Assertion\NumericAsse
 use Whalar\Tests\Shared\Shared\Infrastructure\Behat\Assert\Assertion\RegexAssertion;
 use Whalar\Tests\Shared\Shared\Infrastructure\Behat\Assert\Assertion\TrueAssertion;
 use Whalar\Tests\Shared\Shared\Infrastructure\Behat\Assert\Assertion\UuidAssertion;
-use Illuminate\Support\Arr;
 
 final class Assertion
 {
@@ -21,7 +21,7 @@ final class Assertion
     {
         $assertion = Arr::get(self::assertions(), $assertionId);
 
-        if ($assertion === null) {
+        if (null === $assertion) {
             throw new \RuntimeException("Assertion $assertionId not found.");
         }
 

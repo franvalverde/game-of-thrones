@@ -13,7 +13,8 @@ use Whalar\Shared\Domain\ValueObject\Name;
 final class HouseCreator
 {
     public function __construct(private readonly HouseRepository $houses)
-    {}
+    {
+    }
 
     /** @throws HouseAlreadyExistsException|\Throwable */
     public function execute(AggregateId $houseId, Name $name): void

@@ -7,9 +7,8 @@ namespace Whalar\Shared\Domain\Event\ValueObject;
 use Assert\Assertion;
 use Assert\AssertionFailedException;
 use JetBrains\PhpStorm\Pure;
-use JsonSerializable;
 
-final class MessageId implements JsonSerializable
+final class MessageId implements \JsonSerializable
 {
     private string $id;
 

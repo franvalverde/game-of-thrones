@@ -9,5 +9,6 @@ use Whalar\Shared\Application\Command\Command;
 final class CreateHouseCommand implements Command
 {
     public function __construct(public readonly string $houseId, public readonly string $name)
-    {}
+    {
+    }
 }

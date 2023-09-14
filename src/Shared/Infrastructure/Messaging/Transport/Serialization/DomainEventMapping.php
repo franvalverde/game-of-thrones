@@ -6,7 +6,6 @@ namespace Whalar\Shared\Infrastructure\Messaging\Transport\Serialization;
 
 use Whalar\Shared\Application\Event\EventHandler;
 use Whalar\Shared\Domain\Event\DomainEvent;
-use RuntimeException;
 
 use function Lambdish\Phunctional\map;
 use function Lambdish\Phunctional\reduce;
@@ -28,7 +27,7 @@ final class DomainEventMapping
     public function for(string $name): string
     {
         if (!isset($this->mapping[$name])) {
-            throw new RuntimeException("The DomainEvent class for <$name> doesn't exist.");
+            throw new \RuntimeException("The DomainEvent class for <$name> doesn't exist.");
         }
 
         return $this->mapping[$name];

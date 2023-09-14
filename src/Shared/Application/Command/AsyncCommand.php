@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Whalar\Shared\Application\Command;
 
-use Whalar\Shared\Domain\Messaging\Message;
 use Illuminate\Support\Str;
+use Whalar\Shared\Domain\Messaging\Message;
 
 abstract class AsyncCommand extends Message
 {

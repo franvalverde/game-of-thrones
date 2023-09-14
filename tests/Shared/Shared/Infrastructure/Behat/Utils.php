@@ -43,7 +43,7 @@ final class Utils
             $result = $value::class;
         } elseif (\is_resource($value)) {
             $result = get_resource_type($value);
-        } elseif ($value === null) {
+        } elseif (null === $value) {
             $result = '<NULL>';
         }
 

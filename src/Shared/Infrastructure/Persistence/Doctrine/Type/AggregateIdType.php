@@ -9,8 +9,6 @@ use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\GuidType;
 use Whalar\Shared\Domain\ValueObject\AggregateId;
 
-use function is_scalar;
-
 final class AggregateIdType extends GuidType
 {
     private const FIELD_ID = 'aggregate_id';
@@ -27,7 +25,7 @@ final class AggregateIdType extends GuidType
     /** @throws AssertionFailedException */
     public function convertToPHPValue($value, AbstractPlatform $platform)
     {
-        if (!is_scalar($value)) {
+        if (!\is_scalar($value)) {
             return null;
         }
 

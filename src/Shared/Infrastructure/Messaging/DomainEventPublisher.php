@@ -4,10 +4,8 @@ declare(strict_types=1);
 
 namespace Whalar\Shared\Infrastructure\Messaging;
 
-use BadMethodCallException;
 use Whalar\Shared\Domain\Event\DomainEvent;
 use Whalar\Shared\Domain\Event\DomainEventSubscriber;
-use Throwable;
 
 final class DomainEventPublisher
 {
@@ -36,10 +34,10 @@ final class DomainEventPublisher
         return self::$instance;
     }
 
-    /** @throws BadMethodCallException */
+    /** @throws \BadMethodCallException */
     public function __clone()
     {
-        throw new BadMethodCallException(sprintf('%s is not supported.', __FUNCTION__));
+        throw new \BadMethodCallException(sprintf('%s is not supported.', __FUNCTION__));
     }
 
     public function subscribe(DomainEventSubscriber $subscriber): int
@@ -51,7 +49,7 @@ final class DomainEventPublisher
         return $identifier;
     }
 
-    /** @throws Throwable */
+    /** @throws \Throwable */
     public function publish(DomainEvent $domainEvent): void
     {
         foreach ($this->subscribers as $subscriber) {

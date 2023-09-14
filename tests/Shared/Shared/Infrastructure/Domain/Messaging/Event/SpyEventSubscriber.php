@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Whalar\Tests\Shared\Shared\Infrastructure\Domain\Messaging\Event;
 
-use Whalar\Shared\Domain\Messaging\Event\DomainEvent;
-use Whalar\Shared\Domain\Messaging\Event\DomainEventSubscriber;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Whalar\Shared\Domain\Messaging\Event\DomainEvent;
+use Whalar\Shared\Domain\Messaging\Event\DomainEventSubscriber;
 
 final class SpyEventSubscriber implements DomainEventSubscriber
 {

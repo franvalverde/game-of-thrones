@@ -158,7 +158,6 @@ final class DataMappingTest extends UnitTestCase
         ];
     }
 
-
     /** @return array<array<mixed>> */
     public function getIntOrNullDataProvider(): array
     {
@@ -217,7 +216,6 @@ final class DataMappingTest extends UnitTestCase
 
         $this->assertSame(1, self::integerOfArray('bar', $foo));
         $this->assertSame(0, self::integerOfArray('undefined', $foo));
-
     }
 
     /** @dataProvider getStringDataProvider */

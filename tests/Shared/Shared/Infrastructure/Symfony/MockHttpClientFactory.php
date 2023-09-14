@@ -13,7 +13,7 @@ final class MockHttpClientFactory
 
     public static function create(): HttpClientInterface
     {
-        if (self::$instance === null) {
+        if (null === self::$instance) {
             self::$instance = new MockHttpClient();
         }
 

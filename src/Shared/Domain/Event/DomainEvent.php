@@ -5,18 +5,11 @@ declare(strict_types=1);
 namespace Whalar\Shared\Domain\Event;
 
 use Assert\Assertion;
-use DateTimeInterface;
-use Whalar\Shared\Domain\Messaging\AsyncApi\AsyncApiChannel;
 use http\Exception\RuntimeException;
-use InvalidArgumentException;
 use JetBrains\PhpStorm\ArrayShape;
-use JsonSerializable;
-use ReflectionClass;
-use Throwable;
+use Whalar\Shared\Domain\Messaging\AsyncApi\AsyncApiChannel;
 
-use function is_object;
-
-abstract class DomainEvent implements JsonSerializable
+abstract class DomainEvent implements \JsonSerializable
 {
     private const BUSINESS_NAME = 'whalar';
     private const DEPARTMENT_NAME = 'got';
@@ -24,7 +17,7 @@ abstract class DomainEvent implements JsonSerializable
 
     private string $messageId;
     private int $messageVersion;
-    private DateTimeInterface $occurredOn;
+    private \DateTimeInterface $occurredOn;
 
     /** @var array<mixed> */
     private array $messagePayload;
@@ -32,12 +25,12 @@ abstract class DomainEvent implements JsonSerializable
     /**
      * @param array<mixed> $messagePayload
      *
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      */
     final private function __construct(
         string $messageId,
         int $messageVersion,
-        DateTimeInterface $occurredOn,
+        \DateTimeInterface $occurredOn,
         array $messagePayload,
     ) {
         $this->messageId = $messageId;
@@ -49,12 +42,12 @@ abstract class DomainEvent implements JsonSerializable
     /**
      * @param array<mixed> $messagePayload
      *
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      */
     final public static function create(
         string $messageId,
         int $messageVersion,
-        DateTimeInterface $occurredOn,
+        \DateTimeInterface $occurredOn,
         array $messagePayload,
     ): self {
         $message = new static(
@@ -91,11 +84,11 @@ abstract class DomainEvent implements JsonSerializable
     /* @throws Throwable */
     public static function messageName(): string
     {
-        $value = (new ReflectionClass(static::class))->getShortName();
+        $value = (new \ReflectionClass(static::class))->getShortName();
 
         if (!ctype_lower($value)) {
             $value = preg_replace('/\s+/u', '', $value) ?? '';
-            $value = preg_replace('/(.)(?=[A-Z])/u', '$1'.'_', $value) ?? '';
+            $value = preg_replace('/(.)(?=[A-Z])/u', '$1_', $value) ?? '';
             $value = strtolower($value);
         }
 
@@ -121,7 +114,7 @@ abstract class DomainEvent implements JsonSerializable
         return $this->messagePayload;
     }
 
-    public function occurredOn(): DateTimeInterface
+    public function occurredOn(): \DateTimeInterface
     {
         return $this->occurredOn;
     }
@@ -129,7 +122,7 @@ abstract class DomainEvent implements JsonSerializable
     /**
      * @return array<mixed>
      *
-     * @throws Throwable
+     * @throws \Throwable
      */
     #[ArrayShape([
         'message_id' => 'string',
@@ -154,7 +147,7 @@ abstract class DomainEvent implements JsonSerializable
     /**
      * @param array<mixed> $messagePayload
      *
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      */
     private function setMessagePayload(array $messagePayload): void
     {
@@ -181,10 +174,10 @@ abstract class DomainEvent implements JsonSerializable
     /* @throws InvalidArgumentException */
     private function ensureThatValueIsPrimitive(mixed $value, string $fieldName): void
     {
-        if (is_object($value)) {
+        if (\is_object($value)) {
             $message = sprintf('Provided "%s" is a invalid primitive.', $fieldName);
 
-            throw new InvalidArgumentException($message, Assertion::INVALID_OBJECT);
+            throw new \InvalidArgumentException($message, Assertion::INVALID_OBJECT);
         }
     }
 

@@ -8,9 +8,6 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Messenger\Exception\HandlerFailedException;
 use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Messenger\Stamp\HandledStamp;
-use Throwable;
-
-use function assert;
 
 abstract class ApiQueryPage
 {
@@ -21,14 +18,14 @@ abstract class ApiQueryPage
         $this->queryBus = $queryBus;
     }
 
-    /** @throws Throwable */
+    /** @throws \Throwable */
     protected function ask(object $message): mixed
     {
         try {
             $envelop = $this->queryBus->dispatch($message);
 
             $handledStamp = $envelop->last(HandledStamp::class);
-            assert($handledStamp instanceof HandledStamp);
+            \assert($handledStamp instanceof HandledStamp);
 
             return $handledStamp->getResult();
         } catch (HandlerFailedException $e) {
@@ -36,25 +33,26 @@ abstract class ApiQueryPage
         }
     }
 
-    protected function raiseException(Throwable $e): Throwable
+    protected function raiseException(\Throwable $e): \Throwable
     {
         while ($e instanceof HandlerFailedException) {
             $e = $e->getPrevious();
-            assert($e instanceof Throwable);
+            \assert($e instanceof \Throwable);
         }
 
         return $e;
     }
 
-
     protected function getStatus(string $statusResponse): int
     {
         $status = Response::HTTP_OK;
-        if ($statusResponse === 'HTTP_NOT_FOUND') {
+
+        if ('HTTP_NOT_FOUND' === $statusResponse) {
             $status = Response::HTTP_NOT_FOUND;
-        } else if ($statusResponse === 'HTTP_NO_CONTENT') {
+        } elseif ('HTTP_NO_CONTENT' === $statusResponse) {
             $status = Response::HTTP_NO_CONTENT;
         }
+
         return $status;
     }
 }

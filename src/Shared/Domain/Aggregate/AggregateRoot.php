@@ -5,9 +5,8 @@ declare(strict_types=1);
 namespace Whalar\Shared\Domain\Aggregate;
 
 use Whalar\Shared\Domain\Event\DomainEvent;
-use JsonSerializable;
 
-abstract class AggregateRoot implements JsonSerializable
+abstract class AggregateRoot implements \JsonSerializable
 {
     private int $aggregateVersion = 0;
 

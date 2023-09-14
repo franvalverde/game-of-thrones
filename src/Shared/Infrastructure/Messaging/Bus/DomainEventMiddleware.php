@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Whalar\Shared\Infrastructure\Messaging\Bus;
 
-use Whalar\Shared\Domain\Event\Repository\StoredEventRepository;
-use Whalar\Shared\Infrastructure\Messaging\DomainEventPublisher;
-use Whalar\Shared\Infrastructure\Messaging\Subscriber\InMemoryStoredEventSubscriber;
 use Symfony\Component\Messenger\Envelope;
 use Symfony\Component\Messenger\Middleware\MiddlewareInterface;
 use Symfony\Component\Messenger\Middleware\StackInterface;
+use Whalar\Shared\Domain\Event\Repository\StoredEventRepository;
+use Whalar\Shared\Infrastructure\Messaging\DomainEventPublisher;
+use Whalar\Shared\Infrastructure\Messaging\Subscriber\InMemoryStoredEventSubscriber;
 
 final class DomainEventMiddleware implements MiddlewareInterface
 {

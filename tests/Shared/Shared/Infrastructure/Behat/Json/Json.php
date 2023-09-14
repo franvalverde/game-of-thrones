@@ -8,8 +8,7 @@ use Symfony\Component\PropertyAccess\PropertyAccessorInterface;
 
 final class Json implements \Stringable
 {
-    /** @var mixed */
-    private $content;
+    private mixed $content;
 
     private function __construct(string $string)
     {
@@ -31,8 +30,7 @@ final class Json implements \Stringable
         return $this->print(false);
     }
 
-    /** @return mixed */
-    public function content()
+    public function content(): mixed
     {
         return $this->content;
     }
@@ -47,21 +45,20 @@ final class Json implements \Stringable
     {
         $flags = \JSON_UNESCAPED_SLASHES | \JSON_UNESCAPED_UNICODE;
 
-        if ($pretty === true && \defined('JSON_PRETTY_PRINT')) {
+        if (true === $pretty && \defined('JSON_PRETTY_PRINT')) {
             $flags |= \JSON_PRETTY_PRINT;
         }
 
         $result = json_encode($this->content, $flags);
 
-        if (json_last_error() !== \JSON_ERROR_NONE) {
+        if (\JSON_ERROR_NONE !== json_last_error()) {
             throw new \RuntimeException(json_last_error_msg());
         }
 
         return $result;
     }
 
-    /** @return mixed */
-    public function read($expression, PropertyAccessorInterface $accessor)
+    public function read($expression, PropertyAccessorInterface $accessor): mixed
     {
         $expression = \is_array($this->content)
             ? preg_replace('/^root/', '', (string) $expression)
@@ -70,7 +67,7 @@ final class Json implements \Stringable
         $expression ??= '';
 
         // If root asked, we return the entire content
-        if (trim($expression) === '') {
+        if ('' === trim($expression)) {
             return $this->content;
         }
 
@@ -81,7 +78,7 @@ final class Json implements \Stringable
     {
         $content = json_decode($string);
 
-        if (json_last_error() !== \JSON_ERROR_NONE) {
+        if (\JSON_ERROR_NONE !== json_last_error()) {
             throw new \RuntimeException(sprintf('Unable to parse string into JSON: %s', json_last_error_msg()));
         }
 

@@ -7,22 +7,21 @@ namespace Whalar\Shared\Domain\Event\Repository;
 use Doctrine\Common\Collections\Collection;
 use Whalar\Shared\Domain\Event\Aggregate\StoredEvent;
 use Whalar\Shared\Domain\Event\ValueObject\MessageId;
-use Throwable;
 
 interface StoredEventRepository
 {
-    /** @throws Throwable */
+    /** @throws \Throwable */
     public function save(StoredEvent $storedEvent): void;
 
     /**
      * @param Collection<string, StoredEvent> $storedEvents
-     * @throws Throwable
+     * @throws \Throwable
      */
     public function saveAll(Collection $storedEvents): void;
 
     /**
      * @return array<StoredEvent>
-     * @throws Throwable
+     * @throws \Throwable
      */
     public function search(
         ?string $from,
@@ -32,12 +31,12 @@ interface StoredEventRepository
         string $orderBy = 'asc',
     ): array;
 
-    /** @throws Throwable */
+    /** @throws \Throwable */
     public function searchCount(?string $from, ?string $to): int;
 
-    /** @throws Throwable */
+    /** @throws \Throwable */
     public function nextIdentity(): string;
 
-    /** @throws Throwable */
+    /** @throws \Throwable */
     public function ofIdOrFail(MessageId $messageId): StoredEvent;
 }

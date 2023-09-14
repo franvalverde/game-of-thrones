@@ -6,15 +6,14 @@ namespace Whalar\Shared\Infrastructure\Messaging\Subscriber;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
-use Whalar\Shared\Domain\Event\Aggregate\StoredEvent;
-use Whalar\Shared\Domain\Event\DomainEvent;
-use Whalar\Shared\Domain\Event\DomainEventSubscriber;
-use Whalar\Shared\Domain\Event\ValueObject\MessageId;
 use JetBrains\PhpStorm\Pure;
 use Symfony\Component\Messenger\Envelope;
 use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Messenger\Stamp\DispatchAfterCurrentBusStamp;
-use Throwable;
+use Whalar\Shared\Domain\Event\Aggregate\StoredEvent;
+use Whalar\Shared\Domain\Event\DomainEvent;
+use Whalar\Shared\Domain\Event\DomainEventSubscriber;
+use Whalar\Shared\Domain\Event\ValueObject\MessageId;
 
 final class InMemoryStoredEventSubscriber implements DomainEventSubscriber
 {
@@ -30,7 +29,7 @@ final class InMemoryStoredEventSubscriber implements DomainEventSubscriber
         $this->events = new ArrayCollection();
     }
 
-    /** @throws Throwable */
+    /** @throws \Throwable */
     public function notify(DomainEvent $domainEvent): void
     {
         $this->eventBus->dispatch(

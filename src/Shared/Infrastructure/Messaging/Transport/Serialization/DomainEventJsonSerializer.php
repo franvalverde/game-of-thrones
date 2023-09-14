@@ -6,9 +6,9 @@ namespace Whalar\Shared\Infrastructure\Messaging\Transport\Serialization;
 
 use Assert\AssertionFailedException;
 use Carbon\CarbonImmutable;
-use Whalar\Shared\Domain\Messaging\AsyncApi\AsyncApiChannel;
 use Symfony\Component\Messenger\Envelope;
 use Symfony\Component\Messenger\Stamp\DispatchAfterCurrentBusStamp;
+use Whalar\Shared\Domain\Messaging\AsyncApi\AsyncApiChannel;
 
 /**
  * @phpstan-type EncodedDomainEvent array{
