@@ -11,7 +11,7 @@ final class NameMother
 {
     public static function create(): string
     {
-        return MotherCreator::random()->text();
+        return MotherCreator::random()->name();
     }
 
     /** @throws AssertionFailedException */

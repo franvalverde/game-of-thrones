@@ -14,7 +14,6 @@ final class HouseWasCreated extends DomainEvent
 {
     private const MESSAGE_VERSION = 1;
 
-    private string $id;
     private string $houseId;
     private string $name;
 
@@ -41,11 +40,6 @@ final class HouseWasCreated extends DomainEvent
     public function messageAggregateName(): string
     {
         return $this->aggregateNameFromClassname(House::class);
-    }
-
-    public function id(): string
-    {
-        return $this->id;
     }
 
     public function houseId(): string

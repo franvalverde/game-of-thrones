@@ -13,8 +13,6 @@ services:
     Whalar\:
         resource: '%kernel.project_dir%/src/*'
         exclude:
-            - '%kernel.project_dir%/src/*/Entity/'
-            - '%kernel.project_dir%/src/*/Mapping/'
             - '%kernel.project_dir%/src/Kernel.php'
 
     Whalar\Tests\Shared\:
@@ -45,7 +43,12 @@ services:
         class: Whalar\Shared\Infrastructure\Generator\SymfonyUuidGenerator
         public: true
 
-    # Event repository
+    # Repositories
+    Whalar\Core\Domain\House\Repository\HouseRepository:
+        class: Whalar\Core\Infrastructure\Persistence\Doctrine\Repository\DoctrineHouseRepository
+        arguments: [ '@doctrine.orm.entity_manager' ]
+        public: true
+
     Whalar\Shared\Domain\Event\Repository\StoredEventRepository:
         class: Whalar\Shared\Infrastructure\Persistence\InMemory\DoctrineStoredEventRepository
         arguments: [ '@doctrine.orm.entity_manager','@Whalar\Shared\Infrastructure\Generator\UuidGenerator' ]
@@ -117,7 +120,7 @@ services:
     Monolog\Processor\TagProcessor:
         class: Monolog\Processor\TagProcessor
         arguments:
-            - [ 'bff-fincas-service' ]
+            - [ 'got-service' ]
         tags:
             - { name: monolog.processor }
 
