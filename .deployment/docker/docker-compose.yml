@@ -4,7 +4,7 @@ services:
     build:
       dockerfile: .deployment/docker/app/Dockerfile
       context: ./../../
-      target: final_stage
+      target: debug
     user: "1000:1000"
     depends_on:
       - db

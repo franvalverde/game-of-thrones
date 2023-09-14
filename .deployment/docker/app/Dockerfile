@@ -19,7 +19,7 @@ RUN apk add --no-cache --virtual .ext-deps \
         docker-php-ext-install dom xml zip gd pdo_pgsql opcache sockets bcmath mbstring pdo intl exif
 
 RUN apk add --no-cache --update --virtual buildDeps autoconf  \
-        && apk add build-base libgit2-dev rabbitmq-c-dev \
+        && apk add build-base libgit2-dev rabbitmq-c-dev  \
         && pecl install amqp \
         && docker-php-ext-enable amqp \
         && apk del buildDeps
@@ -48,7 +48,15 @@ FROM dependencies as devel_dependencies
 RUN mkdir -p ~/.composer
 RUN composer install --prefer-dist --no-scripts
 
-FROM dependencies as final_stage
+FROM dependencies as debug
+RUN apk --no-cache add pcre-dev ${PHPIZE_DEPS} \
+  && apk add --update linux-headers \
+  && pecl install xdebug-3.2.2  \
+  && docker-php-ext-enable xdebug \
+  && apk del pcre-dev ${PHPIZE_DEPS}
+
+COPY .deployment/docker/app/config/xdebug.ini /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+COPY .deployment/docker/app/config/error_reporting.ini /usr/local/etc/php/conf.d/error_reporting.ini
 
 WORKDIR $PROJECT_DIR
 

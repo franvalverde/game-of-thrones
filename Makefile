@@ -97,9 +97,9 @@ lint-fix: ## Analyse code and fix errors
 
 .PHONY: unit-test
 unit-test: clean ## Execute unit tests
-	$(EXEC_APP) "phpunit"
+	$(EXEC_APP) "php bin/phpunit --testsuite='unit'"
 
 .PHONY: unit-test-coverage
 unit-test-coverage: clean ## Execute unit tests with coverage
-	$(EXEC_APP) "phpunit --testsuite unit"
+	$(EXEC_APP) "XDEBUG_MODE=coverage phpunit tests/Unit"
 	@if command -v xdg-open; then xdg-open ./report/html/index.html; fi;

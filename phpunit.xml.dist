@@ -24,13 +24,17 @@
         <server name="APP_ENV" value="test" force="true"/>
         <server name="SHELL_VERBOSITY" value="-1"/>
         <env name="MAX_SIZE_FILE" value="4" />
+        <server name="KERNEL_CLASS" value="Whalar\Kernel" />
     </php>
     <testsuites>
-        <testsuite name="Test suite for the Whalar Challenge of Fran Valverde">
-            <directory>tests</directory>
+        <testsuite name="unit">
+            <directory>tests/Unit</directory>
         </testsuite>
     </testsuites>
     <logging>
         <junit outputFile="report/phpunit.junit.xml"/>
     </logging>
+    <extensions>
+        <extension class="DAMA\DoctrineTestBundle\PHPUnit\PHPUnitExtension"/>
+    </extensions>
 </phpunit>
