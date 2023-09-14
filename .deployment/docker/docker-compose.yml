@@ -1,0 +1,43 @@
+services:
+  app:
+    container_name: whalar-fvalverde-app
+    build:
+      dockerfile: .deployment/docker/app/Dockerfile
+      context: ./../../
+      target: final_stage
+    user: "1000:1000"
+    depends_on:
+      - db
+    working_dir: /var/www/html
+    volumes:
+      - ./../../:/var/www/html
+
+  http_server:
+    container_name: whalar-fvalverde-http-server
+    build:
+      dockerfile: .deployment/docker/httpServer/Dockerfile
+      context: ./../../
+    working_dir: /var/www/html
+    depends_on:
+      - app
+    volumes:
+      - ./../../:/var/www/html:ro
+    ports:
+      - "8080:80"
+
+  db:
+    container_name: whalar-fvalverde-db
+    hostname: db
+    image: postgres:14.2-alpine3.15
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+    env_file:
+      - .env
+
+  adminer:
+    container_name: whalar-fvalverde-adminer
+    image: adminer:4.8.1
+    ports:
+      - "8001:8080"
