@@ -1,0 +1,41 @@
+framework:
+    messenger:
+        routing:
+            # Route your messages to the transports.
+            'Whalar\Shared\Application\Command\Command': sync_commands
+            'Whalar\Shared\Application\Command\AsyncCommand': async_commands
+            'Whalar\Shared\Application\Query\Query': queries
+            'Whalar\Shared\Domain\Event\DomainEvent': events
+
+        serializer:
+            # Service id to use as the default serializer for the transports.
+            default_serializer: messenger.transport.symfony_serializer
+            symfony_serializer:
+                format: json
+                context: { }
+
+        transports:
+            sync_commands: 'sync://'
+            async_commands: 'sync://'
+            queries: 'sync://'
+            events: 'sync://'
+            failed: 'doctrine://default?queue_name=failed'
+
+        # Transport name to send failed messages to (after all retries have failed).
+        failure_transport: failed
+
+        # The bus that is going to be injected when injecting MessageBusInterface.
+        default_bus: none.bus
+
+        buses:
+            none.bus:
+                default_middleware: allow_no_handlers
+            command.bus:
+                middleware:
+                    - 'doctrine_ping_connection'
+                    - 'send_message'
+                    - 'Whalar\Shared\Infrastructure\Messaging\Bus\DomainEventMiddleware'
+                    - 'doctrine_transaction'
+            query.bus: ~
+            event.bus:
+                default_middleware: allow_no_handlers

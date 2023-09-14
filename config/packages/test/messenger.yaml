@@ -1,0 +1,6 @@
+framework:
+  messenger:
+    transports:
+      # The events transport does not actually deliver messages.
+      # Instead, it holds them in memory during the request.
+      events: 'in-memory://'
