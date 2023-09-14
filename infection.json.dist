@@ -1,0 +1,19 @@
+{
+    "source": {
+        "directories": [
+            "src"
+        ],
+        "excludes": [
+            "{.*/Infrastructure/.*}",
+            "Kernel.php"
+        ]
+    },
+    "timeout": 10,
+    "logs": {
+        "text": "report/infection/code-mutations.log",
+        "summary": "report/infection/summary.log",
+        "perMutator": "report/infection/effects.md"
+    },
+    "minMsi": 100,
+    "minCoveredMsi": 100
+}
