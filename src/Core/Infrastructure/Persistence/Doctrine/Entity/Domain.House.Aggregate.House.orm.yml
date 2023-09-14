@@ -1,0 +1,14 @@
+Whalar\Core\Domain\House\Aggregate\House:
+  type: entity
+  table: house
+  schema: core
+  id:
+    id:
+      type: aggregate_id
+      column: id
+      id: true
+
+  fields:
+    name:
+      type: name
+      column: name
