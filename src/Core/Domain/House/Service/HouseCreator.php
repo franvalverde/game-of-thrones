@@ -15,7 +15,7 @@ final class HouseCreator
     public function __construct(private readonly HouseRepository $houses)
     {}
 
-    /** @throws HouseAlreadyExistsException */
+    /** @throws HouseAlreadyExistsException|\Throwable */
     public function execute(AggregateId $houseId, Name $name): void
     {
         $this->ensureHouseNotExists($houseId, $name);

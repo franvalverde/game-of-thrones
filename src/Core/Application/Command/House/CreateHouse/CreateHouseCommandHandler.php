@@ -10,7 +10,7 @@ use Whalar\Shared\Application\Command\CommandHandler;
 use Whalar\Shared\Domain\ValueObject\AggregateId;
 use Whalar\Shared\Domain\ValueObject\Name;
 
-final class CreateGrinderCommandHandler implements CommandHandler
+final class CreateHouseCommandHandler implements CommandHandler
 {
     public function __construct(private readonly HouseCreator $creator)
     {}
