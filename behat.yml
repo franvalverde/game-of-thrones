@@ -1,0 +1,32 @@
+default:
+    gherkin:
+        filters:
+            tags:
+                '~@wip'
+    suites:
+        test:
+            paths:
+                - '%paths.base%/tests/Functional/Test'
+            contexts:
+                - Whalar\Tests\Shared\Core\Infrastructure\Behat\Context\FeatureContext
+        health:
+            paths:
+                - '%paths.base%/tests/Functional/Health'
+            contexts:
+                - Whalar\Tests\Shared\Shared\Infrastructure\Behat\Context\ApplicationContext
+                - Whalar\Tests\Shared\Shared\Infrastructure\Behat\Context\ApiContext
+
+    extensions:
+        Behat\MinkExtension:
+            sessions:
+                symfony:
+                    symfony: ~
+            base_url: 'http://localhost:8080/'
+            files_path: '%paths.base%/tests/Shared/Shared/Infrastructure/Filesystem'
+        FriendsOfBehat\SymfonyExtension:
+            bootstrap: tests/bootstrap.php
+            kernel:
+                class: Whalar\Kernel
+                path: src/Kernel.php
+                environment: test
+                debug: ~
