@@ -1,6 +1,6 @@
 # Core context
 whalar.core:
-    resource: ./routes/core_routes.yaml
+    resource: ./routes/v1_core_routes.yaml
     prefix: /v1
 
 # Shared context

@@ -1,0 +1,7 @@
+# Core
+
+core.rest.create_house.page:
+  path: /houses
+  methods: POST
+  prefix: v1
+  controller: 'Whalar\Core\Infrastructure\Delivery\Rest\V1\House\CreateHousePage'
