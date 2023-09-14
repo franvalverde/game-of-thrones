@@ -1,0 +1,6 @@
+# Shared
+
+shared.rest.status.page:
+  path: /status
+  methods: GET
+  controller: 'Whalar\Shared\Infrastructure\Delivery\Rest\StatusPage'
