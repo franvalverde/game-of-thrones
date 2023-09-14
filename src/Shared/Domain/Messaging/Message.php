@@ -8,6 +8,7 @@ use Assert\AssertionFailedException;
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Str;
 use JetBrains\PhpStorm\ArrayShape;
+use Whalar\Shared\Domain\Event\ValueObject\MessageId;
 use Whalar\Shared\Domain\Messaging\AsyncApi\AsyncApiChannel;
 
 /**

@@ -10,7 +10,7 @@ use Faker\Provider\es_ES\Person;
 
 final class MotherCreator
 {
-    private static $faker;
+    private static ?Generator $faker = null;
 
     public static function random(): Generator
     {

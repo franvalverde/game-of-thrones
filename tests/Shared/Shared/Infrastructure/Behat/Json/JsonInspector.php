@@ -14,7 +14,7 @@ final class JsonInspector
     ) {
     }
 
-    public function evaluate(Json $json, $expression)
+    public function evaluate(Json $json, $expression): mixed
     {
         if ('javascript' === $this->evaluationMode) {
             $expression = str_replace('->', '.', (string) $expression);

@@ -14,6 +14,9 @@ abstract class DoctrineEntityIdType extends GuidType
         return true;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function convertToDatabaseValue($value, AbstractPlatform $platform)
     {
         return null === $value || \is_string($value)
@@ -21,6 +24,9 @@ abstract class DoctrineEntityIdType extends GuidType
             : (string) $value->id();
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function convertToPHPValue($value, AbstractPlatform $platform)
     {
         $className = $this->getClassName();

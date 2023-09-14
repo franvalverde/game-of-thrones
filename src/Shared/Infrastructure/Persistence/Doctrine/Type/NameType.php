@@ -13,7 +13,7 @@ final class NameType extends BaseStringType
 {
     private const FIELD = 'name';
 
-    public function convertToDatabaseValue($value, AbstractPlatform $platform)
+    public function convertToDatabaseValue($value, AbstractPlatform $platform): ?string
     {
         if ($value instanceof Name) {
             return $value->name();
@@ -23,7 +23,7 @@ final class NameType extends BaseStringType
     }
 
     /** @throws AssertionFailedException */
-    public function convertToPHPValue($value, AbstractPlatform $platform)
+    public function convertToPHPValue($value, AbstractPlatform $platform): ?Name
     {
         if (!\is_scalar($value)) {
             return null;
