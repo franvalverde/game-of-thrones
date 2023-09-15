@@ -32,7 +32,7 @@ final class SeasonsActiveType extends BaseStringType
 
         Assertion::string($value);
 
-        return SeasonsActive::from($value);
+        return SeasonsActive::fromArray(json_decode($value));
     }
 
     public function getName(): string

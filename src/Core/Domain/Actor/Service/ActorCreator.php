@@ -30,9 +30,9 @@ final class ActorCreator
     private function ensureActorNotExists(AggregateId $id, Name $name, ActorId $internalId): void
     {
         if (
-            null !== $this->actors->ofId($id) ||
-            null !== $this->actors->ofName($name) ||
-            null !== $this->actors->ofInternalId($internalId)
+            null !== $this->actors->ofId($id)
+            || null !== $this->actors->ofName($name)
+            || null !== $this->actors->ofInternalId($internalId)
         ) {
             throw ActorAlreadyExistsException::from($name->value());
         }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 return [
     DAMA\DoctrineTestBundle\DAMADoctrineTestBundle::class => ['test' => true],
     Symfony\Bundle\FrameworkBundle\FrameworkBundle::class => ['all' => true],

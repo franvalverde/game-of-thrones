@@ -24,7 +24,7 @@ final class CreateActorCommandHandler implements CommandHandler
             id: AggregateId::from($command->id),
             internalId: ActorId::from($command->actorId),
             name: Name::from($command->name),
-            seasonsActive: $command->seasonsActive ? SeasonsActive::fromArray($command->seasonsActive) : null,
+            seasonsActive: null !== $command->seasonsActive ? SeasonsActive::fromArray($command->seasonsActive) : null,
         );
     }
 }
