@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Whalar\Shared\Domain\Data;
 
+use Assert\Assertion;
 use Illuminate\Support\Arr;
 use Whalar\Shared\Domain\Exception\InvalidDataMappingException;
 use Whalar\Shared\Domain\ValueObject\AggregateId;
@@ -95,6 +96,8 @@ trait DataMapping
             $value = AggregateId::random()->id();
         }
 
+        Assertion::string($value);
+
         return $value;
     }
 
@@ -158,6 +161,7 @@ trait DataMapping
         return (string) $value;
     }
 
+    // @phpstan-ignore-next-line
     private static function integerOfArray(string $key, array $data): int
     {
         return array_key_exists($key, $data)

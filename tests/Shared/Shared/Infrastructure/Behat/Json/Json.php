@@ -27,6 +27,7 @@ final class Json implements \Stringable
 
     public function __toString(): string
     {
+        // @phpstan-ignore-next-line
         return $this->print(false);
     }
 
@@ -41,7 +42,7 @@ final class Json implements \Stringable
         return (array) $this->content;
     }
 
-    public function print(bool $pretty = true): string
+    public function print(bool $pretty = true): string|bool
     {
         $flags = \JSON_UNESCAPED_SLASHES | \JSON_UNESCAPED_UNICODE;
 
@@ -58,6 +59,7 @@ final class Json implements \Stringable
         return $result;
     }
 
+    // @phpstan-ignore-next-line
     public function read($expression, PropertyAccessorInterface $accessor): mixed
     {
         $expression = \is_array($this->content)

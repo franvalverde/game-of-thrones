@@ -12,6 +12,7 @@ final class RegexAssertion implements Assertable
     {
     }
 
+    // @phpstan-ignore-next-line
     public function __invoke($actual): void
     {
         Assertion::regex($actual, $this->pattern);

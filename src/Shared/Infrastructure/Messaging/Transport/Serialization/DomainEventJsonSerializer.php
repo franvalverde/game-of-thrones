@@ -35,18 +35,14 @@ final class DomainEventJsonSerializer
     {
         $messageName = $encodedDomainEvent['message_name'];
 
-        // @phpstan-ignore-next-line
         $asyncApiFormatter = AsyncApiChannel::fromString($messageName);
 
         $domainEventClass = $this->mapping->for($asyncApiFormatter->action());
 
         $domainEvent = $domainEventClass::create(
-            // @phpstan-ignore-next-line
             $encodedDomainEvent['message_id'],
             $asyncApiFormatter->messageVersion(),
-            // @phpstan-ignore-next-line
             CarbonImmutable::createFromTimestampMs($encodedDomainEvent['occurred_on_in_ms']),
-            // @phpstan-ignore-next-line
             $encodedDomainEvent['payload'],
         );
 

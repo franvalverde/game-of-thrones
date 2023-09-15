@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Whalar\Tests\Shared\Core\Infrastructure\Behat\Context;
 
 use Behat\Behat\Context\Context;
@@ -27,5 +29,4 @@ final class HouseContext implements Context
             $this->houses->save($house);
         }
     }
-
 }

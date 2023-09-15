@@ -74,7 +74,6 @@ final class MessageMappingPass implements CompilerPassInterface
     {
         $classes = $this->getMessageSubclasses($files);
 
-        // @phpstan-ignore-next-line
         $mapping = $this->generateMapping($classes);
 
         return new Definition(InMemoryMessageMapping::class, [$mapping]);
@@ -124,10 +123,8 @@ final class MessageMappingPass implements CompilerPassInterface
      */
     private function generateMapping(array $messageClasses): array
     {
-        // @phpstan-ignore-next-line
         return reduce(
             static fn (array $mapping, string $message): array => Arr::dot(
-                // @phpstan-ignore-next-line
                 data_set($mapping, $message::messageChannel(), $message),
             ),
             $messageClasses,

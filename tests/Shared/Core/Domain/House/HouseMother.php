@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Whalar\Tests\Shared\Core\Domain\House;
 
 use Whalar\Core\Domain\House\Aggregate\House;
@@ -11,13 +13,10 @@ use Whalar\Tests\Shared\Shared\Domain\ValueObject\NameMother;
 
 final class HouseMother
 {
-    public static function create(
-        ?AggregateId $id = null,
-        ?Name $name = null
-    ): House
+    public static function create(?AggregateId $id = null, ?Name $name = null): House
     {
         $house = House::create(
-            id: $id ?? AggregateIdMother::create(),
+            id: $id ?? AggregateIdMother::random(),
             name: $name ?? NameMother::random(),
         );
 

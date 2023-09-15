@@ -40,9 +40,9 @@ final class CreateHouseCommandHandlerTest extends UnitTestCase
 
         self::assertCount(1, $events);
         self::assertEquals($events[0]->messageAggregateId(), $houseId->id());
+        self::assertInstanceOf(HouseWasCreated::class, $events[0]);
         self::assertEquals('house', $events[0]->messageAggregateName());
         self::assertEquals($events[0]->name(), $name->name());
-        self::assertInstanceOf(HouseWasCreated::class, $events[0]);
     }
 
     public function testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException(): void

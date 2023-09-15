@@ -33,6 +33,7 @@ final class MinkHelper
         $this->requestHeaders[$name] = $value;
     }
 
+    // @phpstan-ignore-next-line
     public function sendRequest($method, $url, array $optionalParams = []): Crawler
     {
         $defaultOptionalParams = [

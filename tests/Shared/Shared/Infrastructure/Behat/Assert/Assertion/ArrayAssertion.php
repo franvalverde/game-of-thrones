@@ -12,6 +12,7 @@ final class ArrayAssertion implements Assertable
     {
     }
 
+    // @phpstan-ignore-next-line
     public function __invoke($actual): void
     {
         Assertion::isArray($actual);

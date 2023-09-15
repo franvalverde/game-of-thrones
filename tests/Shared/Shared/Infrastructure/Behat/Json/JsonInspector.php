@@ -14,6 +14,7 @@ final class JsonInspector
     ) {
     }
 
+    // @phpstan-ignore-next-line
     public function evaluate(Json $json, $expression): mixed
     {
         if ('javascript' === $this->evaluationMode) {

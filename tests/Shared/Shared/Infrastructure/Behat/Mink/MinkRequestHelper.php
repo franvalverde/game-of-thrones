@@ -12,11 +12,13 @@ final class MinkRequestHelper
     {
     }
 
+    // @phpstan-ignore-next-line
     public function sendRequest($method, $url, array $optionalParams = []): void
     {
         $this->mink->sendRequest($method, $url, $optionalParams);
     }
 
+    // @phpstan-ignore-next-line
     public function sendRequestWithPyStringNode($method, $url, PyStringNode $body): void
     {
         $this->mink->sendRequest($method, $url, ['content' => $body->getRaw()]);

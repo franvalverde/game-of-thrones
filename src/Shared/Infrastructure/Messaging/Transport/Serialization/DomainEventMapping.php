@@ -19,7 +19,6 @@ final class DomainEventMapping
     /** @param iterable<array-key, EventHandler> $eventHandlers */
     public function __construct(iterable $eventHandlers)
     {
-        // @phpstan-ignore-next-line
         $this->mapping = reduce($this->domainEventsExtractor(), $eventHandlers, []);
     }
 

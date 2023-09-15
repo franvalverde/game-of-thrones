@@ -8,6 +8,7 @@ use Assert\Assertion;
 
 final class FalseAssertion implements Assertable
 {
+    // @phpstan-ignore-next-line
     public function __invoke($actual): void
     {
         Assertion::false($actual);

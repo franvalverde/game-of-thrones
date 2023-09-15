@@ -1,0 +1,80 @@
+parameters:
+	ignoreErrors:
+		-
+			message: """
+				#^Interface Whalar\\\\Shared\\\\Application\\\\Event\\\\EventHandler extends deprecated interface Symfony\\\\Component\\\\Messenger\\\\Handler\\\\MessageSubscriberInterface\\:
+				since Symfony 6\\.2, use the \\{@see AsMessageHandler\\} attribute instead$#
+			"""
+			count: 1
+			path: src/Shared/Application/Event/EventHandler.php
+
+		-
+			message: """
+				#^Call to deprecated method getName\\(\\) of class Whalar\\\\Shared\\\\Infrastructure\\\\Persistence\\\\Doctrine\\\\Type\\\\CarbonTzImmutableType\\:
+				this method will be removed in Doctrine DBAL 4\\.0,
+				            use \\{@see TypeRegistry\\:\\:lookupName\\(\\)\\} instead\\.$#
+			"""
+			count: 1
+			path: src/Shared/Infrastructure/Persistence/Doctrine/Type/CarbonTzImmutableType.php
+
+		-
+			message: "#^Method Whalar\\\\Shared\\\\Infrastructure\\\\Persistence\\\\InMemory\\\\DoctrineStoredEventRepository\\:\\:searchCount\\(\\) should return int but returns bool\\|float\\|int\\|string\\|null\\.$#"
+			count: 1
+			path: src/Shared/Infrastructure/Persistence/InMemory/DoctrineStoredEventRepository.php
+
+		-
+			message: "#^Call to function assert\\(\\) with true will always evaluate to true\\.$#"
+			count: 1
+			path: src/Shared/Infrastructure/Persistence/InMemory/InMemoryStoredEventRepository.php
+
+		-
+			message: "#^Instanceof between Whalar\\\\Shared\\\\Domain\\\\Event\\\\Aggregate\\\\StoredEvent and Whalar\\\\Shared\\\\Domain\\\\Event\\\\Aggregate\\\\StoredEvent will always evaluate to true\\.$#"
+			count: 1
+			path: src/Shared/Infrastructure/Persistence/InMemory/InMemoryStoredEventRepository.php
+
+		-
+			message: "#^Method Whalar\\\\Shared\\\\Infrastructure\\\\Persistence\\\\InMemory\\\\InMemoryStoredEventRepository\\:\\:resultsFilteredBy\\(\\) should return Doctrine\\\\Common\\\\Collections\\\\Collection\\<string, Whalar\\\\Shared\\\\Domain\\\\Event\\\\Aggregate\\\\StoredEvent\\> but returns Doctrine\\\\Common\\\\Collections\\\\ReadableCollection\\<string, Whalar\\\\Shared\\\\Domain\\\\Event\\\\Aggregate\\\\StoredEvent\\>\\.$#"
+			count: 1
+			path: src/Shared/Infrastructure/Persistence/InMemory/InMemoryStoredEventRepository.php
+
+		-
+			message: "#^Method Whalar\\\\Tests\\\\Shared\\\\Shared\\\\Infrastructure\\\\Behat\\\\Assert\\\\Assertion\\:\\:get\\(\\) has parameter \\$args with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: tests/Shared/Shared/Infrastructure/Behat/Assert/Assertion.php
+
+		-
+			message: "#^Method Whalar\\\\Tests\\\\Shared\\\\Shared\\\\Infrastructure\\\\Behat\\\\Context\\\\ApiContext\\:\\:theResponseHeaderNodeShouldBe\\(\\) has parameter \\$expected with no type specified\\.$#"
+			count: 1
+			path: tests/Shared/Shared/Infrastructure/Behat/Context/ApiContext.php
+
+		-
+			message: "#^Only booleans are allowed in an if condition, int\\|false given\\.$#"
+			count: 1
+			path: tests/Shared/Shared/Infrastructure/Behat/Context/ApiContext.php
+
+		-
+			message: "#^Call to an undefined method Behat\\\\Mink\\\\Driver\\\\DriverInterface\\:\\:getClient\\(\\)\\.$#"
+			count: 1
+			path: tests/Shared/Shared/Infrastructure/Behat/Mink/MinkHelper.php
+
+		-
+			message: "#^Method Whalar\\\\Tests\\\\Shared\\\\Shared\\\\Infrastructure\\\\Behat\\\\Mink\\\\MinkHelper\\:\\:getResponseHeaders\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: tests/Shared/Shared/Infrastructure/Behat/Mink/MinkHelper.php
+
+		-
+			message: "#^Method Whalar\\\\Tests\\\\Shared\\\\Shared\\\\Infrastructure\\\\Behat\\\\Mink\\\\MinkHelper\\:\\:normalizeHeaders\\(\\) has parameter \\$headers with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: tests/Shared/Shared/Infrastructure/Behat/Mink/MinkHelper.php
+
+		-
+			message: "#^Method Whalar\\\\Tests\\\\Shared\\\\Shared\\\\Infrastructure\\\\Behat\\\\Mink\\\\MinkHelper\\:\\:normalizeHeaders\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: tests/Shared/Shared/Infrastructure/Behat/Mink/MinkHelper.php
+
+		-
+			message: "#^Property Whalar\\\\Tests\\\\Shared\\\\Shared\\\\Infrastructure\\\\Behat\\\\Mink\\\\MinkHelper\\:\\:\\$requestHeaders type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: tests/Shared/Shared/Infrastructure/Behat/Mink/MinkHelper.php
+
+

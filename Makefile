@@ -89,7 +89,7 @@ messenger-setup: ## Setup Messenger transports
 ##@ Code analysis
 
 .PHONY: lint-check
-lint-check: ## Analyse code and fix errors
+lint-check: phpstan ## Analyse code and fix errors
 	$(EXEC_APP) "php -d memory_limit=-1 ./bin/phpcs --standard=phpcs.xml.dist --report-full --report-summary -s src tests"
 	$(EXEC_APP) "php -d memory_limit=-1 ./bin/php-cs-fixer fix --no-interaction --dry-run --diff -v"
 
@@ -97,6 +97,10 @@ lint-check: ## Analyse code and fix errors
 lint-fix: ## Analyse code and fix errors
 	$(EXEC_APP) "php -d memory_limit=-1 ./bin/phpcbf --standard=phpcs.xml.dist -s src tests"
 	$(EXEC_APP) "php -d memory_limit=-1 ./bin/php-cs-fixer fix --no-interaction --diff -v"
+
+.PHONY: phpstan
+phpstan:
+	$(EXEC_APP) "php bin/phpstan analyse --memory-limit=-1"
 
 ##@ Test
 

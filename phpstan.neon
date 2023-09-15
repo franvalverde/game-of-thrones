@@ -1,0 +1,14 @@
+includes:
+    - phpstan-baseline.neon
+    - phpstan-ignore.neon
+
+parameters:
+    level: 8
+    doctrine:
+        objectManagerLoader: tests/object-manager.php
+    symfony:
+        container_xml_path: var/cache/dev/Whalar_KernelDevDebugContainer.xml
+    tmpDir: var/phpstan
+    paths:
+          - src
+          - tests

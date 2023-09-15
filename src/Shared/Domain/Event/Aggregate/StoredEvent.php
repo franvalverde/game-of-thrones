@@ -11,7 +11,7 @@ use JetBrains\PhpStorm\ArrayShape;
 use JetBrains\PhpStorm\Pure;
 use Whalar\Shared\Domain\Event\ValueObject\MessageId;
 
-final class StoredEvent implements \JsonSerializable
+class StoredEvent implements \JsonSerializable
 {
     private MessageId $messageId;
 

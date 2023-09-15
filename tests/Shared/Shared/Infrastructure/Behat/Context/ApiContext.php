@@ -70,9 +70,9 @@ final class ApiContext extends RawMinkContext
                     'Mink parameter "files_path" is not a string.',
                 );
                 $path = rtrim(
-                        $this->getMinkParameter('files_path'),
-                        \DIRECTORY_SEPARATOR,
-                    ).\DIRECTORY_SEPARATOR.$filename;
+                    $this->getMinkParameter('files_path'),
+                    \DIRECTORY_SEPARATOR,
+                ).\DIRECTORY_SEPARATOR.$filename;
                 Arr::set($files, $key, new UploadedFile($path, $filename));
             } else {
                 Arr::set($parameters, $key, $value);
@@ -118,7 +118,7 @@ final class ApiContext extends RawMinkContext
     {
         $response = trim($this->mink->getResponse());
 
-        if ($response !== '' && $response !== '{}') {
+        if ('' !== $response && '{}' !== $response) {
             throw new \RuntimeException("The response is not empty.\n\n-- Actual:\n$response");
         }
     }
@@ -146,7 +146,7 @@ final class ApiContext extends RawMinkContext
 
         $actual = $this->jsonInspector->evaluate($response, $node);
 
-        if ($actual === null) {
+        if (null === $actual) {
             throw new \RuntimeException("The response node <$node> is null.");
         }
     }
@@ -191,7 +191,7 @@ final class ApiContext extends RawMinkContext
     /** @Then /^print last response$/ */
     public function printLastResponse(): void
     {
-        if ($this->mink->getResponse() === '') {
+        if ('' === $this->mink->getResponse()) {
             print_r('The response is empty.');
 
             return;

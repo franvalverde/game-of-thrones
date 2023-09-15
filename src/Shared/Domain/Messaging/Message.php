@@ -148,7 +148,7 @@ abstract class Message implements \JsonSerializable
     final public function toArray(): array
     {
         return [
-            'message_id' => $this->messageId()->value(),
+            'message_id' => $this->messageId()->id(),
             'message_name' => $this::messageChannel(),
             'payload' => $this->messagePayload(),
             'occurred_on_in_ms' => $this->messageOccurredOn()->getTimestamp(),

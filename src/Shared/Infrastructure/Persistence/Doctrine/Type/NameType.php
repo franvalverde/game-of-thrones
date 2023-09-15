@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Whalar\Shared\Infrastructure\Persistence\Doctrine\Type;
 
+use Assert\Assertion;
 use Assert\AssertionFailedException;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\StringType as BaseStringType;
@@ -28,6 +29,8 @@ final class NameType extends BaseStringType
         if (!\is_scalar($value)) {
             return null;
         }
+
+        Assertion::string($value);
 
         return Name::from($value);
     }

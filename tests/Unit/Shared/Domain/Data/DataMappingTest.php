@@ -158,7 +158,7 @@ final class DataMappingTest extends UnitTestCase
         ];
     }
 
-    /** @return array<array<mixed>> */
+    // @phpstan-ignore-next-line
     public function getIntOrNullDataProvider(): array
     {
         return [

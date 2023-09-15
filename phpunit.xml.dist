@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- https://phpunit.de/manual/current/en/appendixes.configuration.html -->
-<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd" backupGlobals="false" executionOrder="random" colors="true" bootstrap="config/bootstrap.php">
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+         executionOrder="random"
+         colors="true"
+         bootstrap="tests/bootstrap.php"
+>
     <coverage>
         <include>
             <directory>src</directory>
@@ -13,7 +18,7 @@
         </exclude>
         <report>
             <clover outputFile="report/clover.xml"/>
-            <text outputFile="report/coverage.txt" showUncoveredFiles="false" showOnlySummary="true"/>
+            <text outputFile="report/coverage.txt" showOnlySummary="true"/>
             <html outputDirectory="report/html" lowUpperBound="50" highLowerBound="70"/>
             <xml outputDirectory="report/coverage-xml"/>
         </report>
