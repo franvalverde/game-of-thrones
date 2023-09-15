@@ -70,7 +70,7 @@ class Actor implements \JsonSerializable
     public function jsonSerialize(): array
     {
         $result = [
-            'actorName' => $this->name(),
+            'actorName' => $this->name()->value(),
             'actorLink' => sprintf('/name/%s/', $this->internalId()),
         ];
 

@@ -20,38 +20,38 @@
     <coverage>
       <line nr="22">
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameNameShouldThrowHouseAlreadyExistsException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testHouseIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
       </line>
       <line nr="24">
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameNameShouldThrowHouseAlreadyExistsException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testHouseIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
       </line>
       <line nr="25">
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameNameShouldThrowHouseAlreadyExistsException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testHouseIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
       </line>
       <line nr="26">
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameNameShouldThrowHouseAlreadyExistsException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testHouseIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
       </line>
       <line nr="27">
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameNameShouldThrowHouseAlreadyExistsException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testHouseIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
       </line>
       <line nr="29">
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameNameShouldThrowHouseAlreadyExistsException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testHouseIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
       </line>
       <line nr="30">
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameNameShouldThrowHouseAlreadyExistsException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testHouseIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
       </line>
       <line nr="37">
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testHouseIsCreatedSuccessfully"/>
@@ -67,53 +67,53 @@
       </line>
       <line nr="57">
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameNameShouldThrowHouseAlreadyExistsException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testHouseIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
       </line>
       <line nr="59">
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameNameShouldThrowHouseAlreadyExistsException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testHouseIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
       </line>
       <line nr="60">
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameNameShouldThrowHouseAlreadyExistsException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testHouseIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
       </line>
       <line nr="61">
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameNameShouldThrowHouseAlreadyExistsException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testHouseIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
       </line>
       <line nr="63">
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameNameShouldThrowHouseAlreadyExistsException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testHouseIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
       </line>
       <line nr="64">
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameNameShouldThrowHouseAlreadyExistsException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testHouseIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
       </line>
       <line nr="65">
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameNameShouldThrowHouseAlreadyExistsException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testHouseIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
       </line>
       <line nr="28">
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameNameShouldThrowHouseAlreadyExistsException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testHouseIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
       </line>
       <line nr="31">
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameNameShouldThrowHouseAlreadyExistsException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testHouseIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
       </line>
       <line nr="32">
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameNameShouldThrowHouseAlreadyExistsException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testHouseIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
       </line>
     </coverage>
     <source>

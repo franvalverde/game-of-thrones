@@ -17,23 +17,23 @@
     <coverage>
       <line nr="17">
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameNameShouldThrowHouseAlreadyExistsException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testHouseIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
       </line>
       <line nr="22">
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameNameShouldThrowHouseAlreadyExistsException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testHouseIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
       </line>
       <line nr="24">
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameNameShouldThrowHouseAlreadyExistsException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testHouseIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
       </line>
       <line nr="30">
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameNameShouldThrowHouseAlreadyExistsException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testHouseIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
       </line>
       <line nr="31">
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameNameShouldThrowHouseAlreadyExistsException"/>
@@ -272,7 +272,7 @@
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_VARIABLE">$name</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
-        <token name="T_STRING">name</token>
+        <token name="T_STRING">value</token>
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_CLOSE_BRACKET">)</token>

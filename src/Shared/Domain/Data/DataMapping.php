@@ -8,7 +8,6 @@ use Assert\Assertion;
 use Illuminate\Support\Arr;
 use Whalar\Shared\Domain\Exception\InvalidDataMappingException;
 use Whalar\Shared\Domain\ValueObject\AggregateId;
-use function Lambdish\Phunctional\filter;
 
 trait DataMapping
 {
@@ -25,7 +24,9 @@ trait DataMapping
 
         $value = $data[$key];
 
-        return !\is_array($value) ? null : $value;
+        return !\is_array($value)
+            ? null
+            : $value;
     }
 
     /* @param array<mixed> $data */

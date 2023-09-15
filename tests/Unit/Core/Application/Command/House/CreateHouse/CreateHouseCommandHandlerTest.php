@@ -34,7 +34,7 @@ final class CreateHouseCommandHandlerTest extends UnitTestCase
 
         self::assertNotNull($house);
         self::assertTrue($houseId->equalsTo($house->id()));
-        self::assertEquals($name->value(), $name->value());
+        self::assertEquals($house->name()->value(), $name->value());
 
         $events = DomainEventPublisher::instance()->events();
 

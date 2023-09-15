@@ -10,11 +10,6 @@ final class SeasonsActive
     {
     }
 
-    public static function from(string $seasonsActive): self
-    {
-        return new self($seasonsActive);
-    }
-
     public static function fromArray(array $seasonsActive): self
     {
         return new self(json_encode($seasonsActive));

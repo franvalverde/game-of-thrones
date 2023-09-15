@@ -1,39 +1,79 @@
 <?xml version="1.0"?>
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
-  <build time="Fri Sep 15 13:20:00 CEST 2023" phpunit="9.6.12" coverage="9.2.28">
+  <build time="Fri Sep 15 23:01:10 CEST 2023" phpunit="9.6.12" coverage="9.2.28">
     <runtime name="PHP" version="8.1.18" url="https://secure.php.net/"/>
     <driver name="xdebug" version="3.2.2"/>
   </build>
   <project source="/var/www/html/src/Core">
     <tests>
       <test name="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameNameShouldThrowHouseAlreadyExistsException" size="unknown" result="0" status="PASSED"/>
-      <test name="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException" size="unknown" result="0" status="PASSED"/>
       <test name="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testHouseIsCreatedSuccessfully" size="unknown" result="0" status="PASSED"/>
+      <test name="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException" size="unknown" result="0" status="PASSED"/>
+      <test name="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameNameShouldThrowActorAlreadyExistsException" size="unknown" result="0" status="PASSED"/>
+      <test name="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowActorAlreadyExistsException" size="unknown" result="0" status="PASSED"/>
+      <test name="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameIdShouldThrowActorAlreadyExistsException" size="unknown" result="0" status="PASSED"/>
+      <test name="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testActorIsCreatedSuccessfully" size="unknown" result="0" status="PASSED"/>
     </tests>
     <directory name="/">
       <totals>
-        <lines total="232" comments="5" code="227" executable="41" executed="41" percent="100.00"/>
-        <methods count="17" tested="17" percent="100.00"/>
+        <lines total="604" comments="13" code="591" executable="119" executed="119" percent="100.00"/>
+        <methods count="48" tested="48" percent="100.00"/>
         <functions count="0" tested="0" percent="0"/>
-        <classes count="6" tested="6" percent="100.00"/>
+        <classes count="14" tested="14" percent="100.00"/>
         <traits count="0" tested="0" percent="0"/>
       </totals>
       <directory name="Application">
         <totals>
-          <lines total="39" comments="1" code="38" executable="3" executed="3" percent="100.00"/>
-          <methods count="3" tested="3" percent="100.00"/>
+          <lines total="89" comments="2" code="87" executable="11" executed="11" percent="100.00"/>
+          <methods count="6" tested="6" percent="100.00"/>
           <functions count="0" tested="0" percent="0"/>
-          <classes count="2" tested="2" percent="100.00"/>
+          <classes count="4" tested="4" percent="100.00"/>
           <traits count="0" tested="0" percent="0"/>
         </totals>
         <directory name="Command">
           <totals>
-            <lines total="39" comments="1" code="38" executable="3" executed="3" percent="100.00"/>
-            <methods count="3" tested="3" percent="100.00"/>
+            <lines total="89" comments="2" code="87" executable="11" executed="11" percent="100.00"/>
+            <methods count="6" tested="6" percent="100.00"/>
             <functions count="0" tested="0" percent="0"/>
-            <classes count="2" tested="2" percent="100.00"/>
+            <classes count="4" tested="4" percent="100.00"/>
             <traits count="0" tested="0" percent="0"/>
           </totals>
+          <directory name="Actor">
+            <totals>
+              <lines total="50" comments="1" code="49" executable="8" executed="8" percent="100.00"/>
+              <methods count="3" tested="3" percent="100.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="2" tested="2" percent="100.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+            <directory name="CreateActor">
+              <totals>
+                <lines total="50" comments="1" code="49" executable="8" executed="8" percent="100.00"/>
+                <methods count="3" tested="3" percent="100.00"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="2" tested="2" percent="100.00"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+              <file name="CreateActorCommand.php" href="Application/Command/Actor/CreateActor/CreateActorCommand.php.xml">
+                <totals>
+                  <lines total="19" comments="0" code="19" executable="1" executed="1" percent="100.00"/>
+                  <methods count="1" tested="1" percent="100.00"/>
+                  <functions count="0" tested="0" percent="0"/>
+                  <classes count="1" tested="1" percent="100.00"/>
+                  <traits count="0" tested="0" percent="0"/>
+                </totals>
+              </file>
+              <file name="CreateActorCommandHandler.php" href="Application/Command/Actor/CreateActor/CreateActorCommandHandler.php.xml">
+                <totals>
+                  <lines total="31" comments="1" code="30" executable="7" executed="7" percent="100.00"/>
+                  <methods count="2" tested="2" percent="100.00"/>
+                  <functions count="0" tested="0" percent="0"/>
+                  <classes count="1" tested="1" percent="100.00"/>
+                  <traits count="0" tested="0" percent="0"/>
+                </totals>
+              </file>
+            </directory>
+          </directory>
           <directory name="House">
             <totals>
               <lines total="39" comments="1" code="38" executable="3" executed="3" percent="100.00"/>
@@ -74,15 +114,141 @@
       </directory>
       <directory name="Domain">
         <totals>
-          <lines total="193" comments="4" code="189" executable="38" executed="38" percent="100.00"/>
-          <methods count="14" tested="14" percent="100.00"/>
+          <lines total="515" comments="11" code="504" executable="108" executed="108" percent="100.00"/>
+          <methods count="42" tested="42" percent="100.00"/>
           <functions count="0" tested="0" percent="0"/>
-          <classes count="4" tested="4" percent="100.00"/>
+          <classes count="10" tested="10" percent="100.00"/>
           <traits count="0" tested="0" percent="0"/>
         </totals>
+        <directory name="Actor">
+          <totals>
+            <lines total="323" comments="7" code="316" executable="70" executed="70" percent="100.00"/>
+            <methods count="28" tested="28" percent="100.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="6" tested="6" percent="100.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+          <directory name="Aggregate">
+            <totals>
+              <lines total="84" comments="1" code="83" executable="21" executed="21" percent="100.00"/>
+              <methods count="7" tested="7" percent="100.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="1" percent="100.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+            <file name="Actor.php" href="Domain/Actor/Aggregate/Actor.php.xml">
+              <totals>
+                <lines total="84" comments="1" code="83" executable="21" executed="21" percent="100.00"/>
+                <methods count="7" tested="7" percent="100.00"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="1" tested="1" percent="100.00"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+          </directory>
+          <directory name="Event">
+            <totals>
+              <lines total="68" comments="0" code="68" executable="21" executed="21" percent="100.00"/>
+              <methods count="6" tested="6" percent="100.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="1" percent="100.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+            <file name="ActorWasCreated.php" href="Domain/Actor/Event/ActorWasCreated.php.xml">
+              <totals>
+                <lines total="68" comments="0" code="68" executable="21" executed="21" percent="100.00"/>
+                <methods count="6" tested="6" percent="100.00"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="1" tested="1" percent="100.00"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+          </directory>
+          <directory name="Exception">
+            <totals>
+              <lines total="22" comments="1" code="21" executable="6" executed="6" percent="100.00"/>
+              <methods count="1" tested="1" percent="100.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="1" percent="100.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+            <file name="ActorAlreadyExistsException.php" href="Domain/Actor/Exception/ActorAlreadyExistsException.php.xml">
+              <totals>
+                <lines total="22" comments="1" code="21" executable="6" executed="6" percent="100.00"/>
+                <methods count="1" tested="1" percent="100.00"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="1" tested="1" percent="100.00"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+          </directory>
+          <directory name="Repository">
+            <totals>
+              <lines total="22" comments="0" code="22" executable="0" executed="0" percent="0"/>
+              <methods count="0" tested="0" percent="0"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="0" tested="0" percent="0"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+            <file name="ActorRepository.php" href="Domain/Actor/Repository/ActorRepository.php.xml">
+              <totals>
+                <lines total="22" comments="0" code="22" executable="0" executed="0" percent="0"/>
+                <methods count="0" tested="0" percent="0"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="0" tested="0" percent="0"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+          </directory>
+          <directory name="Service">
+            <totals>
+              <lines total="41" comments="2" code="39" executable="7" executed="7" percent="100.00"/>
+              <methods count="3" tested="3" percent="100.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="1" percent="100.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+            <file name="ActorCreator.php" href="Domain/Actor/Service/ActorCreator.php.xml">
+              <totals>
+                <lines total="41" comments="2" code="39" executable="7" executed="7" percent="100.00"/>
+                <methods count="3" tested="3" percent="100.00"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="1" tested="1" percent="100.00"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+          </directory>
+          <directory name="ValueObject">
+            <totals>
+              <lines total="86" comments="3" code="83" executable="15" executed="15" percent="100.00"/>
+              <methods count="11" tested="11" percent="100.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="2" tested="2" percent="100.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+            <file name="ActorId.php" href="Domain/Actor/ValueObject/ActorId.php.xml">
+              <totals>
+                <lines total="58" comments="3" code="55" executable="11" executed="11" percent="100.00"/>
+                <methods count="7" tested="7" percent="100.00"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="1" tested="1" percent="100.00"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+            <file name="SeasonsActive.php" href="Domain/Actor/ValueObject/SeasonsActive.php.xml">
+              <totals>
+                <lines total="28" comments="0" code="28" executable="4" executed="4" percent="100.00"/>
+                <methods count="4" tested="4" percent="100.00"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="1" tested="1" percent="100.00"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+          </directory>
+        </directory>
         <directory name="House">
           <totals>
-            <lines total="193" comments="4" code="189" executable="38" executed="38" percent="100.00"/>
+            <lines total="192" comments="4" code="188" executable="38" executed="38" percent="100.00"/>
             <methods count="14" tested="14" percent="100.00"/>
             <functions count="0" tested="0" percent="0"/>
             <classes count="4" tested="4" percent="100.00"/>
@@ -90,7 +256,7 @@
           </totals>
           <directory name="Aggregate">
             <totals>
-              <lines total="49" comments="1" code="48" executable="6" executed="6" percent="100.00"/>
+              <lines total="48" comments="1" code="47" executable="6" executed="6" percent="100.00"/>
               <methods count="4" tested="4" percent="100.00"/>
               <functions count="0" tested="0" percent="0"/>
               <classes count="1" tested="1" percent="100.00"/>
@@ -98,7 +264,7 @@
             </totals>
             <file name="House.php" href="Domain/House/Aggregate/House.php.xml">
               <totals>
-                <lines total="49" comments="1" code="48" executable="6" executed="6" percent="100.00"/>
+                <lines total="48" comments="1" code="47" executable="6" executed="6" percent="100.00"/>
                 <methods count="4" tested="4" percent="100.00"/>
                 <functions count="0" tested="0" percent="0"/>
                 <classes count="1" tested="1" percent="100.00"/>
