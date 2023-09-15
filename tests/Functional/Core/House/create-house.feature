@@ -22,8 +22,8 @@ Feature: Create House
       """
     Then the response status code should be 400
     And the response should be:
-      | status | 400                                                  |
-      | detail | Value "" is empty, but non empty value was expected. |
+      | status | 400                                |
+      | detail | Provided "3" is not less than "0". |
 
   Scenario: Create a house successfully
     When I send a POST request to "/v1/houses" with body:

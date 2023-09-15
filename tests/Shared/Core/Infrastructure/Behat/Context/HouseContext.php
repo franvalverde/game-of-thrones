@@ -9,7 +9,7 @@ use Behat\Gherkin\Node\TableNode;
 use Whalar\Core\Domain\House\Repository\HouseRepository;
 use Whalar\Shared\Domain\ValueObject\AggregateId;
 use Whalar\Shared\Domain\ValueObject\Name;
-use Whalar\Tests\Shared\Core\Domain\House\HouseMother;
+use Whalar\Tests\Shared\Core\Domain\House\Aggregate\HouseMother;
 
 final class HouseContext implements Context
 {

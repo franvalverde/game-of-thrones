@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Whalar\Tests\Shared\Core\Domain\House;
+namespace Whalar\Tests\Shared\Core\Domain\House\Aggregate;
 
 use Whalar\Core\Domain\House\Aggregate\House;
 use Whalar\Shared\Domain\ValueObject\AggregateId;
