@@ -112,3 +112,12 @@ unit-test-coverage: clean ## Execute unit tests with coverage
 .PHONY: mutant-test
 mutant-test: ## Execute mutant tests
 	$(EXEC_APP) "php -d memory_limit=-1 bin/infection --show-mutations --threads=max"
+
+TEST_SUITES := document management marketplace medical_test chat
+
+.PHONY: acceptance-test
+acceptance-test: ## Execute acceptance tests
+	$(EXEC_APP) "bin/console doctrine:database:drop --if-exists --force --quiet --no-interaction --env=test"
+	$(EXEC_APP) "bin/console doctrine:database:create --quiet --no-interaction --env=test"
+	$(EXEC_APP) "bin/console doctrine:migrations:migrate --quiet --no-interaction --env=test"
+	$(EXEC_APP) "php -d memory_limit=-1 bin/behat --suite=core --no-snippets --strict"

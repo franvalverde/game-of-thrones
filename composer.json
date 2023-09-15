@@ -113,6 +113,7 @@
         "infection/infection": "^0.26.6",
         "jetbrains/phpstorm-attributes": "^1.0",
         "mockery/mockery": "^1.5",
+        "opis/json-schema": "^2.3",
         "phpstan/extension-installer": "^1.1",
         "phpstan/phpstan": "^1.5",
         "phpstan/phpstan-beberlei-assert": "^1.0",

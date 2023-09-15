@@ -4,17 +4,12 @@ default:
             tags:
                 '~@wip'
     suites:
-        test:
+        core:
             paths:
-                - '%paths.base%/tests/Functional/Test'
+                - '%paths.base%/tests/Functional/Core'
             contexts:
-                - Whalar\Tests\Shared\Core\Infrastructure\Behat\Context\FeatureContext
-        health:
-            paths:
-                - '%paths.base%/tests/Functional/Health'
-            contexts:
-                - Whalar\Tests\Shared\Shared\Infrastructure\Behat\Context\ApplicationContext
                 - Whalar\Tests\Shared\Shared\Infrastructure\Behat\Context\ApiContext
+                - Whalar\Tests\Shared\Core\Infrastructure\Behat\Context\HouseContext
 
     extensions:
         Behat\MinkExtension:
@@ -22,7 +17,6 @@ default:
                 symfony:
                     symfony: ~
             base_url: 'http://localhost:8080/'
-            files_path: '%paths.base%/tests/Shared/Shared/Infrastructure/Filesystem'
         FriendsOfBehat\SymfonyExtension:
             bootstrap: tests/bootstrap.php
             kernel:
@@ -30,3 +24,4 @@ default:
                 path: src/Kernel.php
                 environment: test
                 debug: ~
+        DAMA\DoctrineTestBundle\Behat\ServiceContainer\DoctrineExtension: ~
