@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+LC_ALL=C
+
+commands=(composer-validate lint-check)
+executor=make
+
+for cmd in "${commands[@]}"; do
+  DISABLE_INTERACTIVE=1 "${executor}" "${cmd}"
+  cmd_status=$?
+  if [[ ${cmd_status} != 0 ]]; then
+    echo "Error with $executor $cmd"
+    exit ${cmd_status}
+  fi
+done
