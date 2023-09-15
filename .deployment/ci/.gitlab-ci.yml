@@ -1,0 +1,71 @@
+variables:
+  PROJECT_NAME: whalar-got-challenge-franvalverde
+  BUILD_NUMBER: $CI_COMMIT_SHA
+  CI_REGISTRY_IMAGE: registry.gitlab.com/franvalverde/whalar-got-challenge-franvalverde
+  BASE_APP_IMAGE: $CI_REGISTRY_IMAGE:base-app-$CI_COMMIT_SHA
+  TEST_APP_IMAGE: $CI_REGISTRY_IMAGE:test-app-$CI_COMMIT_SHA
+
+stages:
+  - build
+  - security-analysis
+  - code-analysis
+  - test
+
+build_base_environment:
+  stage: build
+  script:
+    - docker build -f .deployment/docker/app/Dockerfile --target base  --tag $BASE_APP_IMAGE .
+    - docker push $BASE_APP_IMAGE
+  tags:
+    - develop
+
+build_test_environment:
+  extends: build_base_environment
+  stage: build
+  script:
+    - cp .env.dist .env
+    - docker build -f .deployment/docker/php/Dockerfile --target devel_with_debug --tag $TEST_APP_IMAGE  .
+    - docker push $TEST_APP_IMAGE
+  tags:
+    - develop
+
+check_docker_images:
+  stage: security-analysis
+  needs:
+    - build_base_environment
+  before_script:
+    - date
+    - export TRIVY_VERSION=$(wget -qO - "https://api.github.com/repos/aquasecurity/trivy/releases/latest" | grep '"tag_name":' | sed -E 's/.*"v([^"]+)".*/\1/')
+    - wget --no-verbose https://github.com/aquasecurity/trivy/releases/download/v${TRIVY_VERSION}/trivy_${TRIVY_VERSION}_Linux-64bit.tar.gz -O - | tar -zxvf -
+  script:
+    - for i in `docker images --format "{{.Repository}}:{{.Tag}}" | grep $CI_REGISTRY_IMAGE | grep -v $BASE_APP_IMAGE | grep $CI_COMMIT_SHA`; do ./trivy --cache-dir /tmp/.trivycache/ image --exit-code 0 --severity HIGH --no-progress $i; done
+    - for i in `docker images --format "{{.Repository}}:{{.Tag}}" | grep $CI_REGISTRY_IMAGE | grep -v $BASE_APP_IMAGE | grep $CI_COMMIT_SHA`; do ./trivy --cache-dir /tmp/.trivycache/ image --exit-code 0 --severity CRITICAL --no-progress $i; done
+  interruptible: true
+
+check_composer:
+  stage: security-analysis
+  allow_failure: true
+  script:
+    - docker run --rm $TEST_APP_IMAGE sh -lc "/usr/bin/composer validate --no-check-lock --strict composer.json"
+  needs: [ "build_test_environment" ]
+  tags:
+    - develop
+
+check_code_analysis:
+  stage: code-analysis
+  allow_failure: true
+  needs: [ "build_test_environment" ]
+  script:
+    - docker run --rm $TEST_APP_IMAGE sh -lc './bin/phpcs --standard=phpcs.xml.dist -s src'
+    - docker run --rm $TEST_APP_IMAGE sh -lc ' ./bin/php-cs-fixer --no-interaction --dry-run --diff -v fix'
+    - docker run --rm $TEST_APP_IMAGE sh -lc 'php -d memory_limit=-1 ./bin/phpstan analyse -l max src'
+  tags:
+    - develop
+
+unit_test:
+  stage: test
+  script:
+    - docker run --rm -v "${CI_PROJECT_DIR}/report":/var/www/html/report $TEST_APP_IMAGE sh -lc 'php -d memory_limit=-1 ./bin/phpunit'
+  needs: [ "build_test_environment" ]
+  tags:
+    - develop
