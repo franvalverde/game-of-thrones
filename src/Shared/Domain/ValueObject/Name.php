@@ -21,7 +21,7 @@ final class Name
         return new self($name);
     }
 
-    public function name(): string
+    public function value(): string
     {
         return $this->name;
     }

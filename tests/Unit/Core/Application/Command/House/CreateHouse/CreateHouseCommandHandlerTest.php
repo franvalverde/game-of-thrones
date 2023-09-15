@@ -28,13 +28,13 @@ final class CreateHouseCommandHandlerTest extends UnitTestCase
 
         DomainEventPublisher::instance()->resetEvents();
 
-        $this->createHouse(CreateHouseCommandMother::create(houseId: $houseId->id(), name: $name->name()));
+        $this->createHouse(CreateHouseCommandMother::create(houseId: $houseId->id(), name: $name->value()));
 
         $house = $this->houses->ofId($houseId);
 
         self::assertNotNull($house);
         self::assertTrue($houseId->equalsTo($house->id()));
-        self::assertEquals($name->name(), $name->name());
+        self::assertEquals($name->value(), $name->value());
 
         $events = DomainEventPublisher::instance()->events();
 
@@ -42,7 +42,7 @@ final class CreateHouseCommandHandlerTest extends UnitTestCase
         self::assertEquals($events[0]->messageAggregateId(), $houseId->id());
         self::assertInstanceOf(HouseWasCreated::class, $events[0]);
         self::assertEquals('house', $events[0]->messageAggregateName());
-        self::assertEquals($events[0]->name(), $name->name());
+        self::assertEquals($events[0]->name(), $name->value());
     }
 
     public function testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException(): void
@@ -59,10 +59,10 @@ final class CreateHouseCommandHandlerTest extends UnitTestCase
     {
         $name = NameMother::random();
 
-        $this->createHouse(CreateHouseCommandMother::create(name: $name->name()));
+        $this->createHouse(CreateHouseCommandMother::create(name: $name->value()));
 
         $this->expectException(HouseAlreadyExistsException::class);
-        $this->createHouse(CreateHouseCommandMother::create(name: $name->name()));
+        $this->createHouse(CreateHouseCommandMother::create(name: $name->value()));
     }
 
     protected function setUp(): void

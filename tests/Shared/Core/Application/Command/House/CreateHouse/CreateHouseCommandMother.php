@@ -16,7 +16,7 @@ final class CreateHouseCommandMother
     {
         return new CreateHouseCommand(
             $houseId ?? AggregateIdMother::random()->id(),
-            $name ?? NameMother::random()->name(),
+            $name ?? NameMother::random()->value(),
         );
     }
 }

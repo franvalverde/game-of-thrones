@@ -17,7 +17,7 @@ final class NameType extends BaseStringType
     public function convertToDatabaseValue($value, AbstractPlatform $platform): ?string
     {
         if ($value instanceof Name) {
-            return $value->name();
+            return $value->value();
         }
 
         return $value;

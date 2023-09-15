@@ -32,7 +32,7 @@ final class DoctrineHouseRepository implements HouseRepository
 
     public function ofName(Name $name): ?House
     {
-        return $this->houses->findOneBy(['name' => $name->name()]);
+        return $this->houses->findOneBy(['name' => $name->value()]);
     }
 
     public function save(House $house): void

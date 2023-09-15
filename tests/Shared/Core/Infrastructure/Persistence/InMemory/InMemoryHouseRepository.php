@@ -31,7 +31,7 @@ final class InMemoryHouseRepository implements HouseRepository
     public function ofName(Name $name): ?House
     {
         foreach ($this->houses as $house) {
-            if ($house->name()->name() === $name->name()) {
+            if ($house->name()->value() === $name->value()) {
                 return $house;
             }
         }

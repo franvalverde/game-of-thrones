@@ -5,9 +5,8 @@ setup:
 - docker-compose
   - contenedores info
 
-ci/cd: (TO DO)
+ci/cd:
 - git hooks
-- github actions
 - gitlab ci/cd
 
 - hexagonal archicture

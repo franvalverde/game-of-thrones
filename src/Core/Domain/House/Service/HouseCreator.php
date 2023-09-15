@@ -28,7 +28,7 @@ final class HouseCreator
     private function ensureHouseNotExists(AggregateId $houseId, Name $name): void
     {
         if (null !== $this->houses->ofId($houseId) || null !== $this->houses->ofName($name)) {
-            throw HouseAlreadyExistsException::from($name->name());
+            throw HouseAlreadyExistsException::from($name->value());
         }
     }
 }

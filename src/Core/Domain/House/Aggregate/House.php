@@ -15,7 +15,6 @@ use Whalar\Shared\Infrastructure\Messaging\DomainEventPublisher;
 #[ApiResource(operations: [
     new Post(
         uriTemplate: '/houses',
-        requirements: ['id' => '\d+'],
         controller: CreateHousePage::class,
         name: 'Create a house',
     ),
@@ -31,7 +30,7 @@ class House
     {
         $house = new self($id, $name);
 
-        DomainEventPublisher::instance()->publish(HouseWasCreated::from($id->id(), $name->name()));
+        DomainEventPublisher::instance()->publish(HouseWasCreated::from($id->id(), $name->value()));
 
         return $house;
     }
