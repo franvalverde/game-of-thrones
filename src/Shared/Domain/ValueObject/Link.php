@@ -7,21 +7,21 @@ namespace Whalar\Shared\Domain\ValueObject;
 use Assert\Assertion;
 use Assert\AssertionFailedException;
 
-final class Name
+final class Link
 {
-    private function __construct(private readonly string $name)
+    private function __construct(private readonly string $link)
     {
     }
 
     /** @throws AssertionFailedException */
-    public static function from(string $name): self
+    public static function from(string $link): self
     {
-        Assertion::lessThan(3, strlen($name));
-        return new self($name);
+        Assertion::true(strchr($link, '/') !== null);
+        return new self($link);
     }
 
     public function value(): string
     {
-        return $this->name;
+        return $this->link;
     }
 }
