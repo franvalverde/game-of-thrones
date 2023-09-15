@@ -1,0 +1,185 @@
+<?xml version="1.0"?>
+<phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
+  <build time="Fri Sep 15 13:20:00 CEST 2023" phpunit="9.6.12" coverage="9.2.28">
+    <runtime name="PHP" version="8.1.18" url="https://secure.php.net/"/>
+    <driver name="xdebug" version="3.2.2"/>
+  </build>
+  <project source="/var/www/html/src/Core">
+    <tests>
+      <test name="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameNameShouldThrowHouseAlreadyExistsException" size="unknown" result="0" status="PASSED"/>
+      <test name="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException" size="unknown" result="0" status="PASSED"/>
+      <test name="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testHouseIsCreatedSuccessfully" size="unknown" result="0" status="PASSED"/>
+    </tests>
+    <directory name="/">
+      <totals>
+        <lines total="232" comments="5" code="227" executable="41" executed="41" percent="100.00"/>
+        <methods count="17" tested="17" percent="100.00"/>
+        <functions count="0" tested="0" percent="0"/>
+        <classes count="6" tested="6" percent="100.00"/>
+        <traits count="0" tested="0" percent="0"/>
+      </totals>
+      <directory name="Application">
+        <totals>
+          <lines total="39" comments="1" code="38" executable="3" executed="3" percent="100.00"/>
+          <methods count="3" tested="3" percent="100.00"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="2" tested="2" percent="100.00"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+        <directory name="Command">
+          <totals>
+            <lines total="39" comments="1" code="38" executable="3" executed="3" percent="100.00"/>
+            <methods count="3" tested="3" percent="100.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="2" tested="2" percent="100.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+          <directory name="House">
+            <totals>
+              <lines total="39" comments="1" code="38" executable="3" executed="3" percent="100.00"/>
+              <methods count="3" tested="3" percent="100.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="2" tested="2" percent="100.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+            <directory name="CreateHouse">
+              <totals>
+                <lines total="39" comments="1" code="38" executable="3" executed="3" percent="100.00"/>
+                <methods count="3" tested="3" percent="100.00"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="2" tested="2" percent="100.00"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+              <file name="CreateHouseCommand.php" href="Application/Command/House/CreateHouse/CreateHouseCommand.php.xml">
+                <totals>
+                  <lines total="15" comments="0" code="15" executable="1" executed="1" percent="100.00"/>
+                  <methods count="1" tested="1" percent="100.00"/>
+                  <functions count="0" tested="0" percent="0"/>
+                  <classes count="1" tested="1" percent="100.00"/>
+                  <traits count="0" tested="0" percent="0"/>
+                </totals>
+              </file>
+              <file name="CreateHouseCommandHandler.php" href="Application/Command/House/CreateHouse/CreateHouseCommandHandler.php.xml">
+                <totals>
+                  <lines total="24" comments="1" code="23" executable="2" executed="2" percent="100.00"/>
+                  <methods count="2" tested="2" percent="100.00"/>
+                  <functions count="0" tested="0" percent="0"/>
+                  <classes count="1" tested="1" percent="100.00"/>
+                  <traits count="0" tested="0" percent="0"/>
+                </totals>
+              </file>
+            </directory>
+          </directory>
+        </directory>
+      </directory>
+      <directory name="Domain">
+        <totals>
+          <lines total="193" comments="4" code="189" executable="38" executed="38" percent="100.00"/>
+          <methods count="14" tested="14" percent="100.00"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="4" tested="4" percent="100.00"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+        <directory name="House">
+          <totals>
+            <lines total="193" comments="4" code="189" executable="38" executed="38" percent="100.00"/>
+            <methods count="14" tested="14" percent="100.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="4" tested="4" percent="100.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+          <directory name="Aggregate">
+            <totals>
+              <lines total="49" comments="1" code="48" executable="6" executed="6" percent="100.00"/>
+              <methods count="4" tested="4" percent="100.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="1" percent="100.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+            <file name="House.php" href="Domain/House/Aggregate/House.php.xml">
+              <totals>
+                <lines total="49" comments="1" code="48" executable="6" executed="6" percent="100.00"/>
+                <methods count="4" tested="4" percent="100.00"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="1" tested="1" percent="100.00"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+          </directory>
+          <directory name="Event">
+            <totals>
+              <lines total="68" comments="0" code="68" executable="21" executed="21" percent="100.00"/>
+              <methods count="6" tested="6" percent="100.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="1" percent="100.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+            <file name="HouseWasCreated.php" href="Domain/House/Event/HouseWasCreated.php.xml">
+              <totals>
+                <lines total="68" comments="0" code="68" executable="21" executed="21" percent="100.00"/>
+                <methods count="6" tested="6" percent="100.00"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="1" tested="1" percent="100.00"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+          </directory>
+          <directory name="Exception">
+            <totals>
+              <lines total="22" comments="1" code="21" executable="6" executed="6" percent="100.00"/>
+              <methods count="1" tested="1" percent="100.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="1" percent="100.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+            <file name="HouseAlreadyExistsException.php" href="Domain/House/Exception/HouseAlreadyExistsException.php.xml">
+              <totals>
+                <lines total="22" comments="1" code="21" executable="6" executed="6" percent="100.00"/>
+                <methods count="1" tested="1" percent="100.00"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="1" tested="1" percent="100.00"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+          </directory>
+          <directory name="Repository">
+            <totals>
+              <lines total="19" comments="0" code="19" executable="0" executed="0" percent="0"/>
+              <methods count="0" tested="0" percent="0"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="0" tested="0" percent="0"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+            <file name="HouseRepository.php" href="Domain/House/Repository/HouseRepository.php.xml">
+              <totals>
+                <lines total="19" comments="0" code="19" executable="0" executed="0" percent="0"/>
+                <methods count="0" tested="0" percent="0"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="0" tested="0" percent="0"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+          </directory>
+          <directory name="Service">
+            <totals>
+              <lines total="35" comments="2" code="33" executable="5" executed="5" percent="100.00"/>
+              <methods count="3" tested="3" percent="100.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="1" percent="100.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+            <file name="HouseCreator.php" href="Domain/House/Service/HouseCreator.php.xml">
+              <totals>
+                <lines total="35" comments="2" code="33" executable="5" executed="5" percent="100.00"/>
+                <methods count="3" tested="3" percent="100.00"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="1" tested="1" percent="100.00"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+          </directory>
+        </directory>
+      </directory>
+    </directory>
+  </project>
+</phpunit>

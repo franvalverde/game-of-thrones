@@ -23,3 +23,6 @@ linters:
 - phpstan
 - PHP code sniffer
 - PHP Code Beautifier and Fixer
+
+doc
+- api platform
