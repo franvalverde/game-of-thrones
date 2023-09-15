@@ -18,3 +18,8 @@ test:
 - unit test with coverage
 - mutant test
 - acceptance test
+
+linters:
+- phpstan
+- PHP code sniffer
+- PHP Code Beautifier and Fixer

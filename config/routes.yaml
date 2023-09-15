@@ -6,3 +6,9 @@ whalar.core:
 # Shared context
 whalar.shared:
     resource: ./routes/shared_routes.yaml
+
+# Api Platform
+api_platform:
+    resource: .
+    type: api_platform
+    prefix: /api
