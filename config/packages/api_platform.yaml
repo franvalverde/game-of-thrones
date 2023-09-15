@@ -2,7 +2,7 @@ api_platform:
     title: Whalar Backend Recruitment Test by Fran Valverde
     version: 1.0.0
     mapping:
-        paths: ['%kernel.project_dir%/src/Core/Domain/House/Aggregate']
+        paths: ['%kernel.project_dir%/src/Core/Domain']
     patch_formats:
         json: ['application/merge-patch+json']
     swagger:

@@ -1,0 +1,21 @@
+Whalar\Core\Domain\Actor\Aggregate\Actor:
+  type: entity
+  table: actor
+  schema: core
+  id:
+    id:
+      type: aggregate_id
+      column: id
+      id: true
+
+  fields:
+    internalId:
+      type: actor_id
+      column: internal_id
+    name:
+      type: name
+      column: name
+    seasonsActive:
+      type: seasons_active
+      column: seasons_active
+      nullable: true

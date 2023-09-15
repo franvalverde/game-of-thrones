@@ -22,7 +22,6 @@ doctrine:
       carbontz_immutable: Whalar\Shared\Infrastructure\Persistence\Doctrine\Type\CarbonTzImmutableType
       message_id: Whalar\Shared\Infrastructure\Persistence\Doctrine\Type\MessageIdType
       name: Whalar\Shared\Infrastructure\Persistence\Doctrine\Type\NameType
-      link: Whalar\Shared\Infrastructure\Persistence\Doctrine\Type\LinkType
 
   orm:
     auto_generate_proxy_classes: true

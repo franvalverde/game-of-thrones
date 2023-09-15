@@ -24,12 +24,6 @@ final class ActorId implements \JsonSerializable, \Stringable
         return new self($value);
     }
 
-    /** @throws AssertionFailedException */
-    public static function random(): self
-    {
-        return new self(Uuid::v4()->toRfc4122());
-    }
-
     public function id(): string
     {
         return $this->value;
@@ -54,7 +48,7 @@ final class ActorId implements \JsonSerializable, \Stringable
     private function setValue(string $value): void
     {
         Assertion::true(
-            preg_match("/^nm\d{7}$/i", $value),
+            preg_match("/^nm\d{7}$/i", $value) === 1,
             'The actor Id must start with nm followed by 7 numbers',
         );
 

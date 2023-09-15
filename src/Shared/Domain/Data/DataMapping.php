@@ -8,9 +8,26 @@ use Assert\Assertion;
 use Illuminate\Support\Arr;
 use Whalar\Shared\Domain\Exception\InvalidDataMappingException;
 use Whalar\Shared\Domain\ValueObject\AggregateId;
+use function Lambdish\Phunctional\filter;
 
 trait DataMapping
 {
+    /**
+     * @param array $data
+     * @param string $key
+     * @return array|null
+     */
+    private static function getArray(array $data, string $key): ?array
+    {
+        if (!array_key_exists($key, $data)) {
+            return null;
+        }
+
+        $value = $data[$key];
+
+        return !\is_array($value) ? null : $value;
+    }
+
     /* @param array<mixed> $data */
     private static function getBool(array $data, string $key, bool $default = false): bool
     {

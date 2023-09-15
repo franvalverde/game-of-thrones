@@ -17,6 +17,7 @@ final class Name
     public static function from(string $name): self
     {
         Assertion::lessThan(3, strlen($name));
+
         return new self($name);
     }
 

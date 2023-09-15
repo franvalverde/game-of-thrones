@@ -38,6 +38,11 @@ final class Version20220619162136 extends AbstractMigration
         $this->addSql('CREATE TABLE core.house (id UUID NOT NULL, name VARCHAR(255) NOT NULL, PRIMARY KEY(id))');
         $this->addSql('COMMENT ON COLUMN core.house.id IS \'(DC2Type:aggregate_id)\'');
         $this->addSql('COMMENT ON COLUMN core.house.name IS \'(DC2Type:name)\'');
+        $this->addSql('CREATE TABLE core.actor (id UUID NOT NULL, internal_id VARCHAR(255) NOT NULL, name VARCHAR(255) NOT NULL, seasons_active VARCHAR(255) DEFAULT NULL, PRIMARY KEY(id))');
+        $this->addSql('COMMENT ON COLUMN core.actor.id IS \'(DC2Type:aggregate_id)\'');
+        $this->addSql('COMMENT ON COLUMN core.actor.internal_id IS \'(DC2Type:actor_id)\'');
+        $this->addSql('COMMENT ON COLUMN core.actor.name IS \'(DC2Type:name)\'');
+        $this->addSql('COMMENT ON COLUMN core.actor.seasons_active IS \'(DC2Type:seasonsActive)\'');
     }
 
     public function down(Schema $schema): void
@@ -47,5 +52,6 @@ final class Version20220619162136 extends AbstractMigration
         $this->addSql('DROP TABLE stored_event');
         $this->addSql('DROP TABLE messenger_messages');
         $this->addSql('DROP TABLE core.house');
+        $this->addSql('DROP TABLE core.actor');
     }
 }

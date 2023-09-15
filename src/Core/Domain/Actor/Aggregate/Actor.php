@@ -10,7 +10,7 @@ use Whalar\Core\Domain\Actor\Event\ActorWasCreated;
 use Whalar\Core\Domain\Actor\ValueObject\ActorId;
 use Whalar\Core\Domain\Actor\ValueObject\SeasonsActive;
 use Whalar\Core\Infrastructure\Delivery\Rest\V1\Actor\CreateActorPage;
-use Whalar\Shared\Domain\ValueObject\Link;
+use Whalar\Shared\Domain\ValueObject\AggregateId;
 use Whalar\Shared\Domain\ValueObject\Name;
 use Whalar\Shared\Infrastructure\Messaging\DomainEventPublisher;
 
@@ -21,25 +21,25 @@ use Whalar\Shared\Infrastructure\Messaging\DomainEventPublisher;
         name: 'Create an actor',
     ),
 ])]
-class Actor
+class Actor implements \JsonSerializable
 {
     private function __construct(
-        private ActorId $id,
+        private AggregateId $id,
+        private readonly ActorId $internalId,
         private readonly Name $name,
-        private readonly Link $link,
         private readonly ?SeasonsActive $seasonsActive,
-    )
-    {
+    ) {
     }
 
     /** @throws \Throwable */
-    public static function create(ActorId $id, Name $name, Link $link, ?SeasonsActive  $seasonsActive): self
+    public static function create(AggregateId $id, ActorId $internalId, Name $name, ?SeasonsActive $seasonsActive): self
     {
-        $actor = new self($id, $name, $link, $seasonsActive);
+        $actor = new self($id, $internalId, $name, $seasonsActive);
 
         DomainEventPublisher::instance()->publish(
             ActorWasCreated::from(
                 actorId: $id->id(),
+                internalId: $internalId->id(),
                 name: $name->value(),
             ),
         );
@@ -47,9 +47,14 @@ class Actor
         return $actor;
     }
 
-    public function id(): ActorId
+    public function id(): AggregateId
     {
         return $this->id;
+    }
+
+    public function internalId(): ActorId
+    {
+        return $this->internalId;
     }
 
     public function name(): Name
@@ -57,13 +62,22 @@ class Actor
         return $this->name;
     }
 
-    public function link(): Link
-    {
-        return $this->link;
-    }
-
     public function seasonsActive(): ?SeasonsActive
     {
         return $this->seasonsActive;
+    }
+
+    public function jsonSerialize(): array
+    {
+        $result = [
+            'actorName' => $this->name(),
+            'actorLink' => sprintf('/name/%s/', $this->internalId()),
+        ];
+
+        if (null !== $this->seasonsActive()) {
+            $result['seasonsActive'] = $this->seasonsActive()->toArray();
+        }
+
+        return $result;
     }
 }

@@ -5,3 +5,10 @@ core.rest.create_house.page:
   methods: POST
   prefix: v1
   controller: 'Whalar\Core\Infrastructure\Delivery\Rest\V1\House\CreateHousePage'
+
+
+core.rest.create_actor.page:
+  path: /actors
+  methods: POST
+  prefix: v1
+  controller: 'Whalar\Core\Infrastructure\Delivery\Rest\V1\Actor\CreateActorPage'

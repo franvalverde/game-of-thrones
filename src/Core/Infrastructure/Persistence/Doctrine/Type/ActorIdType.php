@@ -6,10 +6,10 @@ namespace Whalar\Core\Infrastructure\Persistence\Doctrine\Type;
 
 use Assert\AssertionFailedException;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
-use Doctrine\DBAL\Types\GuidType;
+use Doctrine\DBAL\Types\StringType;
 use Whalar\Core\Domain\Actor\ValueObject\ActorId;
 
-final class ActorIdType extends GuidType
+final class ActorIdType extends StringType
 {
     private const FIELD_ID = 'actor_id';
 
