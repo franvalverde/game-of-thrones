@@ -17,8 +17,8 @@ use Whalar\Shared\Infrastructure\Messaging\DomainEventPublisher;
         uriTemplate: '/houses',
         requirements: ['id' => '\d+'],
         controller: CreateHousePage::class,
-        name: 'Create a house'
-    )
+        name: 'Create a house',
+    ),
 ])]
 class House
 {
