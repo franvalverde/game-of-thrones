@@ -1,14 +1,19 @@
 # Core
 
-core.rest.create_house.page:
-  path: /houses
-  methods: POST
-  prefix: v1
-  controller: 'Whalar\Core\Infrastructure\Delivery\Rest\V1\House\CreateHousePage'
-
-
 core.rest.create_actor.page:
   path: /actors
   methods: POST
   prefix: v1
   controller: 'Whalar\Core\Infrastructure\Delivery\Rest\V1\Actor\CreateActorPage'
+
+core.rest.create_character.page:
+  path: /characters
+  methods: POST
+  prefix: v1
+  controller: 'Whalar\Core\Infrastructure\Delivery\Rest\V1\Character\CreateCharacterPage'
+
+core.rest.create_house.page:
+  path: /houses
+  methods: POST
+  prefix: v1
+  controller: 'Whalar\Core\Infrastructure\Delivery\Rest\V1\House\CreateHousePage'

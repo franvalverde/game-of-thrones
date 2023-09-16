@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Whalar\Shared\Domain\Data;
 
 use Assert\Assertion;
+use Assert\AssertionFailedException;
 use Illuminate\Support\Arr;
 use Whalar\Shared\Domain\Exception\InvalidDataMappingException;
 use Whalar\Shared\Domain\ValueObject\AggregateId;
@@ -117,6 +118,12 @@ trait DataMapping
         Assertion::string($value);
 
         return $value;
+    }
+
+    /** @throws AssertionFailedException */
+    private static function generateId(): string
+    {
+        return AggregateId::random()->id();
     }
 
     /* @param array<mixed> $data */

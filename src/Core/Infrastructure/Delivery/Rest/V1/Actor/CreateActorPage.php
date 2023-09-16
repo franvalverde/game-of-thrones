@@ -20,17 +20,17 @@ final class CreateActorPage extends ApiCommandPage
     {
         $data = $request->request->all();
 
-        $id = self::getId($data);
+        $actorId = self::getString($data, 'actorId');
 
         $this->dispatch(
             new CreateActorCommand(
-                $id,
+                self::generateId(),
                 self::getString($data, 'internalId'),
                 self::getString($data, 'name'),
                 self::getArray($data, 'seasonsActive'),
             ),
         );
 
-        return new JsonResponse(['id' => $id], Response::HTTP_CREATED);
+        return new JsonResponse(['actorId' => $actorId], Response::HTTP_CREATED);
     }
 }
