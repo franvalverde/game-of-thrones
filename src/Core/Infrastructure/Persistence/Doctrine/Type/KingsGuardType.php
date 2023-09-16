@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Whalar\Core\Infrastructure\Persistence\Doctrine\Type;
 
-use Assert\AssertionFailedException;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\BooleanType;
 use Whalar\Core\Domain\Character\ValueObject\CharacterKingsGuard;
@@ -22,14 +21,10 @@ final class KingsGuardType extends BooleanType
         return $value;
     }
 
-    /** @throws AssertionFailedException */
+    // @phpstan-ignore-next-line
     public function convertToPHPValue($value, AbstractPlatform $platform): CharacterKingsGuard
     {
-        if (!\is_scalar($value)) {
-            $value = false;
-        }
-
-        return CharacterKingsGuard::from($value);
+        return CharacterKingsGuard::from(!\is_bool($value) ? false : $value);
     }
 
     public function getName(): string

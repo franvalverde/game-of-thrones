@@ -33,9 +33,9 @@ final class CreateCharacterCommandHandlerTest extends UnitTestCase
                 name: $character->name()->value(),
                 royal: $character->royal()->value(),
                 kingGuard: $character->kingsGuard()->value(),
-                nickname: $character->nickname()->value(),
-                imageThumb: $character->imageThumb()->value(),
-                imageFull: $character->imageFull()->value(),
+                nickname: $character->nickname()?->value(),
+                imageThumb: $character->imageThumb()?->value(),
+                imageFull: $character->imageFull()?->value(),
             ),
         );
 

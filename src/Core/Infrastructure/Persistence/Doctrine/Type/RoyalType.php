@@ -22,14 +22,10 @@ final class RoyalType extends BooleanType
         return $value;
     }
 
-    /** @throws AssertionFailedException */
+    // @phpstan-ignore-next-line
     public function convertToPHPValue($value, AbstractPlatform $platform): CharacterRoyal
     {
-        if (!\is_scalar($value)) {
-            $value = false;
-        }
-
-        return CharacterRoyal::from($value);
+        return CharacterRoyal::from(!\is_bool($value) ? false : $value);
     }
 
     public function getName(): string
