@@ -43,6 +43,15 @@ final class Version20220619162136 extends AbstractMigration
         $this->addSql('COMMENT ON COLUMN core.actor.internal_id IS \'(DC2Type:actor_id)\'');
         $this->addSql('COMMENT ON COLUMN core.actor.name IS \'(DC2Type:name)\'');
         $this->addSql('COMMENT ON COLUMN core.actor.seasons_active IS \'(DC2Type:seasons_active)\'');
+        $this->addSql('CREATE TABLE core.character (id UUID NOT NULL, internal_id VARCHAR(255) NOT NULL, name VARCHAR(255) NOT NULL, royal BOOLEAN NOT NULL, kings_guard BOOLEAN NOT NULL, nickname VARCHAR(255) DEFAULT NULL, image_thumb VARCHAR(255) DEFAULT NULL, image_full VARCHAR(255) DEFAULT NULL, PRIMARY KEY(id))');
+        $this->addSql('COMMENT ON COLUMN core.character.id IS \'(DC2Type:aggregate_id)\'');
+        $this->addSql('COMMENT ON COLUMN core.character.internal_id IS \'(DC2Type:character_id)\'');
+        $this->addSql('COMMENT ON COLUMN core.character.name IS \'(DC2Type:name)\'');
+        $this->addSql('COMMENT ON COLUMN core.character.royal IS \'(DC2Type:royal)\'');
+        $this->addSql('COMMENT ON COLUMN core.character.kings_guard IS \'(DC2Type:kings_guard)\'');
+        $this->addSql('COMMENT ON COLUMN core.character.nickname IS \'(DC2Type:name)\'');
+        $this->addSql('COMMENT ON COLUMN core.character.image_thumb IS \'(DC2Type:image_url)\'');
+        $this->addSql('COMMENT ON COLUMN core.character.image_full IS \'(DC2Type:image_url)\'');
     }
 
     public function down(Schema $schema): void
@@ -53,5 +62,6 @@ final class Version20220619162136 extends AbstractMigration
         $this->addSql('DROP TABLE messenger_messages');
         $this->addSql('DROP TABLE core.house');
         $this->addSql('DROP TABLE core.actor');
+        $this->addSql('DROP TABLE core.character');
     }
 }
