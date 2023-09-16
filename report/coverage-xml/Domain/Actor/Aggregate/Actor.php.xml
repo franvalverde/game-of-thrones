@@ -20,67 +20,67 @@
     </class>
     <coverage>
       <line nr="32">
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameNameShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testActorIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameIdShouldThrowActorAlreadyExistsException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameNameShouldThrowActorAlreadyExistsException"/>
       </line>
       <line nr="37">
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameNameShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testActorIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameIdShouldThrowActorAlreadyExistsException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameNameShouldThrowActorAlreadyExistsException"/>
       </line>
       <line nr="39">
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameNameShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testActorIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameIdShouldThrowActorAlreadyExistsException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameNameShouldThrowActorAlreadyExistsException"/>
       </line>
       <line nr="40">
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameNameShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testActorIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameIdShouldThrowActorAlreadyExistsException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameNameShouldThrowActorAlreadyExistsException"/>
       </line>
       <line nr="41">
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameNameShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testActorIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameIdShouldThrowActorAlreadyExistsException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameNameShouldThrowActorAlreadyExistsException"/>
       </line>
       <line nr="42">
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameNameShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testActorIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameIdShouldThrowActorAlreadyExistsException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameNameShouldThrowActorAlreadyExistsException"/>
       </line>
       <line nr="43">
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameNameShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testActorIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameIdShouldThrowActorAlreadyExistsException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameNameShouldThrowActorAlreadyExistsException"/>
       </line>
       <line nr="47">
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameNameShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testActorIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameIdShouldThrowActorAlreadyExistsException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameNameShouldThrowActorAlreadyExistsException"/>
       </line>
       <line nr="52">
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameNameShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testActorIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameIdShouldThrowActorAlreadyExistsException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameNameShouldThrowActorAlreadyExistsException"/>
       </line>
       <line nr="57">
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testActorIsCreatedSuccessfully"/>
       </line>
       <line nr="62">
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameNameShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testActorIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameNameShouldThrowActorAlreadyExistsException"/>
       </line>
       <line nr="67">
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testActorIsCreatedSuccessfully"/>
@@ -104,16 +104,16 @@
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testActorIsCreatedSuccessfully"/>
       </line>
       <line nr="44">
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameNameShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testActorIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameIdShouldThrowActorAlreadyExistsException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameNameShouldThrowActorAlreadyExistsException"/>
       </line>
       <line nr="45">
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameNameShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testActorIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameIdShouldThrowActorAlreadyExistsException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameNameShouldThrowActorAlreadyExistsException"/>
       </line>
       <line nr="75">
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testActorIsCreatedSuccessfully"/>

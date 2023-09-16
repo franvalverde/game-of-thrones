@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1694850766">
-  <project timestamp="1694850766">
+<coverage generated="1694853910">
+  <project timestamp="1694853910">
     <file name="/var/www/html/src/Core/Application/Command/Actor/CreateActor/CreateActorCommand.php">
       <class name="Whalar\Core\Application\Command\Actor\CreateActor\CreateActorCommand" namespace="global">
         <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
@@ -370,7 +370,7 @@
     </file>
     <file name="/var/www/html/src/Core/Domain/Character/ValueObject/CharacterKingsGuard.php">
       <class name="Whalar\Core\Domain\Character\ValueObject\CharacterKingsGuard" namespace="global">
-        <metrics complexity="6" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="12" coveredelements="12"/>
+        <metrics complexity="6" methods="5" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="6" elements="12" coveredelements="10"/>
       </class>
       <line num="11" type="method" name="__construct" visibility="private" complexity="1" crap="1" count="3"/>
       <line num="13" type="stmt" count="3"/>
@@ -380,11 +380,11 @@
       <line num="23" type="stmt" count="3"/>
       <line num="26" type="method" name="jsonSerialize" visibility="public" complexity="1" crap="1" count="1"/>
       <line num="28" type="stmt" count="1"/>
-      <line num="31" type="method" name="__toString" visibility="public" complexity="2" crap="2" count="1"/>
+      <line num="31" type="method" name="__toString" visibility="public" complexity="2" crap="2.15" count="1"/>
       <line num="33" type="stmt" count="1"/>
-      <line num="34" type="stmt" count="1"/>
+      <line num="34" type="stmt" count="0"/>
       <line num="35" type="stmt" count="1"/>
-      <metrics loc="38" ncloc="38" classes="1" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="12" coveredelements="12"/>
+      <metrics loc="38" ncloc="38" classes="1" methods="5" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="6" elements="12" coveredelements="10"/>
     </file>
     <file name="/var/www/html/src/Core/Domain/Character/ValueObject/CharacterRoyal.php">
       <class name="Whalar\Core\Domain\Character\ValueObject\CharacterRoyal" namespace="global">
@@ -483,6 +483,6 @@
       <line num="31" type="stmt" count="2"/>
       <metrics loc="35" ncloc="33" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="8" coveredelements="8"/>
     </file>
-    <metrics files="26" loc="1105" ncloc="1084" classes="23" methods="91" coveredmethods="91" conditionals="0" coveredconditionals="0" statements="244" coveredstatements="244" elements="335" coveredelements="335"/>
+    <metrics files="26" loc="1105" ncloc="1084" classes="23" methods="91" coveredmethods="90" conditionals="0" coveredconditionals="0" statements="244" coveredstatements="243" elements="335" coveredelements="333"/>
   </project>
 </coverage>

@@ -17,6 +17,9 @@ test:
 - unit test with coverage
 - mutant test
 - acceptance test
+- integration test
+  - functional tests
+  - postman tests include collection and explan how use
 
 linters:
 - phpstan

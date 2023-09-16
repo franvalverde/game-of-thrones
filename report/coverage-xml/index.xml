@@ -1,28 +1,28 @@
 <?xml version="1.0"?>
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
-  <build time="Sat Sep 16 9:52:47 CEST 2023" phpunit="9.6.12" coverage="9.2.28">
+  <build time="Sat Sep 16 10:45:11 CEST 2023" phpunit="9.6.12" coverage="9.2.28">
     <runtime name="PHP" version="8.1.18" url="https://secure.php.net/"/>
     <driver name="xdebug" version="3.2.2"/>
   </build>
   <project source="/var/www/html/src/Core">
     <tests>
-      <test name="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameNameShouldThrowCharacterAlreadyExistsException" size="unknown" result="0" status="PASSED"/>
-      <test name="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully" size="unknown" result="0" status="PASSED"/>
-      <test name="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowCharacterAlreadyExistsException" size="unknown" result="0" status="PASSED"/>
-      <test name="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameNameShouldThrowActorAlreadyExistsException" size="unknown" result="0" status="PASSED"/>
+      <test name="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testHouseIsCreatedSuccessfully" size="unknown" result="0" status="PASSED"/>
+      <test name="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException" size="unknown" result="0" status="PASSED"/>
+      <test name="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameNameShouldThrowHouseAlreadyExistsException" size="unknown" result="0" status="PASSED"/>
       <test name="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowActorAlreadyExistsException" size="unknown" result="0" status="PASSED"/>
       <test name="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testActorIsCreatedSuccessfully" size="unknown" result="0" status="PASSED"/>
       <test name="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameIdShouldThrowActorAlreadyExistsException" size="unknown" result="0" status="PASSED"/>
-      <test name="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException" size="unknown" result="0" status="PASSED"/>
-      <test name="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testHouseIsCreatedSuccessfully" size="unknown" result="0" status="PASSED"/>
-      <test name="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameNameShouldThrowHouseAlreadyExistsException" size="unknown" result="0" status="PASSED"/>
+      <test name="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameNameShouldThrowActorAlreadyExistsException" size="unknown" result="0" status="PASSED"/>
+      <test name="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameNameShouldThrowCharacterAlreadyExistsException" size="unknown" result="0" status="PASSED"/>
+      <test name="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowCharacterAlreadyExistsException" size="unknown" result="0" status="PASSED"/>
+      <test name="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully" size="unknown" result="0" status="PASSED"/>
     </tests>
     <directory name="/">
       <totals>
-        <lines total="1105" comments="21" code="1084" executable="244" executed="244" percent="100.00"/>
-        <methods count="91" tested="91" percent="100.00"/>
+        <lines total="1105" comments="21" code="1084" executable="244" executed="243" percent="99.59"/>
+        <methods count="91" tested="90" percent="98.90"/>
         <functions count="0" tested="0" percent="0"/>
-        <classes count="23" tested="23" percent="100.00"/>
+        <classes count="23" tested="22" percent="95.65"/>
         <traits count="0" tested="0" percent="0"/>
       </totals>
       <directory name="Application">
@@ -153,10 +153,10 @@
       </directory>
       <directory name="Domain">
         <totals>
-          <lines total="956" comments="18" code="938" executable="221" executed="221" percent="100.00"/>
-          <methods count="82" tested="82" percent="100.00"/>
+          <lines total="956" comments="18" code="938" executable="221" executed="220" percent="99.55"/>
+          <methods count="82" tested="81" percent="98.78"/>
           <functions count="0" tested="0" percent="0"/>
-          <classes count="17" tested="17" percent="100.00"/>
+          <classes count="17" tested="16" percent="94.12"/>
           <traits count="0" tested="0" percent="0"/>
         </totals>
         <directory name="Actor">
@@ -287,10 +287,10 @@
         </directory>
         <directory name="Character">
           <totals>
-            <lines total="426" comments="7" code="419" executable="106" executed="106" percent="100.00"/>
-            <methods count="39" tested="39" percent="100.00"/>
+            <lines total="426" comments="7" code="419" executable="106" executed="105" percent="99.06"/>
+            <methods count="39" tested="38" percent="97.44"/>
             <functions count="0" tested="0" percent="0"/>
-            <classes count="7" tested="7" percent="100.00"/>
+            <classes count="7" tested="6" percent="85.71"/>
             <traits count="0" tested="0" percent="0"/>
           </totals>
           <directory name="Aggregate">
@@ -385,10 +385,10 @@
           </directory>
           <directory name="ValueObject">
             <totals>
-              <lines total="133" comments="3" code="130" executable="25" executed="25" percent="100.00"/>
-              <methods count="17" tested="17" percent="100.00"/>
+              <lines total="133" comments="3" code="130" executable="25" executed="24" percent="96.00"/>
+              <methods count="17" tested="16" percent="94.12"/>
               <functions count="0" tested="0" percent="0"/>
-              <classes count="3" tested="3" percent="100.00"/>
+              <classes count="3" tested="2" percent="66.67"/>
               <traits count="0" tested="0" percent="0"/>
             </totals>
             <file name="CharacterId.php" href="Domain/Character/ValueObject/CharacterId.php.xml">
@@ -402,10 +402,10 @@
             </file>
             <file name="CharacterKingsGuard.php" href="Domain/Character/ValueObject/CharacterKingsGuard.php.xml">
               <totals>
-                <lines total="38" comments="0" code="38" executable="7" executed="7" percent="100.00"/>
-                <methods count="5" tested="5" percent="100.00"/>
+                <lines total="38" comments="0" code="38" executable="7" executed="6" percent="85.71"/>
+                <methods count="5" tested="4" percent="80.00"/>
                 <functions count="0" tested="0" percent="0"/>
-                <classes count="1" tested="1" percent="100.00"/>
+                <classes count="1" tested="0" percent="0.00"/>
                 <traits count="0" tested="0" percent="0"/>
               </totals>
             </file>
