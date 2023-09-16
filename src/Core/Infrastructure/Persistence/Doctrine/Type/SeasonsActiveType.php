@@ -12,7 +12,7 @@ use Whalar\Core\Domain\Actor\ValueObject\SeasonsActive;
 
 final class SeasonsActiveType extends BaseStringType
 {
-    private const FIELD = 'seasonsActive';
+    private const FIELD = 'seasons_active';
 
     public function convertToDatabaseValue($value, AbstractPlatform $platform): ?string
     {
