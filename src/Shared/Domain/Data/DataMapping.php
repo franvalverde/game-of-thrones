@@ -106,20 +106,6 @@ trait DataMapping
         return filter_var($value, \FILTER_VALIDATE_FLOAT, \FILTER_NULL_ON_FAILURE);
     }
 
-    /* @param array<mixed> $data */
-    private static function getId(array $data): string
-    {
-        $value = Arr::get($data, 'id');
-
-        if (!is_scalar($value)) {
-            $value = AggregateId::random()->id();
-        }
-
-        Assertion::string($value);
-
-        return $value;
-    }
-
     /** @throws AssertionFailedException */
     private static function generateId(): string
     {

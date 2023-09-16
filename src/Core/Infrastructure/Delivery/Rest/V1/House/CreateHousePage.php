@@ -18,17 +18,15 @@ final class CreateHousePage extends ApiCommandPage
     /** @throws \Throwable */
     public function __invoke(Request $request): JsonResponse
     {
-        $data = $request->request->all();
-
-        $id = self::getId($data);
+        $id = self::generateId();
 
         $this->dispatch(
             new CreateHouseCommand(
                 $id,
-                self::getString($data, 'name'),
+                self::getString($request->request->all(), 'name'),
             ),
         );
 
-        return new JsonResponse(['id' => $id], Response::HTTP_CREATED);
+        return new JsonResponse(['houseId' => $id], Response::HTTP_CREATED);
     }
 }
