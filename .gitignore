@@ -10,6 +10,7 @@
 /vendor/
 .env
 .idea
+/report/
 .composer
 .DS_Store
 .ash_history

@@ -1,0 +1,35 @@
+Whalar\Core\Domain\Character\Aggregate\Character:
+  type: entity
+  table: character
+  schema: core
+  id:
+    id:
+      type: aggregate_id
+      column: id
+      id: true
+
+  fields:
+    internalId:
+      type: character_id
+      column: internal_id
+    name:
+      type: name
+      column: name
+    royal:
+      type: royal
+      column: royal
+    kingsGuard:
+      type: kings_guard
+      column: kings_guard
+    nickname:
+      type: name
+      column: nickname
+      nullable: true
+    imageThumb:
+      type: image_url
+      column: image_thumb
+      nullable: true
+    imageFull:
+      type: image_url
+      column: image_full
+      nullable: true

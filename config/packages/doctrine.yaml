@@ -16,12 +16,16 @@ doctrine:
       # Core context
       actor_id: Whalar\Core\Infrastructure\Persistence\Doctrine\Type\ActorIdType
       seasons_active: Whalar\Core\Infrastructure\Persistence\Doctrine\Type\SeasonsActiveType
+      character_id: Whalar\Core\Infrastructure\Persistence\Doctrine\Type\CharacterIdType
+      royal: Whalar\Core\Infrastructure\Persistence\Doctrine\Type\RoyalType
+      kings_guard: Whalar\Core\Infrastructure\Persistence\Doctrine\Type\KingsGuardType
 
       # Shared context
       aggregate_id: Whalar\Shared\Infrastructure\Persistence\Doctrine\Type\AggregateIdType
       carbontz_immutable: Whalar\Shared\Infrastructure\Persistence\Doctrine\Type\CarbonTzImmutableType
       message_id: Whalar\Shared\Infrastructure\Persistence\Doctrine\Type\MessageIdType
       name: Whalar\Shared\Infrastructure\Persistence\Doctrine\Type\NameType
+      image_url: Whalar\Shared\Infrastructure\Persistence\Doctrine\Type\ImageUrlType
 
   orm:
     auto_generate_proxy_classes: true

@@ -39,7 +39,7 @@ class Actor implements \JsonSerializable
         DomainEventPublisher::instance()->publish(
             ActorWasCreated::from(
                 actorId: $id->id(),
-                internalId: $internalId->id(),
+                internalId: $internalId->value(),
                 name: $name->value(),
             ),
         );

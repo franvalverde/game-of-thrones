@@ -34,7 +34,7 @@ final class CreateActorCommandHandlerTest extends UnitTestCase
         $this->createActor(
             CreateActorCommandMother::create(
                 id: $actorId->id(),
-                internalId: $internalId->id(),
+                internalId: $internalId->value(),
                 name: $name->value(),
                 seasonsActive: $sessionsActive,
             ),
@@ -64,6 +64,7 @@ final class CreateActorCommandHandlerTest extends UnitTestCase
         self::assertInstanceOf(ActorWasCreated::class, $events[0]);
         self::assertEquals('actor', $events[0]->messageAggregateName());
         self::assertEquals($events[0]->name(), $name->value());
+        self::assertEquals($events[0]->internalId(), $internalId->value());
     }
 
     public function testTryCreateWithSameIdShouldThrowActorAlreadyExistsException(): void
@@ -90,10 +91,10 @@ final class CreateActorCommandHandlerTest extends UnitTestCase
     {
         $internalId = ActorIdMother::random('nm2231505');
 
-        $this->createActor(CreateActorCommandMother::create(internalId: $internalId->id()));
+        $this->createActor(CreateActorCommandMother::create(internalId: $internalId->value()));
 
         $this->expectException(ActorAlreadyExistsException::class);
-        $this->createActor(CreateActorCommandMother::create(internalId: $internalId->id()));
+        $this->createActor(CreateActorCommandMother::create(internalId: $internalId->value()));
     }
 
     protected function setUp(): void

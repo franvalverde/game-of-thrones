@@ -23,14 +23,14 @@ final class ActorId implements \JsonSerializable, \Stringable
         return new self($value);
     }
 
-    public function id(): string
+    public function value(): string
     {
         return $this->value;
     }
 
     public function equalsTo(self $other): bool
     {
-        return $this->id() === $other->id();
+        return $this->value() === $other->value();
     }
 
     public function jsonSerialize(): string

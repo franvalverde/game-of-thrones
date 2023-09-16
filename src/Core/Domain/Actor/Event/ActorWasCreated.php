@@ -15,6 +15,7 @@ final class ActorWasCreated extends DomainEvent
     private const MESSAGE_VERSION = 1;
 
     private string $actorId;
+    private string $internalId;
     private string $name;
 
     public static function from(string $actorId, string $internalId, string $name): DomainEvent
@@ -27,6 +28,7 @@ final class ActorWasCreated extends DomainEvent
             CarbonImmutable::now(),
             [
                 'actorId' => $actorId,
+                'internalId' => $internalId,
                 'name' => $name,
             ],
         );
@@ -52,6 +54,11 @@ final class ActorWasCreated extends DomainEvent
         return $this->name;
     }
 
+    public function internalId(): string
+    {
+        return $this->internalId;
+    }
+
     protected function setupPayload(): void
     {
         $payload = $this->messagePayload();
@@ -63,5 +70,9 @@ final class ActorWasCreated extends DomainEvent
         Assert::that($payload)->keyExists('name');
         Assert::that($payload['name'])->string();
         $this->name = $payload['name'];
+
+        Assert::that($payload)->keyExists('internalId');
+        Assert::that($payload['internalId'])->string();
+        $this->internalId = $payload['internalId'];
     }
 }

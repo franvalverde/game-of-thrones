@@ -49,6 +49,11 @@ services:
         arguments: [ '@doctrine.orm.entity_manager' ]
         public: true
 
+    Whalar\Core\Domain\Character\Repository\CharacterRepository:
+        class: Whalar\Core\Infrastructure\Persistence\Doctrine\Repository\DoctrineCharacterRepository
+        arguments: [ '@doctrine.orm.entity_manager' ]
+        public: true
+
     Whalar\Core\Domain\House\Repository\HouseRepository:
         class: Whalar\Core\Infrastructure\Persistence\Doctrine\Repository\DoctrineHouseRepository
         arguments: [ '@doctrine.orm.entity_manager' ]

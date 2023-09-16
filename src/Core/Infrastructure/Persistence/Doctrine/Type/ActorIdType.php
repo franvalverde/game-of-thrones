@@ -16,7 +16,7 @@ final class ActorIdType extends StringType
     public function convertToDatabaseValue($value, AbstractPlatform $platform): string
     {
         if ($value instanceof ActorId) {
-            return $value->id();
+            return $value->value();
         }
 
         return $value;

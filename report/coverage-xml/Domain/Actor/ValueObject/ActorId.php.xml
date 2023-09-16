@@ -2,79 +2,79 @@
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
   <file name="ActorId.php" path="/Domain/Actor/ValueObject">
     <totals>
-      <lines total="58" comments="3" code="55" executable="11" executed="11" percent="100.00"/>
+      <lines total="57" comments="3" code="54" executable="11" executed="11" percent="100.00"/>
       <methods count="7" tested="7" percent="100.00"/>
       <functions count="0" tested="0" percent="0"/>
       <classes count="1" tested="1" percent="100.00"/>
       <traits count="0" tested="0" percent="0"/>
     </totals>
-    <class name="Whalar\Core\Domain\Actor\ValueObject\ActorId" start="11" executable="11" executed="11" crap="7">
+    <class name="Whalar\Core\Domain\Actor\ValueObject\ActorId" start="10" executable="11" executed="11" crap="7">
       <namespace name="Whalar\Core\Domain\Actor\ValueObject"/>
-      <method name="__construct" signature="__construct(string $value)" start="16" end="19" crap="1" executable="1" executed="1" coverage="100"/>
-      <method name="from" signature="from(string $value): self" start="22" end="25" crap="1" executable="1" executed="1" coverage="100"/>
-      <method name="id" signature="id(): string" start="27" end="30" crap="1" executable="1" executed="1" coverage="100"/>
-      <method name="equalsTo" signature="equalsTo(self $other): bool" start="32" end="35" crap="1" executable="1" executed="1" coverage="100"/>
-      <method name="jsonSerialize" signature="jsonSerialize(): string" start="37" end="40" crap="1" executable="1" executed="1" coverage="100"/>
-      <method name="__toString" signature="__toString(): string" start="42" end="45" crap="1" executable="1" executed="1" coverage="100"/>
-      <method name="setValue" signature="setValue(string $value): void" start="48" end="56" crap="1" executable="5" executed="5" coverage="100"/>
+      <method name="__construct" signature="__construct(string $value)" start="15" end="18" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="from" signature="from(string $value): self" start="21" end="24" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="value" signature="value(): string" start="26" end="29" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="equalsTo" signature="equalsTo(self $other): bool" start="31" end="34" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="jsonSerialize" signature="jsonSerialize(): string" start="36" end="39" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="__toString" signature="__toString(): string" start="41" end="44" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="setValue" signature="setValue(string $value): void" start="47" end="55" crap="1" executable="5" executed="5" coverage="100"/>
     </class>
     <coverage>
-      <line nr="18">
+      <line nr="17">
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameNameShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowActorAlreadyExistsException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameIdShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testActorIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameIdShouldThrowActorAlreadyExistsException"/>
       </line>
-      <line nr="24">
+      <line nr="23">
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameNameShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowActorAlreadyExistsException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameIdShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testActorIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameIdShouldThrowActorAlreadyExistsException"/>
       </line>
-      <line nr="29">
+      <line nr="28">
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameNameShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowActorAlreadyExistsException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameIdShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testActorIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameIdShouldThrowActorAlreadyExistsException"/>
       </line>
-      <line nr="34">
+      <line nr="33">
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowActorAlreadyExistsException"/>
       </line>
-      <line nr="39">
+      <line nr="38">
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testActorIsCreatedSuccessfully"/>
       </line>
-      <line nr="44">
+      <line nr="43">
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testActorIsCreatedSuccessfully"/>
+      </line>
+      <line nr="49">
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameNameShouldThrowActorAlreadyExistsException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowActorAlreadyExistsException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testActorIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameIdShouldThrowActorAlreadyExistsException"/>
       </line>
       <line nr="50">
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameNameShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowActorAlreadyExistsException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameIdShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testActorIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameIdShouldThrowActorAlreadyExistsException"/>
       </line>
       <line nr="51">
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameNameShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowActorAlreadyExistsException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameIdShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testActorIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameIdShouldThrowActorAlreadyExistsException"/>
+      </line>
+      <line nr="54">
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameNameShouldThrowActorAlreadyExistsException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowActorAlreadyExistsException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testActorIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameIdShouldThrowActorAlreadyExistsException"/>
       </line>
       <line nr="52">
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameNameShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowActorAlreadyExistsException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameIdShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testActorIsCreatedSuccessfully"/>
-      </line>
-      <line nr="55">
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameNameShouldThrowActorAlreadyExistsException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameIdShouldThrowActorAlreadyExistsException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testActorIsCreatedSuccessfully"/>
-      </line>
-      <line nr="53">
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameNameShouldThrowActorAlreadyExistsException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowActorAlreadyExistsException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameIdShouldThrowActorAlreadyExistsException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testActorIsCreatedSuccessfully"/>
       </line>
     </coverage>
     <source>
@@ -111,14 +111,8 @@
         <token name="T_NAME_QUALIFIED">Assert\AssertionFailedException</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="9">
-        <token name="T_USE">use</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_NAME_QUALIFIED">Symfony\Component\Uid\Uuid</token>
-        <token name="T_SEMICOLON">;</token>
-      </line>
-      <line no="10"/>
-      <line no="11">
+      <line no="9"/>
+      <line no="10">
         <token name="T_FINAL">final</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_CLASS">class</token>
@@ -132,10 +126,10 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_NAME_FULLY_QUALIFIED">\Stringable</token>
       </line>
-      <line no="12">
+      <line no="11">
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="13">
+      <line no="12">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PRIVATE">private</token>
         <token name="T_WHITESPACE"> </token>
@@ -144,12 +138,12 @@
         <token name="T_VARIABLE">$value</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="14"/>
-      <line no="15">
+      <line no="13"/>
+      <line no="14">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/** @throws AssertionFailedException */</token>
       </line>
-      <line no="16">
+      <line no="15">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PRIVATE">private</token>
         <token name="T_WHITESPACE"> </token>
@@ -162,11 +156,11 @@
         <token name="T_VARIABLE">$value</token>
         <token name="T_CLOSE_BRACKET">)</token>
       </line>
-      <line no="17">
+      <line no="16">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="18">
+      <line no="17">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -176,16 +170,16 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="19">
+      <line no="18">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="20"/>
-      <line no="21">
+      <line no="19"/>
+      <line no="20">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/** @throws AssertionFailedException */</token>
       </line>
-      <line no="22">
+      <line no="21">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -203,11 +197,11 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">self</token>
       </line>
-      <line no="23">
+      <line no="22">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="24">
+      <line no="23">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -219,29 +213,29 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="25">
+      <line no="24">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="26"/>
-      <line no="27">
+      <line no="25"/>
+      <line no="26">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_FUNCTION">function</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_STRING">id</token>
+        <token name="T_STRING">value</token>
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_COLON">:</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">string</token>
       </line>
-      <line no="28">
+      <line no="27">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="29">
+      <line no="28">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -250,12 +244,12 @@
         <token name="T_STRING">value</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="30">
+      <line no="29">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="31"/>
-      <line no="32">
+      <line no="30"/>
+      <line no="31">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -271,17 +265,17 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">bool</token>
       </line>
-      <line no="33">
+      <line no="32">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="34">
+      <line no="33">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
-        <token name="T_STRING">id</token>
+        <token name="T_STRING">value</token>
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_WHITESPACE"> </token>
@@ -289,17 +283,17 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_VARIABLE">$other</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
-        <token name="T_STRING">id</token>
+        <token name="T_STRING">value</token>
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="35">
+      <line no="34">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="36"/>
-      <line no="37">
+      <line no="35"/>
+      <line no="36">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -312,11 +306,11 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">string</token>
       </line>
-      <line no="38">
+      <line no="37">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="39">
+      <line no="38">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -325,12 +319,12 @@
         <token name="T_STRING">value</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="40">
+      <line no="39">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="41"/>
-      <line no="42">
+      <line no="40"/>
+      <line no="41">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -343,11 +337,11 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">string</token>
       </line>
-      <line no="43">
+      <line no="42">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="44">
+      <line no="43">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -356,16 +350,16 @@
         <token name="T_STRING">value</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="45">
+      <line no="44">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="46"/>
-      <line no="47">
+      <line no="45"/>
+      <line no="46">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/** @throws AssertionFailedException */</token>
       </line>
-      <line no="48">
+      <line no="47">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PRIVATE">private</token>
         <token name="T_WHITESPACE"> </token>
@@ -381,19 +375,23 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">void</token>
       </line>
-      <line no="49">
+      <line no="48">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="50">
+      <line no="49">
         <token name="T_WHITESPACE">        </token>
         <token name="T_STRING">Assertion</token>
         <token name="T_DOUBLE_COLON">::</token>
         <token name="T_STRING">true</token>
         <token name="T_OPEN_BRACKET">(</token>
       </line>
-      <line no="51">
+      <line no="50">
         <token name="T_WHITESPACE">            </token>
+        <token name="T_LNUMBER">1</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_IS_IDENTICAL">===</token>
+        <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">preg_match</token>
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_CONSTANT_ENCAPSED_STRING">"/^nm\d{7}$/i"</token>
@@ -401,24 +399,20 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_VARIABLE">$value</token>
         <token name="T_CLOSE_BRACKET">)</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_IS_IDENTICAL">===</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_LNUMBER">1</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="52">
+      <line no="51">
         <token name="T_WHITESPACE">            </token>
         <token name="T_CONSTANT_ENCAPSED_STRING">'The actor Id must start with nm followed by 7 numbers'</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="53">
+      <line no="52">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="54"/>
-      <line no="55">
+      <line no="53"/>
+      <line no="54">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -429,14 +423,14 @@
         <token name="T_VARIABLE">$value</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="56">
+      <line no="55">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="57">
+      <line no="56">
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="58"/>
+      <line no="57"/>
     </source>
   </file>
 </phpunit>

@@ -38,7 +38,7 @@ final class DoctrineActorRepository implements ActorRepository
 
     public function ofInternalId(ActorId $actorId): ?Actor
     {
-        return $this->actors->findOneBy(['internalId' => $actorId->id()]);
+        return $this->actors->findOneBy(['internalId' => $actorId->value()]);
     }
 
     public function save(Actor $actor): void
