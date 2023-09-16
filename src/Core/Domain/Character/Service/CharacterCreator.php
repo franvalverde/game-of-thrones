@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Whalar\Core\Domain\Character\Service;
 
+use Whalar\Core\Domain\Actor\Repository\ActorRepository;
+use Whalar\Core\Domain\Actor\ValueObject\ActorsCollection;
 use Whalar\Core\Domain\Character\Aggregate\Character;
 use Whalar\Core\Domain\Character\Exception\CharacterAlreadyExistsException;
 use Whalar\Core\Domain\Character\Repository\CharacterRepository;
@@ -16,7 +18,7 @@ use Whalar\Shared\Domain\ValueObject\Name;
 
 final class CharacterCreator
 {
-    public function __construct(private readonly CharacterRepository $characters)
+    public function __construct(private readonly CharacterRepository $characters, private ActorRepository $actors)
     {
     }
 
@@ -27,24 +29,31 @@ final class CharacterCreator
         Name $name,
         CharacterRoyal $royal,
         CharacterKingsGuard $kingsGuard,
+        ActorsCollection $actors,
         ?Name $nickname,
         ?ImageUrl $imageThumb,
         ?ImageUrl $imageFull,
     ): void {
         $this->ensureCharacterNotExists(internalId: $internalId, name: $name);
 
-        $this->characters->save(
-            Character::create(
-                id: $id,
-                internalId: $internalId,
-                name: $name,
-                royal: $royal,
-                kingsGuard: $kingsGuard,
-                nickname: $nickname,
-                imageThumb: $imageThumb,
-                imageFull: $imageFull,
-            ),
+        $character = Character::create(
+            id: $id,
+            internalId: $internalId,
+            name: $name,
+            royal: $royal,
+            kingsGuard: $kingsGuard,
+            actors: $actors,
+            nickname: $nickname,
+            imageThumb: $imageThumb,
+            imageFull: $imageFull,
         );
+
+        $this->characters->save($character);
+
+        foreach ($actors->collection() as $actor) {
+            $actor->assignCharacter($character);
+            $this->actors->save($actor);
+        }
     }
 
     /** @throws CharacterAlreadyExistsException */

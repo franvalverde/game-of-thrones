@@ -33,3 +33,9 @@ Whalar\Core\Domain\Character\Aggregate\Character:
       type: image_url
       column: image_full
       nullable: true
+
+  oneToMany:
+    actors:
+      targetEntity: Whalar\Core\Domain\Actor\Aggregate\Actor
+      mappedBy: character
+      cascade: ["all"]

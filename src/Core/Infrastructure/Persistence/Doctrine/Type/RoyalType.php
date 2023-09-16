@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Whalar\Core\Infrastructure\Persistence\Doctrine\Type;
 
-use Assert\AssertionFailedException;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\BooleanType;
 use Whalar\Core\Domain\Character\ValueObject\CharacterRoyal;

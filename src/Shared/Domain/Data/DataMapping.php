@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Whalar\Shared\Domain\Data;
 
-use Assert\Assertion;
 use Assert\AssertionFailedException;
 use Illuminate\Support\Arr;
 use Whalar\Shared\Domain\Exception\InvalidDataMappingException;

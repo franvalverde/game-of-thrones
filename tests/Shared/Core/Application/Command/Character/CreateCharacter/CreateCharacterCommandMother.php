@@ -6,6 +6,7 @@ namespace Whalar\Tests\Shared\Core\Application\Command\Character\CreateCharacter
 
 use Assert\AssertionFailedException;
 use Whalar\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommand;
+use Whalar\Tests\Shared\Core\Domain\Actor\ValueObject\ActorIdMother;
 use Whalar\Tests\Shared\Core\Domain\Character\ValueObject\CharacterIdMother;
 use Whalar\Tests\Shared\Core\Domain\Character\ValueObject\CharacterKingsGuardMother;
 use Whalar\Tests\Shared\Core\Domain\Character\ValueObject\CharacterRoyalMother;
@@ -21,6 +22,7 @@ final class CreateCharacterCommandMother
         ?string $name = null,
         ?bool $royal = null,
         ?bool $kingGuard = null,
+        ?array $actors = null,
         ?string $nickname = null,
         ?string $imageThumb = null,
         ?string $imageFull = null,
@@ -31,6 +33,7 @@ final class CreateCharacterCommandMother
             name: $name ?? NameMother::random()->value(),
             royal: $royal ?? CharacterRoyalMother::random()->value(),
             kingsGuard: $kingGuard ?? CharacterKingsGuardMother::random()->value(),
+            actors: $actors ?? [ActorIdMother::random()->value()],
             nickname: $nickname,
             imageThumb: $imageThumb,
             imageFull: $imageFull,

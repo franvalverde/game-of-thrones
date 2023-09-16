@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Whalar\Tests\Shared\Core\Domain\Character\Aggregate;
 
+use Whalar\Core\Domain\Actor\ValueObject\ActorsCollection;
 use Whalar\Core\Domain\Character\Aggregate\Character;
 use Whalar\Core\Domain\Character\ValueObject\CharacterId;
 use Whalar\Core\Domain\Character\ValueObject\CharacterKingsGuard;
@@ -12,6 +13,7 @@ use Whalar\Shared\Domain\ValueObject\AggregateId;
 use Whalar\Shared\Domain\ValueObject\ImageUrl;
 use Whalar\Shared\Domain\ValueObject\Name;
 use Whalar\Shared\Infrastructure\Messaging\DomainEventPublisher;
+use Whalar\Tests\Shared\Core\Domain\Actor\Aggregate\ActorMother;
 use Whalar\Tests\Shared\Core\Domain\Character\ValueObject\CharacterIdMother;
 use Whalar\Tests\Shared\Core\Domain\Character\ValueObject\CharacterKingsGuardMother;
 use Whalar\Tests\Shared\Core\Domain\Character\ValueObject\CharacterRoyalMother;
@@ -27,6 +29,7 @@ final class CharacterMother
         ?Name $name = null,
         ?CharacterRoyal $royal = null,
         ?CharacterKingsGuard $kingsGuard = null,
+        ?ActorsCollection $actors = null,
         ?Name $nickname = null,
         ?ImageUrl $imageThumb = null,
         ?ImageUrl $imageFull = null,
@@ -37,6 +40,7 @@ final class CharacterMother
             name: $name ?? NameMother::random(),
             royal: $royal ?? CharacterRoyalMother::random(),
             kingsGuard: $kingsGuard ?? CharacterKingsGuardMother::random(),
+            actors: $actors ?? ActorsCollection::from([ActorMother::create()]),
             nickname: $nickname ?? NameMother::random(),
             imageThumb: $imageThumb ?? ImageUrlMother::random(),
             imageFull: $imageFull ?? ImageUrlMother::random(),

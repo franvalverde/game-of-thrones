@@ -5,6 +5,10 @@ declare(strict_types=1);
 namespace Whalar\Core\Domain\Character\Aggregate;
 
 use ApiPlatform\Metadata\ApiResource;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+use Whalar\Core\Domain\Actor\Aggregate\Actor;
+use Whalar\Core\Domain\Actor\ValueObject\ActorsCollection;
 use Whalar\Core\Domain\Character\Event\CharacterWasCreated;
 use Whalar\Core\Domain\Character\ValueObject\CharacterId;
 use Whalar\Core\Domain\Character\ValueObject\CharacterKingsGuard;
@@ -17,6 +21,9 @@ use Whalar\Shared\Infrastructure\Messaging\DomainEventPublisher;
 #[ApiResource]
 class Character implements \JsonSerializable
 {
+    /** @var Collection<int, Actor> */
+    private Collection $actors;
+
     private function __construct(
         private AggregateId $id,
         private readonly CharacterId $internalId,
@@ -27,6 +34,7 @@ class Character implements \JsonSerializable
         private readonly ?ImageUrl $imageThumb,
         private readonly ?ImageUrl $imageFull,
     ) {
+        $this->actors = new ArrayCollection();
     }
 
     /** @throws \Throwable */
@@ -36,6 +44,7 @@ class Character implements \JsonSerializable
         Name $name,
         CharacterRoyal $royal,
         CharacterKingsGuard $kingsGuard,
+        ActorsCollection $actors,
         ?Name $nickname,
         ?ImageUrl $imageThumb,
         ?ImageUrl $imageFull,
@@ -50,6 +59,10 @@ class Character implements \JsonSerializable
             imageThumb: $imageThumb,
             imageFull: $imageFull,
         );
+
+        foreach ($actors->collection() as $actor) {
+            $character->actors()->add($actor);
+        }
 
         DomainEventPublisher::instance()->publish(
             CharacterWasCreated::from(
@@ -100,6 +113,12 @@ class Character implements \JsonSerializable
     public function imageFull(): ?ImageUrl
     {
         return $this->imageFull;
+    }
+
+    /** @return Collection<int, Actor> */
+    public function actors(): Collection
+    {
+        return $this->actors;
     }
 
     public function jsonSerialize(): array

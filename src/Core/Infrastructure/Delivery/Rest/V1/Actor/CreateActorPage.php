@@ -25,7 +25,7 @@ final class CreateActorPage extends ApiCommandPage
         $this->dispatch(
             new CreateActorCommand(
                 self::generateId(),
-                self::getString($data, 'internalId'),
+                $actorId,
                 self::getString($data, 'name'),
                 self::getArray($data, 'seasonsActive'),
             ),

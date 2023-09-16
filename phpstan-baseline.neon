@@ -1,6 +1,11 @@
 parameters:
 	ignoreErrors:
 		-
+			message: "#^Construct empty\\(\\) is not allowed\\. Use more strict comparison\\.$#"
+			count: 1
+			path: src/Core/Application/Command/Character/CreateCharacter/CreateCharacterCommandHandler.php
+
+		-
 			message: """
 				#^Interface Whalar\\\\Shared\\\\Application\\\\Event\\\\EventHandler extends deprecated interface Symfony\\\\Component\\\\Messenger\\\\Handler\\\\MessageSubscriberInterface\\:
 				since Symfony 6\\.2, use the \\{@see AsMessageHandler\\} attribute instead$#
@@ -38,11 +43,6 @@ parameters:
 			path: src/Shared/Infrastructure/Persistence/InMemory/InMemoryStoredEventRepository.php
 
 		-
-			message: "#^Method Whalar\\\\Tests\\\\Shared\\\\Shared\\\\Infrastructure\\\\Behat\\\\Assert\\\\Assertion\\:\\:get\\(\\) has parameter \\$args with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: tests/Shared/Shared/Infrastructure/Behat/Assert/Assertion.php
-
-		-
 			message: "#^Method Whalar\\\\Tests\\\\Shared\\\\Shared\\\\Infrastructure\\\\Behat\\\\Context\\\\ApiContext\\:\\:theResponseHeaderNodeShouldBe\\(\\) has parameter \\$expected with no type specified\\.$#"
 			count: 1
 			path: tests/Shared/Shared/Infrastructure/Behat/Context/ApiContext.php
@@ -54,21 +54,6 @@ parameters:
 
 		-
 			message: "#^Call to an undefined method Behat\\\\Mink\\\\Driver\\\\DriverInterface\\:\\:getClient\\(\\)\\.$#"
-			count: 1
-			path: tests/Shared/Shared/Infrastructure/Behat/Mink/MinkHelper.php
-
-		-
-			message: "#^Method Whalar\\\\Tests\\\\Shared\\\\Shared\\\\Infrastructure\\\\Behat\\\\Mink\\\\MinkHelper\\:\\:getResponseHeaders\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: tests/Shared/Shared/Infrastructure/Behat/Mink/MinkHelper.php
-
-		-
-			message: "#^Method Whalar\\\\Tests\\\\Shared\\\\Shared\\\\Infrastructure\\\\Behat\\\\Mink\\\\MinkHelper\\:\\:normalizeHeaders\\(\\) has parameter \\$headers with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: tests/Shared/Shared/Infrastructure/Behat/Mink/MinkHelper.php
-
-		-
-			message: "#^Method Whalar\\\\Tests\\\\Shared\\\\Shared\\\\Infrastructure\\\\Behat\\\\Mink\\\\MinkHelper\\:\\:normalizeHeaders\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: tests/Shared/Shared/Infrastructure/Behat/Mink/MinkHelper.php
 

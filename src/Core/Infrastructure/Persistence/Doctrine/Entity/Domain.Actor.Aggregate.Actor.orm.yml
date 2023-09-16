@@ -19,3 +19,13 @@ Whalar\Core\Domain\Actor\Aggregate\Actor:
       type: seasons_active
       column: seasons_active
       nullable: true
+
+  manyToOne:
+    character:
+      targetEntity: Whalar\Core\Domain\Character\Aggregate\Character
+      inversedBy: actors
+      joinColumn:
+        name: character_id
+        referencedColumnName: id
+        nullable: true
+      cascade: [ "persist" ]

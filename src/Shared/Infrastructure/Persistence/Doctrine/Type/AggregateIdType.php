@@ -13,7 +13,7 @@ final class AggregateIdType extends GuidType
 {
     private const FIELD_ID = 'aggregate_id';
 
-    public function convertToDatabaseValue($value, AbstractPlatform $platform): string
+    public function convertToDatabaseValue($value, AbstractPlatform $platform): ?string
     {
         if ($value instanceof AggregateId) {
             return $value->id();

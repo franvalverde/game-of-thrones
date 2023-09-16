@@ -24,14 +24,15 @@ final class CreateCharacterPage extends ApiCommandPage
 
         $this->dispatch(
             new CreateCharacterCommand(
-                self::generateId(),
-                $characterId,
-                self::getString($data, 'name'),
-                self::getBool($data, 'royal'),
-                self::getBool($data, 'kingsguard'),
-                self::getNonEmptyStringOrNull($data, 'nickname'),
-                self::getNonEmptyStringOrNull($data, 'imageThumb'),
-                self::getNonEmptyStringOrNull($data, 'imageFull'),
+                id: self::generateId(),
+                characterId: $characterId,
+                name: self::getString($data, 'name'),
+                royal: self::getBool($data, 'royal'),
+                kingsGuard: self::getBool($data, 'kingsguard'),
+                actors: self::getArray($data, 'actors') ?? [],
+                nickname: self::getNonEmptyStringOrNull($data, 'nickname'),
+                imageThumb: self::getNonEmptyStringOrNull($data, 'imageThumb'),
+                imageFull: self::getNonEmptyStringOrNull($data, 'imageFull'),
             ),
         );
 

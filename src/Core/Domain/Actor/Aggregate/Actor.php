@@ -9,6 +9,7 @@ use ApiPlatform\Metadata\Post;
 use Whalar\Core\Domain\Actor\Event\ActorWasCreated;
 use Whalar\Core\Domain\Actor\ValueObject\ActorId;
 use Whalar\Core\Domain\Actor\ValueObject\SeasonsActive;
+use Whalar\Core\Domain\Character\Aggregate\Character;
 use Whalar\Core\Infrastructure\Delivery\Rest\V1\Actor\CreateActorPage;
 use Whalar\Shared\Domain\ValueObject\AggregateId;
 use Whalar\Shared\Domain\ValueObject\Name;
@@ -28,13 +29,19 @@ class Actor implements \JsonSerializable
         private readonly ActorId $internalId,
         private readonly Name $name,
         private readonly ?SeasonsActive $seasonsActive,
+        private ?Character $character,
     ) {
     }
 
     /** @throws \Throwable */
-    public static function create(AggregateId $id, ActorId $internalId, Name $name, ?SeasonsActive $seasonsActive): self
-    {
-        $actor = new self($id, $internalId, $name, $seasonsActive);
+    public static function create(
+        AggregateId $id,
+        ActorId $internalId,
+        Name $name,
+        ?SeasonsActive $seasonsActive,
+        ?Character $character = null,
+    ): self {
+        $actor = new self($id, $internalId, $name, $seasonsActive, $character);
 
         DomainEventPublisher::instance()->publish(
             ActorWasCreated::from(
@@ -67,12 +74,22 @@ class Actor implements \JsonSerializable
         return $this->seasonsActive;
     }
 
+    public function character(): ?Character
+    {
+        return $this->character;
+    }
+
+    public function assignCharacter(Character $character): void
+    {
+        $this->character = $character;
+    }
+
     public function jsonSerialize(): array
     {
         return [
             'actorName' => $this->name()->value(),
             'actorLink' => sprintf('/name/%s/', $this->internalId()),
-            'seasonsActive' => $this->seasonsActive()->toArray(),
+            'seasonsActive' => $this->seasonsActive()?->toArray(),
         ];
     }
 }
