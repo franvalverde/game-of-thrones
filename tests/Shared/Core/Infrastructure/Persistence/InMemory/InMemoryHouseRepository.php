@@ -49,17 +49,15 @@ final class InMemoryHouseRepository implements HouseRepository
 
     public function paginate(PaginatorPage $page, PaginatorSize $size, PaginatorOrder $order): array
     {
-        $total = $this->houses->count();
-        $results = $this->houses->toArray();
+        $items = [];
+
+        foreach ($this->houses as $house) {
+            $items[] = $house->jsonSerialize();
+        }
 
         return [
-            'meta' => [
-                'currentPage' => $page->value(),
-                'lastPage' => (int) \max(\ceil($total / $size->value()), 1),
-                'size' => $size->value(),
-                'total' => $total,
-            ],
-            'houses' => $results,
+            'total' => $this->houses->count(),
+            'houses' => $items,
         ];
     }
 }

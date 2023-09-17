@@ -19,12 +19,15 @@ final class ListHousesQueryHandler implements QueryHandler
     /** @throws \Throwable */
     public function __invoke(ListHousesQuery $query): ListHousesResponse
     {
-        return ListHousesResponse::write(
-            $this->houses->paginate(
-                PaginatorPage::from($query->page),
-                PaginatorSize::from($query->size),
-                PaginatorOrder::from($query->order),
-            ),
+        $pageNumber = PaginatorPage::from($query->page);
+        $pageSize = PaginatorSize::from($query->size);
+
+        $list = $this->houses->paginate(
+            $pageNumber,
+            $pageSize,
+            PaginatorOrder::from($query->order),
         );
+
+        return new ListHousesResponse($list['houses'], $list['total'], $pageNumber, $pageSize);
     }
 }

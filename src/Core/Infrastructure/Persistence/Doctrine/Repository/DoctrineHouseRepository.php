@@ -72,12 +72,7 @@ final class DoctrineHouseRepository implements HouseRepository
             ->getSingleScalarResult();
 
         return [
-            'meta' => [
-                'currentPage' => $page->value(),
-                'lastPage' => (int) \max(\ceil($total / $size->value()), 1),
-                'size' => $size->value(),
-                'total' => $total,
-            ],
+            'total' => $total,
             'houses' => $results,
         ];
     }
