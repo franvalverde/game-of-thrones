@@ -6,6 +6,9 @@ namespace Whalar\Core\Domain\House\Aggregate;
 
 use ApiPlatform\Metadata\ApiResource;
 use ApiPlatform\Metadata\Post;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+use Whalar\Core\Domain\Character\Aggregate\Character;
 use Whalar\Core\Domain\House\Event\HouseWasCreated;
 use Whalar\Core\Infrastructure\Delivery\Rest\V1\House\CreateHousePage;
 use Whalar\Shared\Domain\ValueObject\AggregateId;
@@ -21,8 +24,12 @@ use Whalar\Shared\Infrastructure\Messaging\DomainEventPublisher;
 ])]
 class House
 {
+    /** @var Collection<int, Character> */
+    private Collection $characters;
+
     private function __construct(private AggregateId $id, private readonly Name $name)
     {
+        $this->characters = new ArrayCollection();
     }
 
     /** @throws \Throwable */
@@ -43,5 +50,10 @@ class House
     public function name(): Name
     {
         return $this->name;
+    }
+
+    public function characters(): Collection
+    {
+        return $this->characters;
     }
 }

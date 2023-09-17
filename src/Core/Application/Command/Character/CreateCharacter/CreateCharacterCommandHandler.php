@@ -16,6 +16,7 @@ use Whalar\Core\Domain\Character\Service\CharacterCreator;
 use Whalar\Core\Domain\Character\ValueObject\CharacterId;
 use Whalar\Core\Domain\Character\ValueObject\CharacterKingsGuard;
 use Whalar\Core\Domain\Character\ValueObject\CharacterRoyal;
+use Whalar\Core\Domain\House\Service\HouseFinder;
 use Whalar\Shared\Application\Command\CommandHandler;
 use Whalar\Shared\Domain\ValueObject\AggregateId;
 use Whalar\Shared\Domain\ValueObject\ImageUrl;
@@ -23,8 +24,11 @@ use Whalar\Shared\Domain\ValueObject\Name;
 
 final class CreateCharacterCommandHandler implements CommandHandler
 {
-    public function __construct(private readonly CharacterCreator $creator, private readonly ActorFinder $actorFinder)
-    {
+    public function __construct(
+        private readonly CharacterCreator $creator,
+        private readonly HouseFinder $houseFinder,
+        private readonly ActorFinder $actorFinder,
+    ) {
     }
 
     /** @throws \Throwable */
@@ -37,6 +41,9 @@ final class CreateCharacterCommandHandler implements CommandHandler
             royal: CharacterRoyal::from($command->royal),
             kingsGuard: CharacterKingsGuard::from($command->kingsGuard),
             actors: $this->getActors($command->actors),
+            house: null !== $command->houseId ? $this->houseFinder->ofIdOrFail(
+                AggregateId::from($command->houseId),
+            ) : null,
             nickname: null !== $command->nickname ? Name::from($command->nickname) : null,
             imageThumb: null !== $command->imageThumb ? ImageUrl::from($command->imageThumb) : null,
             imageFull: null !== $command->imageFull ? ImageUrl::from($command->imageFull) : null,

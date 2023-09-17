@@ -9,6 +9,7 @@ use Whalar\Core\Domain\Character\Aggregate\Character;
 use Whalar\Core\Domain\Character\ValueObject\CharacterId;
 use Whalar\Core\Domain\Character\ValueObject\CharacterKingsGuard;
 use Whalar\Core\Domain\Character\ValueObject\CharacterRoyal;
+use Whalar\Core\Domain\House\Aggregate\House;
 use Whalar\Shared\Domain\ValueObject\AggregateId;
 use Whalar\Shared\Domain\ValueObject\ImageUrl;
 use Whalar\Shared\Domain\ValueObject\Name;
@@ -17,6 +18,7 @@ use Whalar\Tests\Shared\Core\Domain\Actor\Aggregate\ActorMother;
 use Whalar\Tests\Shared\Core\Domain\Character\ValueObject\CharacterIdMother;
 use Whalar\Tests\Shared\Core\Domain\Character\ValueObject\CharacterKingsGuardMother;
 use Whalar\Tests\Shared\Core\Domain\Character\ValueObject\CharacterRoyalMother;
+use Whalar\Tests\Shared\Core\Domain\House\Aggregate\HouseMother;
 use Whalar\Tests\Shared\Shared\Domain\ValueObject\AggregateIdMother;
 use Whalar\Tests\Shared\Shared\Domain\ValueObject\ImageUrlMother;
 use Whalar\Tests\Shared\Shared\Domain\ValueObject\NameMother;
@@ -30,6 +32,7 @@ final class CharacterMother
         ?CharacterRoyal $royal = null,
         ?CharacterKingsGuard $kingsGuard = null,
         ?ActorsCollection $actors = null,
+        ?House $house = null,
         ?Name $nickname = null,
         ?ImageUrl $imageThumb = null,
         ?ImageUrl $imageFull = null,
@@ -41,6 +44,7 @@ final class CharacterMother
             royal: $royal ?? CharacterRoyalMother::random(),
             kingsGuard: $kingsGuard ?? CharacterKingsGuardMother::random(),
             actors: $actors ?? ActorsCollection::from([ActorMother::create()]),
+            house: $house ?? HouseMother::create(),
             nickname: $nickname ?? NameMother::random(),
             imageThumb: $imageThumb ?? ImageUrlMother::random(),
             imageFull: $imageFull ?? ImageUrlMother::random(),

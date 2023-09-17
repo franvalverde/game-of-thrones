@@ -15,20 +15,28 @@ use Whalar\Core\Domain\Character\Exception\CharacterAlreadyExistsException;
 use Whalar\Core\Domain\Character\Exception\CharacterMustHaveActorException;
 use Whalar\Core\Domain\Character\Repository\CharacterRepository;
 use Whalar\Core\Domain\Character\Service\CharacterCreator;
+use Whalar\Core\Domain\Character\ValueObject\CharacterKingsGuard;
 use Whalar\Core\Domain\Character\ValueObject\CharacterRoyal;
+use Whalar\Core\Domain\House\Exception\HouseNotFoundException;
+use Whalar\Core\Domain\House\Repository\HouseRepository;
+use Whalar\Core\Domain\House\Service\HouseFinder;
 use Whalar\Shared\Infrastructure\Messaging\DomainEventPublisher;
 use Whalar\Tests\Shared\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandMother;
 use Whalar\Tests\Shared\Core\Domain\Actor\Aggregate\ActorMother;
 use Whalar\Tests\Shared\Core\Domain\Character\Aggregate\CharacterMother;
 use Whalar\Tests\Shared\Core\Domain\Character\ValueObject\CharacterIdMother;
+use Whalar\Tests\Shared\Core\Domain\House\Aggregate\HouseMother;
 use Whalar\Tests\Shared\Core\Infrastructure\Persistence\InMemory\InMemoryActorRepository;
 use Whalar\Tests\Shared\Core\Infrastructure\Persistence\InMemory\InMemoryCharacterRepository;
+use Whalar\Tests\Shared\Core\Infrastructure\Persistence\InMemory\InMemoryHouseRepository;
+use Whalar\Tests\Shared\Shared\Domain\ValueObject\AggregateIdMother;
 use Whalar\Tests\Shared\Shared\Domain\ValueObject\NameMother;
 use Whalar\Tests\Shared\Shared\Infrastructure\PHPUnit\UnitTestCase;
 
 final class CreateCharacterCommandHandlerTest extends UnitTestCase
 {
     private CharacterRepository $characters;
+    private HouseRepository $houses;
     private ActorRepository $actors;
 
     public function testCharacterIsCreatedSuccessfully(): void
@@ -58,6 +66,7 @@ final class CreateCharacterCommandHandlerTest extends UnitTestCase
         self::assertEquals($character->name()->value(), $characterCreated->name()->value());
         self::assertEquals('true', $characterCreated->royal()->__toString());
         self::assertNotEmpty($characterCreated->actors());
+        self::assertNull($characterCreated->house());
 
         self::assertEquals(
             [
@@ -79,6 +88,33 @@ final class CreateCharacterCommandHandlerTest extends UnitTestCase
         self::assertEquals($events[0]->internalId(), $character->internalId()->value());
     }
 
+    public function testCharacterThatBelongsToAHouseIsCreatedSuccessfully(): void
+    {
+        $character = CharacterMother::create(kingsGuard: CharacterKingsGuard::from(true));
+
+        $actor = ActorMother::create();
+        $this->actors->save($actor);
+
+        $house = HouseMother::create();
+        $this->houses->save($house);
+
+        $this->createCharacter(
+            CreateCharacterCommandMother::create(
+                internalId: $character->internalId()->value(),
+                kingGuard: $character->kingsGuard()->value(),
+                actors: [$actor->internalId()->value()],
+                houseId: $house->id()->id(),
+            ),
+        );
+
+        $characterCreated = $this->characters->ofInternalId($character->internalId());
+
+        self::assertNotNull($characterCreated);
+        self::assertEquals('true', $characterCreated->kingsGuard()->__toString());
+        self::assertNotNull($characterCreated->house());
+        self::assertTrue($house->id()->equalsTo($characterCreated->house()->id()));
+    }
+
     public function testTryCreateWithSameNameShouldThrowCharacterAlreadyExistsException(): void
     {
         $name = NameMother::random();
@@ -93,6 +129,12 @@ final class CreateCharacterCommandHandlerTest extends UnitTestCase
     {
         $this->expectException(ActorNotFoundException::class);
         $this->createCharacter(CreateCharacterCommandMother::create());
+    }
+
+    public function testTryCreateWithHouseNotFoundShouldThrowException(): void
+    {
+        $this->expectException(HouseNotFoundException::class);
+        $this->createCharacter($this->getCommand(houseId: AggregateIdMother::random()->id()));
     }
 
     public function testTryCreateWithoutActorsShouldThrowException(): void
@@ -131,6 +173,7 @@ final class CreateCharacterCommandHandlerTest extends UnitTestCase
         parent::setUp();
 
         $this->characters = new InMemoryCharacterRepository();
+        $this->houses = new InMemoryHouseRepository();
         $this->actors = new InMemoryActorRepository();
     }
 
@@ -138,12 +181,16 @@ final class CreateCharacterCommandHandlerTest extends UnitTestCase
     {
         (new CreateCharacterCommandHandler(
             new CharacterCreator($this->characters, $this->actors),
+            new HouseFinder($this->houses),
             new ActorFinder($this->actors),
         ))($command);
     }
 
-    private function getCommand(?string $name = null, ?string $internalId = null): CreateCharacterCommand
-    {
+    private function getCommand(
+        ?string $name = null,
+        ?string $internalId = null,
+        ?string $houseId = null,
+    ): CreateCharacterCommand {
         $actor = ActorMother::create();
         $this->actors->save($actor);
 
@@ -151,6 +198,7 @@ final class CreateCharacterCommandHandlerTest extends UnitTestCase
             internalId: $internalId ?? CharacterIdMother::create(),
             name: $name ?? NameMother::create(),
             actors: [$actor->internalId()->value()],
+            houseId: $houseId,
         );
     }
 }

@@ -12,3 +12,9 @@ Whalar\Core\Domain\House\Aggregate\House:
     name:
       type: name
       column: name
+
+  oneToMany:
+    characters:
+      targetEntity: Whalar\Core\Domain\Character\Aggregate\Character
+      mappedBy: house
+      cascade: [ "all" ]

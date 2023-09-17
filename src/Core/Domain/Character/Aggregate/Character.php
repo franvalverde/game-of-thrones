@@ -13,6 +13,7 @@ use Whalar\Core\Domain\Character\Event\CharacterWasCreated;
 use Whalar\Core\Domain\Character\ValueObject\CharacterId;
 use Whalar\Core\Domain\Character\ValueObject\CharacterKingsGuard;
 use Whalar\Core\Domain\Character\ValueObject\CharacterRoyal;
+use Whalar\Core\Domain\House\Aggregate\House;
 use Whalar\Shared\Domain\ValueObject\AggregateId;
 use Whalar\Shared\Domain\ValueObject\ImageUrl;
 use Whalar\Shared\Domain\ValueObject\Name;
@@ -30,6 +31,7 @@ class Character implements \JsonSerializable
         private readonly Name $name,
         private readonly CharacterRoyal $royal,
         private readonly CharacterKingsGuard $kingsGuard,
+        private readonly ?House $house,
         private readonly ?Name $nickname,
         private readonly ?ImageUrl $imageThumb,
         private readonly ?ImageUrl $imageFull,
@@ -45,6 +47,7 @@ class Character implements \JsonSerializable
         CharacterRoyal $royal,
         CharacterKingsGuard $kingsGuard,
         ActorsCollection $actors,
+        ?House $house,
         ?Name $nickname,
         ?ImageUrl $imageThumb,
         ?ImageUrl $imageFull,
@@ -55,6 +58,7 @@ class Character implements \JsonSerializable
             name: $name,
             royal: $royal,
             kingsGuard: $kingsGuard,
+            house: $house,
             nickname: $nickname,
             imageThumb: $imageThumb,
             imageFull: $imageFull,
@@ -98,6 +102,11 @@ class Character implements \JsonSerializable
     public function kingsGuard(): CharacterKingsGuard
     {
         return $this->kingsGuard;
+    }
+
+    public function house(): ?House
+    {
+        return $this->house;
     }
 
     public function nickname(): ?Name

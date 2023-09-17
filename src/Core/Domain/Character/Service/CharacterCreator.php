@@ -12,6 +12,7 @@ use Whalar\Core\Domain\Character\Repository\CharacterRepository;
 use Whalar\Core\Domain\Character\ValueObject\CharacterId;
 use Whalar\Core\Domain\Character\ValueObject\CharacterKingsGuard;
 use Whalar\Core\Domain\Character\ValueObject\CharacterRoyal;
+use Whalar\Core\Domain\House\Aggregate\House;
 use Whalar\Shared\Domain\ValueObject\AggregateId;
 use Whalar\Shared\Domain\ValueObject\ImageUrl;
 use Whalar\Shared\Domain\ValueObject\Name;
@@ -30,6 +31,7 @@ final class CharacterCreator
         CharacterRoyal $royal,
         CharacterKingsGuard $kingsGuard,
         ActorsCollection $actors,
+        ?House $house,
         ?Name $nickname,
         ?ImageUrl $imageThumb,
         ?ImageUrl $imageFull,
@@ -43,6 +45,7 @@ final class CharacterCreator
             royal: $royal,
             kingsGuard: $kingsGuard,
             actors: $actors,
+            house: $house,
             nickname: $nickname,
             imageThumb: $imageThumb,
             imageFull: $imageFull,

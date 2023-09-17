@@ -30,6 +30,7 @@ final class CreateCharacterPage extends ApiCommandPage
                 royal: self::getBool($data, 'royal'),
                 kingsGuard: self::getBool($data, 'kingsguard'),
                 actors: self::getArray($data, 'actors') ?? [],
+                houseId: self::getNonEmptyStringOrNull($data, 'houseId'),
                 nickname: self::getNonEmptyStringOrNull($data, 'nickname'),
                 imageThumb: self::getNonEmptyStringOrNull($data, 'imageThumb'),
                 imageFull: self::getNonEmptyStringOrNull($data, 'imageFull'),

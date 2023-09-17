@@ -16,6 +16,7 @@ final class CreateCharacterCommand implements Command
         public readonly bool $royal,
         public readonly bool $kingsGuard,
         public readonly array $actors,
+        public readonly ?string $houseId,
         public readonly ?string $nickname,
         public readonly ?string $imageThumb,
         public readonly ?string $imageFull,
