@@ -7,6 +7,9 @@ namespace Whalar\Core\Domain\House\Repository;
 use Whalar\Core\Domain\House\Aggregate\House;
 use Whalar\Shared\Domain\ValueObject\AggregateId;
 use Whalar\Shared\Domain\ValueObject\Name;
+use Whalar\Shared\Domain\ValueObject\PaginatorOrder;
+use Whalar\Shared\Domain\ValueObject\PaginatorPage;
+use Whalar\Shared\Domain\ValueObject\PaginatorSize;
 
 interface HouseRepository
 {
@@ -15,4 +18,6 @@ interface HouseRepository
     public function ofName(Name $name): ?House;
 
     public function save(House $house): void;
+
+    public function paginate(PaginatorPage $page, PaginatorSize $size, PaginatorOrder $order): array;
 }

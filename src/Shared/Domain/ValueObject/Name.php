@@ -7,7 +7,7 @@ namespace Whalar\Shared\Domain\ValueObject;
 use Assert\Assertion;
 use Assert\AssertionFailedException;
 
-final class Name
+final class Name implements \JsonSerializable
 {
     private function __construct(private readonly string $name)
     {
@@ -24,5 +24,10 @@ final class Name
     public function value(): string
     {
         return $this->name;
+    }
+
+    public function jsonSerialize(): string
+    {
+        return $this->value();
     }
 }

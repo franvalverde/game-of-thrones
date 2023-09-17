@@ -11,6 +11,9 @@ use Whalar\Core\Domain\House\Aggregate\House;
 use Whalar\Core\Domain\House\Repository\HouseRepository;
 use Whalar\Shared\Domain\ValueObject\AggregateId;
 use Whalar\Shared\Domain\ValueObject\Name;
+use Whalar\Shared\Domain\ValueObject\PaginatorOrder;
+use Whalar\Shared\Domain\ValueObject\PaginatorPage;
+use Whalar\Shared\Domain\ValueObject\PaginatorSize;
 
 final class InMemoryHouseRepository implements HouseRepository
 {
@@ -42,5 +45,21 @@ final class InMemoryHouseRepository implements HouseRepository
     public function save(House $house): void
     {
         $this->houses->set($house->id()->id(), $house);
+    }
+
+    public function paginate(PaginatorPage $page, PaginatorSize $size, PaginatorOrder $order): array
+    {
+        $total = $this->houses->count();
+        $results = $this->houses->toArray();
+
+        return [
+            'meta' => [
+                'currentPage' => $page->value(),
+                'lastPage' => (int) \max(\ceil($total / $size->value()), 1),
+                'size' => $size->value(),
+                'total' => $total,
+            ],
+            'houses' => $results,
+        ];
     }
 }

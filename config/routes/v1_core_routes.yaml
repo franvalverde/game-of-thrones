@@ -17,3 +17,9 @@ core.rest.create_house.page:
   methods: POST
   prefix: v1
   controller: 'Whalar\Core\Infrastructure\Delivery\Rest\V1\House\CreateHousePage'
+
+core.rest.list_houses.page:
+  path: /houses
+  methods: GET
+  prefix: v1
+  controller: 'Whalar\Core\Infrastructure\Delivery\Rest\V1\House\ListHousesPage'

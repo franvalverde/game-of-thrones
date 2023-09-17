@@ -22,7 +22,7 @@ use Whalar\Shared\Infrastructure\Messaging\DomainEventPublisher;
         name: 'Create a house',
     ),
 ])]
-class House
+class House implements \JsonSerializable
 {
     /** @var Collection<int, Character> */
     private Collection $characters;
@@ -56,5 +56,13 @@ class House
     public function characters(): Collection
     {
         return $this->characters;
+    }
+
+    public function jsonSerialize(): array
+    {
+        return [
+            'id' => $this->id(),
+            'name' => $this->name(),
+        ];
     }
 }
