@@ -133,8 +133,13 @@ class Character implements \JsonSerializable
     public function jsonSerialize(): array
     {
         return [
-            'characterName' => $this->name()->value(),
+            'characterName' => $this->name(),
+            'houseName' => $this->house->name(),
+            'characterImageThumb' => $this->imageThumb(),
+            'characterImageFull' => $this->imageFull(),
             'characterLink' => sprintf('/name/%s/', $this->internalId()),
+            'actors' => $this->actors(),
+            'nickname' => $this->nickname(),
             'royal' => $this->royal(),
             'kingsguard' => $this->kingsGuard(),
         ];

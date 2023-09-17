@@ -6,7 +6,7 @@ namespace Whalar\Shared\Domain\ValueObject;
 
 use Assert\Assertion;
 
-final class ImageUrl
+final class ImageUrl implements \JsonSerializable
 {
     private function __construct(private readonly string $imageUrl)
     {
@@ -22,5 +22,10 @@ final class ImageUrl
     public function value(): string
     {
         return $this->imageUrl;
+    }
+
+    public function jsonSerialize(): string
+    {
+        return $this->value();
     }
 }

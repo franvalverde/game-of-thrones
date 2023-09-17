@@ -11,6 +11,9 @@ use Whalar\Core\Domain\Character\Aggregate\Character;
 use Whalar\Core\Domain\Character\Repository\CharacterRepository;
 use Whalar\Core\Domain\Character\ValueObject\CharacterId;
 use Whalar\Shared\Domain\ValueObject\Name;
+use Whalar\Shared\Domain\ValueObject\PaginatorOrder;
+use Whalar\Shared\Domain\ValueObject\PaginatorPage;
+use Whalar\Shared\Domain\ValueObject\PaginatorSize;
 
 final class InMemoryCharacterRepository implements CharacterRepository
 {
@@ -48,5 +51,19 @@ final class InMemoryCharacterRepository implements CharacterRepository
         }
 
         return null;
+    }
+
+    public function paginate(PaginatorPage $page, PaginatorSize $size, PaginatorOrder $order): array
+    {
+        $items = [];
+
+        foreach ($this->characters as $character) {
+            $items[] = $character->jsonSerialize();
+        }
+
+        return [
+            'total' => $this->characters->count(),
+            'characters' => $items,
+        ];
     }
 }

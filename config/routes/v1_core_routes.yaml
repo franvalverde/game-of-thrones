@@ -12,6 +12,12 @@ core.rest.create_character.page:
   prefix: v1
   controller: 'Whalar\Core\Infrastructure\Delivery\Rest\V1\Character\CreateCharacterPage'
 
+core.rest.list_characters.page:
+  path: /characters
+  methods: GET
+  prefix: v1
+  controller: 'Whalar\Core\Infrastructure\Delivery\Rest\V1\Character\ListCharactersPage'
+
 core.rest.create_house.page:
   path: /houses
   methods: POST

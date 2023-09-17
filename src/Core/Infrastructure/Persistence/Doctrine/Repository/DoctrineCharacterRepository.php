@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Whalar\Core\Infrastructure\Persistence\Doctrine\Repository;
 
+use Assert\Assertion;
+use Doctrine\Common\Collections\Criteria;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\EntityRepository;
 use Doctrine\Persistence\ObjectRepository;
@@ -12,6 +14,9 @@ use Whalar\Core\Domain\Character\Repository\CharacterRepository;
 use Whalar\Core\Domain\Character\ValueObject\CharacterId;
 use Whalar\Shared\Domain\ValueObject\AggregateId;
 use Whalar\Shared\Domain\ValueObject\Name;
+use Whalar\Shared\Domain\ValueObject\PaginatorOrder;
+use Whalar\Shared\Domain\ValueObject\PaginatorPage;
+use Whalar\Shared\Domain\ValueObject\PaginatorSize;
 
 final class DoctrineCharacterRepository implements CharacterRepository
 {
@@ -45,5 +50,36 @@ final class DoctrineCharacterRepository implements CharacterRepository
     {
         $this->entityManager->persist($character);
         $this->entityManager->flush();
+    }
+
+    public function paginate(PaginatorPage $page, PaginatorSize $size, PaginatorOrder $order): array
+    {
+        $criteria = Criteria::create()
+            ->setFirstResult(($page->value() - 1) * $size->value())
+            ->setMaxResults($size->value());
+
+        $results = $this->entityManager
+            ->createQueryBuilder()
+            ->select('character')
+            ->from(Character::class, 'character')
+            ->addCriteria($criteria)
+            ->orderBy('character.name', $order->value)
+            ->getQuery()
+            ->getResult();
+
+        Assertion::isArray($results);
+
+        $total = $this->entityManager
+            ->createQueryBuilder()
+            ->select('count(character.id)')
+            ->from(Character::class, 'character')
+            ->addCriteria($criteria)
+            ->getQuery()
+            ->getSingleScalarResult();
+
+        return [
+            'total' => $total,
+            'characters' => $results,
+        ];
     }
 }
