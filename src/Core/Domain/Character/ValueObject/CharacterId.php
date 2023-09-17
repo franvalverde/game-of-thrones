@@ -48,7 +48,7 @@ final class CharacterId implements \JsonSerializable, \Stringable
     {
         Assertion::true(
             1 === preg_match("/^ch\d{7}$/i", $value),
-            'The character Id must start with nm followed by 7 numbers',
+            'The character Id must start with ch followed by 7 numbers',
         );
 
         $this->value = $value;

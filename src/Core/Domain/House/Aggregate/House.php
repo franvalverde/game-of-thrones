@@ -52,6 +52,7 @@ class House
         return $this->name;
     }
 
+    /** @return Collection<int, Character> */
     public function characters(): Collection
     {
         return $this->characters;

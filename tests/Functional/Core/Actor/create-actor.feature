@@ -1,24 +1,10 @@
 Feature: Create Actor
 
-  Scenario: Create an actor with invalid id
-    When I send a POST request to "/v1/actors" with body:
-      """
-      {
-          "id":"invalid-id",
-          "internalId": "nm1234567",
-          "name":"Junade Khan"
-      }
-      """
-    Then the response status code should be 400
-    And the response should be:
-      | status | 400                                     |
-      | detail | Value "invalid-id" is not a valid UUID. |
-
   Scenario: Create an actor with invalid name
     When I send a POST request to "/v1/actors" with body:
       """
       {
-          "internalId": "nm1234567",
+          "actorId": "nm1234567",
           "name":"Al"
       }
       """
@@ -27,11 +13,11 @@ Feature: Create Actor
       | status | 400                                |
       | detail | Provided "3" is not less than "2". |
 
-  Scenario: Create an actor with invalid internal id
+  Scenario: Create an actor with invalid actor id
     When I send a POST request to "/v1/actors" with body:
       """
       {
-          "internalId": "nm123456",
+          "actorId": "nm123456",
           "name":"David Coakley"
       }
       """
@@ -44,14 +30,13 @@ Feature: Create Actor
     When I send a POST request to "/v1/actors" with body:
       """
       {
-          "id": "58ed5090-6ae9-4834-a8b4-1a9d457a9a2e",
-          "internalId": "nm1234567",
+          "actorId": "nm1234567",
           "name":"David Coakley"
       }
       """
     Then the response status code should be 201
     And the response should be:
-      | id | 58ed5090-6ae9-4834-a8b4-1a9d457a9a2e |
+      | actorId | nm1234567 |
 
   Scenario: Create an actor with internal id already exists
     Given the following actor exist:
@@ -60,7 +45,7 @@ Feature: Create Actor
     When I send a POST request to "/v1/actors" with body:
       """
       {
-          "internalId": "nm7234567",
+          "actorId": "nm7234567",
           "name":"Wall Coakley"
       }
       """
