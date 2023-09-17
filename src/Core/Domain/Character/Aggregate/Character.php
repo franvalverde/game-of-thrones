@@ -138,7 +138,7 @@ class Character implements \JsonSerializable
             'characterImageThumb' => $this->imageThumb(),
             'characterImageFull' => $this->imageFull(),
             'characterLink' => sprintf('/name/%s/', $this->internalId()),
-            'actors' => $this->actors(),
+            'actors' => $this->actors()->toArray(),
             'nickname' => $this->nickname(),
             'royal' => $this->royal(),
             'kingsguard' => $this->kingsGuard(),

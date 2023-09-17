@@ -25,6 +25,11 @@ final class ListCharactersResponse extends PaginatorResponse implements \JsonSer
         foreach ($result as $character) {
             $item = $character->jsonSerialize();
 
+            if (1 === count($item['actors'])) {
+                $item = array_merge($item, $item['actors'][0]->jsonSerialize());
+                unset($item['actors']);
+            }
+
             if (false === $character->royal()->value()) {
                 unset($item['royal']);
             }
