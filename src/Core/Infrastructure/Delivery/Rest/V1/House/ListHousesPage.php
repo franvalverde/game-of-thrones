@@ -18,7 +18,7 @@ final class ListHousesPage extends ApiQueryPage
     /** @throws \Throwable */
     public function __invoke(Request $request): JsonResponse
     {
-        $data = $request->request->all();
+        $data = $request->query->all();
 
         $response = $this->ask(
             new ListHousesQuery(

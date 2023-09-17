@@ -7,8 +7,6 @@ namespace Whalar\Tests\Shared\Shared\Infrastructure\Behat\Context;
 use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
 use Behat\MinkExtension\Context\RawMinkContext;
-use Illuminate\Support\Arr;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Whalar\Tests\Shared\Shared\Infrastructure\Behat\Assert\Assertions;
 use Whalar\Tests\Shared\Shared\Infrastructure\Behat\Json\Json;
 use Whalar\Tests\Shared\Shared\Infrastructure\Behat\Json\JsonInspector;
@@ -27,16 +25,6 @@ final class ApiContext extends RawMinkContext
         $this->minkRequest = new MinkRequestHelper($mink);
     }
 
-    /**
-     * Add a header element in a request.
-     *
-     * @When /^I add a(?:n)? "([^"]*)" header equal to "([^"]*)"$/
-     */
-    public function iAddAHeaderEqualTo(string $name, string|int $value): void
-    {
-        $this->mink->setHttpHeader($name, $value);
-    }
-
     /** @When I send a :method request to :url */
     public function iSendARequestTo(string $method, string $url): void
     {
@@ -47,43 +35,6 @@ final class ApiContext extends RawMinkContext
     public function iSendARequestToWithBody(string $method, string $url, PyStringNode $body): void
     {
         $this->minkRequest->sendRequestWithPyStringNode($method, $this->locatePath($url), $body);
-    }
-
-    /** @When I send a :method request to :url with files: */
-    public function iSendARequestToWithFiles(string $method, string $url, TableNode $data): void
-    {
-        $files = [];
-        $parameters = [];
-
-        foreach ($data->getHash() as $row) {
-            $key = $row['key'];
-            $value = $row['value'];
-
-            if (!isset($key) || !isset($value)) {
-                throw new \RuntimeException("You must provide a 'key' and 'value' column in your table node.");
-            }
-
-            if (\is_string($value) && str_starts_with($value, '@')) {
-                $filename = substr($value, 1);
-                \assert(
-                    \is_string($this->getMinkParameter('files_path')),
-                    'Mink parameter "files_path" is not a string.',
-                );
-                $path = rtrim(
-                    $this->getMinkParameter('files_path'),
-                    \DIRECTORY_SEPARATOR,
-                ).\DIRECTORY_SEPARATOR.$filename;
-                Arr::set($files, $key, new UploadedFile($path, $filename));
-            } else {
-                Arr::set($parameters, $key, $value);
-            }
-        }
-
-        $this->minkRequest->sendRequest($method, $this->locatePath($url), [
-            'parameters' => $parameters,
-            'files' => $files,
-            'server' => [],
-        ]);
     }
 
     /** @Then /^the response status code should be (\d+)$/ */
