@@ -1,9 +1,5 @@
 parameters:
 	ignoreErrors:
-		-
-			message: "#^Construct empty\\(\\) is not allowed\\. Use more strict comparison\\.$#"
-			count: 1
-			path: src/Core/Application/Command/Character/CreateCharacter/CreateCharacterCommandHandler.php
 
 		-
 			message: """

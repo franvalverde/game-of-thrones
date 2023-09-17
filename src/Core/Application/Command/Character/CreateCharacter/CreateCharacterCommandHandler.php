@@ -53,7 +53,7 @@ final class CreateCharacterCommandHandler implements CommandHandler
     /** @throws \Throwable|AssertionFailedException|ActorNotFoundException|CharacterMustHaveActorException */
     private function getActors(array $actorIds): ActorsCollection
     {
-        if (empty($actorIds)) {
+        if (0 === count($actorIds)) {
             throw CharacterMustHaveActorException::from();
         }
 
