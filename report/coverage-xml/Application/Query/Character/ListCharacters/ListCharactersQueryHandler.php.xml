@@ -1,0 +1,434 @@
+<?xml version="1.0"?>
+<phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
+  <file name="ListCharactersQueryHandler.php" path="/Application/Query/Character/ListCharacters">
+    <totals>
+      <lines total="50" comments="1" code="49" executable="17" executed="17" percent="100.00"/>
+      <methods count="3" tested="3" percent="100.00"/>
+      <functions count="0" tested="0" percent="0"/>
+      <classes count="1" tested="1" percent="100.00"/>
+      <traits count="0" tested="0" percent="0"/>
+    </totals>
+    <class name="Whalar\Core\Application\Query\Character\ListCharacters\ListCharactersQueryHandler" start="15" executable="17" executed="17" crap="4">
+      <namespace name="Whalar\Core\Application\Query\Character\ListCharacters"/>
+      <method name="__construct" signature="__construct(Whalar\Core\Domain\Character\Repository\CharacterRepository $characters)" start="17" end="19" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="__invoke" signature="__invoke(Whalar\Core\Application\Query\Character\ListCharacters\ListCharactersQuery $query): Whalar\Core\Application\Query\Character\ListCharacters\ListCharactersResponse" start="22" end="35" crap="1" executable="9" executed="9" coverage="100"/>
+      <method name="filter" signature="filter(Whalar\Core\Application\Query\Character\ListCharacters\ListCharactersQuery $query): ?Whalar\Shared\Domain\ValueObject\FilterCollection" start="37" end="48" crap="2" executable="7" executed="7" coverage="100"/>
+    </class>
+    <coverage>
+      <line nr="19">
+        <covered by="Whalar\Tests\Unit\Core\Application\Query\Character\ListCharacters\ListCharactersQueryHandlerTest::testListCharactersSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Query\Character\ListCharacters\ListCharactersQueryHandlerTest::testListCharactersFilteringByNameSuccessfully"/>
+      </line>
+      <line nr="24">
+        <covered by="Whalar\Tests\Unit\Core\Application\Query\Character\ListCharacters\ListCharactersQueryHandlerTest::testListCharactersSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Query\Character\ListCharacters\ListCharactersQueryHandlerTest::testListCharactersFilteringByNameSuccessfully"/>
+      </line>
+      <line nr="25">
+        <covered by="Whalar\Tests\Unit\Core\Application\Query\Character\ListCharacters\ListCharactersQueryHandlerTest::testListCharactersSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Query\Character\ListCharacters\ListCharactersQueryHandlerTest::testListCharactersFilteringByNameSuccessfully"/>
+      </line>
+      <line nr="27">
+        <covered by="Whalar\Tests\Unit\Core\Application\Query\Character\ListCharacters\ListCharactersQueryHandlerTest::testListCharactersSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Query\Character\ListCharacters\ListCharactersQueryHandlerTest::testListCharactersFilteringByNameSuccessfully"/>
+      </line>
+      <line nr="28">
+        <covered by="Whalar\Tests\Unit\Core\Application\Query\Character\ListCharacters\ListCharactersQueryHandlerTest::testListCharactersSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Query\Character\ListCharacters\ListCharactersQueryHandlerTest::testListCharactersFilteringByNameSuccessfully"/>
+      </line>
+      <line nr="30">
+        <covered by="Whalar\Tests\Unit\Core\Application\Query\Character\ListCharacters\ListCharactersQueryHandlerTest::testListCharactersSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Query\Character\ListCharacters\ListCharactersQueryHandlerTest::testListCharactersFilteringByNameSuccessfully"/>
+      </line>
+      <line nr="31">
+        <covered by="Whalar\Tests\Unit\Core\Application\Query\Character\ListCharacters\ListCharactersQueryHandlerTest::testListCharactersSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Query\Character\ListCharacters\ListCharactersQueryHandlerTest::testListCharactersFilteringByNameSuccessfully"/>
+      </line>
+      <line nr="34">
+        <covered by="Whalar\Tests\Unit\Core\Application\Query\Character\ListCharacters\ListCharactersQueryHandlerTest::testListCharactersSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Query\Character\ListCharacters\ListCharactersQueryHandlerTest::testListCharactersFilteringByNameSuccessfully"/>
+      </line>
+      <line nr="39">
+        <covered by="Whalar\Tests\Unit\Core\Application\Query\Character\ListCharacters\ListCharactersQueryHandlerTest::testListCharactersSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Query\Character\ListCharacters\ListCharactersQueryHandlerTest::testListCharactersFilteringByNameSuccessfully"/>
+      </line>
+      <line nr="40">
+        <covered by="Whalar\Tests\Unit\Core\Application\Query\Character\ListCharacters\ListCharactersQueryHandlerTest::testListCharactersFilteringByNameSuccessfully"/>
+      </line>
+      <line nr="41">
+        <covered by="Whalar\Tests\Unit\Core\Application\Query\Character\ListCharacters\ListCharactersQueryHandlerTest::testListCharactersFilteringByNameSuccessfully"/>
+      </line>
+      <line nr="42">
+        <covered by="Whalar\Tests\Unit\Core\Application\Query\Character\ListCharacters\ListCharactersQueryHandlerTest::testListCharactersFilteringByNameSuccessfully"/>
+      </line>
+      <line nr="43">
+        <covered by="Whalar\Tests\Unit\Core\Application\Query\Character\ListCharacters\ListCharactersQueryHandlerTest::testListCharactersFilteringByNameSuccessfully"/>
+      </line>
+      <line nr="47">
+        <covered by="Whalar\Tests\Unit\Core\Application\Query\Character\ListCharacters\ListCharactersQueryHandlerTest::testListCharactersSuccessfully"/>
+      </line>
+      <line nr="29">
+        <covered by="Whalar\Tests\Unit\Core\Application\Query\Character\ListCharacters\ListCharactersQueryHandlerTest::testListCharactersSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Query\Character\ListCharacters\ListCharactersQueryHandlerTest::testListCharactersFilteringByNameSuccessfully"/>
+      </line>
+      <line nr="32">
+        <covered by="Whalar\Tests\Unit\Core\Application\Query\Character\ListCharacters\ListCharactersQueryHandlerTest::testListCharactersSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Query\Character\ListCharacters\ListCharactersQueryHandlerTest::testListCharactersFilteringByNameSuccessfully"/>
+      </line>
+      <line nr="44">
+        <covered by="Whalar\Tests\Unit\Core\Application\Query\Character\ListCharacters\ListCharactersQueryHandlerTest::testListCharactersFilteringByNameSuccessfully"/>
+      </line>
+    </coverage>
+    <source>
+      <line no="1">
+        <token name="T_OPEN_TAG">&lt;?php</token>
+      </line>
+      <line no="2"/>
+      <line no="3">
+        <token name="T_DECLARE">declare</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">strict_types</token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_LNUMBER">1</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="4"/>
+      <line no="5">
+        <token name="T_NAMESPACE">namespace</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">Whalar\Core\Application\Query\Character\ListCharacters</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="6"/>
+      <line no="7">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">Whalar\Core\Domain\Character\Repository\CharacterRepository</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="8">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">Whalar\Shared\Application\Query\QueryHandler</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="9">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">Whalar\Shared\Domain\ValueObject\FilterCollection</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="10">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">Whalar\Shared\Domain\ValueObject\Name</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="11">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">Whalar\Shared\Domain\ValueObject\PaginatorOrder</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="12">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">Whalar\Shared\Domain\ValueObject\PaginatorPage</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="13">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">Whalar\Shared\Domain\ValueObject\PaginatorSize</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="14"/>
+      <line no="15">
+        <token name="T_FINAL">final</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CLASS">class</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">ListCharactersQueryHandler</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_IMPLEMENTS">implements</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">QueryHandler</token>
+      </line>
+      <line no="16">
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="17">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">__construct</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_PRIVATE">private</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_READONLY">readonly</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">CharacterRepository</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$characters</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="18">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="19">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="20"/>
+      <line no="21">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/** @throws \Throwable */</token>
+      </line>
+      <line no="22">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">__invoke</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">ListCharactersQuery</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$query</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">ListCharactersResponse</token>
+      </line>
+      <line no="23">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="24">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$pageNumber</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">PaginatorPage</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">from</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$query</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">page</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="25">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$pageSize</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">PaginatorSize</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">from</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$query</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">size</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="26"/>
+      <line no="27">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$list</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">characters</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">paginate</token>
+        <token name="T_OPEN_BRACKET">(</token>
+      </line>
+      <line no="28">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_VARIABLE">$pageNumber</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="29">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_VARIABLE">$pageSize</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="30">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_STRING">PaginatorOrder</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">from</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$query</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">order</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="31">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">filter</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$query</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="32">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="33"/>
+      <line no="34">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NEW">new</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">ListCharactersResponse</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$list</token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'characters'</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$list</token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'total'</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$pageNumber</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$pageSize</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="35">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="36"/>
+      <line no="37">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PRIVATE">private</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">filter</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">ListCharactersQuery</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$query</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_QUESTION_MARK">?</token>
+        <token name="T_STRING">FilterCollection</token>
+      </line>
+      <line no="38">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="39">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_IF">if</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">null</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_IS_NOT_IDENTICAL">!==</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$query</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">name</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="40">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NEW">new</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">FilterCollection</token>
+        <token name="T_OPEN_BRACKET">(</token>
+      </line>
+      <line no="41">
+        <token name="T_WHITESPACE">                </token>
+        <token name="T_STRING">operator</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'startsWith'</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="42">
+        <token name="T_WHITESPACE">                </token>
+        <token name="T_STRING">key</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'character.name'</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="43">
+        <token name="T_WHITESPACE">                </token>
+        <token name="T_STRING">value</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Name</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">from</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$query</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">name</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">value</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="44">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="45">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="46"/>
+      <line no="47">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">null</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="48">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="49">
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="50"/>
+    </source>
+  </file>
+</phpunit>
