@@ -1,3 +1,5 @@
+version: '3.7'
+
 services:
   app:
     container_name: whalar-fvalverde-app
@@ -57,10 +59,9 @@ services:
       - .deployment/docker/relk/rabbitmq/config/rabbitmq.config:/etc/rabbitmq/rabbitmq.config:ro
 
   elasticsearch:
-    container_name: whalar-fvalverde-elasticsearch
     image: elasticsearch:8.9.2
-    command: elasticsearch
-    ports: ['9200:9200']
+    container_name: whalar-fvalverde-elasticsearch
+    ports: [ '9200:9200' ]
     environment:
       - "ELASTIC_PASSWORD=elastic"
       - "bootstrap.memory_lock=true"
@@ -76,6 +77,8 @@ services:
 
   logstash:
     container_name: whalar-fvalverde-logstash
+    environment:
+      - "ELASTIC_PASSWORD=elastic"
     build:
       dockerfile: .deployment/docker/relk/logstash/Dockerfile
       context: ./../../
@@ -88,9 +91,7 @@ services:
 
   kibana:
     container_name: whalar-fvalverde-kibana
-    build:
-      dockerfile: .deployment/docker/relk/kibana/Dockerfile
-      context: ./../../
+    image: kibana:8.9.2
     environment:
       - "ELASTIC_PASSWORD=elastic"
     ports: [ '5601:5601' ]
