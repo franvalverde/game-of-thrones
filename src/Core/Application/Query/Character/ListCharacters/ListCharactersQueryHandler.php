@@ -6,6 +6,8 @@ namespace Whalar\Core\Application\Query\Character\ListCharacters;
 
 use Whalar\Core\Domain\Character\Repository\CharacterRepository;
 use Whalar\Shared\Application\Query\QueryHandler;
+use Whalar\Shared\Domain\ValueObject\FilterCollection;
+use Whalar\Shared\Domain\ValueObject\Name;
 use Whalar\Shared\Domain\ValueObject\PaginatorOrder;
 use Whalar\Shared\Domain\ValueObject\PaginatorPage;
 use Whalar\Shared\Domain\ValueObject\PaginatorSize;
@@ -26,8 +28,22 @@ final class ListCharactersQueryHandler implements QueryHandler
             $pageNumber,
             $pageSize,
             PaginatorOrder::from($query->order),
+            $this->filter($query),
         );
 
         return new ListCharactersResponse($list['characters'], $list['total'], $pageNumber, $pageSize);
+    }
+
+    private function filter(ListCharactersQuery $query): ?FilterCollection
+    {
+        if (null !== $query->name) {
+            return new FilterCollection(
+                operator: 'startsWith',
+                key: 'character.name',
+                value: Name::from($query->name)->value(),
+            );
+        }
+
+        return null;
     }
 }

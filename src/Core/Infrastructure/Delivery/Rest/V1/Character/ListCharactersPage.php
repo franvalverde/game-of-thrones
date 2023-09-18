@@ -25,6 +25,7 @@ final class ListCharactersPage extends ApiQueryPage
                 page: self::getInt($data, 'page', 1),
                 size: self::getInt($data, 'size', 5),
                 order: self::getString($data, 'sort', 'desc'),
+                name: self::getNonEmptyStringOrNull($data, 'name'),
             ),
         );
 

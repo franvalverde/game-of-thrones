@@ -6,7 +6,6 @@ namespace Whalar\Shared\Domain\Data;
 
 use Assert\AssertionFailedException;
 use Illuminate\Support\Arr;
-use Whalar\Shared\Domain\Exception\InvalidDataMappingException;
 use Whalar\Shared\Domain\ValueObject\AggregateId;
 
 trait DataMapping
@@ -81,30 +80,6 @@ trait DataMapping
         return filter_var($value, \FILTER_VALIDATE_INT, \FILTER_NULL_ON_FAILURE);
     }
 
-    /* @param array<mixed> $data */
-    private static function getFloat(array $data, string $key, float $default = 0.0): float
-    {
-        $value = self::getFloatOrNull($data, $key);
-
-        return $value ?? $default;
-    }
-
-    /* @param array<mixed> $data */
-    private static function getFloatOrNull(array $data, string $key): ?float
-    {
-        $value = Arr::get($data, $key);
-
-        if (null === $value) {
-            return null;
-        }
-
-        if (\is_bool($value)) {
-            return (float) $value;
-        }
-
-        return filter_var($value, \FILTER_VALIDATE_FLOAT, \FILTER_NULL_ON_FAILURE);
-    }
-
     /** @throws AssertionFailedException */
     private static function generateId(): string
     {
@@ -120,12 +95,10 @@ trait DataMapping
             return $default;
         }
 
-        if (true === $value) {
-            return 'true';
-        }
-
-        if (false === $value) {
-            return 'false';
+        if (true === $value || false === $value) {
+            return true === $value
+                ? 'true'
+                : 'false';
         }
 
         return (string) $value;
@@ -141,41 +114,5 @@ trait DataMapping
         }
 
         return $value;
-    }
-
-    /**
-     * @param array<mixed> $data
-     *
-     * @throws InvalidDataMappingException
-     */
-    private static function getStringOrFail(array $data, string $key, ?string $arrayName = null): string
-    {
-        if (!Arr::has($data, $key)) {
-            throw InvalidDataMappingException::fromMissingKey($key, $arrayName);
-        }
-
-        $value = Arr::get($data, $key);
-
-        if (!is_scalar($value)) {
-            throw InvalidDataMappingException::fromNonScalar($key, $arrayName);
-        }
-
-        if (true === $value) {
-            return 'true';
-        }
-
-        if (false === $value) {
-            return 'false';
-        }
-
-        return (string) $value;
-    }
-
-    // @phpstan-ignore-next-line
-    private static function integerOfArray(string $key, array $data): int
-    {
-        return array_key_exists($key, $data)
-            ? $data[$key]
-            : 0;
     }
 }

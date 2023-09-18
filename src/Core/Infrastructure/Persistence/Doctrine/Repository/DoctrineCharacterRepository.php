@@ -13,6 +13,7 @@ use Whalar\Core\Domain\Character\Aggregate\Character;
 use Whalar\Core\Domain\Character\Repository\CharacterRepository;
 use Whalar\Core\Domain\Character\ValueObject\CharacterId;
 use Whalar\Shared\Domain\ValueObject\AggregateId;
+use Whalar\Shared\Domain\ValueObject\FilterCollection;
 use Whalar\Shared\Domain\ValueObject\Name;
 use Whalar\Shared\Domain\ValueObject\PaginatorOrder;
 use Whalar\Shared\Domain\ValueObject\PaginatorPage;
@@ -52,11 +53,19 @@ final class DoctrineCharacterRepository implements CharacterRepository
         $this->entityManager->flush();
     }
 
-    public function paginate(PaginatorPage $page, PaginatorSize $size, PaginatorOrder $order): array
-    {
+    public function paginate(
+        PaginatorPage $page,
+        PaginatorSize $size,
+        PaginatorOrder $order,
+        ?FilterCollection $filter,
+    ): array {
         $criteria = Criteria::create()
             ->setFirstResult(($page->value() - 1) * $size->value())
             ->setMaxResults($size->value());
+
+        if (null !== $filter) {
+            $criteria->andWhere(Criteria::expr()->{$filter->operator}($filter->key, $filter->value));
+        }
 
         $results = $this->entityManager
             ->createQueryBuilder()

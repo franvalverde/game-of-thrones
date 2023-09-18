@@ -45,6 +45,7 @@ final class CreateActorCommandHandlerTest extends UnitTestCase
         self::assertNotNull($actor);
         self::assertTrue($actorId->equalsTo($actor->id()));
         self::assertEquals($actor->name()->value(), $name->value());
+        self::assertEquals($internalId->value(), $actor->internalId()->__toString());
         self::assertNotNull($actor->seasonsActive());
         self::assertEquals($actor->seasonsActive()->value(), json_encode($sessionsActive));
         self::assertEquals($actor->seasonsActive()->toArray(), $sessionsActive);

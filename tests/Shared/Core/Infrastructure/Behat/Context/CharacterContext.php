@@ -11,7 +11,6 @@ use Whalar\Core\Domain\Character\ValueObject\CharacterId;
 use Whalar\Shared\Domain\ValueObject\AggregateId;
 use Whalar\Shared\Domain\ValueObject\Name;
 use Whalar\Tests\Shared\Core\Domain\Character\Aggregate\CharacterMother;
-use Whalar\Tests\Shared\Core\Domain\House\Aggregate\HouseMother;
 
 final class CharacterContext implements Context
 {

@@ -65,6 +65,7 @@ final class CreateCharacterCommandHandlerTest extends UnitTestCase
         self::assertTrue($character->id()->equalsTo($characterCreated->id()));
         self::assertEquals($character->name()->value(), $characterCreated->name()->value());
         self::assertEquals('true', $characterCreated->royal()->__toString());
+        self::assertEquals('true', $characterCreated->royal()->jsonSerialize());
         self::assertNotEmpty($characterCreated->actors());
         self::assertNull($characterCreated->house());
 
@@ -100,6 +101,9 @@ final class CreateCharacterCommandHandlerTest extends UnitTestCase
         $characterCreated = $this->characters->ofInternalId($character->internalId());
 
         self::assertNotNull($characterCreated);
+        self::assertEquals($character->internalId()->value(), $characterCreated->internalId()->jsonSerialize());
+        self::assertEquals($character->internalId()->value(), $characterCreated->internalId()->__toString());
+        self::assertEquals('true', $characterCreated->kingsGuard()->jsonSerialize());
         self::assertEquals('true', $characterCreated->kingsGuard()->__toString());
         self::assertNotNull($characterCreated->house());
         self::assertTrue($house->id()->equalsTo($characterCreated->house()->id()));

@@ -10,6 +10,7 @@ use Whalar\Core\Application\Query\Character\ListCharacters\ListCharactersRespons
 use Whalar\Core\Domain\Character\Repository\CharacterRepository;
 use Whalar\Core\Domain\Character\ValueObject\CharacterKingsGuard;
 use Whalar\Core\Domain\Character\ValueObject\CharacterRoyal;
+use Whalar\Shared\Domain\ValueObject\Name;
 use Whalar\Tests\Shared\Core\Domain\Character\Aggregate\CharacterMother;
 use Whalar\Tests\Shared\Core\Infrastructure\Persistence\InMemory\InMemoryCharacterRepository;
 use Whalar\Tests\Shared\Shared\Infrastructure\PHPUnit\UnitTestCase;
@@ -30,7 +31,7 @@ final class ListCharactersQueryHandlerTest extends UnitTestCase
         );
         $this->characters->save($character);
 
-        $response = $this->listCharacters(new ListCharactersQuery($page, $size, $order));
+        $response = $this->listCharacters(new ListCharactersQuery($page, $size, $order, null));
 
         self::assertEquals(
             [
@@ -48,6 +49,33 @@ final class ListCharactersQueryHandlerTest extends UnitTestCase
             ],
             $response->jsonSerialize()['characters'],
         );
+
+        self::assertEquals(
+            [
+                'currentPage' => $page,
+                'lastPage' => 1,
+                'size' => $size,
+                'total' => 1,
+            ],
+            $response->jsonSerialize()['meta'],
+        );
+    }
+
+
+    public function testListCharactersFilteringByNameSuccessfully(): void
+    {
+        $discartCharacter = CharacterMother::create(name: Name::from('King Joffrey Baratheon Dwarf'));
+        $this->characters->save($discartCharacter);
+        $wishCharacter = CharacterMother::create(name: Name::from('Khal Rhalko'));
+        $this->characters->save($wishCharacter);
+
+        $page = 1;
+        $size = 2;
+        $filterByName = 'Khal';
+
+        $response = $this->listCharacters(new ListCharactersQuery($page, $size, 'desc', $filterByName));
+
+        self::assertEquals($wishCharacter->name(), $response->jsonSerialize()['characters'][0]['characterName']);
 
         self::assertEquals(
             [

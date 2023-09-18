@@ -18,7 +18,6 @@ use Whalar\Tests\Shared\Core\Domain\Actor\Aggregate\ActorMother;
 use Whalar\Tests\Shared\Core\Domain\Character\ValueObject\CharacterIdMother;
 use Whalar\Tests\Shared\Core\Domain\Character\ValueObject\CharacterKingsGuardMother;
 use Whalar\Tests\Shared\Core\Domain\Character\ValueObject\CharacterRoyalMother;
-use Whalar\Tests\Shared\Core\Domain\House\Aggregate\HouseMother;
 use Whalar\Tests\Shared\Shared\Domain\ValueObject\AggregateIdMother;
 use Whalar\Tests\Shared\Shared\Domain\ValueObject\ImageUrlMother;
 use Whalar\Tests\Shared\Shared\Domain\ValueObject\NameMother;

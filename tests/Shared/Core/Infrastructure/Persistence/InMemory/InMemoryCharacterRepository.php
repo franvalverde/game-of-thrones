@@ -10,6 +10,7 @@ use JetBrains\PhpStorm\Pure;
 use Whalar\Core\Domain\Character\Aggregate\Character;
 use Whalar\Core\Domain\Character\Repository\CharacterRepository;
 use Whalar\Core\Domain\Character\ValueObject\CharacterId;
+use Whalar\Shared\Domain\ValueObject\FilterCollection;
 use Whalar\Shared\Domain\ValueObject\Name;
 use Whalar\Shared\Domain\ValueObject\PaginatorOrder;
 use Whalar\Shared\Domain\ValueObject\PaginatorPage;
@@ -53,11 +54,29 @@ final class InMemoryCharacterRepository implements CharacterRepository
         return null;
     }
 
-    public function paginate(PaginatorPage $page, PaginatorSize $size, PaginatorOrder $order): array
-    {
+    public function paginate(
+        PaginatorPage $page,
+        PaginatorSize $size,
+        PaginatorOrder $order,
+        ?FilterCollection $filter,
+    ): array {
+
+        $result = [];
+        $total = 0;
+
+        foreach ($this->characters->getValues() as $character) {
+            if (null !== $filter && !str_starts_with($character->name()->value(), $filter->value)) {
+                continue;
+            }
+
+            $total++;
+            $result[] = $character;
+        }
+
+
         return [
-            'total' => $this->characters->count(),
-            'characters' => $this->characters->toArray(),
+            'total' => $total,
+            'characters' => $result,
         ];
     }
 }

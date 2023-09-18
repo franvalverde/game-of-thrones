@@ -8,7 +8,11 @@ use Whalar\Shared\Application\Query\Query;
 
 final class ListCharactersQuery implements Query
 {
-    public function __construct(public readonly int $page, public readonly int $size, public readonly string $order)
-    {
+    public function __construct(
+        public readonly int $page,
+        public readonly int $size,
+        public readonly string $order,
+        public readonly ?string $name,
+    ) {
     }
 }
