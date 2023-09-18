@@ -140,8 +140,8 @@ class Character implements \JsonSerializable
             'characterLink' => $this->internalId()->link(),
             'actors' => $this->actors()->toArray(),
             'nickname' => $this->nickname(),
-            'royal' => $this->royal()->value() ?? null,
-            'kingsguard' => $this->kingsGuard()->value() ?? null,
+            'royal' => true === $this->royal()->value() ? $this->royal()->value() : null,
+            'kingsguard' => true === $this->kingsGuard()->value() ? $this->kingsGuard()->value() : null,
         ];
     }
 }

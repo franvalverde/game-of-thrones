@@ -28,3 +28,9 @@ linters:
 
 doc
 - api platform
+
+
+events:
+- stored event in bd
+- send to rabbitmq
+- RELK stack (Rabbitmq, Elastic, Logstash, Kibana)

@@ -60,7 +60,6 @@ final class InMemoryCharacterRepository implements CharacterRepository
         PaginatorOrder $order,
         ?FilterCollection $filter,
     ): array {
-
         $result = [];
         $total = 0;
 
@@ -69,10 +68,9 @@ final class InMemoryCharacterRepository implements CharacterRepository
                 continue;
             }
 
-            $total++;
+            ++$total;
             $result[] = $character;
         }
-
 
         return [
             'total' => $total,

@@ -43,8 +43,8 @@ final class ListCharactersQueryHandlerTest extends UnitTestCase
                     'nickname' => $character->nickname(),
                     'royal' => $character->royal()->value(),
                     'kingsguard' => $character->kingsGuard()->value(),
-                    'actorName' => $character->actors()[0]->name()->value(),
-                    'actorLink' => $character->actors()[0]->internalId()->link(),
+                    'actorName' => $character->actors()[0]?->name()->value(),
+                    'actorLink' => $character->actors()[0]?->internalId()->link(),
                 ],
             ],
             $response->jsonSerialize()['characters'],
@@ -60,7 +60,6 @@ final class ListCharactersQueryHandlerTest extends UnitTestCase
             $response->jsonSerialize()['meta'],
         );
     }
-
 
     public function testListCharactersFilteringByNameSuccessfully(): void
     {

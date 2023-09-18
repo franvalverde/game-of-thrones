@@ -13,15 +13,10 @@ use Whalar\Shared\Infrastructure\Messaging\Subscriber\InMemoryStoredEventSubscri
 
 final class DomainEventMiddleware implements MiddlewareInterface
 {
-    private StoredEventRepository $events;
-    private InMemoryStoredEventSubscriber $inMemoryStoredEventSubscriber;
-
     public function __construct(
-        StoredEventRepository $events,
-        InMemoryStoredEventSubscriber $inMemoryStoredEventSubscriber,
+        private readonly StoredEventRepository $events,
+        private readonly InMemoryStoredEventSubscriber $inMemoryStoredEventSubscriber,
     ) {
-        $this->events = $events;
-        $this->inMemoryStoredEventSubscriber = $inMemoryStoredEventSubscriber;
     }
 
     /* @throws Throwable */

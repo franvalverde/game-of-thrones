@@ -41,3 +41,14 @@ services:
     image: adminer:4.8.1
     ports:
       - "8001:8080"
+
+  rabbitmq:
+    container_name: whalar-fvalverde-rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    hostname: rabbitmq
+    image: rabbitmq:3.12-rc-management-alpine
+    ports:
+      - "5672:5672"
+      - "15672:15672"
