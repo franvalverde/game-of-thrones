@@ -30,14 +30,6 @@ final class ListCharactersResponse extends PaginatorResponse implements \JsonSer
                 unset($item['actors']);
             }
 
-            if (false === $character->royal()->value()) {
-                unset($item['royal']);
-            }
-
-            if (false === $character->kingsGuard()->value()) {
-                unset($item['kingsguard']);
-            }
-
             $items[] = array_filter($item);
         }
 

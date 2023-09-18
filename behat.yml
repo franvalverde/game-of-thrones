@@ -10,6 +10,7 @@ default:
             contexts:
                 - Whalar\Tests\Shared\Shared\Infrastructure\Behat\Context\ApiContext
                 - Whalar\Tests\Shared\Core\Infrastructure\Behat\Context\ActorContext
+                - Whalar\Tests\Shared\Core\Infrastructure\Behat\Context\CharacterContext
                 - Whalar\Tests\Shared\Core\Infrastructure\Behat\Context\HouseContext
 
     extensions:

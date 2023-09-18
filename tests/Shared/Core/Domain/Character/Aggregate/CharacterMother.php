@@ -44,7 +44,7 @@ final class CharacterMother
             royal: $royal ?? CharacterRoyalMother::random(),
             kingsGuard: $kingsGuard ?? CharacterKingsGuardMother::random(),
             actors: $actors ?? ActorsCollection::from([ActorMother::create()]),
-            house: $house ?? HouseMother::create(),
+            house: $house,
             nickname: $nickname ?? NameMother::random(),
             imageThumb: $imageThumb ?? ImageUrlMother::random(),
             imageFull: $imageFull ?? ImageUrlMother::random(),

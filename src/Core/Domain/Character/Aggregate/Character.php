@@ -134,14 +134,14 @@ class Character implements \JsonSerializable
     {
         return [
             'characterName' => $this->name(),
-            'houseName' => $this->house->name(),
+            'houseName' => $this->house()?->name(),
             'characterImageThumb' => $this->imageThumb(),
             'characterImageFull' => $this->imageFull(),
-            'characterLink' => sprintf('/name/%s/', $this->internalId()),
+            'characterLink' => sprintf('/character/%s/', $this->internalId()),
             'actors' => $this->actors()->toArray(),
             'nickname' => $this->nickname(),
-            'royal' => $this->royal(),
-            'kingsguard' => $this->kingsGuard(),
+            'royal' => $this->royal()->value() ?? null,
+            'kingsguard' => $this->kingsGuard()->value() ?? null,
         ];
     }
 }
