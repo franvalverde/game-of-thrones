@@ -15,7 +15,7 @@ help: ## Display help
 ##@ Main commands
 
 .PHONY: initialize
-initialize: set-hooks copy-environment stop clean prepare start composer-install db-init ## Initialize this project from scratch
+initialize: set-hooks copy-environment stop clean prepare start composer-install db-init messenger-setup ## Initialize this project from scratch
 
 .PHONY: start
 start: ## Start this project
@@ -60,7 +60,7 @@ composer-validate: ## Validate format of composer
 ##@ Database
 
 .PHONY: db-init
-db-init: db-fresh messenger-setup ## Initialize database and setup Messenger transports
+db-init: db-fresh ## Initialize database and setup Messenger transports
 
 .PHONY: db-fresh
 db-fresh: ## Drop the database and create a new one with all migrations

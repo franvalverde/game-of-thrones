@@ -48,9 +48,51 @@ services:
       RABBITMQ_DEFAULT_USER: guest
       RABBITMQ_DEFAULT_PASS: guest
     hostname: rabbitmq
-    build:
-      dockerfile: .deployment/docker/relk/rabbitmq/Dockerfile
-      context: ./../../
+    image: rabbitmq:3.12-rc-management-alpine
     ports:
       - "5672:5672"
       - "15672:15672"
+    volumes:
+      - .deployment/docker/relk/rabbitmq/config/custom_definitions.json:/opt/definitions.json:ro
+      - .deployment/docker/relk/rabbitmq/config/rabbitmq.config:/etc/rabbitmq/rabbitmq.config:ro
+
+  elasticsearch:
+    container_name: whalar-fvalverde-elasticsearch
+    image: elasticsearch:8.9.2
+    command: elasticsearch
+    ports: ['9200:9200']
+    environment:
+      - "ELASTIC_PASSWORD=elastic"
+      - "bootstrap.memory_lock=true"
+      - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
+      - "discovery.type=single-node"
+      - "TAKE_FILE_OWNERSHIP=1"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - './var/elasticsearch:/usr/share/elasticsearch/data'
+
+  logstash:
+    container_name: whalar-fvalverde-logstash
+    build:
+      dockerfile: .deployment/docker/relk/logstash/Dockerfile
+      context: ./../../
+    command: logstash -f /etc/logstash/conf.d/logstash.conf
+    ports:
+      - "5001:5000"
+    links:
+      - elasticsearch
+      - rabbitmq
+
+  kibana:
+    container_name: whalar-fvalverde-kibana
+    build:
+      dockerfile: .deployment/docker/relk/kibana/Dockerfile
+      context: ./../../
+    environment:
+      - "ELASTIC_PASSWORD=elastic"
+    ports: [ '5601:5601' ]
+    depends_on:
+      - elasticsearch
