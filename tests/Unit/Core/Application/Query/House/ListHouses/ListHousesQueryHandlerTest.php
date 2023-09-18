@@ -42,7 +42,7 @@ final class ListHousesQueryHandlerTest extends UnitTestCase
                     'name' => $lanisterHouse->name(),
                 ],
             ],
-            $response->jsonSerialize(),
+            $response->jsonSerialize()['houses'],
         );
 
         self::assertEquals(

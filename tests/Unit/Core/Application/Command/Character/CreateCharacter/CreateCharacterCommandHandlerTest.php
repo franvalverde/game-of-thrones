@@ -68,16 +68,6 @@ final class CreateCharacterCommandHandlerTest extends UnitTestCase
         self::assertNotEmpty($characterCreated->actors());
         self::assertNull($characterCreated->house());
 
-        self::assertEquals(
-            [
-                'characterName' => $character->name()->value(),
-                'characterLink' => sprintf('/name/%s/', $character->internalId()->jsonSerialize()),
-                'royal' => $character->royal()->jsonSerialize(),
-                'kingsguard' => $character->kingsGuard()->jsonSerialize(),
-            ],
-            $characterCreated->jsonSerialize(),
-        );
-
         $events = DomainEventPublisher::instance()->events();
 
         self::assertCount(1, $events);

@@ -88,7 +88,7 @@ class Actor implements \JsonSerializable
     {
         return [
             'actorName' => $this->name()->value(),
-            'actorLink' => sprintf('/name/%s/', $this->internalId()),
+            'actorLink' => $this->internalId()->link(),
             'seasonsActive' => $this->seasonsActive()?->toArray(),
         ];
     }

@@ -55,15 +55,9 @@ final class InMemoryCharacterRepository implements CharacterRepository
 
     public function paginate(PaginatorPage $page, PaginatorSize $size, PaginatorOrder $order): array
     {
-        $items = [];
-
-        foreach ($this->characters as $character) {
-            $items[] = $character->jsonSerialize();
-        }
-
         return [
             'total' => $this->characters->count(),
-            'characters' => $items,
+            'characters' => $this->characters->toArray(),
         ];
     }
 }

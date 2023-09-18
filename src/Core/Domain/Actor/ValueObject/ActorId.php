@@ -43,6 +43,11 @@ final class ActorId implements \JsonSerializable, \Stringable
         return $this->value;
     }
 
+    public function link(): string
+    {
+        return sprintf('/name/%s/', $this->value());
+    }
+
     /** @throws AssertionFailedException */
     private function setValue(string $value): void
     {
