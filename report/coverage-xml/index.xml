@@ -1,59 +1,61 @@
 <?xml version="1.0"?>
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
-  <build time="Tue Sep 19 10:26:53 CEST 2023" phpunit="9.6.12" coverage="9.2.28">
+  <build time="Tue Sep 19 11:06:53 CEST 2023" phpunit="9.6.12" coverage="9.2.28">
     <runtime name="PHP" version="8.1.18" url="https://secure.php.net/"/>
     <driver name="xdebug" version="3.2.2"/>
   </build>
   <project source="/var/www/html/src/Core">
     <tests>
-      <test name="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameNameShouldThrowActorAlreadyExistsException" size="unknown" result="0" status="PASSED"/>
-      <test name="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowActorAlreadyExistsException" size="unknown" result="0" status="PASSED"/>
-      <test name="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameIdShouldThrowActorAlreadyExistsException" size="unknown" result="0" status="PASSED"/>
-      <test name="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testActorIsCreatedSuccessfully" size="unknown" result="0" status="PASSED"/>
-      <test name="Whalar\Tests\Unit\Core\Application\Query\Character\RetrieveCharacter\RetrieveCharacterQueryHandlerTest::testRetrieveCharacterSuccessfully" size="unknown" result="0" status="PASSED"/>
-      <test name="Whalar\Tests\Unit\Core\Application\Query\Character\RetrieveCharacter\RetrieveCharacterQueryHandlerTest::testTryRetrieveCharacterNotFoundShouldThrowException" size="unknown" result="0" status="PASSED"/>
+      <test name="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully" size="unknown" result="0" status="PASSED"/>
       <test name="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameNameShouldThrowCharacterAlreadyExistsException" size="unknown" result="0" status="PASSED"/>
       <test name="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithHouseNotFoundShouldThrowException" size="unknown" result="0" status="PASSED"/>
       <test name="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorNotFoundShouldThrowException" size="unknown" result="0" status="PASSED"/>
-      <test name="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully" size="unknown" result="0" status="PASSED"/>
-      <test name="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully" size="unknown" result="0" status="PASSED"/>
+      <test name="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithoutActorsShouldThrowException" size="unknown" result="0" status="PASSED"/>
       <test name="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowCharacterAlreadyExistsException" size="unknown" result="0" status="PASSED"/>
       <test name="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorAlreadyAssignedShouldThrowException" size="unknown" result="0" status="PASSED"/>
-      <test name="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithoutActorsShouldThrowException" size="unknown" result="0" status="PASSED"/>
-      <test name="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testCharacterIsRelatedSuccessfully" size="unknown" result="0" status="PASSED"/>
+      <test name="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully" size="unknown" result="0" status="PASSED"/>
       <test name="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharacterToTheSameCharacterShouldThrowException" size="unknown" result="0" status="PASSED"/>
-      <test name="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharactersWithInvalidRelationTypeThrowException" size="unknown" result="0" status="PASSED"/>
+      <test name="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testCharacterIsRelatedSuccessfully" size="unknown" result="0" status="PASSED"/>
       <test name="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharactersWithRelatedToNotFoundThrowException" size="unknown" result="0" status="PASSED"/>
       <test name="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharactersWithCharacterNotFoundThrowException" size="unknown" result="0" status="PASSED"/>
-      <test name="Whalar\Tests\Unit\Core\Application\Query\House\ListHouses\ListHousesQueryHandlerTest::testListHousesSuccessfully" size="unknown" result="0" status="PASSED"/>
-      <test name="Whalar\Tests\Unit\Core\Application\Query\Character\ListCharacters\ListCharactersQueryHandlerTest::testListCharactersSuccessfully" size="unknown" result="0" status="PASSED"/>
-      <test name="Whalar\Tests\Unit\Core\Application\Query\Character\ListCharacters\ListCharactersQueryHandlerTest::testListCharactersFilteringByNameSuccessfully" size="unknown" result="0" status="PASSED"/>
+      <test name="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharactersWithInvalidRelationTypeThrowException" size="unknown" result="0" status="PASSED"/>
+      <test name="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameIdShouldThrowActorAlreadyExistsException" size="unknown" result="0" status="PASSED"/>
+      <test name="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowActorAlreadyExistsException" size="unknown" result="0" status="PASSED"/>
+      <test name="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameNameShouldThrowActorAlreadyExistsException" size="unknown" result="0" status="PASSED"/>
+      <test name="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testActorIsCreatedSuccessfully" size="unknown" result="0" status="PASSED"/>
+      <test name="Whalar\Tests\Unit\Core\Application\Command\House\UpdateHouse\UpdateHouseCommandHandlerTest::testTryUpdateWithHouseIdNotFoundShouldThrowException" size="unknown" result="0" status="PASSED"/>
+      <test name="Whalar\Tests\Unit\Core\Application\Command\House\UpdateHouse\UpdateHouseCommandHandlerTest::testHouseIsUpdatedSuccessfully" size="unknown" result="0" status="PASSED"/>
       <test name="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException" size="unknown" result="0" status="PASSED"/>
       <test name="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testHouseIsCreatedSuccessfully" size="unknown" result="0" status="PASSED"/>
       <test name="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameNameShouldThrowHouseAlreadyExistsException" size="unknown" result="0" status="PASSED"/>
+      <test name="Whalar\Tests\Unit\Core\Application\Query\Character\ListCharacters\ListCharactersQueryHandlerTest::testListCharactersSuccessfully" size="unknown" result="0" status="PASSED"/>
+      <test name="Whalar\Tests\Unit\Core\Application\Query\Character\ListCharacters\ListCharactersQueryHandlerTest::testListCharactersFilteringByNameSuccessfully" size="unknown" result="0" status="PASSED"/>
+      <test name="Whalar\Tests\Unit\Core\Application\Query\House\ListHouses\ListHousesQueryHandlerTest::testListHousesSuccessfully" size="unknown" result="0" status="PASSED"/>
+      <test name="Whalar\Tests\Unit\Core\Application\Query\Character\RetrieveCharacter\RetrieveCharacterQueryHandlerTest::testRetrieveCharacterSuccessfully" size="unknown" result="0" status="PASSED"/>
+      <test name="Whalar\Tests\Unit\Core\Application\Query\Character\RetrieveCharacter\RetrieveCharacterQueryHandlerTest::testTryRetrieveCharacterNotFoundShouldThrowException" size="unknown" result="0" status="PASSED"/>
     </tests>
     <directory name="/">
       <totals>
-        <lines total="2122" comments="53" code="2069" executable="480" executed="479" percent="99.79"/>
-        <methods count="160" tested="159" percent="99.38"/>
+        <lines total="2268" comments="56" code="2212" executable="510" executed="510" percent="100.00"/>
+        <methods count="172" tested="172" percent="100.00"/>
         <functions count="0" tested="0" percent="0"/>
-        <classes count="48" tested="48" percent="100.00"/>
+        <classes count="52" tested="53" percent="101.92"/>
         <traits count="1" tested="0" percent="0.00"/>
       </totals>
       <directory name="Application">
         <totals>
-          <lines total="486" comments="11" code="475" executable="99" executed="99" percent="100.00"/>
-          <methods count="30" tested="30" percent="100.00"/>
+          <lines total="525" comments="12" code="513" executable="102" executed="102" percent="100.00"/>
+          <methods count="33" tested="33" percent="100.00"/>
           <functions count="0" tested="0" percent="0"/>
-          <classes count="17" tested="17" percent="100.00"/>
+          <classes count="19" tested="19" percent="100.00"/>
           <traits count="0" tested="0" percent="0"/>
         </totals>
         <directory name="Command">
           <totals>
-            <lines total="245" comments="7" code="238" executable="47" executed="47" percent="100.00"/>
-            <methods count="14" tested="14" percent="100.00"/>
+            <lines total="284" comments="8" code="276" executable="50" executed="50" percent="100.00"/>
+            <methods count="17" tested="17" percent="100.00"/>
             <functions count="0" tested="0" percent="0"/>
-            <classes count="8" tested="8" percent="100.00"/>
+            <classes count="10" tested="10" percent="100.00"/>
             <traits count="0" tested="0" percent="0"/>
           </totals>
           <directory name="Actor">
@@ -157,10 +159,10 @@
           </directory>
           <directory name="House">
             <totals>
-              <lines total="39" comments="1" code="38" executable="3" executed="3" percent="100.00"/>
-              <methods count="3" tested="3" percent="100.00"/>
+              <lines total="78" comments="2" code="76" executable="6" executed="6" percent="100.00"/>
+              <methods count="6" tested="6" percent="100.00"/>
               <functions count="0" tested="0" percent="0"/>
-              <classes count="2" tested="2" percent="100.00"/>
+              <classes count="4" tested="4" percent="100.00"/>
               <traits count="0" tested="0" percent="0"/>
             </totals>
             <directory name="CreateHouse">
@@ -181,6 +183,33 @@
                 </totals>
               </file>
               <file name="CreateHouseCommandHandler.php" href="Application/Command/House/CreateHouse/CreateHouseCommandHandler.php.xml">
+                <totals>
+                  <lines total="24" comments="1" code="23" executable="2" executed="2" percent="100.00"/>
+                  <methods count="2" tested="2" percent="100.00"/>
+                  <functions count="0" tested="0" percent="0"/>
+                  <classes count="1" tested="1" percent="100.00"/>
+                  <traits count="0" tested="0" percent="0"/>
+                </totals>
+              </file>
+            </directory>
+            <directory name="UpdateHouse">
+              <totals>
+                <lines total="39" comments="1" code="38" executable="3" executed="3" percent="100.00"/>
+                <methods count="3" tested="3" percent="100.00"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="2" tested="2" percent="100.00"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+              <file name="UpdateHouseCommand.php" href="Application/Command/House/UpdateHouse/UpdateHouseCommand.php.xml">
+                <totals>
+                  <lines total="15" comments="0" code="15" executable="1" executed="1" percent="100.00"/>
+                  <methods count="1" tested="1" percent="100.00"/>
+                  <functions count="0" tested="0" percent="0"/>
+                  <classes count="1" tested="1" percent="100.00"/>
+                  <traits count="0" tested="0" percent="0"/>
+                </totals>
+              </file>
+              <file name="UpdateHouseCommandHandler.php" href="Application/Command/House/UpdateHouse/UpdateHouseCommandHandler.php.xml">
                 <totals>
                   <lines total="24" comments="1" code="23" executable="2" executed="2" percent="100.00"/>
                   <methods count="2" tested="2" percent="100.00"/>
@@ -330,10 +359,10 @@
       </directory>
       <directory name="Domain">
         <totals>
-          <lines total="1636" comments="42" code="1594" executable="381" executed="380" percent="99.74"/>
-          <methods count="130" tested="129" percent="99.23"/>
+          <lines total="1743" comments="44" code="1699" executable="408" executed="408" percent="100.00"/>
+          <methods count="139" tested="139" percent="100.00"/>
           <functions count="0" tested="0" percent="0"/>
-          <classes count="31" tested="31" percent="100.00"/>
+          <classes count="33" tested="34" percent="103.03"/>
           <traits count="1" tested="0" percent="0.00"/>
         </totals>
         <directory name="Actor">
@@ -500,26 +529,26 @@
         </directory>
         <directory name="Character">
           <totals>
-            <lines total="567" comments="14" code="553" executable="135" executed="134" percent="99.26"/>
-            <methods count="47" tested="46" percent="97.87"/>
+            <lines total="567" comments="14" code="553" executable="135" executed="135" percent="100.00"/>
+            <methods count="47" tested="47" percent="100.00"/>
             <functions count="0" tested="0" percent="0"/>
-            <classes count="10" tested="9" percent="90.00"/>
+            <classes count="10" tested="10" percent="100.00"/>
             <traits count="0" tested="0" percent="0"/>
           </totals>
           <directory name="Aggregate">
             <totals>
-              <lines total="159" comments="5" code="154" executable="45" executed="44" percent="97.78"/>
-              <methods count="14" tested="13" percent="92.86"/>
+              <lines total="159" comments="5" code="154" executable="45" executed="45" percent="100.00"/>
+              <methods count="14" tested="14" percent="100.00"/>
               <functions count="0" tested="0" percent="0"/>
-              <classes count="1" tested="0" percent="0.00"/>
+              <classes count="1" tested="1" percent="100.00"/>
               <traits count="0" tested="0" percent="0"/>
             </totals>
             <file name="Character.php" href="Domain/Character/Aggregate/Character.php.xml">
               <totals>
-                <lines total="159" comments="5" code="154" executable="45" executed="44" percent="97.78"/>
-                <methods count="14" tested="13" percent="92.86"/>
+                <lines total="159" comments="5" code="154" executable="45" executed="45" percent="100.00"/>
+                <methods count="14" tested="14" percent="100.00"/>
                 <functions count="0" tested="0" percent="0"/>
-                <classes count="1" tested="0" percent="0.00"/>
+                <classes count="1" tested="1" percent="100.00"/>
                 <traits count="0" tested="0" percent="0"/>
               </totals>
             </file>
@@ -788,24 +817,24 @@
         </directory>
         <directory name="House">
           <totals>
-            <lines total="270" comments="8" code="262" executable="54" executed="54" percent="100.00"/>
-            <methods count="19" tested="19" percent="100.00"/>
+            <lines total="377" comments="10" code="367" executable="81" executed="81" percent="100.00"/>
+            <methods count="28" tested="28" percent="100.00"/>
             <functions count="0" tested="0" percent="0"/>
-            <classes count="6" tested="6" percent="100.00"/>
+            <classes count="8" tested="8" percent="100.00"/>
             <traits count="0" tested="0" percent="0"/>
           </totals>
           <directory name="Aggregate">
             <totals>
-              <lines total="69" comments="3" code="66" executable="11" executed="11" percent="100.00"/>
-              <methods count="6" tested="6" percent="100.00"/>
+              <lines total="77" comments="4" code="73" executable="13" executed="13" percent="100.00"/>
+              <methods count="7" tested="7" percent="100.00"/>
               <functions count="0" tested="0" percent="0"/>
               <classes count="1" tested="1" percent="100.00"/>
               <traits count="0" tested="0" percent="0"/>
             </totals>
             <file name="House.php" href="Domain/House/Aggregate/House.php.xml">
               <totals>
-                <lines total="69" comments="3" code="66" executable="11" executed="11" percent="100.00"/>
-                <methods count="6" tested="6" percent="100.00"/>
+                <lines total="77" comments="4" code="73" executable="13" executed="13" percent="100.00"/>
+                <methods count="7" tested="7" percent="100.00"/>
                 <functions count="0" tested="0" percent="0"/>
                 <classes count="1" tested="1" percent="100.00"/>
                 <traits count="0" tested="0" percent="0"/>
@@ -814,13 +843,22 @@
           </directory>
           <directory name="Event">
             <totals>
-              <lines total="68" comments="0" code="68" executable="21" executed="21" percent="100.00"/>
-              <methods count="6" tested="6" percent="100.00"/>
+              <lines total="136" comments="0" code="136" executable="42" executed="42" percent="100.00"/>
+              <methods count="12" tested="12" percent="100.00"/>
               <functions count="0" tested="0" percent="0"/>
-              <classes count="1" tested="1" percent="100.00"/>
+              <classes count="2" tested="2" percent="100.00"/>
               <traits count="0" tested="0" percent="0"/>
             </totals>
             <file name="HouseWasCreated.php" href="Domain/House/Event/HouseWasCreated.php.xml">
+              <totals>
+                <lines total="68" comments="0" code="68" executable="21" executed="21" percent="100.00"/>
+                <methods count="6" tested="6" percent="100.00"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="1" tested="1" percent="100.00"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+            <file name="HouseWasUpdated.php" href="Domain/House/Event/HouseWasUpdated.php.xml">
               <totals>
                 <lines total="68" comments="0" code="68" executable="21" executed="21" percent="100.00"/>
                 <methods count="6" tested="6" percent="100.00"/>
@@ -877,10 +915,10 @@
           </directory>
           <directory name="Service">
             <totals>
-              <lines total="65" comments="3" code="62" executable="10" executed="10" percent="100.00"/>
-              <methods count="5" tested="5" percent="100.00"/>
+              <lines total="96" comments="4" code="92" executable="14" executed="14" percent="100.00"/>
+              <methods count="7" tested="7" percent="100.00"/>
               <functions count="0" tested="0" percent="0"/>
-              <classes count="2" tested="2" percent="100.00"/>
+              <classes count="3" tested="3" percent="100.00"/>
               <traits count="0" tested="0" percent="0"/>
             </totals>
             <file name="HouseCreator.php" href="Domain/House/Service/HouseCreator.php.xml">
@@ -895,6 +933,15 @@
             <file name="HouseFinder.php" href="Domain/House/Service/HouseFinder.php.xml">
               <totals>
                 <lines total="30" comments="1" code="29" executable="5" executed="5" percent="100.00"/>
+                <methods count="2" tested="2" percent="100.00"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="1" tested="1" percent="100.00"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+            <file name="HouseUpdater.php" href="Domain/House/Service/HouseUpdater.php.xml">
+              <totals>
+                <lines total="31" comments="1" code="30" executable="4" executed="4" percent="100.00"/>
                 <methods count="2" tested="2" percent="100.00"/>
                 <functions count="0" tested="0" percent="0"/>
                 <classes count="1" tested="1" percent="100.00"/>

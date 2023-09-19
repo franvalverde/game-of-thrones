@@ -17,243 +17,243 @@
     </class>
     <coverage>
       <line nr="32">
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameNameShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithHouseNotFoundShouldThrowException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorNotFoundShouldThrowException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithoutActorsShouldThrowException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorAlreadyAssignedShouldThrowException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithoutActorsShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
       </line>
       <line nr="37">
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameNameShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithHouseNotFoundShouldThrowException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorNotFoundShouldThrowException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithoutActorsShouldThrowException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorAlreadyAssignedShouldThrowException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithoutActorsShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
       </line>
       <line nr="38">
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameNameShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithHouseNotFoundShouldThrowException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorNotFoundShouldThrowException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithoutActorsShouldThrowException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorAlreadyAssignedShouldThrowException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithoutActorsShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
       </line>
       <line nr="39">
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameNameShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithHouseNotFoundShouldThrowException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorNotFoundShouldThrowException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithoutActorsShouldThrowException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorAlreadyAssignedShouldThrowException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithoutActorsShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
       </line>
       <line nr="40">
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameNameShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithHouseNotFoundShouldThrowException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorNotFoundShouldThrowException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithoutActorsShouldThrowException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorAlreadyAssignedShouldThrowException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithoutActorsShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
       </line>
       <line nr="41">
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameNameShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithHouseNotFoundShouldThrowException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorNotFoundShouldThrowException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithoutActorsShouldThrowException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorAlreadyAssignedShouldThrowException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithoutActorsShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
       </line>
       <line nr="42">
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameNameShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithHouseNotFoundShouldThrowException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorNotFoundShouldThrowException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithoutActorsShouldThrowException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorAlreadyAssignedShouldThrowException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithoutActorsShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
       </line>
       <line nr="43">
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameNameShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithHouseNotFoundShouldThrowException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorNotFoundShouldThrowException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithoutActorsShouldThrowException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorAlreadyAssignedShouldThrowException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithoutActorsShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
       </line>
       <line nr="44">
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameNameShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithHouseNotFoundShouldThrowException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorAlreadyAssignedShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
       </line>
       <line nr="45">
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameNameShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithHouseNotFoundShouldThrowException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorAlreadyAssignedShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
       </line>
       <line nr="46">
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameNameShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithHouseNotFoundShouldThrowException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorAlreadyAssignedShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
       </line>
       <line nr="47">
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameNameShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithHouseNotFoundShouldThrowException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorNotFoundShouldThrowException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithoutActorsShouldThrowException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorAlreadyAssignedShouldThrowException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithoutActorsShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
       </line>
       <line nr="48">
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameNameShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithHouseNotFoundShouldThrowException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorNotFoundShouldThrowException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithoutActorsShouldThrowException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorAlreadyAssignedShouldThrowException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithoutActorsShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
       </line>
       <line nr="49">
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameNameShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithHouseNotFoundShouldThrowException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorNotFoundShouldThrowException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithoutActorsShouldThrowException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorAlreadyAssignedShouldThrowException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithoutActorsShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
       </line>
       <line nr="56">
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameNameShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithHouseNotFoundShouldThrowException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorNotFoundShouldThrowException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithoutActorsShouldThrowException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorAlreadyAssignedShouldThrowException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithoutActorsShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
       </line>
       <line nr="57">
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithoutActorsShouldThrowException"/>
       </line>
       <line nr="60">
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameNameShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithHouseNotFoundShouldThrowException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorNotFoundShouldThrowException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorAlreadyAssignedShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
       </line>
       <line nr="61">
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameNameShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithHouseNotFoundShouldThrowException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorNotFoundShouldThrowException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorAlreadyAssignedShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
       </line>
       <line nr="62">
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameNameShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithHouseNotFoundShouldThrowException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorNotFoundShouldThrowException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorAlreadyAssignedShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
       </line>
       <line nr="71">
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameNameShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithHouseNotFoundShouldThrowException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorNotFoundShouldThrowException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorAlreadyAssignedShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
       </line>
       <line nr="73">
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameNameShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithHouseNotFoundShouldThrowException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorAlreadyAssignedShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
       </line>
       <line nr="74">
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorAlreadyAssignedShouldThrowException"/>
       </line>
       <line nr="77">
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameNameShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithHouseNotFoundShouldThrowException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorAlreadyAssignedShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
       </line>
       <line nr="50">
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameNameShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithHouseNotFoundShouldThrowException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorNotFoundShouldThrowException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithoutActorsShouldThrowException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorAlreadyAssignedShouldThrowException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithoutActorsShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
       </line>
       <line nr="63">
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameNameShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithHouseNotFoundShouldThrowException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorNotFoundShouldThrowException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorAlreadyAssignedShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
       </line>
       <line nr="64">
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameNameShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithHouseNotFoundShouldThrowException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorNotFoundShouldThrowException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorAlreadyAssignedShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
       </line>
       <line nr="65">
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameNameShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithHouseNotFoundShouldThrowException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorNotFoundShouldThrowException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowCharacterAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithActorAlreadyAssignedShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterIsCreatedSuccessfully"/>
       </line>
     </coverage>
     <source>

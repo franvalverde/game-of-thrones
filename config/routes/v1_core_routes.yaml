@@ -36,6 +36,13 @@ core.rest.create_house.page:
   prefix: v1
   controller: 'Whalar\Core\Infrastructure\Delivery\Rest\V1\House\CreateHousePage'
 
+
+core.rest.update_house.page:
+  path: /houses/{id}
+  methods: PUT
+  prefix: v1
+  controller: 'Whalar\Core\Infrastructure\Delivery\Rest\V1\House\UpdateHousePage'
+
 core.rest.list_houses.page:
   path: /houses
   methods: GET

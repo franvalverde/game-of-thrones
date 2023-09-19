@@ -16,53 +16,53 @@
     </trait>
     <coverage>
       <line nr="22">
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testCharacterIsRelatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharacterToTheSameCharacterShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testCharacterIsRelatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharactersWithInvalidRelationTypeThrowException"/>
       </line>
       <line nr="23">
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testCharacterIsRelatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharacterToTheSameCharacterShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testCharacterIsRelatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharactersWithInvalidRelationTypeThrowException"/>
       </line>
       <line nr="24">
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testCharacterIsRelatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharacterToTheSameCharacterShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testCharacterIsRelatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharactersWithInvalidRelationTypeThrowException"/>
       </line>
       <line nr="25">
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testCharacterIsRelatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharacterToTheSameCharacterShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testCharacterIsRelatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharactersWithInvalidRelationTypeThrowException"/>
       </line>
       <line nr="26">
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testCharacterIsRelatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharacterToTheSameCharacterShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testCharacterIsRelatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharactersWithInvalidRelationTypeThrowException"/>
       </line>
       <line nr="27">
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testCharacterIsRelatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharacterToTheSameCharacterShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testCharacterIsRelatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharactersWithInvalidRelationTypeThrowException"/>
       </line>
       <line nr="28">
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testCharacterIsRelatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharacterToTheSameCharacterShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testCharacterIsRelatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharactersWithInvalidRelationTypeThrowException"/>
       </line>
       <line nr="29">
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testCharacterIsRelatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharacterToTheSameCharacterShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testCharacterIsRelatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharactersWithInvalidRelationTypeThrowException"/>
       </line>
       <line nr="30">
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testCharacterIsRelatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharacterToTheSameCharacterShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testCharacterIsRelatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharactersWithInvalidRelationTypeThrowException"/>
       </line>
       <line nr="31">
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testCharacterIsRelatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharacterToTheSameCharacterShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testCharacterIsRelatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharactersWithInvalidRelationTypeThrowException"/>
       </line>
       <line nr="37">
@@ -96,8 +96,8 @@
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testCharacterIsRelatedSuccessfully"/>
       </line>
       <line nr="32">
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testCharacterIsRelatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharacterToTheSameCharacterShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testCharacterIsRelatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharactersWithInvalidRelationTypeThrowException"/>
       </line>
       <line nr="46">

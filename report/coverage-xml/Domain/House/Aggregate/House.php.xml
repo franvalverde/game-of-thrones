@@ -2,75 +2,93 @@
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
   <file name="House.php" path="/Domain/House/Aggregate">
     <totals>
-      <lines total="69" comments="3" code="66" executable="11" executed="11" percent="100.00"/>
-      <methods count="6" tested="6" percent="100.00"/>
+      <lines total="77" comments="4" code="73" executable="13" executed="13" percent="100.00"/>
+      <methods count="7" tested="7" percent="100.00"/>
       <functions count="0" tested="0" percent="0"/>
       <classes count="1" tested="1" percent="100.00"/>
       <traits count="0" tested="0" percent="0"/>
     </totals>
-    <class name="Whalar\Core\Domain\House\Aggregate\House" start="18" executable="11" executed="11" crap="6">
+    <class name="Whalar\Core\Domain\House\Aggregate\House" start="19" executable="13" executed="13" crap="7">
       <namespace name="Whalar\Core\Domain\House\Aggregate"/>
-      <method name="__construct" signature="__construct(Whalar\Shared\Domain\ValueObject\AggregateId $id, Whalar\Shared\Domain\ValueObject\Name $name)" start="30" end="33" crap="1" executable="1" executed="1" coverage="100"/>
-      <method name="create" signature="create(Whalar\Shared\Domain\ValueObject\AggregateId $id, Whalar\Shared\Domain\ValueObject\Name $name): self" start="36" end="43" crap="1" executable="3" executed="3" coverage="100"/>
-      <method name="id" signature="id(): Whalar\Shared\Domain\ValueObject\AggregateId" start="45" end="48" crap="1" executable="1" executed="1" coverage="100"/>
-      <method name="name" signature="name(): Whalar\Shared\Domain\ValueObject\Name" start="50" end="53" crap="1" executable="1" executed="1" coverage="100"/>
-      <method name="characters" signature="characters(): Doctrine\Common\Collections\Collection" start="56" end="59" crap="1" executable="1" executed="1" coverage="100"/>
-      <method name="jsonSerialize" signature="jsonSerialize(): array" start="61" end="67" crap="1" executable="4" executed="4" coverage="100"/>
+      <method name="__construct" signature="__construct(Whalar\Shared\Domain\ValueObject\AggregateId $id, Whalar\Shared\Domain\ValueObject\Name $name)" start="31" end="34" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="create" signature="create(Whalar\Shared\Domain\ValueObject\AggregateId $id, Whalar\Shared\Domain\ValueObject\Name $name): self" start="37" end="44" crap="1" executable="3" executed="3" coverage="100"/>
+      <method name="id" signature="id(): Whalar\Shared\Domain\ValueObject\AggregateId" start="46" end="49" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="name" signature="name(): Whalar\Shared\Domain\ValueObject\Name" start="51" end="54" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="characters" signature="characters(): Doctrine\Common\Collections\Collection" start="57" end="60" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="update" signature="update(Whalar\Shared\Domain\ValueObject\Name $name): void" start="63" end="67" crap="1" executable="2" executed="2" coverage="100"/>
+      <method name="jsonSerialize" signature="jsonSerialize(): array" start="69" end="75" crap="1" executable="4" executed="4" coverage="100"/>
     </class>
     <coverage>
-      <line nr="32">
+      <line nr="33">
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Query\House\ListHouses\ListHousesQueryHandlerTest::testListHousesSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\UpdateHouse\UpdateHouseCommandHandlerTest::testTryUpdateWithHouseIdNotFoundShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\UpdateHouse\UpdateHouseCommandHandlerTest::testHouseIsUpdatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameNameShouldThrowHouseAlreadyExistsException"/>
-      </line>
-      <line nr="38">
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Query\House\ListHouses\ListHousesQueryHandlerTest::testListHousesSuccessfully"/>
+      </line>
+      <line nr="39">
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\UpdateHouse\UpdateHouseCommandHandlerTest::testTryUpdateWithHouseIdNotFoundShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\UpdateHouse\UpdateHouseCommandHandlerTest::testHouseIsUpdatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameNameShouldThrowHouseAlreadyExistsException"/>
-      </line>
-      <line nr="40">
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Query\House\ListHouses\ListHousesQueryHandlerTest::testListHousesSuccessfully"/>
+      </line>
+      <line nr="41">
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\UpdateHouse\UpdateHouseCommandHandlerTest::testTryUpdateWithHouseIdNotFoundShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\UpdateHouse\UpdateHouseCommandHandlerTest::testHouseIsUpdatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameNameShouldThrowHouseAlreadyExistsException"/>
-      </line>
-      <line nr="42">
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Query\House\ListHouses\ListHousesQueryHandlerTest::testListHousesSuccessfully"/>
+      </line>
+      <line nr="43">
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\UpdateHouse\UpdateHouseCommandHandlerTest::testTryUpdateWithHouseIdNotFoundShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\UpdateHouse\UpdateHouseCommandHandlerTest::testHouseIsUpdatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameNameShouldThrowHouseAlreadyExistsException"/>
-      </line>
-      <line nr="47">
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Query\House\ListHouses\ListHousesQueryHandlerTest::testListHousesSuccessfully"/>
+      </line>
+      <line nr="48">
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testCharacterThatBelongsToAHouseIsCreatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\UpdateHouse\UpdateHouseCommandHandlerTest::testTryUpdateWithHouseIdNotFoundShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\UpdateHouse\UpdateHouseCommandHandlerTest::testHouseIsUpdatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameIdShouldThrowHouseAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameNameShouldThrowHouseAlreadyExistsException"/>
-      </line>
-      <line nr="52">
         <covered by="Whalar\Tests\Unit\Core\Application\Query\House\ListHouses\ListHousesQueryHandlerTest::testListHousesSuccessfully"/>
+      </line>
+      <line nr="53">
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\UpdateHouse\UpdateHouseCommandHandlerTest::testHouseIsUpdatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testHouseIsCreatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testTryCreateWithSameNameShouldThrowHouseAlreadyExistsException"/>
-      </line>
-      <line nr="58">
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testHouseIsCreatedSuccessfully"/>
-      </line>
-      <line nr="64">
         <covered by="Whalar\Tests\Unit\Core\Application\Query\House\ListHouses\ListHousesQueryHandlerTest::testListHousesSuccessfully"/>
+      </line>
+      <line nr="59">
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\CreateHouse\CreateHouseCommandHandlerTest::testHouseIsCreatedSuccessfully"/>
       </line>
       <line nr="65">
-        <covered by="Whalar\Tests\Unit\Core\Application\Query\House\ListHouses\ListHousesQueryHandlerTest::testListHousesSuccessfully"/>
-      </line>
-      <line nr="63">
-        <covered by="Whalar\Tests\Unit\Core\Application\Query\House\ListHouses\ListHousesQueryHandlerTest::testListHousesSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\UpdateHouse\UpdateHouseCommandHandlerTest::testHouseIsUpdatedSuccessfully"/>
       </line>
       <line nr="66">
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\UpdateHouse\UpdateHouseCommandHandlerTest::testHouseIsUpdatedSuccessfully"/>
+      </line>
+      <line nr="72">
+        <covered by="Whalar\Tests\Unit\Core\Application\Query\House\ListHouses\ListHousesQueryHandlerTest::testListHousesSuccessfully"/>
+      </line>
+      <line nr="73">
+        <covered by="Whalar\Tests\Unit\Core\Application\Query\House\ListHouses\ListHousesQueryHandlerTest::testListHousesSuccessfully"/>
+      </line>
+      <line nr="71">
+        <covered by="Whalar\Tests\Unit\Core\Application\Query\House\ListHouses\ListHousesQueryHandlerTest::testListHousesSuccessfully"/>
+      </line>
+      <line nr="74">
         <covered by="Whalar\Tests\Unit\Core\Application\Query\House\ListHouses\ListHousesQueryHandlerTest::testListHousesSuccessfully"/>
       </line>
     </coverage>
@@ -135,29 +153,35 @@
       <line no="13">
         <token name="T_USE">use</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_NAME_QUALIFIED">Whalar\Core\Infrastructure\Delivery\Rest\V1\House\CreateHousePage</token>
+        <token name="T_NAME_QUALIFIED">Whalar\Core\Domain\House\Event\HouseWasUpdated</token>
         <token name="T_SEMICOLON">;</token>
       </line>
       <line no="14">
         <token name="T_USE">use</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_NAME_QUALIFIED">Whalar\Shared\Domain\ValueObject\AggregateId</token>
+        <token name="T_NAME_QUALIFIED">Whalar\Core\Infrastructure\Delivery\Rest\V1\House\CreateHousePage</token>
         <token name="T_SEMICOLON">;</token>
       </line>
       <line no="15">
         <token name="T_USE">use</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_NAME_QUALIFIED">Whalar\Shared\Domain\ValueObject\Name</token>
+        <token name="T_NAME_QUALIFIED">Whalar\Shared\Domain\ValueObject\AggregateId</token>
         <token name="T_SEMICOLON">;</token>
       </line>
       <line no="16">
         <token name="T_USE">use</token>
         <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">Whalar\Shared\Domain\ValueObject\Name</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="17">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
         <token name="T_NAME_QUALIFIED">Whalar\Shared\Infrastructure\Messaging\DomainEventPublisher</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="17"/>
-      <line no="18">
+      <line no="18"/>
+      <line no="19">
         <token name="T_ATTRIBUTE">#[</token>
         <token name="T_STRING">ApiResource</token>
         <token name="T_OPEN_BRACKET">(</token>
@@ -166,14 +190,14 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_SQUARE">[</token>
       </line>
-      <line no="19">
+      <line no="20">
         <token name="T_WHITESPACE">    </token>
         <token name="T_NEW">new</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">Post</token>
         <token name="T_OPEN_BRACKET">(</token>
       </line>
-      <line no="20">
+      <line no="21">
         <token name="T_WHITESPACE">        </token>
         <token name="T_STRING">uriTemplate</token>
         <token name="T_COLON">:</token>
@@ -181,7 +205,7 @@
         <token name="T_CONSTANT_ENCAPSED_STRING">'/houses'</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="21">
+      <line no="22">
         <token name="T_WHITESPACE">        </token>
         <token name="T_STRING">controller</token>
         <token name="T_COLON">:</token>
@@ -191,7 +215,7 @@
         <token name="T_CLASS">class</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="22">
+      <line no="23">
         <token name="T_WHITESPACE">        </token>
         <token name="T_STRING">name</token>
         <token name="T_COLON">:</token>
@@ -199,17 +223,17 @@
         <token name="T_CONSTANT_ENCAPSED_STRING">'Create a house'</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="23">
+      <line no="24">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="24">
+      <line no="25">
         <token name="T_CLOSE_SQUARE">]</token>
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_CLOSE_SQUARE">]</token>
       </line>
-      <line no="25">
+      <line no="26">
         <token name="T_CLASS">class</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">House</token>
@@ -218,14 +242,14 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_NAME_FULLY_QUALIFIED">\JsonSerializable</token>
       </line>
-      <line no="26">
+      <line no="27">
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="27">
+      <line no="28">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/** @var Collection&lt;int, Character&gt; */</token>
       </line>
-      <line no="28">
+      <line no="29">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PRIVATE">private</token>
         <token name="T_WHITESPACE"> </token>
@@ -234,8 +258,8 @@
         <token name="T_VARIABLE">$characters</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="29"/>
-      <line no="30">
+      <line no="30"/>
+      <line no="31">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PRIVATE">private</token>
         <token name="T_WHITESPACE"> </token>
@@ -252,18 +276,16 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_PRIVATE">private</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_READONLY">readonly</token>
-        <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">Name</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_VARIABLE">$name</token>
         <token name="T_CLOSE_BRACKET">)</token>
       </line>
-      <line no="31">
+      <line no="32">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="32">
+      <line no="33">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -278,16 +300,16 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="33">
+      <line no="34">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="34"/>
-      <line no="35">
+      <line no="35"/>
+      <line no="36">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/** @throws \Throwable */</token>
       </line>
-      <line no="36">
+      <line no="37">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -310,11 +332,11 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">self</token>
       </line>
-      <line no="37">
+      <line no="38">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="38">
+      <line no="39">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$house</token>
         <token name="T_WHITESPACE"> </token>
@@ -331,8 +353,8 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="39"/>
-      <line no="40">
+      <line no="40"/>
+      <line no="41">
         <token name="T_WHITESPACE">        </token>
         <token name="T_STRING">DomainEventPublisher</token>
         <token name="T_DOUBLE_COLON">::</token>
@@ -362,20 +384,20 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="41"/>
-      <line no="42">
+      <line no="42"/>
+      <line no="43">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_VARIABLE">$house</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="43">
+      <line no="44">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="44"/>
-      <line no="45">
+      <line no="45"/>
+      <line no="46">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -388,11 +410,11 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">AggregateId</token>
       </line>
-      <line no="46">
+      <line no="47">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="47">
+      <line no="48">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -401,12 +423,12 @@
         <token name="T_STRING">id</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="48">
+      <line no="49">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="49"/>
-      <line no="50">
+      <line no="50"/>
+      <line no="51">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -419,11 +441,11 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">Name</token>
       </line>
-      <line no="51">
+      <line no="52">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="52">
+      <line no="53">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -432,16 +454,16 @@
         <token name="T_STRING">name</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="53">
+      <line no="54">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="54"/>
-      <line no="55">
+      <line no="55"/>
+      <line no="56">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/** @return Collection&lt;int, Character&gt; */</token>
       </line>
-      <line no="56">
+      <line no="57">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -454,11 +476,11 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">Collection</token>
       </line>
-      <line no="57">
+      <line no="58">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="58">
+      <line no="59">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -467,12 +489,86 @@
         <token name="T_STRING">characters</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="59">
+      <line no="60">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="60"/>
-      <line no="61">
+      <line no="61"/>
+      <line no="62">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/** @throws \Throwable */</token>
+      </line>
+      <line no="63">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">update</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">Name</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$name</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">void</token>
+      </line>
+      <line no="64">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="65">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">name</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$name</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="66">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_STRING">DomainEventPublisher</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">instance</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">publish</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">HouseWasUpdated</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">from</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">id</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">id</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$name</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">value</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="67">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="68"/>
+      <line no="69">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -485,17 +581,17 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_ARRAY">array</token>
       </line>
-      <line no="62">
+      <line no="70">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="63">
+      <line no="71">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_SQUARE">[</token>
       </line>
-      <line no="64">
+      <line no="72">
         <token name="T_WHITESPACE">            </token>
         <token name="T_CONSTANT_ENCAPSED_STRING">'id'</token>
         <token name="T_WHITESPACE"> </token>
@@ -508,7 +604,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="65">
+      <line no="73">
         <token name="T_WHITESPACE">            </token>
         <token name="T_CONSTANT_ENCAPSED_STRING">'name'</token>
         <token name="T_WHITESPACE"> </token>
@@ -521,19 +617,19 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="66">
+      <line no="74">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_SQUARE">]</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="67">
+      <line no="75">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="68">
+      <line no="76">
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="69"/>
+      <line no="77"/>
     </source>
   </file>
 </phpunit>

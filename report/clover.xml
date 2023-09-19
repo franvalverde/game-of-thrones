@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1695112011">
-  <project timestamp="1695112011">
+<coverage generated="1695114411">
+  <project timestamp="1695114411">
     <file name="/var/www/html/src/Core/Application/Command/Actor/CreateActor/CreateActorCommand.php">
       <class name="Whalar\Core\Application\Command\Actor\CreateActor\CreateActorCommand" namespace="global">
         <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
@@ -108,6 +108,24 @@
       <line num="16" type="stmt" count="3"/>
       <line num="19" type="method" name="__invoke" visibility="public" complexity="1" crap="1" count="3"/>
       <line num="21" type="stmt" count="3"/>
+      <metrics loc="24" ncloc="23" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
+    </file>
+    <file name="/var/www/html/src/Core/Application/Command/House/UpdateHouse/UpdateHouseCommand.php">
+      <class name="Whalar\Core\Application\Command\House\UpdateHouse\UpdateHouseCommand" namespace="global">
+        <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+      </class>
+      <line num="11" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="13" type="stmt" count="2"/>
+      <metrics loc="15" ncloc="15" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+    </file>
+    <file name="/var/www/html/src/Core/Application/Command/House/UpdateHouse/UpdateHouseCommandHandler.php">
+      <class name="Whalar\Core\Application\Command\House\UpdateHouse\UpdateHouseCommandHandler" namespace="global">
+        <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
+      </class>
+      <line num="14" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="16" type="stmt" count="2"/>
+      <line num="19" type="method" name="__invoke" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="21" type="stmt" count="2"/>
       <metrics loc="24" ncloc="23" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
     </file>
     <file name="/var/www/html/src/Core/Application/Query/Character/ListCharacters/ListCharactersQuery.php">
@@ -444,7 +462,7 @@
     </file>
     <file name="/var/www/html/src/Core/Domain/Character/Aggregate/Character.php">
       <class name="Whalar\Core\Domain\Character\Aggregate\Character" namespace="global">
-        <metrics complexity="17" methods="14" coveredmethods="13" conditionals="0" coveredconditionals="0" statements="45" coveredstatements="44" elements="59" coveredelements="57"/>
+        <metrics complexity="17" methods="14" coveredmethods="14" conditionals="0" coveredconditionals="0" statements="45" coveredstatements="45" elements="59" coveredelements="59"/>
       </class>
       <line num="32" type="method" name="__construct" visibility="private" complexity="1" crap="1" count="13"/>
       <line num="43" type="stmt" count="13"/>
@@ -491,8 +509,8 @@
       <line num="129" type="stmt" count="4"/>
       <line num="133" type="method" name="actors" visibility="public" complexity="1" crap="1" count="13"/>
       <line num="135" type="stmt" count="13"/>
-      <line num="139" type="method" name="relates" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="141" type="stmt" count="0"/>
+      <line num="139" type="method" name="relates" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="141" type="stmt" count="1"/>
       <line num="144" type="method" name="jsonSerialize" visibility="public" complexity="3" crap="3" count="3"/>
       <line num="146" type="stmt" count="3"/>
       <line num="147" type="stmt" count="3"/>
@@ -505,7 +523,7 @@
       <line num="154" type="stmt" count="3"/>
       <line num="155" type="stmt" count="3"/>
       <line num="156" type="stmt" count="3"/>
-      <metrics loc="159" ncloc="154" classes="1" methods="14" coveredmethods="13" conditionals="0" coveredconditionals="0" statements="45" coveredstatements="44" elements="59" coveredelements="57"/>
+      <metrics loc="159" ncloc="154" classes="1" methods="14" coveredmethods="14" conditionals="0" coveredconditionals="0" statements="45" coveredstatements="45" elements="59" coveredelements="59"/>
     </file>
     <file name="/var/www/html/src/Core/Domain/Character/Event/CharacterWasCreated.php">
       <class name="Whalar\Core\Domain\Character\Event\CharacterWasCreated" namespace="global">
@@ -837,42 +855,45 @@
     </file>
     <file name="/var/www/html/src/Core/Domain/House/Aggregate/House.php">
       <class name="Whalar\Core\Domain\House\Aggregate\House" namespace="global">
-        <metrics complexity="6" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="11" elements="17" coveredelements="17"/>
+        <metrics complexity="7" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="20" coveredelements="20"/>
       </class>
-      <line num="30" type="method" name="__construct" visibility="private" complexity="1" crap="1" count="5"/>
-      <line num="32" type="stmt" count="5"/>
-      <line num="36" type="method" name="create" visibility="public" complexity="1" crap="1" count="5"/>
-      <line num="38" type="stmt" count="5"/>
-      <line num="40" type="stmt" count="5"/>
-      <line num="42" type="stmt" count="5"/>
-      <line num="45" type="method" name="id" visibility="public" complexity="1" crap="1" count="5"/>
-      <line num="47" type="stmt" count="5"/>
-      <line num="50" type="method" name="name" visibility="public" complexity="1" crap="1" count="3"/>
-      <line num="52" type="stmt" count="3"/>
-      <line num="56" type="method" name="characters" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="58" type="stmt" count="1"/>
-      <line num="61" type="method" name="jsonSerialize" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="63" type="stmt" count="1"/>
-      <line num="64" type="stmt" count="1"/>
+      <line num="31" type="method" name="__construct" visibility="private" complexity="1" crap="1" count="7"/>
+      <line num="33" type="stmt" count="7"/>
+      <line num="37" type="method" name="create" visibility="public" complexity="1" crap="1" count="7"/>
+      <line num="39" type="stmt" count="7"/>
+      <line num="41" type="stmt" count="7"/>
+      <line num="43" type="stmt" count="7"/>
+      <line num="46" type="method" name="id" visibility="public" complexity="1" crap="1" count="7"/>
+      <line num="48" type="stmt" count="7"/>
+      <line num="51" type="method" name="name" visibility="public" complexity="1" crap="1" count="4"/>
+      <line num="53" type="stmt" count="4"/>
+      <line num="57" type="method" name="characters" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="59" type="stmt" count="1"/>
+      <line num="63" type="method" name="update" visibility="public" complexity="1" crap="1" count="1"/>
       <line num="65" type="stmt" count="1"/>
       <line num="66" type="stmt" count="1"/>
-      <metrics loc="69" ncloc="66" classes="1" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="11" elements="17" coveredelements="17"/>
+      <line num="69" type="method" name="jsonSerialize" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="71" type="stmt" count="1"/>
+      <line num="72" type="stmt" count="1"/>
+      <line num="73" type="stmt" count="1"/>
+      <line num="74" type="stmt" count="1"/>
+      <metrics loc="77" ncloc="73" classes="1" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="20" coveredelements="20"/>
     </file>
     <file name="/var/www/html/src/Core/Domain/House/Event/HouseWasCreated.php">
       <class name="Whalar\Core\Domain\House\Event\HouseWasCreated" namespace="global">
         <metrics complexity="6" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="21" elements="27" coveredelements="27"/>
       </class>
-      <line num="20" type="method" name="from" visibility="public" complexity="1" crap="1" count="5"/>
-      <line num="22" type="stmt" count="5"/>
-      <line num="24" type="stmt" count="5"/>
-      <line num="25" type="stmt" count="5"/>
-      <line num="26" type="stmt" count="5"/>
-      <line num="27" type="stmt" count="5"/>
-      <line num="28" type="stmt" count="5"/>
-      <line num="29" type="stmt" count="5"/>
-      <line num="30" type="stmt" count="5"/>
-      <line num="31" type="stmt" count="5"/>
-      <line num="32" type="stmt" count="5"/>
+      <line num="20" type="method" name="from" visibility="public" complexity="1" crap="1" count="7"/>
+      <line num="22" type="stmt" count="7"/>
+      <line num="24" type="stmt" count="7"/>
+      <line num="25" type="stmt" count="7"/>
+      <line num="26" type="stmt" count="7"/>
+      <line num="27" type="stmt" count="7"/>
+      <line num="28" type="stmt" count="7"/>
+      <line num="29" type="stmt" count="7"/>
+      <line num="30" type="stmt" count="7"/>
+      <line num="31" type="stmt" count="7"/>
+      <line num="32" type="stmt" count="7"/>
       <line num="35" type="method" name="messageAggregateId" visibility="public" complexity="1" crap="1" count="1"/>
       <line num="37" type="stmt" count="1"/>
       <line num="40" type="method" name="messageAggregateName" visibility="public" complexity="1" crap="1" count="1"/>
@@ -881,14 +902,47 @@
       <line num="47" type="stmt" count="1"/>
       <line num="50" type="method" name="name" visibility="public" complexity="1" crap="1" count="1"/>
       <line num="52" type="stmt" count="1"/>
-      <line num="55" type="method" name="setupPayload" visibility="protected" complexity="1" crap="1" count="5"/>
-      <line num="57" type="stmt" count="5"/>
-      <line num="59" type="stmt" count="5"/>
-      <line num="60" type="stmt" count="5"/>
-      <line num="61" type="stmt" count="5"/>
-      <line num="63" type="stmt" count="5"/>
-      <line num="64" type="stmt" count="5"/>
-      <line num="65" type="stmt" count="5"/>
+      <line num="55" type="method" name="setupPayload" visibility="protected" complexity="1" crap="1" count="7"/>
+      <line num="57" type="stmt" count="7"/>
+      <line num="59" type="stmt" count="7"/>
+      <line num="60" type="stmt" count="7"/>
+      <line num="61" type="stmt" count="7"/>
+      <line num="63" type="stmt" count="7"/>
+      <line num="64" type="stmt" count="7"/>
+      <line num="65" type="stmt" count="7"/>
+      <metrics loc="68" ncloc="68" classes="1" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="21" elements="27" coveredelements="27"/>
+    </file>
+    <file name="/var/www/html/src/Core/Domain/House/Event/HouseWasUpdated.php">
+      <class name="Whalar\Core\Domain\House\Event\HouseWasUpdated" namespace="global">
+        <metrics complexity="6" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="21" elements="27" coveredelements="27"/>
+      </class>
+      <line num="20" type="method" name="from" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="22" type="stmt" count="1"/>
+      <line num="24" type="stmt" count="1"/>
+      <line num="25" type="stmt" count="1"/>
+      <line num="26" type="stmt" count="1"/>
+      <line num="27" type="stmt" count="1"/>
+      <line num="28" type="stmt" count="1"/>
+      <line num="29" type="stmt" count="1"/>
+      <line num="30" type="stmt" count="1"/>
+      <line num="31" type="stmt" count="1"/>
+      <line num="32" type="stmt" count="1"/>
+      <line num="35" type="method" name="messageAggregateId" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="37" type="stmt" count="1"/>
+      <line num="40" type="method" name="messageAggregateName" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="42" type="stmt" count="1"/>
+      <line num="45" type="method" name="houseId" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="47" type="stmt" count="1"/>
+      <line num="50" type="method" name="name" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="52" type="stmt" count="1"/>
+      <line num="55" type="method" name="setupPayload" visibility="protected" complexity="1" crap="1" count="1"/>
+      <line num="57" type="stmt" count="1"/>
+      <line num="59" type="stmt" count="1"/>
+      <line num="60" type="stmt" count="1"/>
+      <line num="61" type="stmt" count="1"/>
+      <line num="63" type="stmt" count="1"/>
+      <line num="64" type="stmt" count="1"/>
+      <line num="65" type="stmt" count="1"/>
       <metrics loc="68" ncloc="68" classes="1" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="21" elements="27" coveredelements="27"/>
     </file>
     <file name="/var/www/html/src/Core/Domain/House/Exception/HouseAlreadyExistsException.php">
@@ -908,13 +962,13 @@
       <class name="Whalar\Core\Domain\House\Exception\HouseNotFoundException" namespace="global">
         <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="7" coveredelements="7"/>
       </class>
-      <line num="12" type="method" name="from" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="14" type="stmt" count="1"/>
-      <line num="15" type="stmt" count="1"/>
-      <line num="16" type="stmt" count="1"/>
-      <line num="17" type="stmt" count="1"/>
-      <line num="18" type="stmt" count="1"/>
-      <line num="19" type="stmt" count="1"/>
+      <line num="12" type="method" name="from" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="14" type="stmt" count="2"/>
+      <line num="15" type="stmt" count="2"/>
+      <line num="16" type="stmt" count="2"/>
+      <line num="17" type="stmt" count="2"/>
+      <line num="18" type="stmt" count="2"/>
+      <line num="19" type="stmt" count="2"/>
       <metrics loc="22" ncloc="21" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="7" coveredelements="7"/>
     </file>
     <file name="/var/www/html/src/Core/Domain/House/Repository/HouseRepository.php">
@@ -938,15 +992,27 @@
       <class name="Whalar\Core\Domain\House\Service\HouseFinder" namespace="global">
         <metrics complexity="3" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="7" coveredelements="7"/>
       </class>
-      <line num="14" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="8"/>
-      <line num="16" type="stmt" count="8"/>
-      <line num="19" type="method" name="ofIdOrFail" visibility="public" complexity="2" crap="2" count="2"/>
-      <line num="21" type="stmt" count="2"/>
-      <line num="23" type="stmt" count="2"/>
-      <line num="24" type="stmt" count="1"/>
-      <line num="27" type="stmt" count="1"/>
+      <line num="14" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="10"/>
+      <line num="16" type="stmt" count="10"/>
+      <line num="19" type="method" name="ofIdOrFail" visibility="public" complexity="2" crap="2" count="4"/>
+      <line num="21" type="stmt" count="4"/>
+      <line num="23" type="stmt" count="4"/>
+      <line num="24" type="stmt" count="2"/>
+      <line num="27" type="stmt" count="2"/>
       <metrics loc="30" ncloc="29" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="7" coveredelements="7"/>
     </file>
-    <metrics files="53" loc="2122" ncloc="2069" classes="49" methods="160" coveredmethods="159" conditionals="0" coveredconditionals="0" statements="480" coveredstatements="479" elements="640" coveredelements="638"/>
+    <file name="/var/www/html/src/Core/Domain/House/Service/HouseUpdater.php">
+      <class name="Whalar\Core\Domain\House\Service\HouseUpdater" namespace="global">
+        <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="6" coveredelements="6"/>
+      </class>
+      <line num="16" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="18" type="stmt" count="2"/>
+      <line num="22" type="method" name="execute" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="24" type="stmt" count="2"/>
+      <line num="26" type="stmt" count="1"/>
+      <line num="28" type="stmt" count="1"/>
+      <metrics loc="31" ncloc="30" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="6" coveredelements="6"/>
+    </file>
+    <metrics files="57" loc="2268" ncloc="2212" classes="53" methods="172" coveredmethods="172" conditionals="0" coveredconditionals="0" statements="510" coveredstatements="510" elements="682" coveredelements="682"/>
   </project>
 </coverage>

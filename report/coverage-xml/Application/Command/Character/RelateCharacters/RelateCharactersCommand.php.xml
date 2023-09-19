@@ -14,11 +14,11 @@
     </class>
     <coverage>
       <line nr="17">
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testCharacterIsRelatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharacterToTheSameCharacterShouldThrowException"/>
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharactersWithInvalidRelationTypeThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testCharacterIsRelatedSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharactersWithRelatedToNotFoundThrowException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharactersWithCharacterNotFoundThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharactersWithInvalidRelationTypeThrowException"/>
       </line>
     </coverage>
     <source>

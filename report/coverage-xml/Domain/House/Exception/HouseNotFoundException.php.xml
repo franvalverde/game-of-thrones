@@ -15,21 +15,27 @@
     <coverage>
       <line nr="14">
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithHouseNotFoundShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\UpdateHouse\UpdateHouseCommandHandlerTest::testTryUpdateWithHouseIdNotFoundShouldThrowException"/>
       </line>
       <line nr="15">
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithHouseNotFoundShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\UpdateHouse\UpdateHouseCommandHandlerTest::testTryUpdateWithHouseIdNotFoundShouldThrowException"/>
       </line>
       <line nr="16">
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithHouseNotFoundShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\UpdateHouse\UpdateHouseCommandHandlerTest::testTryUpdateWithHouseIdNotFoundShouldThrowException"/>
       </line>
       <line nr="17">
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithHouseNotFoundShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\UpdateHouse\UpdateHouseCommandHandlerTest::testTryUpdateWithHouseIdNotFoundShouldThrowException"/>
       </line>
       <line nr="18">
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithHouseNotFoundShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\UpdateHouse\UpdateHouseCommandHandlerTest::testTryUpdateWithHouseIdNotFoundShouldThrowException"/>
       </line>
       <line nr="19">
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommandHandlerTest::testTryCreateWithHouseNotFoundShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\House\UpdateHouse\UpdateHouseCommandHandlerTest::testTryUpdateWithHouseIdNotFoundShouldThrowException"/>
       </line>
     </coverage>
     <source>
