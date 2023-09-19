@@ -1,0 +1,30 @@
+{
+  "unversionedId": "getting-started/theme-options",
+  "id": "getting-started/theme-options",
+  "title": "Theme Options",
+  "description": "primaryColor (string, hex/rgba value)",
+  "source": "@site/docs/getting-started/theme-options.md",
+  "sourceDirName": "getting-started",
+  "slug": "/getting-started/theme-options",
+  "permalink": "/docs/getting-started/theme-options",
+  "draft": false,
+  "editUrl": "https://github.com/rohit-gohri/redocusaurus/edit/main/website/docs/getting-started/theme-options.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "Theme Options",
+    "sidebar_position": 2,
+    "author": "Rohit Gohri",
+    "author_url": "https://rohit.page"
+  },
+  "sidebar": "defaultSidebar",
+  "previous": {
+    "title": "Plugin Options",
+    "permalink": "/docs/getting-started/plugin-options"
+  },
+  "next": {
+    "title": "Schema Imports",
+    "permalink": "/docs/guides/schema-imports"
+  }
+}

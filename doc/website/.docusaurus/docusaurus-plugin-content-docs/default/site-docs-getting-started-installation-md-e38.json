@@ -1,0 +1,30 @@
+{
+  "unversionedId": "getting-started/Installation",
+  "id": "getting-started/Installation",
+  "title": "Installation",
+  "description": "1. Install redocusaurus:",
+  "source": "@site/docs/getting-started/Installation.md",
+  "sourceDirName": "getting-started",
+  "slug": "/getting-started/Installation",
+  "permalink": "/docs/getting-started/Installation",
+  "draft": false,
+  "editUrl": "https://github.com/rohit-gohri/redocusaurus/edit/main/website/docs/getting-started/Installation.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 0,
+  "frontMatter": {
+    "title": "Installation",
+    "sidebar_position": 0,
+    "author": "Rohit Gohri",
+    "author_url": "https://rohit.page"
+  },
+  "sidebar": "defaultSidebar",
+  "previous": {
+    "title": "Introduction",
+    "permalink": "/docs/"
+  },
+  "next": {
+    "title": "Plugin Options",
+    "permalink": "/docs/getting-started/plugin-options"
+  }
+}

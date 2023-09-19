@@ -1,0 +1,25 @@
+{
+  "unversionedId": "who-is-using-redocusaurus",
+  "id": "who-is-using-redocusaurus",
+  "title": "Used technology",
+  "description": "Feel free to add your site below by sending a Pull Request! (sort in alphabetical order)",
+  "source": "@site/docs/who-is-using-redocusaurus.md",
+  "sourceDirName": ".",
+  "slug": "/used technology",
+  "permalink": "/docs/used technology",
+  "draft": false,
+  "editUrl": "https://github.com/rohit-gohri/redocusaurus/edit/main/website/docs/who-is-using-redocusaurus.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "slug": "/used technology",
+    "title": "Used technology",
+    "sidebar_position": 2
+  },
+  "sidebar": "defaultSidebar",
+  "previous": {
+    "title": "Introduction",
+    "permalink": "/docs/"
+  }
+}

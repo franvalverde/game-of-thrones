@@ -1,0 +1,100 @@
+{
+  "/examples/-942": {
+    "__comp": "__comp---site-src-pages-examples-index-jsx-2-ad-55c",
+    "__context": {
+      "plugin": "plugin---examples-d-22-2a1"
+    },
+    "config": "config---examples-5-e-9-e9a"
+  },
+  "/examples/client-only/-d8b": {
+    "__comp": "__comp---site-src-pages-examples-client-only-index-jsxdc-0-20a",
+    "__context": {
+      "plugin": "plugin---examples-d-22-2a1"
+    },
+    "config": "config---examples-5-e-9-e9a"
+  },
+  "/examples/custom-layout/-a9e": {
+    "__comp": "__comp---site-src-pages-examples-custom-layout-index-jsxe-45-489",
+    "__context": {
+      "plugin": "plugin---examples-d-22-2a1"
+    },
+    "config": "config---examples-5-e-9-e9a"
+  },
+  "/examples/custom-page/-848": {
+    "__comp": "__comp---site-src-pages-examples-custom-page-index-jsxf-98-6aa",
+    "__context": {
+      "plugin": "plugin---examples-d-22-2a1"
+    },
+    "config": "config---examples-5-e-9-e9a"
+  },
+  "/examples/using-multi-file-yaml/-1cc": {
+    "__comp": "__comp---theme-api-docf-0-a-77e",
+    "__context": {
+      "plugin": "plugin---examples-using-multi-file-yaml-2-c-2-e45"
+    },
+    "specProps": "specProps---examples-using-multi-file-yaml-cf-1-47a",
+    "layoutProps": "layoutProps---examples-using-multi-file-yaml-ef-8-b70"
+  },
+  "/examples/using-remote-url/-9f5": {
+    "__comp": "__comp---theme-api-docf-0-a-77e",
+    "__context": {
+      "plugin": "plugin---examples-using-remote-url-dce-08e"
+    },
+    "specProps": "specProps---examples-using-remote-url-581-bca",
+    "layoutProps": "layoutProps---examples-using-remote-url-dd-9-524"
+  },
+  "/examples/using-single-yaml/-e44": {
+    "__comp": "__comp---theme-api-docf-0-a-77e",
+    "__context": {
+      "plugin": "plugin---examples-using-single-yaml-622-bc6"
+    },
+    "specProps": "specProps---examples-using-single-yaml-066-f63",
+    "layoutProps": "layoutProps---examples-using-single-yaml-792-f8c"
+  },
+  "/examples/using-swagger-json/-9c1": {
+    "__comp": "__comp---theme-api-docf-0-a-77e",
+    "__context": {
+      "plugin": "plugin---examples-using-swagger-json-7-c-5-d49"
+    },
+    "specProps": "specProps---examples-using-swagger-json-385-c79",
+    "layoutProps": "layoutProps---examples-using-swagger-json-a-64-903"
+  },
+  "/openapi/got/-7da": {
+    "__comp": "__comp---theme-api-docf-0-a-77e",
+    "__context": {
+      "plugin": "plugin---openapi-got-153-310"
+    },
+    "specProps": "specProps---openapi-got-e-15-ea2",
+    "layoutProps": "layoutProps---openapi-got-4-cb-600"
+  },
+  "/docs-f9c": {
+    "__comp": "__comp---theme-doc-page-1-be-9be",
+    "__context": {
+      "plugin": "plugin---docse-74-37c"
+    },
+    "versionMetadata": "versionMetadata---docs-935-398"
+  },
+  "/docs/-08d": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-e-0-a-fc7"
+  },
+  "/docs/bussiness_rules-d5d": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-used-technology-65-d-650"
+  },
+  "/docs/events-6dd": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-used-technology-8-e-9-9bd"
+  },
+  "/docs/used_technology-f80": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-used-technologye-7-f-475"
+  },
+  "/-e90": {
+    "__comp": "__comp---site-src-pages-index-jsx-9-dd-cb1",
+    "__context": {
+      "plugin": "plugin---examples-d-22-2a1"
+    },
+    "config": "config---examples-5-e-9-e9a"
+  }
+}

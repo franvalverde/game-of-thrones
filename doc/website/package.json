@@ -1,0 +1,48 @@
+{
+  "name": "redocusaurus-website",
+  "version": "0.0.2",
+  "homepage": "https://github.com/rohit-gohri/redocusaurus",
+  "bugs": {
+    "url": "https://github.com/rohit-gohri/redocusaurus/issues"
+  },
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rohit-gohri/redocusaurus.git"
+  },
+  "license": "MIT",
+  "author": "Rohit Gohri <code@rohit.page>",
+  "scripts": {
+    "clear": "docusaurus clear",
+    "dev": "docusaurus start",
+    "start": "docusaurus start",
+    "build": "NODE_OPTIONS='--inspect' docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "serve": "docusaurus serve",
+    "test": "percy snapshot snapshots.js"
+  },
+  "dependencies": {
+    "@docusaurus/core": "^2.3.1",
+    "@docusaurus/preset-classic": "^2.3.1",
+    "clsx": "^1.2.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "redocusaurus": "^1.6.3"
+  },
+  "devDependencies": {
+    "@percy/cli": "^1.18.0",
+    "@types/react": "^17.0.53"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

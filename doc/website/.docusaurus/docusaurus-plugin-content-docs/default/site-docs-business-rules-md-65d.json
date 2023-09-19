@@ -1,0 +1,29 @@
+{
+  "unversionedId": "BusinessRules",
+  "id": "BusinessRules",
+  "title": "Business rules",
+  "description": "Feel free to add your site below by sending a Pull Request! (sort in alphabetical order)",
+  "source": "@site/docs/BusinessRules.md",
+  "sourceDirName": ".",
+  "slug": "/bussiness_rules",
+  "permalink": "/docs/bussiness_rules",
+  "draft": false,
+  "editUrl": "https://github.com/rohit-gohri/redocusaurus/edit/main/website/docs/BusinessRules.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "slug": "/bussiness_rules",
+    "title": "Business rules",
+    "sidebar_position": 3
+  },
+  "sidebar": "defaultSidebar",
+  "previous": {
+    "title": "Used technology",
+    "permalink": "/docs/used_technology"
+  },
+  "next": {
+    "title": "Events",
+    "permalink": "/docs/events"
+  }
+}

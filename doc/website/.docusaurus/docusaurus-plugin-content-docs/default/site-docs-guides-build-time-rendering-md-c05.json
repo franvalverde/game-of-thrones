@@ -1,0 +1,29 @@
+{
+  "unversionedId": "guides/build-time-rendering",
+  "id": "guides/build-time-rendering",
+  "title": "Build Time Rendering",
+  "description": "Parse the OpenAPI schema at build time and skip the loading screen",
+  "source": "@site/docs/guides/build-time-rendering.md",
+  "sourceDirName": "guides",
+  "slug": "/guides/build-time-rendering",
+  "permalink": "/docs/guides/build-time-rendering",
+  "draft": false,
+  "editUrl": "https://github.com/rohit-gohri/redocusaurus/edit/main/website/docs/guides/build-time-rendering.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "Build Time Rendering",
+    "description": "Parse the OpenAPI schema at build time and skip the loading screen",
+    "sidebar_position": 3
+  },
+  "sidebar": "defaultSidebar",
+  "previous": {
+    "title": "Showing Multiple APIs",
+    "permalink": "/docs/guides/multiple-apis"
+  },
+  "next": {
+    "title": "Migrating to V1",
+    "permalink": "/docs/guides/migrating-to-v1"
+  }
+}

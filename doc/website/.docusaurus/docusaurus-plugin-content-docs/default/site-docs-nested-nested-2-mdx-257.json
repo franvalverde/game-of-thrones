@@ -1,0 +1,23 @@
+{
+  "unversionedId": "nested/nested-2",
+  "id": "nested/nested-2",
+  "title": "API 2 - Swagger Petstore",
+  "description": "",
+  "source": "@site/docs/nested/nested-2.mdx",
+  "sourceDirName": "nested",
+  "slug": "/nested/nested-2",
+  "permalink": "/docs/nested/nested-2",
+  "draft": false,
+  "editUrl": "https://github.com/rohit-gohri/redocusaurus/edit/main/website/docs/nested/nested-2.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "API 2 - Swagger Petstore",
+    "hide_table_of_contents": true
+  },
+  "sidebar": "defaultSidebar",
+  "previous": {
+    "title": "API 1 - Swagger Petstore",
+    "permalink": "/docs/nested/nested-1"
+  }
+}

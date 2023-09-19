@@ -1,0 +1,25 @@
+{
+  "unversionedId": "Introduction",
+  "id": "Introduction",
+  "title": "Introduction",
+  "description": "Redocusaurus is a preset for Docusaurus to help you integrate OpenAPI documentation via Redoc. It was created to make it easy to have API docs that live with your other documentation and look and feel like a part of it.",
+  "source": "@site/docs/Introduction.md",
+  "sourceDirName": ".",
+  "slug": "/",
+  "permalink": "/docs/",
+  "draft": false,
+  "editUrl": "https://github.com/rohit-gohri/redocusaurus/edit/main/website/docs/Introduction.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 0,
+  "frontMatter": {
+    "slug": "/",
+    "title": "Introduction",
+    "sidebar_position": 0
+  },
+  "sidebar": "defaultSidebar",
+  "next": {
+    "title": "Used technology",
+    "permalink": "/docs/used_technology"
+  }
+}

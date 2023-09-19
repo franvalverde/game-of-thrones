@@ -1,0 +1,29 @@
+{
+  "unversionedId": "UsedTechnology",
+  "id": "UsedTechnology",
+  "title": "Used technology",
+  "description": "Feel free to add your site below by sending a Pull Request! (sort in alphabetical order)",
+  "source": "@site/docs/UsedTechnology.md",
+  "sourceDirName": ".",
+  "slug": "/used_technology",
+  "permalink": "/docs/used_technology",
+  "draft": false,
+  "editUrl": "https://github.com/rohit-gohri/redocusaurus/edit/main/website/docs/UsedTechnology.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "slug": "/used_technology",
+    "title": "Used technology",
+    "sidebar_position": 2
+  },
+  "sidebar": "defaultSidebar",
+  "previous": {
+    "title": "Introduction",
+    "permalink": "/docs/"
+  },
+  "next": {
+    "title": "Business rules",
+    "permalink": "/docs/bussiness_rules"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "unversionedId": "guides/multiple-apis",
+  "id": "guides/multiple-apis",
+  "title": "Showing Multiple APIs",
+  "description": "Nested View with MDX",
+  "source": "@site/docs/guides/multiple-apis.md",
+  "sourceDirName": "guides",
+  "slug": "/guides/multiple-apis",
+  "permalink": "/docs/guides/multiple-apis",
+  "draft": false,
+  "editUrl": "https://github.com/rohit-gohri/redocusaurus/edit/main/website/docs/guides/multiple-apis.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "Showing Multiple APIs",
+    "sidebar_position": 2
+  },
+  "sidebar": "defaultSidebar",
+  "previous": {
+    "title": "Schema Imports",
+    "permalink": "/docs/guides/schema-imports"
+  },
+  "next": {
+    "title": "Build Time Rendering",
+    "permalink": "/docs/guides/build-time-rendering"
+  }
+}

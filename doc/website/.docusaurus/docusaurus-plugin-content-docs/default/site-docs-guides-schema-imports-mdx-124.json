@@ -1,0 +1,28 @@
+{
+  "unversionedId": "guides/schema-imports",
+  "id": "guides/schema-imports",
+  "title": "Schema Imports",
+  "description": "You can import model definitions from your API schema and render them in your Docusaurus Docs. You'll need to create an .mdx file and import the React Component. Read more here about MDX in Docusaurus.",
+  "source": "@site/docs/guides/schema-imports.mdx",
+  "sourceDirName": "guides",
+  "slug": "/guides/schema-imports",
+  "permalink": "/docs/guides/schema-imports",
+  "draft": false,
+  "editUrl": "https://github.com/rohit-gohri/redocusaurus/edit/main/website/docs/guides/schema-imports.mdx",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "Schema Imports",
+    "sidebar_position": 1
+  },
+  "sidebar": "defaultSidebar",
+  "previous": {
+    "title": "Introduction",
+    "permalink": "/docs/"
+  },
+  "next": {
+    "title": "Showing Multiple APIs",
+    "permalink": "/docs/guides/multiple-apis"
+  }
+}

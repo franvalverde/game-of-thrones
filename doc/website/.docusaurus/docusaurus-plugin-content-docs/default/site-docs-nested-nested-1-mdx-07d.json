@@ -1,0 +1,27 @@
+{
+  "unversionedId": "nested/nested-1",
+  "id": "nested/nested-1",
+  "title": "API 1 - Swagger Petstore",
+  "description": "",
+  "source": "@site/docs/nested/nested-1.mdx",
+  "sourceDirName": "nested",
+  "slug": "/nested/nested-1",
+  "permalink": "/docs/nested/nested-1",
+  "draft": false,
+  "editUrl": "https://github.com/rohit-gohri/redocusaurus/edit/main/website/docs/nested/nested-1.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "API 1 - Swagger Petstore",
+    "hide_table_of_contents": true
+  },
+  "sidebar": "defaultSidebar",
+  "previous": {
+    "title": "Who is using Redocusaurus?",
+    "permalink": "/docs/who-is-using-redocusaurus"
+  },
+  "next": {
+    "title": "API 2 - Swagger Petstore",
+    "permalink": "/docs/nested/nested-2"
+  }
+}

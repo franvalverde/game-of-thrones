@@ -1,0 +1,28 @@
+{
+  "unversionedId": "guides/migrating-to-v1",
+  "id": "guides/migrating-to-v1",
+  "title": "Migrating to V1",
+  "description": "Options Changed",
+  "source": "@site/docs/guides/migrating-to-v1.md",
+  "sourceDirName": "guides",
+  "slug": "/guides/migrating-to-v1",
+  "permalink": "/docs/guides/migrating-to-v1",
+  "draft": false,
+  "editUrl": "https://github.com/rohit-gohri/redocusaurus/edit/main/website/docs/guides/migrating-to-v1.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "title": "Migrating to V1",
+    "sidebar_position": 4
+  },
+  "sidebar": "defaultSidebar",
+  "previous": {
+    "title": "Build Time Rendering",
+    "permalink": "/docs/guides/build-time-rendering"
+  },
+  "next": {
+    "title": "Who is using Redocusaurus?",
+    "permalink": "/docs/who-is-using-redocusaurus"
+  }
+}
