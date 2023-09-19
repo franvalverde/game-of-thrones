@@ -40,7 +40,7 @@ final class CharacterLinker
     private function ensureCharacterIsNotTheSame(Character $character, Character $relatedTo): void
     {
         if ($character->id()->equalsTo($relatedTo->id())) {
-                throw CharacterRelateInvalidExistsException::from();
+            throw CharacterRelateInvalidExistsException::from();
         }
     }
 }

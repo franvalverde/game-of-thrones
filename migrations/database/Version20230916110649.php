@@ -72,6 +72,5 @@ final class Version20230916110649 extends AbstractMigration
         $this->addSql('COMMENT ON COLUMN messenger_messages.delivered_at IS NULL');
         $this->addSql('ALTER TABLE core.actor DROP CONSTRAINT fk_d28aa97d1136be75');
         $this->addSql('ALTER TABLE core.actor ADD CONSTRAINT fk_d28aa97d1136be75 FOREIGN KEY (character_id) REFERENCES core."character" (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
-
     }
 }
