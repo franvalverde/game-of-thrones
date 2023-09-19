@@ -9,6 +9,8 @@
 /public/bundles/
 /var/
 /vendor/
+/doc/node_modules/
+/doc/.docusaurus/
 .env
 .idea
 .composer
