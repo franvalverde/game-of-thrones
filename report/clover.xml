@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1695114411">
-  <project timestamp="1695114411">
+<coverage generated="1695114867">
+  <project timestamp="1695114867">
     <file name="/var/www/html/src/Core/Application/Command/Actor/CreateActor/CreateActorCommand.php">
       <class name="Whalar\Core\Application\Command\Actor\CreateActor\CreateActorCommand" namespace="global">
         <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>

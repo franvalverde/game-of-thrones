@@ -20,7 +20,6 @@
             <clover outputFile="report/clover.xml"/>
             <text outputFile="report/coverage.txt" showOnlySummary="true"/>
             <html outputDirectory="report/html" lowUpperBound="50" highLowerBound="70"/>
-            <xml outputDirectory="report/coverage-xml"/>
         </report>
     </coverage>
     <php>
