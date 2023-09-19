@@ -32,8 +32,8 @@ class CharacterRelate
         DomainEventPublisher::instance()->publish(
             CharacterWasRelated::from(
                 relationId: $id->id(),
-                characterId: $character->id()->id(),
-                relatedTo: $relatedTo->id()->id(),
+                characterId: $character->internalId()->value(),
+                relatedTo: $relatedTo->internalId()->value(),
                 relation: $relation->value(),
             ),
         );

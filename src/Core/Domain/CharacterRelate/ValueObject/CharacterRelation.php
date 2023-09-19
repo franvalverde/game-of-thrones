@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Whalar\Core\Domain\CharacterRelate\ValueObject;
 
-use Whalar\Core\Domain\Character\Exception\InvalidCharacterRelationTypeException;
+use Whalar\Core\Domain\CharacterRelate\Exception\InvalidCharacterRelationTypeException;
 
 enum CharacterRelation
 {
@@ -44,5 +44,10 @@ enum CharacterRelation
             self::Parents => 'parents',
             self::Siblings => 'siblings',
         };
+    }
+
+    public function equalsTo(self $other): bool
+    {
+        return $this->value() === $other->value();
     }
 }

@@ -13,10 +13,8 @@ use Whalar\Shared\Domain\ValueObject\AggregateId;
 
 final class RelateCharactersCommandHandler implements CommandHandler
 {
-    public function __construct(
-        private readonly CharacterFinder $finder,
-        private readonly CharacterLinker $linker,
-    ) {
+    public function __construct(private readonly CharacterFinder $finder, private readonly CharacterLinker $linker,)
+    {
     }
 
     /** @throws \Throwable */

@@ -17,20 +17,41 @@
       <line nr="16">
         <covered by="Whalar\Tests\Unit\Core\Application\Query\Character\RetrieveCharacter\RetrieveCharacterQueryHandlerTest::testRetrieveCharacterSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Query\Character\RetrieveCharacter\RetrieveCharacterQueryHandlerTest::testTryRetrieveCharacterNotFoundShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testCharacterIsRelatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharacterToTheSameCharacterShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharactersWithInvalidRelationTypeThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharactersWithRelatedToNotFoundThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharactersWithCharacterNotFoundThrowException"/>
       </line>
       <line nr="21">
         <covered by="Whalar\Tests\Unit\Core\Application\Query\Character\RetrieveCharacter\RetrieveCharacterQueryHandlerTest::testRetrieveCharacterSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Query\Character\RetrieveCharacter\RetrieveCharacterQueryHandlerTest::testTryRetrieveCharacterNotFoundShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testCharacterIsRelatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharacterToTheSameCharacterShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharactersWithInvalidRelationTypeThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharactersWithRelatedToNotFoundThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharactersWithCharacterNotFoundThrowException"/>
       </line>
       <line nr="23">
         <covered by="Whalar\Tests\Unit\Core\Application\Query\Character\RetrieveCharacter\RetrieveCharacterQueryHandlerTest::testRetrieveCharacterSuccessfully"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Query\Character\RetrieveCharacter\RetrieveCharacterQueryHandlerTest::testTryRetrieveCharacterNotFoundShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testCharacterIsRelatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharacterToTheSameCharacterShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharactersWithInvalidRelationTypeThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharactersWithRelatedToNotFoundThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharactersWithCharacterNotFoundThrowException"/>
       </line>
       <line nr="24">
         <covered by="Whalar\Tests\Unit\Core\Application\Query\Character\RetrieveCharacter\RetrieveCharacterQueryHandlerTest::testTryRetrieveCharacterNotFoundShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharactersWithRelatedToNotFoundThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharactersWithCharacterNotFoundThrowException"/>
       </line>
       <line nr="27">
         <covered by="Whalar\Tests\Unit\Core\Application\Query\Character\RetrieveCharacter\RetrieveCharacterQueryHandlerTest::testRetrieveCharacterSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testCharacterIsRelatedSuccessfully"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharacterToTheSameCharacterShouldThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharactersWithInvalidRelationTypeThrowException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommandHandlerTest::testTryRelateCharactersWithRelatedToNotFoundThrowException"/>
       </line>
     </coverage>
     <source>

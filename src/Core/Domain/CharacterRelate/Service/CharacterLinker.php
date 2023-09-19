@@ -6,6 +6,7 @@ namespace Whalar\Core\Domain\CharacterRelate\Service;
 
 use Whalar\Core\Domain\Character\Aggregate\Character;
 use Whalar\Core\Domain\CharacterRelate\Aggregate\CharacterRelate;
+use Whalar\Core\Domain\CharacterRelate\Exception\CharacterRelateInvalidExistsException;
 use Whalar\Core\Domain\CharacterRelate\Repository\CharacterRelateRepository;
 use Whalar\Core\Domain\CharacterRelate\ValueObject\CharacterRelation;
 use Whalar\Shared\Domain\ValueObject\AggregateId;
@@ -23,6 +24,8 @@ final class CharacterLinker
         Character $relatedTo,
         CharacterRelation $relation,
     ): void {
+        $this->ensureCharacterIsNotTheSame(character: $character, relatedTo: $relatedTo);
+
         $this->relates->save(
             CharacterRelate::create(
                 id: $id,
@@ -31,5 +34,13 @@ final class CharacterLinker
                 relation: $relation,
             ),
         );
+    }
+
+    /** @throws CharacterRelateInvalidExistsException */
+    private function ensureCharacterIsNotTheSame(Character $character, Character $relatedTo): void
+    {
+        if ($character->id()->equalsTo($relatedTo->id())) {
+                throw CharacterRelateInvalidExistsException::from();
+        }
     }
 }

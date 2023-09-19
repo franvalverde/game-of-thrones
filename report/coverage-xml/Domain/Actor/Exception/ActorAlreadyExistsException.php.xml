@@ -14,33 +14,33 @@
     </class>
     <coverage>
       <line nr="14">
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameNameShouldThrowActorAlreadyExistsException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameIdShouldThrowActorAlreadyExistsException"/>
       </line>
       <line nr="15">
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameNameShouldThrowActorAlreadyExistsException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameIdShouldThrowActorAlreadyExistsException"/>
       </line>
       <line nr="16">
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameNameShouldThrowActorAlreadyExistsException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameIdShouldThrowActorAlreadyExistsException"/>
       </line>
       <line nr="17">
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameNameShouldThrowActorAlreadyExistsException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameIdShouldThrowActorAlreadyExistsException"/>
       </line>
       <line nr="18">
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameNameShouldThrowActorAlreadyExistsException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameIdShouldThrowActorAlreadyExistsException"/>
       </line>
       <line nr="19">
-        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameNameShouldThrowActorAlreadyExistsException"/>
+        <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameInternalIdShouldThrowActorAlreadyExistsException"/>
         <covered by="Whalar\Tests\Unit\Core\Application\Command\Actor\CreateActor\CreateActorCommandHandlerTest::testTryCreateWithSameIdShouldThrowActorAlreadyExistsException"/>
       </line>
     </coverage>

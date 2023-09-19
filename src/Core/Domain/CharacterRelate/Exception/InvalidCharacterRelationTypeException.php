@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Whalar\Core\Domain\Character\Exception;
+namespace Whalar\Core\Domain\CharacterRelate\Exception;
 
 use Whalar\Shared\Domain\Exception\Http\BadRequestException;
 
