@@ -7,7 +7,7 @@ namespace Whalar\Core\Infrastructure\Delivery\Rest\V1\Character;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Whalar\Core\Application\Command\Character\CreateCharacter\CreateCharacterCommand;
+use Whalar\Core\Application\Command\Character\RelateCharacters\RelateCharactersCommand;
 use Whalar\Shared\Domain\Data\DataMapping;
 use Whalar\Shared\Infrastructure\Delivery\Rest\ApiCommandPage;
 
@@ -20,23 +20,17 @@ final class RelateCharactersPage extends ApiCommandPage
     {
         $data = $request->request->all();
 
-        $characterId = self::getString($data, 'characterId');
+        $relationId = self::generateId();
 
         $this->dispatch(
-            new CreateCharacterCommand(
-                id: self::generateId(),
-                characterId: $characterId,
-                name: self::getString($data, 'name'),
-                royal: self::getBool($data, 'royal'),
-                kingsGuard: self::getBool($data, 'kingsguard'),
-                actors: self::getArray($data, 'actors') ?? [],
-                houseId: self::getNonEmptyStringOrNull($data, 'houseId'),
-                nickname: self::getNonEmptyStringOrNull($data, 'nickname'),
-                imageThumb: self::getNonEmptyStringOrNull($data, 'imageThumb'),
-                imageFull: self::getNonEmptyStringOrNull($data, 'imageFull'),
+            new RelateCharactersCommand(
+                relationId: $relationId,
+                characterId: self::getString($request->attributes->all(), 'id'),
+                relationType: self::getString($data, 'type'),
+                relatedTo: self::getString($data, 'relatedTo'),
             ),
         );
 
-        return new JsonResponse(['characterId' => $characterId], Response::HTTP_CREATED);
+        return new JsonResponse(['relationId' => $relationId], Response::HTTP_CREATED);
     }
 }

@@ -48,3 +48,8 @@ Whalar\Core\Domain\Character\Aggregate\Character:
       targetEntity: Whalar\Core\Domain\Actor\Aggregate\Actor
       mappedBy: character
       cascade: ["all"]
+
+    relates:
+      targetEntity: Whalar\Core\Domain\CharacterRelate\Aggregate\CharacterRelate
+      mappedBy: character
+      cascade: [ "all" ]

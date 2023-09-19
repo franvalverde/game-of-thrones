@@ -13,6 +13,7 @@ use Whalar\Core\Domain\Character\Event\CharacterWasCreated;
 use Whalar\Core\Domain\Character\ValueObject\CharacterId;
 use Whalar\Core\Domain\Character\ValueObject\CharacterKingsGuard;
 use Whalar\Core\Domain\Character\ValueObject\CharacterRoyal;
+use Whalar\Core\Domain\CharacterRelate\Aggregate\CharacterRelate;
 use Whalar\Core\Domain\House\Aggregate\House;
 use Whalar\Shared\Domain\ValueObject\AggregateId;
 use Whalar\Shared\Domain\ValueObject\ImageUrl;
@@ -24,6 +25,9 @@ class Character implements \JsonSerializable
 {
     /** @var Collection<int, Actor> */
     private Collection $actors;
+
+    /** @var Collection<int, CharacterRelate> */
+    private Collection $relates;
 
     private function __construct(
         private AggregateId $id,
@@ -37,6 +41,7 @@ class Character implements \JsonSerializable
         private readonly ?ImageUrl $imageFull,
     ) {
         $this->actors = new ArrayCollection();
+        $this->relates = new ArrayCollection();
     }
 
     /** @throws \Throwable */
@@ -128,6 +133,12 @@ class Character implements \JsonSerializable
     public function actors(): Collection
     {
         return $this->actors;
+    }
+
+    /** @return Collection<int, CharacterRelate> */
+    public function relates(): Collection
+    {
+        return $this->relates;
     }
 
     public function jsonSerialize(): array

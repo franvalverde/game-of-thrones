@@ -43,7 +43,6 @@ final class RetrieveCharacterQueryHandlerTest extends UnitTestCase
                 'actors' => [
                     $character->actors()[0],
                 ],
-
             ],
             $response->jsonSerialize(),
         );

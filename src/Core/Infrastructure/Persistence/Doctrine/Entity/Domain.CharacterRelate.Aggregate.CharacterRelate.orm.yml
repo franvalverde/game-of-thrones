@@ -1,0 +1,28 @@
+Whalar\Core\Domain\CharacterRelate\Aggregate\CharacterRelate:
+  type: entity
+  table: character_relate
+  schema: core
+  id:
+    id:
+      type: aggregate_id
+      column: id
+      id: true
+
+  fields:
+    relation:
+      type: character_relation
+      column: relation
+
+  manyToOne:
+    character:
+      targetEntity: Whalar\Core\Domain\Character\Aggregate\Character
+      inversedBy: relates
+      joinColumn:
+        name: character_id
+        referencedColumnName: id
+
+    relatedTo:
+      targetEntity: Whalar\Core\Domain\Character\Aggregate\Character
+      joinColumn:
+        name: related_to
+        referencedColumnName: id

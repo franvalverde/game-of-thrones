@@ -19,6 +19,7 @@ doctrine:
       character_id: Whalar\Core\Infrastructure\Persistence\Doctrine\Type\CharacterIdType
       royal: Whalar\Core\Infrastructure\Persistence\Doctrine\Type\RoyalType
       kings_guard: Whalar\Core\Infrastructure\Persistence\Doctrine\Type\KingsGuardType
+      character_relation: Whalar\Core\Infrastructure\Persistence\Doctrine\Type\CharacterRelationType
 
       # Shared context
       aggregate_id: Whalar\Shared\Infrastructure\Persistence\Doctrine\Type\AggregateIdType
