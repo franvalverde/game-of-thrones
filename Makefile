@@ -26,8 +26,8 @@ stop: ## Stop this project
 	$(DOCKER_COMPOSE) stop
 
 .PHONY: clean
-clean: ## Clean vendors, cache, logs, assets, reports, etc.
-	@rm -rf report/* var/*
+clean: ## Clean cache, logs, assets, etc.
+	@rm -rf var/*
 
 .PHONE: set-hooks
 set-hooks:
@@ -125,3 +125,7 @@ acceptance-test: ## Execute acceptance tests
 	$(EXEC_APP) "bin/console doctrine:database:create --quiet --no-interaction --env=test"
 	$(EXEC_APP) "bin/console doctrine:migrations:migrate --quiet --no-interaction --env=test"
 	$(EXEC_APP) "php -d memory_limit=-1 bin/behat --suite=core --no-snippets --strict"
+
+.PHONY: start-doc
+start-doc: ## Build and start docusaurus
+	@cd doc && yarn install && npm start

@@ -1,0 +1,44 @@
+# Effects per Mutator
+
+| Mutator               | Mutations | Killed | Escaped | Errors | Syntax Errors | Timed Out | Skipped | Ignored | MSI (%s) | Covered MSI (%s) |
+| --------------------- | --------- | ------ | ------- | ------ | ------------- | --------- | ------- | ------- | -------- | ---------------- |
+| ArrayItem             |        32 |     14 |       0 |      0 |             0 |         0 |       0 |       0 |    43.75 |           100.00 |
+| ArrayItemRemoval      |        15 |     10 |       0 |      0 |             0 |         0 |       0 |       0 |    66.67 |           100.00 |
+| ArrayOneItem          |         2 |      0 |       1 |      0 |             0 |         0 |       0 |       0 |     0.00 |             0.00 |
+| CastInt               |         3 |      0 |       0 |      0 |             0 |         0 |       0 |       0 |     0.00 |             0.00 |
+| CastString            |         3 |      0 |       0 |      0 |             0 |         0 |       0 |       0 |     0.00 |             0.00 |
+| Coalesce              |         4 |      0 |       0 |      0 |             0 |         0 |       0 |       0 |     0.00 |             0.00 |
+| Concat                |         2 |      0 |       0 |      0 |             0 |         0 |       0 |       0 |     0.00 |             0.00 |
+| ConcatOperandRemoval  |         4 |      0 |       0 |      0 |             0 |         0 |       0 |       0 |     0.00 |             0.00 |
+| DecrementInteger      |         9 |      0 |       0 |      0 |             0 |         0 |       0 |       0 |     0.00 |             0.00 |
+| Division              |         1 |      0 |       0 |      0 |             0 |         0 |       0 |       0 |     0.00 |             0.00 |
+| FalseValue            |         3 |      0 |       0 |      0 |             0 |         0 |       0 |       0 |     0.00 |             0.00 |
+| Foreach_              |         3 |      3 |       0 |      0 |             0 |         0 |       0 |       0 |   100.00 |           100.00 |
+| FunctionCall          |         2 |      0 |       0 |      0 |             0 |         0 |       0 |       0 |     0.00 |             0.00 |
+| FunctionCallRemoval   |         2 |      0 |       0 |      0 |             0 |         0 |       0 |       0 |     0.00 |             0.00 |
+| Identical             |        25 |     12 |       0 |      0 |             0 |         0 |       0 |       0 |    48.00 |           100.00 |
+| Increment             |         1 |      0 |       0 |      0 |             0 |         0 |       0 |       0 |     0.00 |             0.00 |
+| IncrementInteger      |        11 |      4 |       0 |      0 |             0 |         0 |       0 |       0 |    36.36 |           100.00 |
+| LogicalNot            |         6 |      1 |       0 |      0 |             0 |         0 |       0 |       0 |    16.67 |           100.00 |
+| LogicalOr             |         4 |      4 |       0 |      0 |             0 |         0 |       0 |       0 |   100.00 |           100.00 |
+| MatchArmRemoval       |        17 |      3 |      14 |      0 |             0 |         0 |       0 |       0 |    17.65 |            17.65 |
+| MethodCallRemoval     |        96 |     25 |      33 |      0 |             0 |         0 |       0 |       0 |    26.04 |            43.10 |
+| NewObject             |         1 |      1 |       0 |      0 |             0 |         0 |       0 |       0 |   100.00 |           100.00 |
+| NotIdentical          |        16 |     14 |       0 |      0 |             0 |         0 |       0 |       0 |    87.50 |           100.00 |
+| NullSafeMethodCall    |         2 |      2 |       0 |      0 |             0 |         0 |       0 |       0 |   100.00 |           100.00 |
+| PregMatchRemoveCaret  |         2 |      0 |       2 |      0 |             0 |         0 |       0 |       0 |     0.00 |             0.00 |
+| PregMatchRemoveDollar |         2 |      0 |       2 |      0 |             0 |         0 |       0 |       0 |     0.00 |             0.00 |
+| PregMatchRemoveFlags  |         2 |      0 |       2 |      0 |             0 |         0 |       0 |       0 |     0.00 |             0.00 |
+| ProtectedVisibility   |         2 |      0 |       0 |      0 |             0 |         0 |       0 |       0 |     0.00 |             0.00 |
+| PublicVisibility      |       155 |     82 |       5 |      0 |             0 |         0 |       0 |       0 |    52.90 |            94.25 |
+| RoundingFamily        |         2 |      0 |       0 |      0 |             0 |         0 |       0 |       0 |     0.00 |             0.00 |
+| Ternary               |        12 |      9 |       0 |      0 |             0 |         0 |       0 |       0 |    75.00 |           100.00 |
+| Throw_                |        21 |      9 |       0 |      0 |             0 |         0 |       0 |       0 |    42.86 |           100.00 |
+| TrueValue             |         5 |      2 |       0 |      0 |             0 |         0 |       0 |       0 |    40.00 |           100.00 |
+| UnwrapArrayFilter     |         2 |      2 |       0 |      0 |             0 |         0 |       0 |       0 |   100.00 |           100.00 |
+| UnwrapArrayMap        |         1 |      1 |       0 |      0 |             0 |         0 |       0 |       0 |   100.00 |           100.00 |
+| UnwrapArrayMerge      |         2 |      2 |       0 |      0 |             0 |         0 |       0 |       0 |   100.00 |           100.00 |
+| UnwrapLtrim           |         1 |      0 |       0 |      0 |             0 |         0 |       0 |       0 |     0.00 |             0.00 |
+| UnwrapStrReplace      |         1 |      0 |       0 |      0 |             0 |         0 |       0 |       0 |     0.00 |             0.00 |
+| UnwrapStrToLower      |         3 |      0 |       0 |      0 |             0 |         0 |       0 |       0 |     0.00 |             0.00 |
+| UnwrapTrim            |         5 |      0 |       0 |      0 |             0 |         0 |       0 |       0 |     0.00 |             0.00 |

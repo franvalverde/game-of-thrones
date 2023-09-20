@@ -1,0 +1,4245 @@
+Escaped mutants:
+================
+
+1) /var/www/html/src/Core/Application/Query/Character/ListCharacters/ListCharactersResponse.php:36    [M] ArrayOneItem
+
+--- Original
++++ New
+@@ @@
+             }
+             $items[] = array_filter($item);
+         }
+-        return $items;
++        return count($items) > 1 ? array_slice($items, 0, 1, true) : $items;
+     }
+ }
+
+
+2) /var/www/html/src/Core/Domain/Actor/Event/ActorWasCreated.php:47    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+     {
+         return $this->aggregateNameFromClassname(Actor::class);
+     }
+-    public function actorId() : string
++    protected function actorId() : string
+     {
+         return $this->actorId;
+     }
+
+
+3) /var/www/html/src/Core/Domain/Actor/Event/ActorWasCreated.php:66    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     protected function setupPayload() : void
+     {
+         $payload = $this->messagePayload();
+-        Assert::that($payload)->keyExists('actorId');
++        
+         Assert::that($payload['actorId'])->string();
+         $this->actorId = $payload['actorId'];
+         Assert::that($payload)->keyExists('name');
+
+
+4) /var/www/html/src/Core/Domain/Actor/Event/ActorWasCreated.php:67    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     {
+         $payload = $this->messagePayload();
+         Assert::that($payload)->keyExists('actorId');
+-        Assert::that($payload['actorId'])->string();
++        
+         $this->actorId = $payload['actorId'];
+         Assert::that($payload)->keyExists('name');
+         Assert::that($payload['name'])->string();
+
+
+5) /var/www/html/src/Core/Domain/Actor/Event/ActorWasCreated.php:70    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         Assert::that($payload)->keyExists('actorId');
+         Assert::that($payload['actorId'])->string();
+         $this->actorId = $payload['actorId'];
+-        Assert::that($payload)->keyExists('name');
++        
+         Assert::that($payload['name'])->string();
+         $this->name = $payload['name'];
+         Assert::that($payload)->keyExists('internalId');
+
+
+6) /var/www/html/src/Core/Domain/Actor/Event/ActorWasCreated.php:71    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         Assert::that($payload['actorId'])->string();
+         $this->actorId = $payload['actorId'];
+         Assert::that($payload)->keyExists('name');
+-        Assert::that($payload['name'])->string();
++        
+         $this->name = $payload['name'];
+         Assert::that($payload)->keyExists('internalId');
+         Assert::that($payload['internalId'])->string();
+
+
+7) /var/www/html/src/Core/Domain/Actor/Event/ActorWasCreated.php:74    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         Assert::that($payload)->keyExists('name');
+         Assert::that($payload['name'])->string();
+         $this->name = $payload['name'];
+-        Assert::that($payload)->keyExists('internalId');
++        
+         Assert::that($payload['internalId'])->string();
+         $this->internalId = $payload['internalId'];
+     }
+ }
+
+
+8) /var/www/html/src/Core/Domain/Actor/Event/ActorWasCreated.php:75    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         Assert::that($payload['name'])->string();
+         $this->name = $payload['name'];
+         Assert::that($payload)->keyExists('internalId');
+-        Assert::that($payload['internalId'])->string();
++        
+         $this->internalId = $payload['internalId'];
+     }
+ }
+
+
+9) /var/www/html/src/Core/Domain/Actor/ValueObject/ActorId.php:54    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     /** @throws AssertionFailedException */
+     private function setValue(string $value) : void
+     {
+-        Assertion::true(1 === preg_match("/^nm\\d{7}\$/i", $value), 'The actor Id must start with nm followed by 7 numbers');
++        
+         $this->value = $value;
+     }
+ }
+
+
+10) /var/www/html/src/Core/Domain/Actor/ValueObject/ActorId.php:55    [M] PregMatchRemoveCaret
+
+--- Original
++++ New
+@@ @@
+     /** @throws AssertionFailedException */
+     private function setValue(string $value) : void
+     {
+-        Assertion::true(1 === preg_match("/^nm\\d{7}\$/i", $value), 'The actor Id must start with nm followed by 7 numbers');
++        Assertion::true(1 === preg_match("/nm\\d{7}\$/i", $value), 'The actor Id must start with nm followed by 7 numbers');
+         $this->value = $value;
+     }
+ }
+
+
+11) /var/www/html/src/Core/Domain/Actor/ValueObject/ActorId.php:55    [M] PregMatchRemoveDollar
+
+--- Original
++++ New
+@@ @@
+     /** @throws AssertionFailedException */
+     private function setValue(string $value) : void
+     {
+-        Assertion::true(1 === preg_match("/^nm\\d{7}\$/i", $value), 'The actor Id must start with nm followed by 7 numbers');
++        Assertion::true(1 === preg_match("/^nm\\d{7}/i", $value), 'The actor Id must start with nm followed by 7 numbers');
+         $this->value = $value;
+     }
+ }
+
+
+12) /var/www/html/src/Core/Domain/Actor/ValueObject/ActorId.php:55    [M] PregMatchRemoveFlags
+
+--- Original
++++ New
+@@ @@
+     /** @throws AssertionFailedException */
+     private function setValue(string $value) : void
+     {
+-        Assertion::true(1 === preg_match("/^nm\\d{7}\$/i", $value), 'The actor Id must start with nm followed by 7 numbers');
++        Assertion::true(1 === preg_match("/^nm\\d{7}\$/", $value), 'The actor Id must start with nm followed by 7 numbers');
+         $this->value = $value;
+     }
+ }
+
+
+13) /var/www/html/src/Core/Domain/Actor/ValueObject/SeasonsActive.php:18    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     public static function fromArray(array $seasonsActive) : self
+     {
+         $value = json_encode($seasonsActive);
+-        Assertion::string($value);
++        
+         return new self($value);
+     }
+     public function value() : string
+
+
+14) /var/www/html/src/Core/Domain/Character/Event/CharacterWasCreated.php:47    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+     {
+         return $this->aggregateNameFromClassname(Character::class);
+     }
+-    public function characterId() : string
++    protected function characterId() : string
+     {
+         return $this->characterId;
+     }
+
+
+15) /var/www/html/src/Core/Domain/Character/Event/CharacterWasCreated.php:66    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     protected function setupPayload() : void
+     {
+         $payload = $this->messagePayload();
+-        Assert::that($payload)->keyExists('characterId');
++        
+         Assert::that($payload['characterId'])->string();
+         $this->characterId = $payload['characterId'];
+         Assert::that($payload)->keyExists('name');
+
+
+16) /var/www/html/src/Core/Domain/Character/Event/CharacterWasCreated.php:67    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     {
+         $payload = $this->messagePayload();
+         Assert::that($payload)->keyExists('characterId');
+-        Assert::that($payload['characterId'])->string();
++        
+         $this->characterId = $payload['characterId'];
+         Assert::that($payload)->keyExists('name');
+         Assert::that($payload['name'])->string();
+
+
+17) /var/www/html/src/Core/Domain/Character/Event/CharacterWasCreated.php:70    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         Assert::that($payload)->keyExists('characterId');
+         Assert::that($payload['characterId'])->string();
+         $this->characterId = $payload['characterId'];
+-        Assert::that($payload)->keyExists('name');
++        
+         Assert::that($payload['name'])->string();
+         $this->name = $payload['name'];
+         Assert::that($payload)->keyExists('internalId');
+
+
+18) /var/www/html/src/Core/Domain/Character/Event/CharacterWasCreated.php:71    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         Assert::that($payload['characterId'])->string();
+         $this->characterId = $payload['characterId'];
+         Assert::that($payload)->keyExists('name');
+-        Assert::that($payload['name'])->string();
++        
+         $this->name = $payload['name'];
+         Assert::that($payload)->keyExists('internalId');
+         Assert::that($payload['internalId'])->string();
+
+
+19) /var/www/html/src/Core/Domain/Character/Event/CharacterWasCreated.php:74    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         Assert::that($payload)->keyExists('name');
+         Assert::that($payload['name'])->string();
+         $this->name = $payload['name'];
+-        Assert::that($payload)->keyExists('internalId');
++        
+         Assert::that($payload['internalId'])->string();
+         $this->internalId = $payload['internalId'];
+     }
+ }
+
+
+20) /var/www/html/src/Core/Domain/Character/Event/CharacterWasCreated.php:75    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         Assert::that($payload['name'])->string();
+         $this->name = $payload['name'];
+         Assert::that($payload)->keyExists('internalId');
+-        Assert::that($payload['internalId'])->string();
++        
+         $this->internalId = $payload['internalId'];
+     }
+ }
+
+
+21) /var/www/html/src/Core/Domain/Character/Service/CharacterCreator.php:58    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         $this->characters->save($character);
+         foreach ($actors->collection() as $actor) {
+             $actor->assignCharacter($character);
+-            $this->actors->save($actor);
++            
+         }
+     }
+     /** @throws CharacterAlreadyExistsException */
+
+
+22) /var/www/html/src/Core/Domain/Character/ValueObject/CharacterId.php:54    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     /** @throws AssertionFailedException */
+     private function setValue(string $value) : void
+     {
+-        Assertion::true(1 === preg_match("/^ch\\d{7}\$/i", $value), 'The character Id must start with ch followed by 7 numbers');
++        
+         $this->value = $value;
+     }
+ }
+
+
+23) /var/www/html/src/Core/Domain/Character/ValueObject/CharacterId.php:55    [M] PregMatchRemoveCaret
+
+--- Original
++++ New
+@@ @@
+     /** @throws AssertionFailedException */
+     private function setValue(string $value) : void
+     {
+-        Assertion::true(1 === preg_match("/^ch\\d{7}\$/i", $value), 'The character Id must start with ch followed by 7 numbers');
++        Assertion::true(1 === preg_match("/ch\\d{7}\$/i", $value), 'The character Id must start with ch followed by 7 numbers');
+         $this->value = $value;
+     }
+ }
+
+
+24) /var/www/html/src/Core/Domain/Character/ValueObject/CharacterId.php:55    [M] PregMatchRemoveDollar
+
+--- Original
++++ New
+@@ @@
+     /** @throws AssertionFailedException */
+     private function setValue(string $value) : void
+     {
+-        Assertion::true(1 === preg_match("/^ch\\d{7}\$/i", $value), 'The character Id must start with ch followed by 7 numbers');
++        Assertion::true(1 === preg_match("/^ch\\d{7}/i", $value), 'The character Id must start with ch followed by 7 numbers');
+         $this->value = $value;
+     }
+ }
+
+
+25) /var/www/html/src/Core/Domain/Character/ValueObject/CharacterId.php:55    [M] PregMatchRemoveFlags
+
+--- Original
++++ New
+@@ @@
+     /** @throws AssertionFailedException */
+     private function setValue(string $value) : void
+     {
+-        Assertion::true(1 === preg_match("/^ch\\d{7}\$/i", $value), 'The character Id must start with ch followed by 7 numbers');
++        Assertion::true(1 === preg_match("/^ch\\d{7}\$/", $value), 'The character Id must start with ch followed by 7 numbers');
+         $this->value = $value;
+     }
+ }
+
+
+26) /var/www/html/src/Core/Domain/CharacterRelate/Event/CharacterWasRelated.php:53    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+     {
+         return $this->aggregateNameFromClassname(CharacterRelate::class);
+     }
+-    public function relationId() : string
++    protected function relationId() : string
+     {
+         return $this->relationId;
+     }
+
+
+27) /var/www/html/src/Core/Domain/CharacterRelate/Event/CharacterWasRelated.php:77    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     protected function setupPayload() : void
+     {
+         $payload = $this->messagePayload();
+-        Assert::that($payload)->keyExists('relationId');
++        
+         Assert::that($payload['relationId'])->string();
+         $this->relationId = $payload['relationId'];
+         Assert::that($payload)->keyExists('characterId');
+
+
+28) /var/www/html/src/Core/Domain/CharacterRelate/Event/CharacterWasRelated.php:78    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     {
+         $payload = $this->messagePayload();
+         Assert::that($payload)->keyExists('relationId');
+-        Assert::that($payload['relationId'])->string();
++        
+         $this->relationId = $payload['relationId'];
+         Assert::that($payload)->keyExists('characterId');
+         Assert::that($payload['characterId'])->string();
+
+
+29) /var/www/html/src/Core/Domain/CharacterRelate/Event/CharacterWasRelated.php:81    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         Assert::that($payload)->keyExists('relationId');
+         Assert::that($payload['relationId'])->string();
+         $this->relationId = $payload['relationId'];
+-        Assert::that($payload)->keyExists('characterId');
++        
+         Assert::that($payload['characterId'])->string();
+         $this->characterId = $payload['characterId'];
+         Assert::that($payload)->keyExists('relatedTo');
+
+
+30) /var/www/html/src/Core/Domain/CharacterRelate/Event/CharacterWasRelated.php:82    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         Assert::that($payload['relationId'])->string();
+         $this->relationId = $payload['relationId'];
+         Assert::that($payload)->keyExists('characterId');
+-        Assert::that($payload['characterId'])->string();
++        
+         $this->characterId = $payload['characterId'];
+         Assert::that($payload)->keyExists('relatedTo');
+         Assert::that($payload['relatedTo'])->string();
+
+
+31) /var/www/html/src/Core/Domain/CharacterRelate/Event/CharacterWasRelated.php:85    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         Assert::that($payload)->keyExists('characterId');
+         Assert::that($payload['characterId'])->string();
+         $this->characterId = $payload['characterId'];
+-        Assert::that($payload)->keyExists('relatedTo');
++        
+         Assert::that($payload['relatedTo'])->string();
+         $this->relatedTo = $payload['relatedTo'];
+         Assert::that($payload)->keyExists('relation');
+
+
+32) /var/www/html/src/Core/Domain/CharacterRelate/Event/CharacterWasRelated.php:86    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         Assert::that($payload['characterId'])->string();
+         $this->characterId = $payload['characterId'];
+         Assert::that($payload)->keyExists('relatedTo');
+-        Assert::that($payload['relatedTo'])->string();
++        
+         $this->relatedTo = $payload['relatedTo'];
+         Assert::that($payload)->keyExists('relation');
+         Assert::that($payload['relation'])->string();
+
+
+33) /var/www/html/src/Core/Domain/CharacterRelate/Event/CharacterWasRelated.php:89    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         Assert::that($payload)->keyExists('relatedTo');
+         Assert::that($payload['relatedTo'])->string();
+         $this->relatedTo = $payload['relatedTo'];
+-        Assert::that($payload)->keyExists('relation');
++        
+         Assert::that($payload['relation'])->string();
+         $this->relation = $payload['relation'];
+     }
+ }
+
+
+34) /var/www/html/src/Core/Domain/CharacterRelate/Event/CharacterWasRelated.php:90    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         Assert::that($payload['relatedTo'])->string();
+         $this->relatedTo = $payload['relatedTo'];
+         Assert::that($payload)->keyExists('relation');
+-        Assert::that($payload['relation'])->string();
++        
+         $this->relation = $payload['relation'];
+     }
+ }
+
+
+35) /var/www/html/src/Core/Domain/CharacterRelate/ValueObject/CharacterRelation.php:22    [M] MatchArmRemoval
+
+--- Original
++++ New
+@@ @@
+     public static function from(string $value) : self
+     {
+         return match ($value) {
+-            'abductedBy' => self::AbductedBy,
+             'guardianOf' => self::GuardianOf,
+             'killed' => self::Killed,
+             'killedBy' => self::KilledBy,
+
+
+36) /var/www/html/src/Core/Domain/CharacterRelate/ValueObject/CharacterRelation.php:22    [M] MatchArmRemoval
+
+--- Original
++++ New
+@@ @@
+     {
+         return match ($value) {
+             'abductedBy' => self::AbductedBy,
+-            'guardianOf' => self::GuardianOf,
+             'killed' => self::Killed,
+             'killedBy' => self::KilledBy,
+             'marriedEngaged' => self::MarriedEngaged,
+
+
+37) /var/www/html/src/Core/Domain/CharacterRelate/ValueObject/CharacterRelation.php:22    [M] MatchArmRemoval
+
+--- Original
++++ New
+@@ @@
+         return match ($value) {
+             'abductedBy' => self::AbductedBy,
+             'guardianOf' => self::GuardianOf,
+-            'killed' => self::Killed,
+             'killedBy' => self::KilledBy,
+             'marriedEngaged' => self::MarriedEngaged,
+             'parentOf' => self::ParentOf,
+
+
+38) /var/www/html/src/Core/Domain/CharacterRelate/ValueObject/CharacterRelation.php:22    [M] MatchArmRemoval
+
+--- Original
++++ New
+@@ @@
+             'abductedBy' => self::AbductedBy,
+             'guardianOf' => self::GuardianOf,
+             'killed' => self::Killed,
+-            'killedBy' => self::KilledBy,
+             'marriedEngaged' => self::MarriedEngaged,
+             'parentOf' => self::ParentOf,
+             'parents' => self::Parents,
+
+
+39) /var/www/html/src/Core/Domain/CharacterRelate/ValueObject/CharacterRelation.php:22    [M] MatchArmRemoval
+
+--- Original
++++ New
+@@ @@
+             'killed' => self::Killed,
+             'killedBy' => self::KilledBy,
+             'marriedEngaged' => self::MarriedEngaged,
+-            'parentOf' => self::ParentOf,
+             'parents' => self::Parents,
+             'siblings' => self::Siblings,
+             default => throw InvalidCharacterRelationTypeException::from($value),
+
+
+40) /var/www/html/src/Core/Domain/CharacterRelate/ValueObject/CharacterRelation.php:22    [M] MatchArmRemoval
+
+--- Original
++++ New
+@@ @@
+             'marriedEngaged' => self::MarriedEngaged,
+             'parentOf' => self::ParentOf,
+             'parents' => self::Parents,
+-            'siblings' => self::Siblings,
+             default => throw InvalidCharacterRelationTypeException::from($value),
+         };
+     }
+
+
+41) /var/www/html/src/Core/Domain/CharacterRelate/ValueObject/CharacterRelation.php:37    [M] MatchArmRemoval
+
+--- Original
++++ New
+@@ @@
+     public function value() : string
+     {
+         return match ($this) {
+-            self::AbductedBy => 'abductedBy',
+             self::GuardianOf => 'guardianOf',
+             self::Killed => 'killed',
+             self::KilledBy => 'killedBy',
+
+
+42) /var/www/html/src/Core/Domain/CharacterRelate/ValueObject/CharacterRelation.php:37    [M] MatchArmRemoval
+
+--- Original
++++ New
+@@ @@
+     {
+         return match ($this) {
+             self::AbductedBy => 'abductedBy',
+-            self::GuardianOf => 'guardianOf',
+             self::Killed => 'killed',
+             self::KilledBy => 'killedBy',
+             self::MarriedEngaged => 'marriedEngaged',
+
+
+43) /var/www/html/src/Core/Domain/CharacterRelate/ValueObject/CharacterRelation.php:37    [M] MatchArmRemoval
+
+--- Original
++++ New
+@@ @@
+         return match ($this) {
+             self::AbductedBy => 'abductedBy',
+             self::GuardianOf => 'guardianOf',
+-            self::Killed => 'killed',
+             self::KilledBy => 'killedBy',
+             self::MarriedEngaged => 'marriedEngaged',
+             self::ParentOf => 'parentOf',
+
+
+44) /var/www/html/src/Core/Domain/CharacterRelate/ValueObject/CharacterRelation.php:37    [M] MatchArmRemoval
+
+--- Original
++++ New
+@@ @@
+             self::AbductedBy => 'abductedBy',
+             self::GuardianOf => 'guardianOf',
+             self::Killed => 'killed',
+-            self::KilledBy => 'killedBy',
+             self::MarriedEngaged => 'marriedEngaged',
+             self::ParentOf => 'parentOf',
+             self::Parents => 'parents',
+
+
+45) /var/www/html/src/Core/Domain/CharacterRelate/ValueObject/CharacterRelation.php:37    [M] MatchArmRemoval
+
+--- Original
++++ New
+@@ @@
+             self::GuardianOf => 'guardianOf',
+             self::Killed => 'killed',
+             self::KilledBy => 'killedBy',
+-            self::MarriedEngaged => 'marriedEngaged',
+             self::ParentOf => 'parentOf',
+             self::Parents => 'parents',
+             self::Siblings => 'siblings',
+
+
+46) /var/www/html/src/Core/Domain/CharacterRelate/ValueObject/CharacterRelation.php:37    [M] MatchArmRemoval
+
+--- Original
++++ New
+@@ @@
+             self::Killed => 'killed',
+             self::KilledBy => 'killedBy',
+             self::MarriedEngaged => 'marriedEngaged',
+-            self::ParentOf => 'parentOf',
+             self::Parents => 'parents',
+             self::Siblings => 'siblings',
+         };
+
+
+47) /var/www/html/src/Core/Domain/CharacterRelate/ValueObject/CharacterRelation.php:37    [M] MatchArmRemoval
+
+--- Original
++++ New
+@@ @@
+             self::KilledBy => 'killedBy',
+             self::MarriedEngaged => 'marriedEngaged',
+             self::ParentOf => 'parentOf',
+-            self::Parents => 'parents',
+             self::Siblings => 'siblings',
+         };
+     }
+
+
+48) /var/www/html/src/Core/Domain/CharacterRelate/ValueObject/CharacterRelation.php:37    [M] MatchArmRemoval
+
+--- Original
++++ New
+@@ @@
+             self::MarriedEngaged => 'marriedEngaged',
+             self::ParentOf => 'parentOf',
+             self::Parents => 'parents',
+-            self::Siblings => 'siblings',
+         };
+     }
+     public function equalsTo(self $other) : bool
+
+
+49) /var/www/html/src/Core/Domain/House/Event/HouseWasCreated.php:45    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+     {
+         return $this->aggregateNameFromClassname(House::class);
+     }
+-    public function houseId() : string
++    protected function houseId() : string
+     {
+         return $this->houseId;
+     }
+
+
+50) /var/www/html/src/Core/Domain/House/Event/HouseWasCreated.php:59    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     protected function setupPayload() : void
+     {
+         $payload = $this->messagePayload();
+-        Assert::that($payload)->keyExists('houseId');
++        
+         Assert::that($payload['houseId'])->string();
+         $this->houseId = $payload['houseId'];
+         Assert::that($payload)->keyExists('name');
+
+
+51) /var/www/html/src/Core/Domain/House/Event/HouseWasCreated.php:60    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     {
+         $payload = $this->messagePayload();
+         Assert::that($payload)->keyExists('houseId');
+-        Assert::that($payload['houseId'])->string();
++        
+         $this->houseId = $payload['houseId'];
+         Assert::that($payload)->keyExists('name');
+         Assert::that($payload['name'])->string();
+
+
+52) /var/www/html/src/Core/Domain/House/Event/HouseWasCreated.php:63    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         Assert::that($payload)->keyExists('houseId');
+         Assert::that($payload['houseId'])->string();
+         $this->houseId = $payload['houseId'];
+-        Assert::that($payload)->keyExists('name');
++        
+         Assert::that($payload['name'])->string();
+         $this->name = $payload['name'];
+     }
+ }
+
+
+53) /var/www/html/src/Core/Domain/House/Event/HouseWasCreated.php:64    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         Assert::that($payload['houseId'])->string();
+         $this->houseId = $payload['houseId'];
+         Assert::that($payload)->keyExists('name');
+-        Assert::that($payload['name'])->string();
++        
+         $this->name = $payload['name'];
+     }
+ }
+
+
+54) /var/www/html/src/Core/Domain/House/Event/HouseWasUpdated.php:45    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+     {
+         return $this->aggregateNameFromClassname(House::class);
+     }
+-    public function houseId() : string
++    protected function houseId() : string
+     {
+         return $this->houseId;
+     }
+
+
+55) /var/www/html/src/Core/Domain/House/Event/HouseWasUpdated.php:59    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     protected function setupPayload() : void
+     {
+         $payload = $this->messagePayload();
+-        Assert::that($payload)->keyExists('houseId');
++        
+         Assert::that($payload['houseId'])->string();
+         $this->houseId = $payload['houseId'];
+         Assert::that($payload)->keyExists('name');
+
+
+56) /var/www/html/src/Core/Domain/House/Event/HouseWasUpdated.php:60    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     {
+         $payload = $this->messagePayload();
+         Assert::that($payload)->keyExists('houseId');
+-        Assert::that($payload['houseId'])->string();
++        
+         $this->houseId = $payload['houseId'];
+         Assert::that($payload)->keyExists('name');
+         Assert::that($payload['name'])->string();
+
+
+57) /var/www/html/src/Core/Domain/House/Event/HouseWasUpdated.php:63    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         Assert::that($payload)->keyExists('houseId');
+         Assert::that($payload['houseId'])->string();
+         $this->houseId = $payload['houseId'];
+-        Assert::that($payload)->keyExists('name');
++        
+         Assert::that($payload['name'])->string();
+         $this->name = $payload['name'];
+     }
+ }
+
+
+58) /var/www/html/src/Core/Domain/House/Event/HouseWasUpdated.php:64    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         Assert::that($payload['houseId'])->string();
+         $this->houseId = $payload['houseId'];
+         Assert::that($payload)->keyExists('name');
+-        Assert::that($payload['name'])->string();
++        
+         $this->name = $payload['name'];
+     }
+ }
+
+
+59) /var/www/html/src/Core/Domain/House/Service/HouseUpdater.php:28    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     {
+         $house = $this->finder->ofIdOrFail($houseId);
+         $house->update($name);
+-        $this->houses->save($house);
++        
+     }
+ }
+
+
+Timed Out mutants:
+==================
+
+Skipped mutants:
+================
+
+Not Covered mutants:
+====================
+
+1) /var/www/html/src/Shared/Application/Command/AsyncCommand.php:19    [M] CastString
+
+--- Original
++++ New
+@@ @@
+     }
+     public static final function messageAction() : string
+     {
+-        return (string) Str::of(class_basename(static::class))->snake()->replaceLast('_command', '');
++        return Str::of(class_basename(static::class))->snake()->replaceLast('_command', '');
+     }
+ }
+
+
+2) /var/www/html/src/Shared/Application/Query/PaginatorResponse.php:20    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+     public function __construct(private readonly array $results, private readonly int $numberOfResults, private readonly PaginatorPage $pageNumber, private readonly PaginatorSize $pageSize)
+     {
+     }
+-    public function results() : array
++    protected function results() : array
+     {
+         return $this->results;
+     }
+
+
+3) /var/www/html/src/Shared/Application/Query/PaginatorResponse.php:25    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+     {
+         return $this->results;
+     }
+-    public function currentPage() : int
++    protected function currentPage() : int
+     {
+         return $this->pageNumber->value();
+     }
+
+
+4) /var/www/html/src/Shared/Application/Query/PaginatorResponse.php:30    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+     {
+         return $this->pageNumber->value();
+     }
+-    public function lastPage() : int
++    protected function lastPage() : int
+     {
+         try {
+             $numberOfPages = (int) ceil($this->total() / $this->size());
+
+
+5) /var/www/html/src/Shared/Application/Query/PaginatorResponse.php:33    [M] Division
+
+--- Original
++++ New
+@@ @@
+     public function lastPage() : int
+     {
+         try {
+-            $numberOfPages = (int) ceil($this->total() / $this->size());
++            $numberOfPages = (int) ceil($this->total() * $this->size());
+         } catch (\Throwable) {
+             $numberOfPages = 0;
+         }
+
+
+6) /var/www/html/src/Shared/Application/Query/PaginatorResponse.php:33    [M] RoundingFamily
+
+--- Original
++++ New
+@@ @@
+     public function lastPage() : int
+     {
+         try {
+-            $numberOfPages = (int) ceil($this->total() / $this->size());
++            $numberOfPages = (int) floor($this->total() / $this->size());
+         } catch (\Throwable) {
+             $numberOfPages = 0;
+         }
+
+
+7) /var/www/html/src/Shared/Application/Query/PaginatorResponse.php:33    [M] RoundingFamily
+
+--- Original
++++ New
+@@ @@
+     public function lastPage() : int
+     {
+         try {
+-            $numberOfPages = (int) ceil($this->total() / $this->size());
++            $numberOfPages = (int) round($this->total() / $this->size());
+         } catch (\Throwable) {
+             $numberOfPages = 0;
+         }
+
+
+8) /var/www/html/src/Shared/Application/Query/PaginatorResponse.php:33    [M] CastInt
+
+--- Original
++++ New
+@@ @@
+     public function lastPage() : int
+     {
+         try {
+-            $numberOfPages = (int) ceil($this->total() / $this->size());
++            $numberOfPages = ceil($this->total() / $this->size());
+         } catch (\Throwable) {
+             $numberOfPages = 0;
+         }
+
+
+9) /var/www/html/src/Shared/Application/Query/PaginatorResponse.php:35    [M] DecrementInteger
+
+--- Original
++++ New
+@@ @@
+         try {
+             $numberOfPages = (int) ceil($this->total() / $this->size());
+         } catch (\Throwable) {
+-            $numberOfPages = 0;
++            $numberOfPages = -1;
+         }
+         return $numberOfPages;
+     }
+
+
+10) /var/www/html/src/Shared/Application/Query/PaginatorResponse.php:41    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         }
+         return $numberOfPages;
+     }
+-    public function size() : int
++    protected function size() : int
+     {
+         return $this->pageSize->value();
+     }
+
+
+11) /var/www/html/src/Shared/Application/Query/PaginatorResponse.php:46    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+     {
+         return $this->pageSize->value();
+     }
+-    public function total() : int
++    protected function total() : int
+     {
+         return $this->numberOfResults;
+     }
+
+
+12) /var/www/html/src/Shared/Application/Query/PaginatorResponse.php:52    [M] ProtectedVisibility
+
+--- Original
++++ New
+@@ @@
+         return $this->numberOfResults;
+     }
+     /** @return array<string, mixed> */
+-    protected function meta() : array
++    private function meta() : array
+     {
+         return ['currentPage' => $this->currentPage(), 'lastPage' => $this->lastPage(), 'size' => $this->size(), 'total' => $this->total()];
+     }
+ }
+
+
+13) /var/www/html/src/Shared/Application/Query/PaginatorResponse.php:54    [M] ArrayItemRemoval
+
+--- Original
++++ New
+@@ @@
+     /** @return array<string, mixed> */
+     protected function meta() : array
+     {
+-        return ['currentPage' => $this->currentPage(), 'lastPage' => $this->lastPage(), 'size' => $this->size(), 'total' => $this->total()];
++        return ['lastPage' => $this->lastPage(), 'size' => $this->size(), 'total' => $this->total()];
+     }
+ }
+
+
+14) /var/www/html/src/Shared/Application/Query/PaginatorResponse.php:55    [M] ArrayItem
+
+--- Original
++++ New
+@@ @@
+     /** @return array<string, mixed> */
+     protected function meta() : array
+     {
+-        return ['currentPage' => $this->currentPage(), 'lastPage' => $this->lastPage(), 'size' => $this->size(), 'total' => $this->total()];
++        return ['currentPage' > $this->currentPage(), 'lastPage' => $this->lastPage(), 'size' => $this->size(), 'total' => $this->total()];
+     }
+ }
+
+
+15) /var/www/html/src/Shared/Application/Query/PaginatorResponse.php:56    [M] ArrayItem
+
+--- Original
++++ New
+@@ @@
+     /** @return array<string, mixed> */
+     protected function meta() : array
+     {
+-        return ['currentPage' => $this->currentPage(), 'lastPage' => $this->lastPage(), 'size' => $this->size(), 'total' => $this->total()];
++        return ['currentPage' => $this->currentPage(), 'lastPage' > $this->lastPage(), 'size' => $this->size(), 'total' => $this->total()];
+     }
+ }
+
+
+16) /var/www/html/src/Shared/Application/Query/PaginatorResponse.php:57    [M] ArrayItem
+
+--- Original
++++ New
+@@ @@
+     /** @return array<string, mixed> */
+     protected function meta() : array
+     {
+-        return ['currentPage' => $this->currentPage(), 'lastPage' => $this->lastPage(), 'size' => $this->size(), 'total' => $this->total()];
++        return ['currentPage' => $this->currentPage(), 'lastPage' => $this->lastPage(), 'size' > $this->size(), 'total' => $this->total()];
+     }
+ }
+
+
+17) /var/www/html/src/Shared/Application/Query/PaginatorResponse.php:58    [M] ArrayItem
+
+--- Original
++++ New
+@@ @@
+     /** @return array<string, mixed> */
+     protected function meta() : array
+     {
+-        return ['currentPage' => $this->currentPage(), 'lastPage' => $this->lastPage(), 'size' => $this->size(), 'total' => $this->total()];
++        return ['currentPage' => $this->currentPage(), 'lastPage' => $this->lastPage(), 'size' => $this->size(), 'total' > $this->total()];
+     }
+ }
+
+
+18) /var/www/html/src/Shared/Domain/Aggregate/AggregateRoot.php:16    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+     private int $aggregateVersion = 0;
+     /** @var array<DomainEvent> */
+     private array $events = [];
+-    public final function aggregateVersion() : int
++    protected final function aggregateVersion() : int
+     {
+         return $this->aggregateVersion;
+     }
+
+
+19) /var/www/html/src/Shared/Domain/Aggregate/AggregateRoot.php:22    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         return $this->aggregateVersion;
+     }
+     /** @return array<DomainEvent> */
+-    public final function events() : array
++    protected final function events() : array
+     {
+         return $this->events;
+     }
+
+
+20) /var/www/html/src/Shared/Domain/Aggregate/AggregateRoot.php:27    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+     {
+         return $this->events;
+     }
+-    public final function reset() : void
++    protected final function reset() : void
+     {
+         $this->events = [];
+         $this->aggregateVersion = 0;
+
+
+21) /var/www/html/src/Shared/Domain/Aggregate/AggregateRoot.php:30    [M] DecrementInteger
+
+--- Original
++++ New
+@@ @@
+     public final function reset() : void
+     {
+         $this->events = [];
+-        $this->aggregateVersion = 0;
++        $this->aggregateVersion = -1;
+     }
+     protected final function recordThat(DomainEvent $event) : void
+     {
+
+
+22) /var/www/html/src/Shared/Domain/Aggregate/AggregateRoot.php:36    [M] Increment
+
+--- Original
++++ New
+@@ @@
+     protected final function recordThat(DomainEvent $event) : void
+     {
+         $this->events[] = $event;
+-        ++$this->aggregateVersion;
++        --$this->aggregateVersion;
+     }
+ }
+
+
+23) /var/www/html/src/Shared/Domain/Data/DataMapping.php:20    [M] LogicalNot
+
+--- Original
++++ New
+@@ @@
+      */
+     private static function getArray(array $data, string $key) : ?array
+     {
+-        if (!array_key_exists($key, $data)) {
++        if (array_key_exists($key, $data)) {
+             return null;
+         }
+         $value = $data[$key];
+
+
+24) /var/www/html/src/Shared/Domain/Data/DataMapping.php:26    [M] LogicalNot
+
+--- Original
++++ New
+@@ @@
+             return null;
+         }
+         $value = $data[$key];
+-        return !\is_array($value) ? null : $value;
++        return \is_array($value) ? null : $value;
+     }
+     /* @param array<mixed> $data */
+     private static function getBool(array $data, string $key, bool $default = false) : bool
+
+
+25) /var/www/html/src/Shared/Domain/Data/DataMapping.php:26    [M] Ternary
+
+--- Original
++++ New
+@@ @@
+             return null;
+         }
+         $value = $data[$key];
+-        return !\is_array($value) ? null : $value;
++        return !\is_array($value) ? $value : null;
+     }
+     /* @param array<mixed> $data */
+     private static function getBool(array $data, string $key, bool $default = false) : bool
+
+
+26) /var/www/html/src/Shared/Domain/Data/DataMapping.php:32    [M] FalseValue
+
+--- Original
++++ New
+@@ @@
+         return !\is_array($value) ? null : $value;
+     }
+     /* @param array<mixed> $data */
+-    private static function getBool(array $data, string $key, bool $default = false) : bool
++    private static function getBool(array $data, string $key, bool $default = true) : bool
+     {
+         $value = self::getBoolOrNull($data, $key);
+         if (null === $value) {
+
+
+27) /var/www/html/src/Shared/Domain/Data/DataMapping.php:36    [M] Identical
+
+--- Original
++++ New
+@@ @@
+     private static function getBool(array $data, string $key, bool $default = false) : bool
+     {
+         $value = self::getBoolOrNull($data, $key);
+-        if (null === $value) {
++        if (null !== $value) {
+             return $default;
+         }
+         return $value;
+
+
+28) /var/www/html/src/Shared/Domain/Data/DataMapping.php:48    [M] Identical
+
+--- Original
++++ New
+@@ @@
+     private static function getBoolOrNull(array $data, string $key) : ?bool
+     {
+         $value = Arr::get($data, $key);
+-        if (null === $value) {
++        if (null !== $value) {
+             return null;
+         }
+         return filter_var($value, \FILTER_VALIDATE_BOOLEAN, \FILTER_NULL_ON_FAILURE);
+
+
+29) /var/www/html/src/Shared/Domain/Data/DataMapping.php:52    [M] FunctionCall
+
+--- Original
++++ New
+@@ @@
+         if (null === $value) {
+             return null;
+         }
+-        return filter_var($value, \FILTER_VALIDATE_BOOLEAN, \FILTER_NULL_ON_FAILURE);
++        filter_var($value, \FILTER_VALIDATE_BOOLEAN, \FILTER_NULL_ON_FAILURE);
++        return null;
+     }
+     /* @param array<mixed> $data */
+     private static function getInt(array $data, string $key, int $default = 0) : int
+
+
+30) /var/www/html/src/Shared/Domain/Data/DataMapping.php:56    [M] DecrementInteger
+
+--- Original
++++ New
+@@ @@
+         return filter_var($value, \FILTER_VALIDATE_BOOLEAN, \FILTER_NULL_ON_FAILURE);
+     }
+     /* @param array<mixed> $data */
+-    private static function getInt(array $data, string $key, int $default = 0) : int
++    private static function getInt(array $data, string $key, int $default = -1) : int
+     {
+         $value = self::getIntOrNull($data, $key);
+         if (null === $value) {
+
+
+31) /var/www/html/src/Shared/Domain/Data/DataMapping.php:56    [M] IncrementInteger
+
+--- Original
++++ New
+@@ @@
+         return filter_var($value, \FILTER_VALIDATE_BOOLEAN, \FILTER_NULL_ON_FAILURE);
+     }
+     /* @param array<mixed> $data */
+-    private static function getInt(array $data, string $key, int $default = 0) : int
++    private static function getInt(array $data, string $key, int $default = 1) : int
+     {
+         $value = self::getIntOrNull($data, $key);
+         if (null === $value) {
+
+
+32) /var/www/html/src/Shared/Domain/Data/DataMapping.php:60    [M] Identical
+
+--- Original
++++ New
+@@ @@
+     private static function getInt(array $data, string $key, int $default = 0) : int
+     {
+         $value = self::getIntOrNull($data, $key);
+-        if (null === $value) {
++        if (null !== $value) {
+             return $default;
+         }
+         return $value;
+
+
+33) /var/www/html/src/Shared/Domain/Data/DataMapping.php:72    [M] Identical
+
+--- Original
++++ New
+@@ @@
+     private static function getIntOrNull(array $data, string $key) : ?int
+     {
+         $value = Arr::get($data, $key);
+-        if (null === $value) {
++        if (null !== $value) {
+             return null;
+         }
+         if (\is_bool($value)) {
+
+
+34) /var/www/html/src/Shared/Domain/Data/DataMapping.php:77    [M] CastInt
+
+--- Original
++++ New
+@@ @@
+             return null;
+         }
+         if (\is_bool($value)) {
+-            return (int) $value;
++            return $value;
+         }
+         return filter_var($value, \FILTER_VALIDATE_INT, \FILTER_NULL_ON_FAILURE);
+     }
+
+
+35) /var/www/html/src/Shared/Domain/Data/DataMapping.php:80    [M] FunctionCall
+
+--- Original
++++ New
+@@ @@
+         if (\is_bool($value)) {
+             return (int) $value;
+         }
+-        return filter_var($value, \FILTER_VALIDATE_INT, \FILTER_NULL_ON_FAILURE);
++        filter_var($value, \FILTER_VALIDATE_INT, \FILTER_NULL_ON_FAILURE);
++        return null;
+     }
+     /** @throws AssertionFailedException */
+     private static function generateId() : string
+
+
+36) /var/www/html/src/Shared/Domain/Data/DataMapping.php:94    [M] LogicalNot
+
+--- Original
++++ New
+@@ @@
+     private static function getString(array $data, string $key, string $default = '') : string
+     {
+         $value = Arr::get($data, $key);
+-        if (!is_scalar($value)) {
++        if (is_scalar($value)) {
+             return $default;
+         }
+         if (true === $value || false === $value) {
+
+
+37) /var/www/html/src/Shared/Domain/Data/DataMapping.php:98    [M] TrueValue
+
+--- Original
++++ New
+@@ @@
+         if (!is_scalar($value)) {
+             return $default;
+         }
+-        if (true === $value || false === $value) {
++        if (false === $value || false === $value) {
+             return true === $value ? 'true' : 'false';
+         }
+         return (string) $value;
+
+
+38) /var/www/html/src/Shared/Domain/Data/DataMapping.php:98    [M] Identical
+
+--- Original
++++ New
+@@ @@
+         if (!is_scalar($value)) {
+             return $default;
+         }
+-        if (true === $value || false === $value) {
++        if (true !== $value || false === $value) {
+             return true === $value ? 'true' : 'false';
+         }
+         return (string) $value;
+
+
+39) /var/www/html/src/Shared/Domain/Data/DataMapping.php:98    [M] FalseValue
+
+--- Original
++++ New
+@@ @@
+         if (!is_scalar($value)) {
+             return $default;
+         }
+-        if (true === $value || false === $value) {
++        if (true === $value || true === $value) {
+             return true === $value ? 'true' : 'false';
+         }
+         return (string) $value;
+
+
+40) /var/www/html/src/Shared/Domain/Data/DataMapping.php:98    [M] Identical
+
+--- Original
++++ New
+@@ @@
+         if (!is_scalar($value)) {
+             return $default;
+         }
+-        if (true === $value || false === $value) {
++        if (true === $value || false !== $value) {
+             return true === $value ? 'true' : 'false';
+         }
+         return (string) $value;
+
+
+41) /var/www/html/src/Shared/Domain/Data/DataMapping.php:99    [M] TrueValue
+
+--- Original
++++ New
+@@ @@
+             return $default;
+         }
+         if (true === $value || false === $value) {
+-            return true === $value ? 'true' : 'false';
++            return false === $value ? 'true' : 'false';
+         }
+         return (string) $value;
+     }
+
+
+42) /var/www/html/src/Shared/Domain/Data/DataMapping.php:99    [M] Identical
+
+--- Original
++++ New
+@@ @@
+             return $default;
+         }
+         if (true === $value || false === $value) {
+-            return true === $value ? 'true' : 'false';
++            return true !== $value ? 'true' : 'false';
+         }
+         return (string) $value;
+     }
+
+
+43) /var/www/html/src/Shared/Domain/Data/DataMapping.php:99    [M] Ternary
+
+--- Original
++++ New
+@@ @@
+             return $default;
+         }
+         if (true === $value || false === $value) {
+-            return true === $value ? 'true' : 'false';
++            return true === $value ? 'false' : 'true';
+         }
+         return (string) $value;
+     }
+
+
+44) /var/www/html/src/Shared/Domain/Data/DataMapping.php:104    [M] CastString
+
+--- Original
++++ New
+@@ @@
+         if (true === $value || false === $value) {
+             return true === $value ? 'true' : 'false';
+         }
+-        return (string) $value;
++        return $value;
+     }
+     /* @param array<mixed> $data */
+     private static function getNonEmptyStringOrNull(array $data, string $key) : ?string
+
+
+45) /var/www/html/src/Shared/Domain/Data/DataMapping.php:112    [M] Identical
+
+--- Original
++++ New
+@@ @@
+     private static function getNonEmptyStringOrNull(array $data, string $key) : ?string
+     {
+         $value = self::getString($data, $key);
+-        if ('' === $value) {
++        if ('' !== $value) {
+             return null;
+         }
+         return $value;
+     }
+ }
+
+
+46) /var/www/html/src/Shared/Domain/DomainException.php:12    [M] ProtectedVisibility
+
+--- Original
++++ New
+@@ @@
+ abstract class DomainException extends \Exception
+ {
+     /** @noinspection PhpAttributeCanBeAddedToOverriddenMemberInspection */
+-    #[Pure]
+-    protected function __construct(string $message, int $code = 0, ?\Throwable $previous = null)
++    private function __construct(string $message, int $code = 0, ?\Throwable $previous = null)
+     {
+         parent::__construct($message, $code, $previous);
+     }
+
+
+47) /var/www/html/src/Shared/Domain/DomainException.php:13    [M] DecrementInteger
+
+--- Original
++++ New
+@@ @@
+ {
+     /** @noinspection PhpAttributeCanBeAddedToOverriddenMemberInspection */
+     #[Pure]
+-    protected function __construct(string $message, int $code = 0, ?\Throwable $previous = null)
++    protected function __construct(string $message, int $code = -1, ?\Throwable $previous = null)
+     {
+         parent::__construct($message, $code, $previous);
+     }
+
+
+48) /var/www/html/src/Shared/Domain/DomainException.php:13    [M] IncrementInteger
+
+--- Original
++++ New
+@@ @@
+ {
+     /** @noinspection PhpAttributeCanBeAddedToOverriddenMemberInspection */
+     #[Pure]
+-    protected function __construct(string $message, int $code = 0, ?\Throwable $previous = null)
++    protected function __construct(string $message, int $code = 1, ?\Throwable $previous = null)
+     {
+         parent::__construct($message, $code, $previous);
+     }
+
+
+49) /var/www/html/src/Shared/Domain/DomainException.php:15    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     #[Pure]
+     protected function __construct(string $message, int $code = 0, ?\Throwable $previous = null)
+     {
+-        parent::__construct($message, $code, $previous);
++        
+     }
+     public abstract function title() : string;
+     #[Pure]
+
+
+50) /var/www/html/src/Shared/Domain/DomainException.php:20    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         parent::__construct($message, $code, $previous);
+     }
+     public abstract function title() : string;
+-    #[Pure]
+-    public function detail() : string
++    protected function detail() : string
+     {
+         return $this->getMessage();
+     }
+
+
+51) /var/www/html/src/Shared/Domain/DomainException.php:26    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+     {
+         return $this->getMessage();
+     }
+-    public function code() : string
++    protected function code() : string
+     {
+         return str_replace('_exception', '', Utils::toSnakeCase(Utils::extractClassName($this)));
+     }
+ }
+
+
+52) /var/www/html/src/Shared/Domain/DomainException.php:28    [M] UnwrapStrReplace
+
+--- Original
++++ New
+@@ @@
+     }
+     public function code() : string
+     {
+-        return str_replace('_exception', '', Utils::toSnakeCase(Utils::extractClassName($this)));
++        return Utils::toSnakeCase(Utils::extractClassName($this));
+     }
+ }
+
+
+53) /var/www/html/src/Shared/Domain/Event/Aggregate/StoredEvent.php:39    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+      */
+     private function __construct(MessageId $messageId, string $messageName, array $messageBody, string $aggregateId, \DateTimeInterface $occurredAt)
+     {
+-        $this->setMessageId($messageId);
++        
+         $this->setMessageName($messageName);
+         $this->setMessageBody($messageBody);
+         $this->setAggregateId($aggregateId);
+
+
+54) /var/www/html/src/Shared/Domain/Event/Aggregate/StoredEvent.php:40    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     private function __construct(MessageId $messageId, string $messageName, array $messageBody, string $aggregateId, \DateTimeInterface $occurredAt)
+     {
+         $this->setMessageId($messageId);
+-        $this->setMessageName($messageName);
++        
+         $this->setMessageBody($messageBody);
+         $this->setAggregateId($aggregateId);
+         $this->setOccurredAt($occurredAt);
+
+
+55) /var/www/html/src/Shared/Domain/Event/Aggregate/StoredEvent.php:41    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     {
+         $this->setMessageId($messageId);
+         $this->setMessageName($messageName);
+-        $this->setMessageBody($messageBody);
++        
+         $this->setAggregateId($aggregateId);
+         $this->setOccurredAt($occurredAt);
+     }
+
+
+56) /var/www/html/src/Shared/Domain/Event/Aggregate/StoredEvent.php:42    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         $this->setMessageId($messageId);
+         $this->setMessageName($messageName);
+         $this->setMessageBody($messageBody);
+-        $this->setAggregateId($aggregateId);
++        
+         $this->setOccurredAt($occurredAt);
+     }
+     /**
+
+
+57) /var/www/html/src/Shared/Domain/Event/Aggregate/StoredEvent.php:43    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         $this->setMessageName($messageName);
+         $this->setMessageBody($messageBody);
+         $this->setAggregateId($aggregateId);
+-        $this->setOccurredAt($occurredAt);
++        
+     }
+     /**
+      * @param array<mixed> $messageBody
+
+
+58) /var/www/html/src/Shared/Domain/Event/Aggregate/StoredEvent.php:51    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+      *
+      * @throws AssertionFailedException
+      */
+-    public static function create(MessageId $messageId, string $messageName, array $messageBody, string $aggregateId, \DateTimeInterface $occurredAt) : self
++    protected static function create(MessageId $messageId, string $messageName, array $messageBody, string $aggregateId, \DateTimeInterface $occurredAt) : self
+     {
+         return new self($messageId, $messageName, $messageBody, $aggregateId, $occurredAt);
+     }
+
+
+59) /var/www/html/src/Shared/Domain/Event/Aggregate/StoredEvent.php:61    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+     {
+         return new self($messageId, $messageName, $messageBody, $aggregateId, $occurredAt);
+     }
+-    public function messageId() : MessageId
++    protected function messageId() : MessageId
+     {
+         return $this->messageId;
+     }
+
+
+60) /var/www/html/src/Shared/Domain/Event/Aggregate/StoredEvent.php:66    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+     {
+         return $this->messageId;
+     }
+-    public function messageName() : string
++    protected function messageName() : string
+     {
+         return $this->messageName;
+     }
+
+
+61) /var/www/html/src/Shared/Domain/Event/Aggregate/StoredEvent.php:72    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         return $this->messageName;
+     }
+     /** @return array<mixed> */
+-    public function messageBody() : array
++    protected function messageBody() : array
+     {
+         return $this->messageBody;
+     }
+
+
+62) /var/www/html/src/Shared/Domain/Event/Aggregate/StoredEvent.php:77    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+     {
+         return $this->messageBody;
+     }
+-    public function aggregateId() : string
++    protected function aggregateId() : string
+     {
+         return $this->aggregateId;
+     }
+
+
+63) /var/www/html/src/Shared/Domain/Event/Aggregate/StoredEvent.php:82    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+     {
+         return $this->aggregateId;
+     }
+-    public function occurredAt() : CarbonImmutable
++    protected function occurredAt() : CarbonImmutable
+     {
+         return $this->occurredAt;
+     }
+
+
+64) /var/www/html/src/Shared/Domain/Event/Aggregate/StoredEvent.php:103    [M] ArrayItemRemoval
+
+--- Original
++++ New
+@@ @@
+     #[ArrayShape(['id' => "\\Whalar\\Shared\\Domain\\Event\\ValueObject\\MessageId", 'topic' => 'string', 'payload' => 'mixed', 'resourceId' => 'string', 'createdAt' => 'string'])]
+     public function jsonSerialize() : array
+     {
+-        return ['id' => $this->messageId(), 'topic' => $this->messageName(), 'payload' => $this->messageBody(), 'resourceId' => $this->aggregateId(), 'createdAt' => $this->occurredAt()->toIso8601ZuluString()];
++        return ['topic' => $this->messageName(), 'payload' => $this->messageBody(), 'resourceId' => $this->aggregateId(), 'createdAt' => $this->occurredAt()->toIso8601ZuluString()];
+     }
+     private function setMessageId(MessageId $messageId) : void
+     {
+
+
+65) /var/www/html/src/Shared/Domain/Event/Aggregate/StoredEvent.php:104    [M] ArrayItem
+
+--- Original
++++ New
+@@ @@
+     #[ArrayShape(['id' => "\\Whalar\\Shared\\Domain\\Event\\ValueObject\\MessageId", 'topic' => 'string', 'payload' => 'mixed', 'resourceId' => 'string', 'createdAt' => 'string'])]
+     public function jsonSerialize() : array
+     {
+-        return ['id' => $this->messageId(), 'topic' => $this->messageName(), 'payload' => $this->messageBody(), 'resourceId' => $this->aggregateId(), 'createdAt' => $this->occurredAt()->toIso8601ZuluString()];
++        return ['id' > $this->messageId(), 'topic' => $this->messageName(), 'payload' => $this->messageBody(), 'resourceId' => $this->aggregateId(), 'createdAt' => $this->occurredAt()->toIso8601ZuluString()];
+     }
+     private function setMessageId(MessageId $messageId) : void
+     {
+
+
+66) /var/www/html/src/Shared/Domain/Event/Aggregate/StoredEvent.php:105    [M] ArrayItem
+
+--- Original
++++ New
+@@ @@
+     #[ArrayShape(['id' => "\\Whalar\\Shared\\Domain\\Event\\ValueObject\\MessageId", 'topic' => 'string', 'payload' => 'mixed', 'resourceId' => 'string', 'createdAt' => 'string'])]
+     public function jsonSerialize() : array
+     {
+-        return ['id' => $this->messageId(), 'topic' => $this->messageName(), 'payload' => $this->messageBody(), 'resourceId' => $this->aggregateId(), 'createdAt' => $this->occurredAt()->toIso8601ZuluString()];
++        return ['id' => $this->messageId(), 'topic' > $this->messageName(), 'payload' => $this->messageBody(), 'resourceId' => $this->aggregateId(), 'createdAt' => $this->occurredAt()->toIso8601ZuluString()];
+     }
+     private function setMessageId(MessageId $messageId) : void
+     {
+
+
+67) /var/www/html/src/Shared/Domain/Event/Aggregate/StoredEvent.php:106    [M] ArrayItem
+
+--- Original
++++ New
+@@ @@
+     #[ArrayShape(['id' => "\\Whalar\\Shared\\Domain\\Event\\ValueObject\\MessageId", 'topic' => 'string', 'payload' => 'mixed', 'resourceId' => 'string', 'createdAt' => 'string'])]
+     public function jsonSerialize() : array
+     {
+-        return ['id' => $this->messageId(), 'topic' => $this->messageName(), 'payload' => $this->messageBody(), 'resourceId' => $this->aggregateId(), 'createdAt' => $this->occurredAt()->toIso8601ZuluString()];
++        return ['id' => $this->messageId(), 'topic' => $this->messageName(), 'payload' > $this->messageBody(), 'resourceId' => $this->aggregateId(), 'createdAt' => $this->occurredAt()->toIso8601ZuluString()];
+     }
+     private function setMessageId(MessageId $messageId) : void
+     {
+
+
+68) /var/www/html/src/Shared/Domain/Event/Aggregate/StoredEvent.php:107    [M] ArrayItem
+
+--- Original
++++ New
+@@ @@
+     #[ArrayShape(['id' => "\\Whalar\\Shared\\Domain\\Event\\ValueObject\\MessageId", 'topic' => 'string', 'payload' => 'mixed', 'resourceId' => 'string', 'createdAt' => 'string'])]
+     public function jsonSerialize() : array
+     {
+-        return ['id' => $this->messageId(), 'topic' => $this->messageName(), 'payload' => $this->messageBody(), 'resourceId' => $this->aggregateId(), 'createdAt' => $this->occurredAt()->toIso8601ZuluString()];
++        return ['id' => $this->messageId(), 'topic' => $this->messageName(), 'payload' => $this->messageBody(), 'resourceId' > $this->aggregateId(), 'createdAt' => $this->occurredAt()->toIso8601ZuluString()];
+     }
+     private function setMessageId(MessageId $messageId) : void
+     {
+
+
+69) /var/www/html/src/Shared/Domain/Event/Aggregate/StoredEvent.php:108    [M] ArrayItem
+
+--- Original
++++ New
+@@ @@
+     #[ArrayShape(['id' => "\\Whalar\\Shared\\Domain\\Event\\ValueObject\\MessageId", 'topic' => 'string', 'payload' => 'mixed', 'resourceId' => 'string', 'createdAt' => 'string'])]
+     public function jsonSerialize() : array
+     {
+-        return ['id' => $this->messageId(), 'topic' => $this->messageName(), 'payload' => $this->messageBody(), 'resourceId' => $this->aggregateId(), 'createdAt' => $this->occurredAt()->toIso8601ZuluString()];
++        return ['id' => $this->messageId(), 'topic' => $this->messageName(), 'payload' => $this->messageBody(), 'resourceId' => $this->aggregateId(), 'createdAt' > $this->occurredAt()->toIso8601ZuluString()];
+     }
+     private function setMessageId(MessageId $messageId) : void
+     {
+
+
+70) /var/www/html/src/Shared/Domain/Event/Aggregate/StoredEvent.php:120    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     /** @throws AssertionFailedException */
+     private function setMessageName(string $messageName) : void
+     {
+-        Assertion::notBlank($messageName);
++        
+         $this->messageName = trim($messageName);
+     }
+     /** @param array<mixed> $messageBody */
+
+
+71) /var/www/html/src/Shared/Domain/Event/Aggregate/StoredEvent.php:121    [M] UnwrapTrim
+
+--- Original
++++ New
+@@ @@
+     private function setMessageName(string $messageName) : void
+     {
+         Assertion::notBlank($messageName);
+-        $this->messageName = trim($messageName);
++        $this->messageName = $messageName;
+     }
+     /** @param array<mixed> $messageBody */
+     private function setMessageBody(array $messageBody) : void
+
+
+72) /var/www/html/src/Shared/Domain/Event/Aggregate/StoredEvent.php:133    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     /** @throws AssertionFailedException */
+     private function setAggregateId(string $aggregateId) : void
+     {
+-        Assertion::uuid($aggregateId);
++        
+         $this->aggregateId = $aggregateId;
+     }
+     private function setOccurredAt(\DateTimeInterface $occurredAt) : void
+
+
+73) /var/www/html/src/Shared/Domain/Event/DomainEvent.php:39    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         $this->messageId = $messageId;
+         $this->messageVersion = $messageVersion;
+         $this->occurredOn = $occurredOn;
+-        $this->setMessagePayload($messagePayload);
++        
+     }
+     /**
+      * @param array<mixed> $messagePayload
+
+
+74) /var/www/html/src/Shared/Domain/Event/DomainEvent.php:47    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+      *
+      * @throws \InvalidArgumentException
+      */
+-    public static final function create(string $messageId, int $messageVersion, \DateTimeInterface $occurredOn, array $messagePayload) : self
++    protected static final function create(string $messageId, int $messageVersion, \DateTimeInterface $occurredOn, array $messagePayload) : self
+     {
+         $message = new static($messageId, $messageVersion, $occurredOn, $messagePayload);
+         $message->setupPayload();
+
+
+75) /var/www/html/src/Shared/Domain/Event/DomainEvent.php:60    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     public static final function create(string $messageId, int $messageVersion, \DateTimeInterface $occurredOn, array $messagePayload) : self
+     {
+         $message = new static($messageId, $messageVersion, $occurredOn, $messagePayload);
+-        $message->setupPayload();
++        
+         return $message;
+     }
+     public function messageAggregateId() : string
+
+
+76) /var/www/html/src/Shared/Domain/Event/DomainEvent.php:65    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         $message->setupPayload();
+         return $message;
+     }
+-    public function messageAggregateId() : string
++    protected function messageAggregateId() : string
+     {
+         throw new RuntimeException('This method acts as an abstract one, should be override and should not be called directly.');
+     }
+
+
+77) /var/www/html/src/Shared/Domain/Event/DomainEvent.php:67    [M] Throw_
+
+--- Original
++++ New
+@@ @@
+     }
+     public function messageAggregateId() : string
+     {
+-        throw new RuntimeException('This method acts as an abstract one, should be override and should not be called directly.');
++        new RuntimeException('This method acts as an abstract one, should be override and should not be called directly.');
+     }
+     public function messageAggregateName() : string
+     {
+
+
+78) /var/www/html/src/Shared/Domain/Event/DomainEvent.php:72    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+     {
+         throw new RuntimeException('This method acts as an abstract one, should be override and should not be called directly.');
+     }
+-    public function messageAggregateName() : string
++    protected function messageAggregateName() : string
+     {
+         throw new RuntimeException('This method acts as an abstract one, should be override and should not be called directly.');
+     }
+
+
+79) /var/www/html/src/Shared/Domain/Event/DomainEvent.php:74    [M] Throw_
+
+--- Original
++++ New
+@@ @@
+     }
+     public function messageAggregateName() : string
+     {
+-        throw new RuntimeException('This method acts as an abstract one, should be override and should not be called directly.');
++        new RuntimeException('This method acts as an abstract one, should be override and should not be called directly.');
+     }
+     public function messageId() : string
+     {
+
+
+80) /var/www/html/src/Shared/Domain/Event/DomainEvent.php:79    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+     {
+         throw new RuntimeException('This method acts as an abstract one, should be override and should not be called directly.');
+     }
+-    public function messageId() : string
++    protected function messageId() : string
+     {
+         return $this->messageId;
+     }
+
+
+81) /var/www/html/src/Shared/Domain/Event/DomainEvent.php:85    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         return $this->messageId;
+     }
+     /* @throws Throwable */
+-    public static function messageName() : string
++    protected static function messageName() : string
+     {
+         $value = (new \ReflectionClass(static::class))->getShortName();
+         if (!ctype_lower($value)) {
+
+
+82) /var/www/html/src/Shared/Domain/Event/DomainEvent.php:89    [M] LogicalNot
+
+--- Original
++++ New
+@@ @@
+     public static function messageName() : string
+     {
+         $value = (new \ReflectionClass(static::class))->getShortName();
+-        if (!ctype_lower($value)) {
++        if (ctype_lower($value)) {
+             $value = preg_replace('/\\s+/u', '', $value) ?? '';
+             $value = preg_replace('/(.)(?=[A-Z])/u', '$1_', $value) ?? '';
+             $value = strtolower($value);
+
+
+83) /var/www/html/src/Shared/Domain/Event/DomainEvent.php:90    [M] Coalesce
+
+--- Original
++++ New
+@@ @@
+     {
+         $value = (new \ReflectionClass(static::class))->getShortName();
+         if (!ctype_lower($value)) {
+-            $value = preg_replace('/\\s+/u', '', $value) ?? '';
++            $value = '' ?? preg_replace('/\\s+/u', '', $value);
+             $value = preg_replace('/(.)(?=[A-Z])/u', '$1_', $value) ?? '';
+             $value = strtolower($value);
+         }
+
+
+84) /var/www/html/src/Shared/Domain/Event/DomainEvent.php:91    [M] Coalesce
+
+--- Original
++++ New
+@@ @@
+         $value = (new \ReflectionClass(static::class))->getShortName();
+         if (!ctype_lower($value)) {
+             $value = preg_replace('/\\s+/u', '', $value) ?? '';
+-            $value = preg_replace('/(.)(?=[A-Z])/u', '$1_', $value) ?? '';
++            $value = '' ?? preg_replace('/(.)(?=[A-Z])/u', '$1_', $value);
+             $value = strtolower($value);
+         }
+         return $value;
+
+
+85) /var/www/html/src/Shared/Domain/Event/DomainEvent.php:92    [M] UnwrapStrToLower
+
+--- Original
++++ New
+@@ @@
+         if (!ctype_lower($value)) {
+             $value = preg_replace('/\\s+/u', '', $value) ?? '';
+             $value = preg_replace('/(.)(?=[A-Z])/u', '$1_', $value) ?? '';
+-            $value = strtolower($value);
++            $value = $value;
+         }
+         return $value;
+     }
+
+
+86) /var/www/html/src/Shared/Domain/Event/DomainEvent.php:99    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         return $value;
+     }
+     /* @throws Throwable */
+-    public function messageDefinition() : string
++    protected function messageDefinition() : string
+     {
+         return AsyncApiChannel::from(self::BUSINESS_NAME, self::DEPARTMENT_NAME, $this->messageVersion, self::EVENT_TYPE, $this->messageAggregateName(), $this::messageName())->format();
+     }
+
+
+87) /var/www/html/src/Shared/Domain/Event/DomainEvent.php:112    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         return AsyncApiChannel::from(self::BUSINESS_NAME, self::DEPARTMENT_NAME, $this->messageVersion, self::EVENT_TYPE, $this->messageAggregateName(), $this::messageName())->format();
+     }
+     /** @return array<mixed> */
+-    public function messagePayload() : array
++    protected function messagePayload() : array
+     {
+         return $this->messagePayload;
+     }
+
+
+88) /var/www/html/src/Shared/Domain/Event/DomainEvent.php:117    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+     {
+         return $this->messagePayload;
+     }
+-    public function occurredOn() : \DateTimeInterface
++    protected function occurredOn() : \DateTimeInterface
+     {
+         return $this->occurredOn;
+     }
+
+
+89) /var/www/html/src/Shared/Domain/Event/DomainEvent.php:136    [M] ArrayItemRemoval
+
+--- Original
++++ New
+@@ @@
+     #[ArrayShape(['message_id' => 'string', 'message_name' => 'string', 'payload' => 'mixed', 'occurred_on_in_ms' => 'false|int', 'occurred_on_in_atom' => "\\DateTimeInterface"])]
+     public function jsonSerialize() : array
+     {
+-        return ['message_id' => $this->messageId(), 'message_name' => $this->messageDefinition(), 'payload' => $this->messagePayload(), 'occurred_on_in_ms' => $this->occurredOn()->getTimestamp(), 'occurred_on_in_atom' => $this->occurredOn()];
++        return ['message_name' => $this->messageDefinition(), 'payload' => $this->messagePayload(), 'occurred_on_in_ms' => $this->occurredOn()->getTimestamp(), 'occurred_on_in_atom' => $this->occurredOn()];
+     }
+     protected abstract function setupPayload() : void;
+     /**
+
+
+90) /var/www/html/src/Shared/Domain/Event/DomainEvent.php:137    [M] ArrayItem
+
+--- Original
++++ New
+@@ @@
+     #[ArrayShape(['message_id' => 'string', 'message_name' => 'string', 'payload' => 'mixed', 'occurred_on_in_ms' => 'false|int', 'occurred_on_in_atom' => "\\DateTimeInterface"])]
+     public function jsonSerialize() : array
+     {
+-        return ['message_id' => $this->messageId(), 'message_name' => $this->messageDefinition(), 'payload' => $this->messagePayload(), 'occurred_on_in_ms' => $this->occurredOn()->getTimestamp(), 'occurred_on_in_atom' => $this->occurredOn()];
++        return ['message_id' > $this->messageId(), 'message_name' => $this->messageDefinition(), 'payload' => $this->messagePayload(), 'occurred_on_in_ms' => $this->occurredOn()->getTimestamp(), 'occurred_on_in_atom' => $this->occurredOn()];
+     }
+     protected abstract function setupPayload() : void;
+     /**
+
+
+91) /var/www/html/src/Shared/Domain/Event/DomainEvent.php:138    [M] ArrayItem
+
+--- Original
++++ New
+@@ @@
+     #[ArrayShape(['message_id' => 'string', 'message_name' => 'string', 'payload' => 'mixed', 'occurred_on_in_ms' => 'false|int', 'occurred_on_in_atom' => "\\DateTimeInterface"])]
+     public function jsonSerialize() : array
+     {
+-        return ['message_id' => $this->messageId(), 'message_name' => $this->messageDefinition(), 'payload' => $this->messagePayload(), 'occurred_on_in_ms' => $this->occurredOn()->getTimestamp(), 'occurred_on_in_atom' => $this->occurredOn()];
++        return ['message_id' => $this->messageId(), 'message_name' > $this->messageDefinition(), 'payload' => $this->messagePayload(), 'occurred_on_in_ms' => $this->occurredOn()->getTimestamp(), 'occurred_on_in_atom' => $this->occurredOn()];
+     }
+     protected abstract function setupPayload() : void;
+     /**
+
+
+92) /var/www/html/src/Shared/Domain/Event/DomainEvent.php:139    [M] ArrayItem
+
+--- Original
++++ New
+@@ @@
+     #[ArrayShape(['message_id' => 'string', 'message_name' => 'string', 'payload' => 'mixed', 'occurred_on_in_ms' => 'false|int', 'occurred_on_in_atom' => "\\DateTimeInterface"])]
+     public function jsonSerialize() : array
+     {
+-        return ['message_id' => $this->messageId(), 'message_name' => $this->messageDefinition(), 'payload' => $this->messagePayload(), 'occurred_on_in_ms' => $this->occurredOn()->getTimestamp(), 'occurred_on_in_atom' => $this->occurredOn()];
++        return ['message_id' => $this->messageId(), 'message_name' => $this->messageDefinition(), 'payload' > $this->messagePayload(), 'occurred_on_in_ms' => $this->occurredOn()->getTimestamp(), 'occurred_on_in_atom' => $this->occurredOn()];
+     }
+     protected abstract function setupPayload() : void;
+     /**
+
+
+93) /var/www/html/src/Shared/Domain/Event/DomainEvent.php:140    [M] ArrayItem
+
+--- Original
++++ New
+@@ @@
+     #[ArrayShape(['message_id' => 'string', 'message_name' => 'string', 'payload' => 'mixed', 'occurred_on_in_ms' => 'false|int', 'occurred_on_in_atom' => "\\DateTimeInterface"])]
+     public function jsonSerialize() : array
+     {
+-        return ['message_id' => $this->messageId(), 'message_name' => $this->messageDefinition(), 'payload' => $this->messagePayload(), 'occurred_on_in_ms' => $this->occurredOn()->getTimestamp(), 'occurred_on_in_atom' => $this->occurredOn()];
++        return ['message_id' => $this->messageId(), 'message_name' => $this->messageDefinition(), 'payload' => $this->messagePayload(), 'occurred_on_in_ms' > $this->occurredOn()->getTimestamp(), 'occurred_on_in_atom' => $this->occurredOn()];
+     }
+     protected abstract function setupPayload() : void;
+     /**
+
+
+94) /var/www/html/src/Shared/Domain/Event/DomainEvent.php:141    [M] ArrayItem
+
+--- Original
++++ New
+@@ @@
+     #[ArrayShape(['message_id' => 'string', 'message_name' => 'string', 'payload' => 'mixed', 'occurred_on_in_ms' => 'false|int', 'occurred_on_in_atom' => "\\DateTimeInterface"])]
+     public function jsonSerialize() : array
+     {
+-        return ['message_id' => $this->messageId(), 'message_name' => $this->messageDefinition(), 'payload' => $this->messagePayload(), 'occurred_on_in_ms' => $this->occurredOn()->getTimestamp(), 'occurred_on_in_atom' => $this->occurredOn()];
++        return ['message_id' => $this->messageId(), 'message_name' => $this->messageDefinition(), 'payload' => $this->messagePayload(), 'occurred_on_in_ms' => $this->occurredOn()->getTimestamp(), 'occurred_on_in_atom' > $this->occurredOn()];
+     }
+     protected abstract function setupPayload() : void;
+     /**
+
+
+95) /var/www/html/src/Shared/Domain/Event/DomainEvent.php:154    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+      */
+     private function setMessagePayload(array $messagePayload) : void
+     {
+-        $this->ensureThatPayloadHasOnlyPrimitives($messagePayload);
++        
+         $this->messagePayload = $messagePayload;
+     }
+     /**
+
+
+96) /var/www/html/src/Shared/Domain/Event/DomainEvent.php:164    [M] FunctionCallRemoval
+
+--- Original
++++ New
+@@ @@
+      */
+     private function ensureThatPayloadHasOnlyPrimitives(array $payload, string $index = 'payload') : void
+     {
+-        array_walk($payload, function ($item, $currentIndex) use($index) : void {
+-            $fieldName = "{$index}.{$currentIndex}";
+-            $this->ensureThatValueIsPrimitive($item, $fieldName);
+-        });
++        
+     }
+     /* @throws InvalidArgumentException */
+     private function ensureThatValueIsPrimitive(mixed $value, string $fieldName) : void
+
+
+97) /var/www/html/src/Shared/Domain/Event/DomainEvent.php:169    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     {
+         array_walk($payload, function ($item, $currentIndex) use($index) : void {
+             $fieldName = "{$index}.{$currentIndex}";
+-            $this->ensureThatValueIsPrimitive($item, $fieldName);
++            
+         });
+     }
+     /* @throws InvalidArgumentException */
+
+
+98) /var/www/html/src/Shared/Domain/Event/DomainEvent.php:180    [M] Throw_
+
+--- Original
++++ New
+@@ @@
+     {
+         if (\is_object($value)) {
+             $message = sprintf('Provided "%s" is a invalid primitive.', $fieldName);
+-            throw new \InvalidArgumentException($message, Assertion::INVALID_OBJECT);
++            new \InvalidArgumentException($message, Assertion::INVALID_OBJECT);
+         }
+     }
+     /** @param class-string $fullClassName */
+
+
+99) /var/www/html/src/Shared/Domain/Event/DomainEvent.php:191    [M] UnwrapStrToLower
+
+--- Original
++++ New
+@@ @@
+     {
+         $className = explode('\\', $fullClassName);
+         $nameSanitized = preg_replace('/[A-Z]([A-Z](?![a-z]))*/', '_$0', end($className));
+-        return ltrim(strtolower("{$nameSanitized}"), '_');
++        return ltrim("{$nameSanitized}", '_');
+     }
+ }
+
+
+100) /var/www/html/src/Shared/Domain/Event/DomainEvent.php:191    [M] UnwrapLtrim
+
+--- Original
++++ New
+@@ @@
+     {
+         $className = explode('\\', $fullClassName);
+         $nameSanitized = preg_replace('/[A-Z]([A-Z](?![a-z]))*/', '_$0', end($className));
+-        return ltrim(strtolower("{$nameSanitized}"), '_');
++        return strtolower("{$nameSanitized}");
+     }
+ }
+
+
+101) /var/www/html/src/Shared/Domain/Event/Exception/StoredEventNotFoundException.php:12    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+ use Whalar\Shared\Domain\Exception\Http\NotFoundException;
+ final class StoredEventNotFoundException extends NotFoundException
+ {
+-    #[Pure]
+-    public static function from(string $identifier) : self
++    protected static function from(string $identifier) : self
+     {
+         return new self(sprintf('Stored event %s not found.', $identifier));
+     }
+ }
+
+
+102) /var/www/html/src/Shared/Domain/Event/ValueObject/MessageId.php:18    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     /** @throws AssertionFailedException */
+     private function __construct(string $id)
+     {
+-        Assertion::uuid($id);
++        
+         $this->id = $id;
+     }
+     /** @throws AssertionFailedException */
+
+
+103) /var/www/html/src/Shared/Domain/Event/ValueObject/MessageId.php:23    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         $this->id = $id;
+     }
+     /** @throws AssertionFailedException */
+-    public static function from(string $messageId) : self
++    protected static function from(string $messageId) : self
+     {
+         return new self($messageId);
+     }
+
+
+104) /var/www/html/src/Shared/Domain/Event/ValueObject/MessageId.php:34    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+     {
+         return $this->id();
+     }
+-    public function id() : string
++    protected function id() : string
+     {
+         return $this->id;
+     }
+
+
+105) /var/www/html/src/Shared/Domain/Exception/InvalidContentTypeException.php:11    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+ use Whalar\Shared\Domain\Exception\Http\BadRequestException;
+ final class InvalidContentTypeException extends BadRequestException
+ {
+-    public static function from(string $type) : self
++    protected static function from(string $type) : self
+     {
+         return new self(sprintf('The content type of request should by %s', $type));
+     }
+ }
+
+
+106) /var/www/html/src/Shared/Domain/Exception/InvalidDataMappingException.php:12    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+ use Whalar\Shared\Domain\Exception\Http\BadRequestException;
+ final class InvalidDataMappingException extends BadRequestException
+ {
+-    #[Pure]
+-    public static function fromMissingKey(string $key, ?string $arrayName = null) : self
++    protected static function fromMissingKey(string $key, ?string $arrayName = null) : self
+     {
+         if (null === $arrayName) {
+             return new self(sprintf('Expected array to have a key "%s".', $key));
+
+
+107) /var/www/html/src/Shared/Domain/Exception/InvalidDataMappingException.php:15    [M] Identical
+
+--- Original
++++ New
+@@ @@
+     #[Pure]
+     public static function fromMissingKey(string $key, ?string $arrayName = null) : self
+     {
+-        if (null === $arrayName) {
++        if (null !== $arrayName) {
+             return new self(sprintf('Expected array to have a key "%s".', $key));
+         }
+         return new self(sprintf('Expected array "%s" to have a key "%s".', $arrayName, $key));
+
+
+108) /var/www/html/src/Shared/Domain/Exception/InvalidDataMappingException.php:22    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         }
+         return new self(sprintf('Expected array "%s" to have a key "%s".', $arrayName, $key));
+     }
+-    #[Pure]
+-    public static function fromNonScalar(string $key, ?string $arrayName = null) : self
++    protected static function fromNonScalar(string $key, ?string $arrayName = null) : self
+     {
+         if (null === $arrayName) {
+             return new self(sprintf('Expected array key "%s" to have a scalar value.', $key));
+
+
+109) /var/www/html/src/Shared/Domain/Exception/InvalidDataMappingException.php:25    [M] Identical
+
+--- Original
++++ New
+@@ @@
+     #[Pure]
+     public static function fromNonScalar(string $key, ?string $arrayName = null) : self
+     {
+-        if (null === $arrayName) {
++        if (null !== $arrayName) {
+             return new self(sprintf('Expected array key "%s" to have a scalar value.', $key));
+         }
+         return new self(sprintf('Expected array key "%s[\'%s\']" to have a scalar value.', $arrayName, $key));
+     }
+ }
+
+
+110) /var/www/html/src/Shared/Domain/Exception/InvalidIntegerIdException.php:11    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+ use Whalar\Shared\Domain\Exception\Http\BadRequestException;
+ final class InvalidIntegerIdException extends BadRequestException
+ {
+-    public static function from() : self
++    protected static function from() : self
+     {
+         return new self('The id is invalid');
+     }
+ }
+
+
+111) /var/www/html/src/Shared/Domain/Messaging/AsyncApi/AsyncApiChannel.php:29    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     /** @throws AssertionFailedException */
+     private function __construct(string $organization, string $service, int $messageVersion, string $messageType, string $resource, string $action)
+     {
+-        $this->setOrganization($organization);
++        
+         $this->setService($service);
+         $this->setMessageVersion($messageVersion);
+         $this->setMessageType($messageType);
+
+
+112) /var/www/html/src/Shared/Domain/Messaging/AsyncApi/AsyncApiChannel.php:30    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     private function __construct(string $organization, string $service, int $messageVersion, string $messageType, string $resource, string $action)
+     {
+         $this->setOrganization($organization);
+-        $this->setService($service);
++        
+         $this->setMessageVersion($messageVersion);
+         $this->setMessageType($messageType);
+         $this->setResource($resource);
+
+
+113) /var/www/html/src/Shared/Domain/Messaging/AsyncApi/AsyncApiChannel.php:31    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     {
+         $this->setOrganization($organization);
+         $this->setService($service);
+-        $this->setMessageVersion($messageVersion);
++        
+         $this->setMessageType($messageType);
+         $this->setResource($resource);
+         $this->setAction($action);
+
+
+114) /var/www/html/src/Shared/Domain/Messaging/AsyncApi/AsyncApiChannel.php:32    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         $this->setOrganization($organization);
+         $this->setService($service);
+         $this->setMessageVersion($messageVersion);
+-        $this->setMessageType($messageType);
++        
+         $this->setResource($resource);
+         $this->setAction($action);
+     }
+
+
+115) /var/www/html/src/Shared/Domain/Messaging/AsyncApi/AsyncApiChannel.php:33    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         $this->setService($service);
+         $this->setMessageVersion($messageVersion);
+         $this->setMessageType($messageType);
+-        $this->setResource($resource);
++        
+         $this->setAction($action);
+     }
+     /** @throws AssertionFailedException */
+
+
+116) /var/www/html/src/Shared/Domain/Messaging/AsyncApi/AsyncApiChannel.php:34    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         $this->setMessageVersion($messageVersion);
+         $this->setMessageType($messageType);
+         $this->setResource($resource);
+-        $this->setAction($action);
++        
+     }
+     /** @throws AssertionFailedException */
+     public static function from(string $organization, string $service, int $messageVersion, string $messageType, string $resource, string $action) : self
+
+
+117) /var/www/html/src/Shared/Domain/Messaging/AsyncApi/AsyncApiChannel.php:38    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         $this->setAction($action);
+     }
+     /** @throws AssertionFailedException */
+-    public static function from(string $organization, string $service, int $messageVersion, string $messageType, string $resource, string $action) : self
++    protected static function from(string $organization, string $service, int $messageVersion, string $messageType, string $resource, string $action) : self
+     {
+         return new self($organization, $service, $messageVersion, $messageType, $resource, $action);
+     }
+
+
+118) /var/www/html/src/Shared/Domain/Messaging/AsyncApi/AsyncApiChannel.php:50    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         return new self($organization, $service, $messageVersion, $messageType, $resource, $action);
+     }
+     /** @throws AssertionFailedException */
+-    public static function fromString(string $string) : self
++    protected static function fromString(string $string) : self
+     {
+         [$businessName, $department, $version, $type, $aggregateName, $action] = explode('.', $string);
+         return new self($businessName, $department, (int) $version, $type, $aggregateName, $action);
+
+
+119) /var/www/html/src/Shared/Domain/Messaging/AsyncApi/AsyncApiChannel.php:54    [M] CastInt
+
+--- Original
++++ New
+@@ @@
+     public static function fromString(string $string) : self
+     {
+         [$businessName, $department, $version, $type, $aggregateName, $action] = explode('.', $string);
+-        return new self($businessName, $department, (int) $version, $type, $aggregateName, $action);
++        return new self($businessName, $department, $version, $type, $aggregateName, $action);
+     }
+     public function organization() : string
+     {
+
+
+120) /var/www/html/src/Shared/Domain/Messaging/AsyncApi/AsyncApiChannel.php:57    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         [$businessName, $department, $version, $type, $aggregateName, $action] = explode('.', $string);
+         return new self($businessName, $department, (int) $version, $type, $aggregateName, $action);
+     }
+-    public function organization() : string
++    protected function organization() : string
+     {
+         return $this->organization;
+     }
+
+
+121) /var/www/html/src/Shared/Domain/Messaging/AsyncApi/AsyncApiChannel.php:62    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+     {
+         return $this->organization;
+     }
+-    public function service() : string
++    protected function service() : string
+     {
+         return $this->service;
+     }
+
+
+122) /var/www/html/src/Shared/Domain/Messaging/AsyncApi/AsyncApiChannel.php:67    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+     {
+         return $this->service;
+     }
+-    public function messageVersion() : int
++    protected function messageVersion() : int
+     {
+         return $this->messageVersion;
+     }
+
+
+123) /var/www/html/src/Shared/Domain/Messaging/AsyncApi/AsyncApiChannel.php:72    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+     {
+         return $this->messageVersion;
+     }
+-    public function messageType() : string
++    protected function messageType() : string
+     {
+         return $this->messageType;
+     }
+
+
+124) /var/www/html/src/Shared/Domain/Messaging/AsyncApi/AsyncApiChannel.php:77    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+     {
+         return $this->messageType;
+     }
+-    public function resource() : string
++    protected function resource() : string
+     {
+         return $this->resource;
+     }
+
+
+125) /var/www/html/src/Shared/Domain/Messaging/AsyncApi/AsyncApiChannel.php:82    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+     {
+         return $this->resource;
+     }
+-    public function action() : string
++    protected function action() : string
+     {
+         return $this->action;
+     }
+
+
+126) /var/www/html/src/Shared/Domain/Messaging/AsyncApi/AsyncApiChannel.php:87    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+     {
+         return $this->action;
+     }
+-    public function format() : string
++    protected function format() : string
+     {
+         return sprintf('%s.%s.%s.%s.%s.%s', $this->organization, $this->service, $this->messageVersion, $this->messageType, $this->resource, $this->action);
+     }
+
+
+127) /var/www/html/src/Shared/Domain/Messaging/AsyncApi/AsyncApiChannel.php:109    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     /** @throws AssertionFailedException */
+     private function setOrganization(string $businessName) : void
+     {
+-        Assertion::notBlank($businessName);
++        
+         $this->organization = trim($businessName);
+     }
+     /** @throws AssertionFailedException */
+
+
+128) /var/www/html/src/Shared/Domain/Messaging/AsyncApi/AsyncApiChannel.php:111    [M] UnwrapTrim
+
+--- Original
++++ New
+@@ @@
+     private function setOrganization(string $businessName) : void
+     {
+         Assertion::notBlank($businessName);
+-        $this->organization = trim($businessName);
++        $this->organization = $businessName;
+     }
+     /** @throws AssertionFailedException */
+     private function setService(string $department) : void
+
+
+129) /var/www/html/src/Shared/Domain/Messaging/AsyncApi/AsyncApiChannel.php:117    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     /** @throws AssertionFailedException */
+     private function setService(string $department) : void
+     {
+-        Assertion::notBlank($department);
++        
+         $this->service = trim($department);
+     }
+     private function setMessageVersion(int $version) : void
+
+
+130) /var/www/html/src/Shared/Domain/Messaging/AsyncApi/AsyncApiChannel.php:119    [M] UnwrapTrim
+
+--- Original
++++ New
+@@ @@
+     private function setService(string $department) : void
+     {
+         Assertion::notBlank($department);
+-        $this->service = trim($department);
++        $this->service = $department;
+     }
+     private function setMessageVersion(int $version) : void
+     {
+
+
+131) /var/www/html/src/Shared/Domain/Messaging/AsyncApi/AsyncApiChannel.php:130    [M] ArrayItemRemoval
+
+--- Original
++++ New
+@@ @@
+     /** @throws AssertionFailedException */
+     private function setMessageType(string $type) : void
+     {
+-        Assertion::choice($type, ['domain_event', 'command', 'query']);
++        Assertion::choice($type, ['command', 'query']);
+         $this->messageType = $type;
+     }
+     /** @throws AssertionFailedException */
+
+
+132) /var/www/html/src/Shared/Domain/Messaging/AsyncApi/AsyncApiChannel.php:130    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     /** @throws AssertionFailedException */
+     private function setMessageType(string $type) : void
+     {
+-        Assertion::choice($type, ['domain_event', 'command', 'query']);
++        
+         $this->messageType = $type;
+     }
+     /** @throws AssertionFailedException */
+
+
+133) /var/www/html/src/Shared/Domain/Messaging/AsyncApi/AsyncApiChannel.php:138    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     /** @throws AssertionFailedException */
+     private function setResource(string $aggregateName) : void
+     {
+-        Assertion::notBlank($aggregateName);
++        
+         $this->resource = trim($aggregateName);
+     }
+     /** @throws AssertionFailedException */
+
+
+134) /var/www/html/src/Shared/Domain/Messaging/AsyncApi/AsyncApiChannel.php:140    [M] UnwrapTrim
+
+--- Original
++++ New
+@@ @@
+     private function setResource(string $aggregateName) : void
+     {
+         Assertion::notBlank($aggregateName);
+-        $this->resource = trim($aggregateName);
++        $this->resource = $aggregateName;
+     }
+     /** @throws AssertionFailedException */
+     private function setAction(string $action) : void
+
+
+135) /var/www/html/src/Shared/Domain/Messaging/AsyncApi/AsyncApiChannel.php:146    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     /** @throws AssertionFailedException */
+     private function setAction(string $action) : void
+     {
+-        Assertion::notBlank($action);
++        
+         $this->action = trim($action);
+     }
+ }
+
+
+136) /var/www/html/src/Shared/Domain/Messaging/AsyncApi/AsyncApiChannel.php:148    [M] UnwrapTrim
+
+--- Original
++++ New
+@@ @@
+     private function setAction(string $action) : void
+     {
+         Assertion::notBlank($action);
+-        $this->action = trim($action);
++        $this->action = $action;
+     }
+ }
+
+
+137) /var/www/html/src/Shared/Domain/Messaging/Message.php:45    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     /** @param array<string, mixed> $payload */
+     private final function __construct(MessageId $messageId, array $payload, \DateTimeInterface $occurredOn)
+     {
+-        $this->setMessageId($messageId);
++        
+         $this->setMessagePayload($payload);
+         $this->setMessageOccurredOn($occurredOn);
+     }
+
+
+138) /var/www/html/src/Shared/Domain/Messaging/Message.php:46    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     private final function __construct(MessageId $messageId, array $payload, \DateTimeInterface $occurredOn)
+     {
+         $this->setMessageId($messageId);
+-        $this->setMessagePayload($payload);
++        
+         $this->setMessageOccurredOn($occurredOn);
+     }
+     /**
+
+
+139) /var/www/html/src/Shared/Domain/Messaging/Message.php:47    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     {
+         $this->setMessageId($messageId);
+         $this->setMessagePayload($payload);
+-        $this->setMessageOccurredOn($occurredOn);
++        
+     }
+     /**
+      * @param array<string, mixed> $payload
+
+
+140) /var/www/html/src/Shared/Domain/Messaging/Message.php:55    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+      *
+      * @return static
+      */
+-    public static final function fromPayload(MessageId $messageId, array $payload, ?\DateTimeInterface $occurredOn = null) : self
++    protected static final function fromPayload(MessageId $messageId, array $payload, ?\DateTimeInterface $occurredOn = null) : self
+     {
+         $message = new static($messageId, $payload, $occurredOn ?? CarbonImmutable::now('utc'));
+         $message->assertPayload();
+
+
+141) /var/www/html/src/Shared/Domain/Messaging/Message.php:60    [M] Coalesce
+
+--- Original
++++ New
+@@ @@
+      */
+     public static final function fromPayload(MessageId $messageId, array $payload, ?\DateTimeInterface $occurredOn = null) : self
+     {
+-        $message = new static($messageId, $payload, $occurredOn ?? CarbonImmutable::now('utc'));
++        $message = new static($messageId, $payload, CarbonImmutable::now('utc') ?? $occurredOn);
+         $message->assertPayload();
+         return $message;
+     }
+
+
+142) /var/www/html/src/Shared/Domain/Messaging/Message.php:61    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     public static final function fromPayload(MessageId $messageId, array $payload, ?\DateTimeInterface $occurredOn = null) : self
+     {
+         $message = new static($messageId, $payload, $occurredOn ?? CarbonImmutable::now('utc'));
+-        $message->assertPayload();
++        
+         return $message;
+     }
+     public static function messageVersion() : int
+
+
+143) /var/www/html/src/Shared/Domain/Messaging/Message.php:66    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         $message->assertPayload();
+         return $message;
+     }
+-    public static function messageVersion() : int
++    protected static function messageVersion() : int
+     {
+         throw new \RuntimeException('This method acts as an abstract one, should be override and should not be called directly.');
+     }
+
+
+144) /var/www/html/src/Shared/Domain/Messaging/Message.php:68    [M] Throw_
+
+--- Original
++++ New
+@@ @@
+     }
+     public static function messageVersion() : int
+     {
+-        throw new \RuntimeException('This method acts as an abstract one, should be override and should not be called directly.');
++        new \RuntimeException('This method acts as an abstract one, should be override and should not be called directly.');
+     }
+     public static function messageType() : string
+     {
+
+
+145) /var/www/html/src/Shared/Domain/Messaging/Message.php:73    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+     {
+         throw new \RuntimeException('This method acts as an abstract one, should be override and should not be called directly.');
+     }
+-    public static function messageType() : string
++    protected static function messageType() : string
+     {
+         throw new \RuntimeException('This method acts as an abstract one, should be override and should not be called directly.');
+     }
+
+
+146) /var/www/html/src/Shared/Domain/Messaging/Message.php:75    [M] Throw_
+
+--- Original
++++ New
+@@ @@
+     }
+     public static function messageType() : string
+     {
+-        throw new \RuntimeException('This method acts as an abstract one, should be override and should not be called directly.');
++        new \RuntimeException('This method acts as an abstract one, should be override and should not be called directly.');
+     }
+     public static function messageAggregate() : string
+     {
+
+
+147) /var/www/html/src/Shared/Domain/Messaging/Message.php:80    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+     {
+         throw new \RuntimeException('This method acts as an abstract one, should be override and should not be called directly.');
+     }
+-    public static function messageAggregate() : string
++    protected static function messageAggregate() : string
+     {
+         throw new \RuntimeException('This method acts as an abstract one, should be override and should not be called directly.');
+     }
+
+
+148) /var/www/html/src/Shared/Domain/Messaging/Message.php:82    [M] Throw_
+
+--- Original
++++ New
+@@ @@
+     }
+     public static function messageAggregate() : string
+     {
+-        throw new \RuntimeException('This method acts as an abstract one, should be override and should not be called directly.');
++        new \RuntimeException('This method acts as an abstract one, should be override and should not be called directly.');
+     }
+     public static function messageAction() : string
+     {
+
+
+149) /var/www/html/src/Shared/Domain/Messaging/Message.php:87    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+     {
+         throw new \RuntimeException('This method acts as an abstract one, should be override and should not be called directly.');
+     }
+-    public static function messageAction() : string
++    protected static function messageAction() : string
+     {
+         throw new \RuntimeException('This method acts as an abstract one, should be override and should not be called directly.');
+     }
+
+
+150) /var/www/html/src/Shared/Domain/Messaging/Message.php:89    [M] Throw_
+
+--- Original
++++ New
+@@ @@
+     }
+     public static function messageAction() : string
+     {
+-        throw new \RuntimeException('This method acts as an abstract one, should be override and should not be called directly.');
++        new \RuntimeException('This method acts as an abstract one, should be override and should not be called directly.');
+     }
+     public static final function messageService() : string
+     {
+
+
+151) /var/www/html/src/Shared/Domain/Messaging/Message.php:94    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+     {
+         throw new \RuntimeException('This method acts as an abstract one, should be override and should not be called directly.');
+     }
+-    public static final function messageService() : string
++    protected static final function messageService() : string
+     {
+         $boundedContextNamespace = Str::of(static::class)->explode('\\')->slice(1)->first();
+         $messageService = self::MESSAGE_SERVICE_MAP[$boundedContextNamespace] ?? null;
+
+
+152) /var/www/html/src/Shared/Domain/Messaging/Message.php:96    [M] DecrementInteger
+
+--- Original
++++ New
+@@ @@
+     }
+     public static final function messageService() : string
+     {
+-        $boundedContextNamespace = Str::of(static::class)->explode('\\')->slice(1)->first();
++        $boundedContextNamespace = Str::of(static::class)->explode('\\')->slice(0)->first();
+         $messageService = self::MESSAGE_SERVICE_MAP[$boundedContextNamespace] ?? null;
+         if (null === $messageService) {
+             throw new \LogicException('Message service mapping not found');
+
+
+153) /var/www/html/src/Shared/Domain/Messaging/Message.php:96    [M] IncrementInteger
+
+--- Original
++++ New
+@@ @@
+     }
+     public static final function messageService() : string
+     {
+-        $boundedContextNamespace = Str::of(static::class)->explode('\\')->slice(1)->first();
++        $boundedContextNamespace = Str::of(static::class)->explode('\\')->slice(2)->first();
+         $messageService = self::MESSAGE_SERVICE_MAP[$boundedContextNamespace] ?? null;
+         if (null === $messageService) {
+             throw new \LogicException('Message service mapping not found');
+
+
+154) /var/www/html/src/Shared/Domain/Messaging/Message.php:100    [M] Identical
+
+--- Original
++++ New
+@@ @@
+     {
+         $boundedContextNamespace = Str::of(static::class)->explode('\\')->slice(1)->first();
+         $messageService = self::MESSAGE_SERVICE_MAP[$boundedContextNamespace] ?? null;
+-        if (null === $messageService) {
++        if (null !== $messageService) {
+             throw new \LogicException('Message service mapping not found');
+         }
+         return $messageService;
+
+
+155) /var/www/html/src/Shared/Domain/Messaging/Message.php:101    [M] Throw_
+
+--- Original
++++ New
+@@ @@
+         $boundedContextNamespace = Str::of(static::class)->explode('\\')->slice(1)->first();
+         $messageService = self::MESSAGE_SERVICE_MAP[$boundedContextNamespace] ?? null;
+         if (null === $messageService) {
+-            throw new \LogicException('Message service mapping not found');
++            new \LogicException('Message service mapping not found');
+         }
+         return $messageService;
+     }
+
+
+156) /var/www/html/src/Shared/Domain/Messaging/Message.php:108    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         return $messageService;
+     }
+     /** @throws AssertionFailedException */
+-    public static final function messageChannel() : string
++    protected static final function messageChannel() : string
+     {
+         return AsyncApiChannel::from(self::BUSINESS, static::messageService(), static::messageVersion(), static::messageType(), static::messageAggregate(), static::messageAction())->format();
+     }
+
+
+157) /var/www/html/src/Shared/Domain/Messaging/Message.php:120    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+     {
+         return AsyncApiChannel::from(self::BUSINESS, static::messageService(), static::messageVersion(), static::messageType(), static::messageAggregate(), static::messageAction())->format();
+     }
+-    public final function messageId() : MessageId
++    protected final function messageId() : MessageId
+     {
+         return $this->messageId;
+     }
+
+
+158) /var/www/html/src/Shared/Domain/Messaging/Message.php:126    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         return $this->messageId;
+     }
+     /** @return array<mixed> */
+-    public final function messagePayload() : array
++    protected final function messagePayload() : array
+     {
+         return $this->messagePayload;
+     }
+
+
+159) /var/www/html/src/Shared/Domain/Messaging/Message.php:131    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+     {
+         return $this->messagePayload;
+     }
+-    public final function messageOccurredOn() : \DateTimeInterface
++    protected final function messageOccurredOn() : \DateTimeInterface
+     {
+         return $this->messageOccurredOn;
+     }
+
+
+160) /var/www/html/src/Shared/Domain/Messaging/Message.php:141    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+      *
+      * @throws AssertionFailedException
+      */
+-    #[ArrayShape(['message_id' => 'string', 'message_name' => 'string', 'payload' => 'array|mixed', 'occurred_on_in_ms' => 'false|int', 'occurred_on_in_atom' => 'string'])]
+-    public final function toArray() : array
++    protected final function toArray() : array
+     {
+         return ['message_id' => $this->messageId()->id(), 'message_name' => $this::messageChannel(), 'payload' => $this->messagePayload(), 'occurred_on_in_ms' => $this->messageOccurredOn()->getTimestamp(), 'occurred_on_in_atom' => $this->messageOccurredOn()->format(self::ISO8601_ZULU_MICROSECOND)];
+     }
+
+
+161) /var/www/html/src/Shared/Domain/Messaging/Message.php:150    [M] ArrayItemRemoval
+
+--- Original
++++ New
+@@ @@
+     #[ArrayShape(['message_id' => 'string', 'message_name' => 'string', 'payload' => 'array|mixed', 'occurred_on_in_ms' => 'false|int', 'occurred_on_in_atom' => 'string'])]
+     public final function toArray() : array
+     {
+-        return ['message_id' => $this->messageId()->id(), 'message_name' => $this::messageChannel(), 'payload' => $this->messagePayload(), 'occurred_on_in_ms' => $this->messageOccurredOn()->getTimestamp(), 'occurred_on_in_atom' => $this->messageOccurredOn()->format(self::ISO8601_ZULU_MICROSECOND)];
++        return ['message_name' => $this::messageChannel(), 'payload' => $this->messagePayload(), 'occurred_on_in_ms' => $this->messageOccurredOn()->getTimestamp(), 'occurred_on_in_atom' => $this->messageOccurredOn()->format(self::ISO8601_ZULU_MICROSECOND)];
+     }
+     /**
+      * @return array<mixed>
+
+
+162) /var/www/html/src/Shared/Domain/Messaging/Message.php:151    [M] ArrayItem
+
+--- Original
++++ New
+@@ @@
+     #[ArrayShape(['message_id' => 'string', 'message_name' => 'string', 'payload' => 'array|mixed', 'occurred_on_in_ms' => 'false|int', 'occurred_on_in_atom' => 'string'])]
+     public final function toArray() : array
+     {
+-        return ['message_id' => $this->messageId()->id(), 'message_name' => $this::messageChannel(), 'payload' => $this->messagePayload(), 'occurred_on_in_ms' => $this->messageOccurredOn()->getTimestamp(), 'occurred_on_in_atom' => $this->messageOccurredOn()->format(self::ISO8601_ZULU_MICROSECOND)];
++        return ['message_id' > $this->messageId()->id(), 'message_name' => $this::messageChannel(), 'payload' => $this->messagePayload(), 'occurred_on_in_ms' => $this->messageOccurredOn()->getTimestamp(), 'occurred_on_in_atom' => $this->messageOccurredOn()->format(self::ISO8601_ZULU_MICROSECOND)];
+     }
+     /**
+      * @return array<mixed>
+
+
+163) /var/www/html/src/Shared/Domain/Messaging/Message.php:153    [M] ArrayItem
+
+--- Original
++++ New
+@@ @@
+     #[ArrayShape(['message_id' => 'string', 'message_name' => 'string', 'payload' => 'array|mixed', 'occurred_on_in_ms' => 'false|int', 'occurred_on_in_atom' => 'string'])]
+     public final function toArray() : array
+     {
+-        return ['message_id' => $this->messageId()->id(), 'message_name' => $this::messageChannel(), 'payload' => $this->messagePayload(), 'occurred_on_in_ms' => $this->messageOccurredOn()->getTimestamp(), 'occurred_on_in_atom' => $this->messageOccurredOn()->format(self::ISO8601_ZULU_MICROSECOND)];
++        return ['message_id' => $this->messageId()->id(), 'message_name' => $this::messageChannel(), 'payload' > $this->messagePayload(), 'occurred_on_in_ms' => $this->messageOccurredOn()->getTimestamp(), 'occurred_on_in_atom' => $this->messageOccurredOn()->format(self::ISO8601_ZULU_MICROSECOND)];
+     }
+     /**
+      * @return array<mixed>
+
+
+164) /var/www/html/src/Shared/Domain/Messaging/Message.php:154    [M] ArrayItem
+
+--- Original
++++ New
+@@ @@
+     #[ArrayShape(['message_id' => 'string', 'message_name' => 'string', 'payload' => 'array|mixed', 'occurred_on_in_ms' => 'false|int', 'occurred_on_in_atom' => 'string'])]
+     public final function toArray() : array
+     {
+-        return ['message_id' => $this->messageId()->id(), 'message_name' => $this::messageChannel(), 'payload' => $this->messagePayload(), 'occurred_on_in_ms' => $this->messageOccurredOn()->getTimestamp(), 'occurred_on_in_atom' => $this->messageOccurredOn()->format(self::ISO8601_ZULU_MICROSECOND)];
++        return ['message_id' => $this->messageId()->id(), 'message_name' => $this::messageChannel(), 'payload' => $this->messagePayload(), 'occurred_on_in_ms' > $this->messageOccurredOn()->getTimestamp(), 'occurred_on_in_atom' => $this->messageOccurredOn()->format(self::ISO8601_ZULU_MICROSECOND)];
+     }
+     /**
+      * @return array<mixed>
+
+
+165) /var/www/html/src/Shared/Domain/Messaging/Message.php:155    [M] ArrayItem
+
+--- Original
++++ New
+@@ @@
+     #[ArrayShape(['message_id' => 'string', 'message_name' => 'string', 'payload' => 'array|mixed', 'occurred_on_in_ms' => 'false|int', 'occurred_on_in_atom' => 'string'])]
+     public final function toArray() : array
+     {
+-        return ['message_id' => $this->messageId()->id(), 'message_name' => $this::messageChannel(), 'payload' => $this->messagePayload(), 'occurred_on_in_ms' => $this->messageOccurredOn()->getTimestamp(), 'occurred_on_in_atom' => $this->messageOccurredOn()->format(self::ISO8601_ZULU_MICROSECOND)];
++        return ['message_id' => $this->messageId()->id(), 'message_name' => $this::messageChannel(), 'payload' => $this->messagePayload(), 'occurred_on_in_ms' => $this->messageOccurredOn()->getTimestamp(), 'occurred_on_in_atom' > $this->messageOccurredOn()->format(self::ISO8601_ZULU_MICROSECOND)];
+     }
+     /**
+      * @return array<mixed>
+
+
+166) /var/www/html/src/Shared/Domain/Messaging/Message.php:181    [M] CastString
+
+--- Original
++++ New
+@@ @@
+     /** @param class-string $class */
+     protected static final function messageAggregateFromClass(string $class) : string
+     {
+-        return (string) Str::of(class_basename($class))->snake();
++        return Str::of(class_basename($class))->snake();
+     }
+     private function setMessageId(MessageId $id) : void
+     {
+
+
+167) /var/www/html/src/Shared/Domain/Messaging/Message.php:192    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     /** @param array<string, mixed> $payload */
+     private function setMessagePayload(array $payload) : void
+     {
+-        $this->ensureThatPayloadHasOnlyPrimitives($payload);
++        
+         $this->messagePayload = $payload;
+     }
+     private function setMessageOccurredOn(\DateTimeInterface $occurredOn) : void
+
+
+168) /var/www/html/src/Shared/Domain/Messaging/Message.php:208    [M] FunctionCallRemoval
+
+--- Original
++++ New
+@@ @@
+      */
+     private function ensureThatPayloadHasOnlyPrimitives(array $payload, string $index = 'payload') : void
+     {
+-        array_walk($payload, function ($item, $currentIndex) use($index) : void {
+-            $fieldName = "{$index}.{$currentIndex}";
+-            $this->ensureThatValueIsPrimitive($item, $fieldName);
+-        });
++        
+     }
+     /* @throws InvalidArgumentException */
+     private function ensureThatValueIsPrimitive(mixed $value, string $fieldName) : void
+
+
+169) /var/www/html/src/Shared/Domain/Messaging/Message.php:213    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     {
+         array_walk($payload, function ($item, $currentIndex) use($index) : void {
+             $fieldName = "{$index}.{$currentIndex}";
+-            $this->ensureThatValueIsPrimitive($item, $fieldName);
++            
+         });
+     }
+     /* @throws InvalidArgumentException */
+
+
+170) /var/www/html/src/Shared/Domain/Messaging/Message.php:224    [M] Throw_
+
+--- Original
++++ New
+@@ @@
+     {
+         if (\is_object($value)) {
+             $message = sprintf('Provided "%s" is an object. Payload parameters only can be primitive.', $fieldName);
+-            throw new \InvalidArgumentException($message);
++            new \InvalidArgumentException($message);
+         }
+         if (true !== \is_array($value)) {
+             return;
+
+
+171) /var/www/html/src/Shared/Domain/Messaging/Message.php:227    [M] TrueValue
+
+--- Original
++++ New
+@@ @@
+             $message = sprintf('Provided "%s" is an object. Payload parameters only can be primitive.', $fieldName);
+             throw new \InvalidArgumentException($message);
+         }
+-        if (true !== \is_array($value)) {
++        if (false !== \is_array($value)) {
+             return;
+         }
+         $this->ensureThatPayloadHasOnlyPrimitives($value, $fieldName);
+     }
+ }
+
+
+172) /var/www/html/src/Shared/Domain/Messaging/Message.php:227    [M] NotIdentical
+
+--- Original
++++ New
+@@ @@
+             $message = sprintf('Provided "%s" is an object. Payload parameters only can be primitive.', $fieldName);
+             throw new \InvalidArgumentException($message);
+         }
+-        if (true !== \is_array($value)) {
++        if (true === \is_array($value)) {
+             return;
+         }
+         $this->ensureThatPayloadHasOnlyPrimitives($value, $fieldName);
+     }
+ }
+
+
+173) /var/www/html/src/Shared/Domain/Messaging/Message.php:231    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+         if (true !== \is_array($value)) {
+             return;
+         }
+-        $this->ensureThatPayloadHasOnlyPrimitives($value, $fieldName);
++        
+     }
+ }
+
+
+174) /var/www/html/src/Shared/Domain/Messaging/Serialization/SerializationException.php:12    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+ use Whalar\Shared\Domain\DomainException;
+ final class SerializationException extends DomainException
+ {
+-    #[Pure]
+-    public static function from(string $message, ?\Throwable $previous = null) : self
++    protected static function from(string $message, ?\Throwable $previous = null) : self
+     {
+         return new self($message, 0, $previous);
+     }
+
+
+175) /var/www/html/src/Shared/Domain/Messaging/Serialization/SerializationException.php:15    [M] DecrementInteger
+
+--- Original
++++ New
+@@ @@
+     #[Pure]
+     public static function from(string $message, ?\Throwable $previous = null) : self
+     {
+-        return new self($message, 0, $previous);
++        return new self($message, -1, $previous);
+     }
+     public function title() : string
+     {
+
+
+176) /var/www/html/src/Shared/Domain/Messaging/Serialization/SerializationException.php:15    [M] IncrementInteger
+
+--- Original
++++ New
+@@ @@
+     #[Pure]
+     public static function from(string $message, ?\Throwable $previous = null) : self
+     {
+-        return new self($message, 0, $previous);
++        return new self($message, 1, $previous);
+     }
+     public function title() : string
+     {
+
+
+177) /var/www/html/src/Shared/Domain/Utils.php:11    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+ use Assert\Assert;
+ final class Utils
+ {
+-    public static function extractClassName(mixed $objectOrClass) : string
++    protected static function extractClassName(mixed $objectOrClass) : string
+     {
+         Assert::that($objectOrClass)->objectOrClass();
+         try {
+
+
+178) /var/www/html/src/Shared/Domain/Utils.php:13    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+ {
+     public static function extractClassName(mixed $objectOrClass) : string
+     {
+-        Assert::that($objectOrClass)->objectOrClass();
++        
+         try {
+             $reflect = new \ReflectionClass($objectOrClass);
+             return $reflect->getShortName();
+
+
+179) /var/www/html/src/Shared/Domain/Utils.php:25    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         }
+     }
+     /** @return array<mixed> */
+-    public static function jsonDecode(string $json) : array
++    protected static function jsonDecode(string $json) : array
+     {
+         $data = json_decode($json, true);
+         if (\JSON_ERROR_NONE !== json_last_error()) {
+
+
+180) /var/www/html/src/Shared/Domain/Utils.php:29    [M] NotIdentical
+
+--- Original
++++ New
+@@ @@
+     public static function jsonDecode(string $json) : array
+     {
+         $data = json_decode($json, true);
+-        if (\JSON_ERROR_NONE !== json_last_error()) {
++        if (\JSON_ERROR_NONE === json_last_error()) {
+             throw new \RuntimeException('Unable to decode JSON string: ' . json_last_error_msg());
+         }
+         if (!\is_array($data)) {
+
+
+181) /var/www/html/src/Shared/Domain/Utils.php:30    [M] Concat
+
+--- Original
++++ New
+@@ @@
+     {
+         $data = json_decode($json, true);
+         if (\JSON_ERROR_NONE !== json_last_error()) {
+-            throw new \RuntimeException('Unable to decode JSON string: ' . json_last_error_msg());
++            throw new \RuntimeException(json_last_error_msg() . 'Unable to decode JSON string: ');
+         }
+         if (!\is_array($data)) {
+             throw new \RuntimeException('Unable to convert decoded JSON to array.');
+
+
+182) /var/www/html/src/Shared/Domain/Utils.php:30    [M] ConcatOperandRemoval
+
+--- Original
++++ New
+@@ @@
+     {
+         $data = json_decode($json, true);
+         if (\JSON_ERROR_NONE !== json_last_error()) {
+-            throw new \RuntimeException('Unable to decode JSON string: ' . json_last_error_msg());
++            throw new \RuntimeException(json_last_error_msg());
+         }
+         if (!\is_array($data)) {
+             throw new \RuntimeException('Unable to convert decoded JSON to array.');
+
+
+183) /var/www/html/src/Shared/Domain/Utils.php:30    [M] ConcatOperandRemoval
+
+--- Original
++++ New
+@@ @@
+     {
+         $data = json_decode($json, true);
+         if (\JSON_ERROR_NONE !== json_last_error()) {
+-            throw new \RuntimeException('Unable to decode JSON string: ' . json_last_error_msg());
++            throw new \RuntimeException('Unable to decode JSON string: ');
+         }
+         if (!\is_array($data)) {
+             throw new \RuntimeException('Unable to convert decoded JSON to array.');
+
+
+184) /var/www/html/src/Shared/Domain/Utils.php:30    [M] Throw_
+
+--- Original
++++ New
+@@ @@
+     {
+         $data = json_decode($json, true);
+         if (\JSON_ERROR_NONE !== json_last_error()) {
+-            throw new \RuntimeException('Unable to decode JSON string: ' . json_last_error_msg());
++            new \RuntimeException('Unable to decode JSON string: ' . json_last_error_msg());
+         }
+         if (!\is_array($data)) {
+             throw new \RuntimeException('Unable to convert decoded JSON to array.');
+
+
+185) /var/www/html/src/Shared/Domain/Utils.php:33    [M] LogicalNot
+
+--- Original
++++ New
+@@ @@
+         if (\JSON_ERROR_NONE !== json_last_error()) {
+             throw new \RuntimeException('Unable to decode JSON string: ' . json_last_error_msg());
+         }
+-        if (!\is_array($data)) {
++        if (\is_array($data)) {
+             throw new \RuntimeException('Unable to convert decoded JSON to array.');
+         }
+         return $data;
+
+
+186) /var/www/html/src/Shared/Domain/Utils.php:34    [M] Throw_
+
+--- Original
++++ New
+@@ @@
+             throw new \RuntimeException('Unable to decode JSON string: ' . json_last_error_msg());
+         }
+         if (!\is_array($data)) {
+-            throw new \RuntimeException('Unable to convert decoded JSON to array.');
++            new \RuntimeException('Unable to convert decoded JSON to array.');
+         }
+         return $data;
+     }
+
+
+187) /var/www/html/src/Shared/Domain/Utils.php:37    [M] ArrayOneItem
+
+--- Original
++++ New
+@@ @@
+         if (!\is_array($data)) {
+             throw new \RuntimeException('Unable to convert decoded JSON to array.');
+         }
+-        return $data;
++        return count($data) > 1 ? array_slice($data, 0, 1, true) : $data;
+     }
+     /** @param array<mixed> $data */
+     public static function jsonEncode(array $data) : string
+
+
+188) /var/www/html/src/Shared/Domain/Utils.php:41    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         return $data;
+     }
+     /** @param array<mixed> $data */
+-    public static function jsonEncode(array $data) : string
++    protected static function jsonEncode(array $data) : string
+     {
+         $json = json_encode($data);
+         if (false === $json) {
+
+
+189) /var/www/html/src/Shared/Domain/Utils.php:45    [M] FalseValue
+
+--- Original
++++ New
+@@ @@
+     public static function jsonEncode(array $data) : string
+     {
+         $json = json_encode($data);
+-        if (false === $json) {
++        if (true === $json) {
+             throw new \RuntimeException('Unable to encode JSON: ' . json_last_error_msg());
+         }
+         return $json;
+
+
+190) /var/www/html/src/Shared/Domain/Utils.php:45    [M] Identical
+
+--- Original
++++ New
+@@ @@
+     public static function jsonEncode(array $data) : string
+     {
+         $json = json_encode($data);
+-        if (false === $json) {
++        if (false !== $json) {
+             throw new \RuntimeException('Unable to encode JSON: ' . json_last_error_msg());
+         }
+         return $json;
+
+
+191) /var/www/html/src/Shared/Domain/Utils.php:46    [M] Concat
+
+--- Original
++++ New
+@@ @@
+     {
+         $json = json_encode($data);
+         if (false === $json) {
+-            throw new \RuntimeException('Unable to encode JSON: ' . json_last_error_msg());
++            throw new \RuntimeException(json_last_error_msg() . 'Unable to encode JSON: ');
+         }
+         return $json;
+     }
+
+
+192) /var/www/html/src/Shared/Domain/Utils.php:46    [M] ConcatOperandRemoval
+
+--- Original
++++ New
+@@ @@
+     {
+         $json = json_encode($data);
+         if (false === $json) {
+-            throw new \RuntimeException('Unable to encode JSON: ' . json_last_error_msg());
++            throw new \RuntimeException(json_last_error_msg());
+         }
+         return $json;
+     }
+
+
+193) /var/www/html/src/Shared/Domain/Utils.php:46    [M] ConcatOperandRemoval
+
+--- Original
++++ New
+@@ @@
+     {
+         $json = json_encode($data);
+         if (false === $json) {
+-            throw new \RuntimeException('Unable to encode JSON: ' . json_last_error_msg());
++            throw new \RuntimeException('Unable to encode JSON: ');
+         }
+         return $json;
+     }
+
+
+194) /var/www/html/src/Shared/Domain/Utils.php:46    [M] Throw_
+
+--- Original
++++ New
+@@ @@
+     {
+         $json = json_encode($data);
+         if (false === $json) {
+-            throw new \RuntimeException('Unable to encode JSON: ' . json_last_error_msg());
++            new \RuntimeException('Unable to encode JSON: ' . json_last_error_msg());
+         }
+         return $json;
+     }
+
+
+195) /var/www/html/src/Shared/Domain/Utils.php:52    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         }
+         return $json;
+     }
+-    public static function toSnakeCase(string $text) : string
++    protected static function toSnakeCase(string $text) : string
+     {
+         return ctype_lower($text) ? $text : strtolower(preg_replace('/([^A-Z\\s])([A-Z])/', '$1_$2', $text) ?? '');
+     }
+ }
+
+
+196) /var/www/html/src/Shared/Domain/Utils.php:54    [M] Ternary
+
+--- Original
++++ New
+@@ @@
+     }
+     public static function toSnakeCase(string $text) : string
+     {
+-        return ctype_lower($text) ? $text : strtolower(preg_replace('/([^A-Z\\s])([A-Z])/', '$1_$2', $text) ?? '');
++        return ctype_lower($text) ? strtolower(preg_replace('/([^A-Z\\s])([A-Z])/', '$1_$2', $text) ?? '') : $text;
+     }
+ }
+
+
+197) /var/www/html/src/Shared/Domain/Utils.php:56    [M] Coalesce
+
+--- Original
++++ New
+@@ @@
+     }
+     public static function toSnakeCase(string $text) : string
+     {
+-        return ctype_lower($text) ? $text : strtolower(preg_replace('/([^A-Z\\s])([A-Z])/', '$1_$2', $text) ?? '');
++        return ctype_lower($text) ? $text : strtolower('' ?? preg_replace('/([^A-Z\\s])([A-Z])/', '$1_$2', $text));
+     }
+ }
+
+
+198) /var/www/html/src/Shared/Domain/Utils.php:56    [M] UnwrapStrToLower
+
+--- Original
++++ New
+@@ @@
+     }
+     public static function toSnakeCase(string $text) : string
+     {
+-        return ctype_lower($text) ? $text : strtolower(preg_replace('/([^A-Z\\s])([A-Z])/', '$1_$2', $text) ?? '');
++        return ctype_lower($text) ? $text : preg_replace('/([^A-Z\\s])([A-Z])/', '$1_$2', $text) ?? '';
+     }
+ }
+
+
+199) /var/www/html/src/Shared/Domain/ValueObject/AggregateId.php:18    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     /** @throws AssertionFailedException */
+     private function __construct(string $value)
+     {
+-        $this->setValue($value);
++        
+     }
+     /** @throws AssertionFailedException */
+     public static function from(string $value) : self
+
+
+200) /var/www/html/src/Shared/Domain/ValueObject/AggregateId.php:22    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         $this->setValue($value);
+     }
+     /** @throws AssertionFailedException */
+-    public static function from(string $value) : self
++    protected static function from(string $value) : self
+     {
+         return new self($value);
+     }
+
+
+201) /var/www/html/src/Shared/Domain/ValueObject/AggregateId.php:28    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         return new self($value);
+     }
+     /** @throws AssertionFailedException */
+-    public static function random() : self
++    protected static function random() : self
+     {
+         return new self(Uuid::v4()->toRfc4122());
+     }
+
+
+202) /var/www/html/src/Shared/Domain/ValueObject/AggregateId.php:33    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+     {
+         return new self(Uuid::v4()->toRfc4122());
+     }
+-    public function id() : string
++    protected function id() : string
+     {
+         return $this->value;
+     }
+
+
+203) /var/www/html/src/Shared/Domain/ValueObject/AggregateId.php:38    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+     {
+         return $this->value;
+     }
+-    public function equalsTo(self $other) : bool
++    protected function equalsTo(self $other) : bool
+     {
+         return $this->id() === $other->id();
+     }
+
+
+204) /var/www/html/src/Shared/Domain/ValueObject/AggregateId.php:40    [M] Identical
+
+--- Original
++++ New
+@@ @@
+     }
+     public function equalsTo(self $other) : bool
+     {
+-        return $this->id() === $other->id();
++        return $this->id() !== $other->id();
+     }
+     public function jsonSerialize() : string
+     {
+
+
+205) /var/www/html/src/Shared/Domain/ValueObject/AggregateId.php:56    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     /** @throws AssertionFailedException */
+     private function setValue(string $value) : void
+     {
+-        Assertion::uuid($value);
++        
+         $this->value = $value;
+     }
+ }
+
+
+206) /var/www/html/src/Shared/Domain/ValueObject/ImageUrl.php:15    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+     private function __construct(private readonly string $imageUrl)
+     {
+     }
+-    public static function from(string $imageUrl) : self
++    protected static function from(string $imageUrl) : self
+     {
+         Assertion::url($imageUrl);
+         return new self($imageUrl);
+
+
+207) /var/www/html/src/Shared/Domain/ValueObject/ImageUrl.php:17    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     }
+     public static function from(string $imageUrl) : self
+     {
+-        Assertion::url($imageUrl);
++        
+         return new self($imageUrl);
+     }
+     public function value() : string
+
+
+208) /var/www/html/src/Shared/Domain/ValueObject/ImageUrl.php:22    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         Assertion::url($imageUrl);
+         return new self($imageUrl);
+     }
+-    public function value() : string
++    protected function value() : string
+     {
+         return $this->imageUrl;
+     }
+
+
+209) /var/www/html/src/Shared/Domain/ValueObject/Name.php:17    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+     {
+     }
+     /** @throws AssertionFailedException */
+-    public static function from(string $name) : self
++    protected static function from(string $name) : self
+     {
+         Assertion::lessThan(3, strlen($name));
+         return new self($name);
+
+
+210) /var/www/html/src/Shared/Domain/ValueObject/Name.php:19    [M] DecrementInteger
+
+--- Original
++++ New
+@@ @@
+     /** @throws AssertionFailedException */
+     public static function from(string $name) : self
+     {
+-        Assertion::lessThan(3, strlen($name));
++        Assertion::lessThan(2, strlen($name));
+         return new self($name);
+     }
+     public function value() : string
+
+
+211) /var/www/html/src/Shared/Domain/ValueObject/Name.php:19    [M] IncrementInteger
+
+--- Original
++++ New
+@@ @@
+     /** @throws AssertionFailedException */
+     public static function from(string $name) : self
+     {
+-        Assertion::lessThan(3, strlen($name));
++        Assertion::lessThan(4, strlen($name));
+         return new self($name);
+     }
+     public function value() : string
+
+
+212) /var/www/html/src/Shared/Domain/ValueObject/Name.php:19    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     /** @throws AssertionFailedException */
+     public static function from(string $name) : self
+     {
+-        Assertion::lessThan(3, strlen($name));
++        
+         return new self($name);
+     }
+     public function value() : string
+
+
+213) /var/www/html/src/Shared/Domain/ValueObject/Name.php:24    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         Assertion::lessThan(3, strlen($name));
+         return new self($name);
+     }
+-    public function value() : string
++    protected function value() : string
+     {
+         return $this->name;
+     }
+
+
+214) /var/www/html/src/Shared/Domain/ValueObject/PaginatorPage.php:17    [M] DecrementInteger
+
+--- Original
++++ New
+@@ @@
+     /** @throws AssertionFailedException */
+     private function __construct(int $page)
+     {
+-        Assertion::greaterThan($page, 0, 'Page must be greater than zero');
++        Assertion::greaterThan($page, -1, 'Page must be greater than zero');
+         $this->page = $page;
+     }
+     /** @throws AssertionFailedException */
+
+
+215) /var/www/html/src/Shared/Domain/ValueObject/PaginatorPage.php:17    [M] IncrementInteger
+
+--- Original
++++ New
+@@ @@
+     /** @throws AssertionFailedException */
+     private function __construct(int $page)
+     {
+-        Assertion::greaterThan($page, 0, 'Page must be greater than zero');
++        Assertion::greaterThan($page, 1, 'Page must be greater than zero');
+         $this->page = $page;
+     }
+     /** @throws AssertionFailedException */
+
+
+216) /var/www/html/src/Shared/Domain/ValueObject/PaginatorPage.php:17    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     /** @throws AssertionFailedException */
+     private function __construct(int $page)
+     {
+-        Assertion::greaterThan($page, 0, 'Page must be greater than zero');
++        
+         $this->page = $page;
+     }
+     /** @throws AssertionFailedException */
+
+
+217) /var/www/html/src/Shared/Domain/ValueObject/PaginatorPage.php:22    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         $this->page = $page;
+     }
+     /** @throws AssertionFailedException */
+-    public static function from(int $page) : self
++    protected static function from(int $page) : self
+     {
+         return new self($page);
+     }
+
+
+218) /var/www/html/src/Shared/Domain/ValueObject/PaginatorPage.php:27    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+     {
+         return new self($page);
+     }
+-    public function value() : int
++    protected function value() : int
+     {
+         return $this->page;
+     }
+ }
+
+
+219) /var/www/html/src/Shared/Domain/ValueObject/PaginatorSize.php:17    [M] DecrementInteger
+
+--- Original
++++ New
+@@ @@
+     /** @throws AssertionFailedException */
+     private function __construct(int $size)
+     {
+-        Assertion::greaterThan($size, 0, 'Size must be greater than zero');
++        Assertion::greaterThan($size, -1, 'Size must be greater than zero');
+         $this->size = $size;
+     }
+     /** @throws AssertionFailedException */
+
+
+220) /var/www/html/src/Shared/Domain/ValueObject/PaginatorSize.php:17    [M] IncrementInteger
+
+--- Original
++++ New
+@@ @@
+     /** @throws AssertionFailedException */
+     private function __construct(int $size)
+     {
+-        Assertion::greaterThan($size, 0, 'Size must be greater than zero');
++        Assertion::greaterThan($size, 1, 'Size must be greater than zero');
+         $this->size = $size;
+     }
+     /** @throws AssertionFailedException */
+
+
+221) /var/www/html/src/Shared/Domain/ValueObject/PaginatorSize.php:17    [M] MethodCallRemoval
+
+--- Original
++++ New
+@@ @@
+     /** @throws AssertionFailedException */
+     private function __construct(int $size)
+     {
+-        Assertion::greaterThan($size, 0, 'Size must be greater than zero');
++        
+         $this->size = $size;
+     }
+     /** @throws AssertionFailedException */
+
+
+222) /var/www/html/src/Shared/Domain/ValueObject/PaginatorSize.php:22    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         $this->size = $size;
+     }
+     /** @throws AssertionFailedException */
+-    public static function from(int $size) : self
++    protected static function from(int $size) : self
+     {
+         return new self($size);
+     }
+
+
+223) /var/www/html/src/Shared/Domain/ValueObject/PaginatorSize.php:27    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+     {
+         return new self($size);
+     }
+-    public function value() : int
++    protected function value() : int
+     {
+         return $this->size;
+     }
+ }

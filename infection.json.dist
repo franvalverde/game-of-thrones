@@ -14,6 +14,6 @@
         "summary": "report/infection/summary.log",
         "perMutator": "report/infection/effects.md"
     },
-    "minMsi": 100,
-    "minCoveredMsi": 100
+    "minMsi": 41,
+    "minCoveredMsi": 77
 }

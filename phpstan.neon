@@ -3,7 +3,7 @@ includes:
     - phpstan-ignore.neon
 
 parameters:
-    level: 8
+    level: max
     doctrine:
         objectManagerLoader: tests/object-manager.php
     symfony:
