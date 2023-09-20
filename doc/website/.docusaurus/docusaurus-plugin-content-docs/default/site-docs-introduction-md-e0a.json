@@ -2,7 +2,7 @@
   "unversionedId": "Introduction",
   "id": "Introduction",
   "title": "Introduction",
-  "description": "Redocusaurus is a preset for Docusaurus to help you integrate OpenAPI documentation via Redoc. It was created to make it easy to have API docs that live with your other documentation and look and feel like a part of it.",
+  "description": "The purpose of this test is to implement a RESTful API to manage the list of the characters present on Game of Thrones, paying special attention to the use of best practices, following SOLID and Clean Code principles.",
   "source": "@site/docs/Introduction.md",
   "sourceDirName": ".",
   "slug": "/",

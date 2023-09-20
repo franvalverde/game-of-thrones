@@ -19,17 +19,11 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', 'f9c'),
+    component: ComponentCreator('/docs', '1b4'),
     routes: [
       {
         path: '/docs/',
         component: ComponentCreator('/docs/', '08d'),
-        exact: true,
-        sidebar: "defaultSidebar"
-      },
-      {
-        path: '/docs/bussiness_rules',
-        component: ComponentCreator('/docs/bussiness_rules', 'd5d'),
         exact: true,
         sidebar: "defaultSidebar"
       },

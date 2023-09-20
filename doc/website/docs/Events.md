@@ -1,14 +1,32 @@
 ---
 slug: /events
 title: Events
-sidebar_position: 4
+sidebar_position: 3
 ---
 
-Feel free to add your site below by sending a Pull Request! (sort in alphabetical order)
+When the state of a resource changes, a new event resource is created to record the change. When an event is created, this event is stored in the database in the stored_event table and is also sent to a rabbitMq queue.
 
-- [ChatKitty API Docs](https://chatkitty.com/docs/rest/reference)
-- [Forem API Docs](https://developers.forem.com/api)
-- [Regards OSS](http://regardsoss.github.io/) - [example](http://regardsoss.github.io/docs/development/backend/services/catalog/api-swagger)
-- [Wechaty OpenAPI](https://wechaty.js.org/docs/openapi/)
-- [Facturapi API Docs](https://docs.facturapi.io/api)
-- [Modrinth API Docs](https://docs.modrinth.com)
+Logstash is subscribed to this rabbitmq queue that consumes the event by sending it to elasticSeach to later be able to view it from Kibana.
+
+## Event topics
+
+### Houses
+
+| Topic             | Description         | Payload                               |
+|-------------------|---------------------|---------------------------------------|
+| house_was_created | A house was created | {"houseId":"string","name": "string"} |
+| house_was_updated | A house was updated | {"houseId":"string","name": "string"} |
+
+
+### Actors
+
+| Topic             | Description          | Payload                                                      |
+|-------------------|----------------------|--------------------------------------------------------------|
+| actor_was_created | An actor was created | {"actorId":"string","internalId": "string", "name": "string"} |
+
+### Characters
+
+| Topic                 | Description             | Payload                                                                                 |
+|-----------------------|-------------------------|-----------------------------------------------------------------------------------------|
+| character_was_created | A character was created | {"characterId":"string","internalId":"string","name": "string"}                         |
+| character_was_related | A relation was created  | {"relationId":"string","characterId":"string","relatedTo":"string","relation":"string"} |

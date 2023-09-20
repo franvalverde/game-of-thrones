@@ -753,52 +753,6 @@
       }
     }
   },
-  "docusaurus-plugin-content-docs": {
-    "default": {
-      "path": "/docs",
-      "versions": [
-        {
-          "name": "current",
-          "label": "Next",
-          "isLast": true,
-          "path": "/docs",
-          "mainDocId": "Introduction",
-          "docs": [
-            {
-              "id": "BusinessRules",
-              "path": "/docs/bussiness_rules",
-              "sidebar": "defaultSidebar"
-            },
-            {
-              "id": "Events",
-              "path": "/docs/events",
-              "sidebar": "defaultSidebar"
-            },
-            {
-              "id": "Introduction",
-              "path": "/docs/",
-              "sidebar": "defaultSidebar"
-            },
-            {
-              "id": "UsedTechnology",
-              "path": "/docs/used_technology",
-              "sidebar": "defaultSidebar"
-            }
-          ],
-          "draftIds": [],
-          "sidebars": {
-            "defaultSidebar": {
-              "link": {
-                "path": "/docs/",
-                "label": "Introduction"
-              }
-            }
-          }
-        }
-      ],
-      "breadcrumbs": true
-    }
-  },
   "docusaurus-theme-redoc": {
     "theme-redoc": {
       "lightTheme": {
@@ -909,6 +863,47 @@
           }
         }
       }
+    }
+  },
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/docs",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/docs",
+          "mainDocId": "Introduction",
+          "docs": [
+            {
+              "id": "Events",
+              "path": "/docs/events",
+              "sidebar": "defaultSidebar"
+            },
+            {
+              "id": "Introduction",
+              "path": "/docs/",
+              "sidebar": "defaultSidebar"
+            },
+            {
+              "id": "UsedTechnology",
+              "path": "/docs/used_technology",
+              "sidebar": "defaultSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "defaultSidebar": {
+              "link": {
+                "path": "/docs/",
+                "label": "Introduction"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
     }
   }
 }

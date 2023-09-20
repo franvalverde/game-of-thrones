@@ -2,7 +2,7 @@
   "unversionedId": "Events",
   "id": "Events",
   "title": "Events",
-  "description": "Feel free to add your site below by sending a Pull Request! (sort in alphabetical order)",
+  "description": "When the state of a resource changes, a new event resource is created to record the change. When an event is created, this event is stored in the database in the stored_event table and is also sent to a rabbitMq queue.",
   "source": "@site/docs/Events.md",
   "sourceDirName": ".",
   "slug": "/events",
@@ -11,15 +11,15 @@
   "editUrl": "https://github.com/rohit-gohri/redocusaurus/edit/main/website/docs/Events.md",
   "tags": [],
   "version": "current",
-  "sidebarPosition": 4,
+  "sidebarPosition": 3,
   "frontMatter": {
     "slug": "/events",
     "title": "Events",
-    "sidebar_position": 4
+    "sidebar_position": 3
   },
   "sidebar": "defaultSidebar",
   "previous": {
-    "title": "Business rules",
-    "permalink": "/docs/bussiness_rules"
+    "title": "Used technology",
+    "permalink": "/docs/used_technology"
   }
 }

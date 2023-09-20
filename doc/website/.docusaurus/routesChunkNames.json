@@ -21,7 +21,7 @@
     "specProps": "specProps---openapi-got-e-15-ea2",
     "layoutProps": "layoutProps---openapi-got-4-cb-600"
   },
-  "/docs-f9c": {
+  "/docs-1b4": {
     "__comp": "__comp---theme-doc-page-1-be-9be",
     "__context": {
       "plugin": "plugin---docse-74-37c"
@@ -31,10 +31,6 @@
   "/docs/-08d": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-e-0-a-fc7"
-  },
-  "/docs/bussiness_rules-d5d": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-bussiness-rules-65-d-d77"
   },
   "/docs/events-6dd": {
     "__comp": "__comp---theme-doc-item-178-a40",

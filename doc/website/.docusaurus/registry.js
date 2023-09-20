@@ -6,7 +6,6 @@ export default {
   '__comp---theme-doc-item-178-a40': [() => import(/* webpackChunkName: '__comp---theme-doc-item-178-a40' */ '@theme/DocItem'), '@theme/DocItem', require.resolveWeak('@theme/DocItem')],
   '__comp---theme-doc-page-1-be-9be': [() => import(/* webpackChunkName: '__comp---theme-doc-page-1-be-9be' */ '@theme/DocPage'), '@theme/DocPage', require.resolveWeak('@theme/DocPage')],
   'config---examples-5-e-9-e9a': [() => import(/* webpackChunkName: 'config---examples-5-e-9-e9a' */ '@generated/docusaurus.config'), '@generated/docusaurus.config', require.resolveWeak('@generated/docusaurus.config')],
-  'content---docs-bussiness-rules-65-d-d77': [() => import(/* webpackChunkName: 'content---docs-bussiness-rules-65-d-d77' */ '@site/docs/BusinessRules.md'), '@site/docs/BusinessRules.md', require.resolveWeak('@site/docs/BusinessRules.md')],
   'content---docs-e-0-a-fc7': [() => import(/* webpackChunkName: 'content---docs-e-0-a-fc7' */ '@site/docs/Introduction.md'), '@site/docs/Introduction.md', require.resolveWeak('@site/docs/Introduction.md')],
   'content---docs-events-8-e-9-f24': [() => import(/* webpackChunkName: 'content---docs-events-8-e-9-f24' */ '@site/docs/Events.md'), '@site/docs/Events.md', require.resolveWeak('@site/docs/Events.md')],
   'content---docs-used-technologye-7-f-58e': [() => import(/* webpackChunkName: 'content---docs-used-technologye-7-f-58e' */ '@site/docs/UsedTechnology.md'), '@site/docs/UsedTechnology.md', require.resolveWeak('@site/docs/UsedTechnology.md')],

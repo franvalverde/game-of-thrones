@@ -23,12 +23,6 @@
       },
       {
         "type": "link",
-        "label": "Business rules",
-        "href": "/docs/bussiness_rules",
-        "docId": "BusinessRules"
-      },
-      {
-        "type": "link",
         "label": "Events",
         "href": "/docs/events",
         "docId": "Events"
@@ -36,28 +30,22 @@
     ]
   },
   "docs": {
-    "BusinessRules": {
-      "id": "BusinessRules",
-      "title": "Business rules",
-      "description": "Feel free to add your site below by sending a Pull Request! (sort in alphabetical order)",
-      "sidebar": "defaultSidebar"
-    },
     "Events": {
       "id": "Events",
       "title": "Events",
-      "description": "Feel free to add your site below by sending a Pull Request! (sort in alphabetical order)",
+      "description": "When the state of a resource changes, a new event resource is created to record the change. When an event is created, this event is stored in the database in the stored_event table and is also sent to a rabbitMq queue.",
       "sidebar": "defaultSidebar"
     },
     "Introduction": {
       "id": "Introduction",
       "title": "Introduction",
-      "description": "Redocusaurus is a preset for Docusaurus to help you integrate OpenAPI documentation via Redoc. It was created to make it easy to have API docs that live with your other documentation and look and feel like a part of it.",
+      "description": "The purpose of this test is to implement a RESTful API to manage the list of the characters present on Game of Thrones, paying special attention to the use of best practices, following SOLID and Clean Code principles.",
       "sidebar": "defaultSidebar"
     },
     "UsedTechnology": {
       "id": "UsedTechnology",
       "title": "Used technology",
-      "description": "Feel free to add your site below by sending a Pull Request! (sort in alphabetical order)",
+      "description": "This is a service that is accessed through a web server using nginx, exposing port 8080 to make requests.",
       "sidebar": "defaultSidebar"
     }
   }

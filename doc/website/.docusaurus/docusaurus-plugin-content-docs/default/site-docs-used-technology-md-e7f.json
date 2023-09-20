@@ -2,7 +2,7 @@
   "unversionedId": "UsedTechnology",
   "id": "UsedTechnology",
   "title": "Used technology",
-  "description": "Feel free to add your site below by sending a Pull Request! (sort in alphabetical order)",
+  "description": "This is a service that is accessed through a web server using nginx, exposing port 8080 to make requests.",
   "source": "@site/docs/UsedTechnology.md",
   "sourceDirName": ".",
   "slug": "/used_technology",
@@ -23,7 +23,7 @@
     "permalink": "/docs/"
   },
   "next": {
-    "title": "Business rules",
-    "permalink": "/docs/bussiness_rules"
+    "title": "Events",
+    "permalink": "/docs/events"
   }
 }
