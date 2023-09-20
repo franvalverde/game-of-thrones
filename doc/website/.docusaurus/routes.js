@@ -13,36 +13,6 @@ export default [
     exact: true
   },
   {
-    path: '/examples/custom-layout/',
-    component: ComponentCreator('/examples/custom-layout/', 'a9e'),
-    exact: true
-  },
-  {
-    path: '/examples/custom-page/',
-    component: ComponentCreator('/examples/custom-page/', '848'),
-    exact: true
-  },
-  {
-    path: '/examples/using-multi-file-yaml/',
-    component: ComponentCreator('/examples/using-multi-file-yaml/', '1cc'),
-    exact: true
-  },
-  {
-    path: '/examples/using-remote-url/',
-    component: ComponentCreator('/examples/using-remote-url/', '9f5'),
-    exact: true
-  },
-  {
-    path: '/examples/using-single-yaml/',
-    component: ComponentCreator('/examples/using-single-yaml/', 'e44'),
-    exact: true
-  },
-  {
-    path: '/examples/using-swagger-json/',
-    component: ComponentCreator('/examples/using-swagger-json/', '9c1'),
-    exact: true
-  },
-  {
     path: '/openapi/got/',
     component: ComponentCreator('/openapi/got/', '7da'),
     exact: true

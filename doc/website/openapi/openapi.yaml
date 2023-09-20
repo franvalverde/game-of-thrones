@@ -1,0 +1,500 @@
+openapi: 3.0.0
+servers:
+  - url: localhost:8080
+    description: Local server
+info:
+  description: |
+    This is the API Specification of Backend Recruitment Test of Whalar.
+
+    # Introduction
+    The purpose of this test is to implement a RESTful API to manage the list of the characters present on Game of Thrones, paying special attention to the use of best practices, following SOLID and Clean Code principles.
+
+    # OpenAPI Specification
+    This API is documented in **OpenAPI format** and [ReDoc](https://github.com/Redocly/redoc) documentation. In addition to standard
+    OpenAPI syntax I use a few [vendor extensions](https://github.com/Redocly/redoc/blob/master/docs/redoc-vendor-extensions.md).
+
+    # Authentication
+
+    No system authentication is required to use the resources required to complete this test.
+
+  version: 1.0.0
+  title: Game of thrones
+  contact:
+    name: Fran Valverde
+    email: franwalverde@gmail.com
+    url: https://github.com/franvalverde
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+tags:
+  - name: house
+    description: Everything about the houses of game of thrones
+  - name: actor
+    description: Actors of game of thrones
+  - name: character
+    description: Operations about characters of game of thrones
+paths:
+  /v1/houses:
+    post:
+      tags:
+        - house
+      summary: Add a new house
+      description: Endpoint to create a new house.
+      operationId: create-house
+      responses:
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HouseCreatedResponse'
+        '400':
+          description: Bad request operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '409':
+          description: Conflict operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      requestBody:
+        $ref: '#/components/requestBodies/House'
+    get:
+      tags:
+        - house
+      summary: Paginated list of houses
+      description: 'Endpoint to list the houses'
+      operationId: list-houses
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HousesResponse'
+        '400':
+          description: Bad request
+      requestBody:
+        $ref: '#/components/requestBodies/Paginate'
+  /v1/houses/{houseId}:
+    parameters:
+      - schema:
+          type: string
+          format: uuid
+        name: houseId
+        in: path
+        required: true
+        description: House identifier
+    put:
+      tags:
+        - house
+      summary: Update an existing house
+      description: 'Endpoint to update a house'
+      operationId: update-house
+      responses:
+        '204':
+          description: No Content
+        '400':
+          description: Bad request
+        '404':
+          description: House not found
+      requestBody:
+        $ref: '#/components/requestBodies/House'
+  /v1/actors:
+    post:
+      tags:
+        - actor
+      summary: Add a new actor
+      description: Endpoint to create a new actor.
+      operationId: create-actor
+      responses:
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActorCreatedResponse'
+        '400':
+          description: Bad request operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '409':
+          description: Conflict operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      requestBody:
+        $ref: '#/components/requestBodies/Actor'
+  /v1/characters:
+    post:
+      tags:
+        - character
+      summary: Add a new character
+      description: Endpoint to create a new character.
+      operationId: create-character
+      responses:
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CharacterCreatedResponse'
+        '400':
+          description: Bad request operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+        '409':
+          description: Conflict operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+      requestBody:
+        $ref: '#/components/requestBodies/Character'
+    get:
+      tags:
+        - character
+      summary: Paginated list of characters
+      description: 'Endpoint to list the characters'
+      operationId: list-characters
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CharactersResponse'
+        '400':
+          description: Bad request
+      requestBody:
+        $ref: '#/components/requestBodies/Paginate'
+  /v1/characters/{characterId}:
+    parameters:
+      - schema:
+          type: string
+          example: ch1234567
+        name: characterId
+        in: path
+        required: true
+        description: Character identifier
+    get:
+      tags:
+        - character
+      summary: Retrieve character
+      description: 'Endpoint to retrieve the specified character'
+      operationId: retrieve-character
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CharacterResponse'
+        '400':
+          description: Bad request
+        '404':
+          description: Not found
+  /v1/characters/{characterId}/relates:
+    parameters:
+      - schema:
+          type: string
+          example: ch1234567
+        name: characterId
+        in: path
+        required: true
+        description: Character identifier
+    post:
+      tags:
+        - character
+      summary: Relate characters
+      description: 'Endpoint to relate two characters'
+      operationId: relate-characters
+      responses:
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CharacterRelateCreatedResponse'
+        '400':
+          description: Bad request
+        '404':
+          description: Not found
+      requestBody:
+        $ref: '#/components/requestBodies/Relate'
+components:
+  schemas:
+    HouseCreatedResponse:
+      type: object
+      properties:
+        houseId:
+          type: "string"
+          format: "uuid"
+    ActorCreatedResponse:
+      type: object
+      properties:
+        actorId:
+          type: "string"
+    CharacterCreatedResponse:
+      type: object
+      properties:
+        characterId:
+          type: "string"
+    CharacterRelateCreatedResponse:
+      type: object
+      properties:
+        relationId:
+          type: "string"
+          format: uuid
+    HousesResponse:
+      type: object
+      properties:
+        meta:
+          $ref: '#/components/schemas/Meta'
+        houses:
+          type: "array"
+          items:
+            $ref: '#/components/schemas/House'
+    CharactersResponse:
+      type: object
+      properties:
+        meta:
+          $ref: '#/components/schemas/Meta'
+        characters:
+          type: "array"
+          items:
+            $ref: '#/components/schemas/CharacterResponse'
+    ExceptionResponse:
+      type: object
+      properties:
+        status:
+          type: "integer"
+        title:
+          type: "string"
+        detail:
+          type: "string"
+        type:
+          type: "string"
+        code:
+          type: "string"
+    ApiResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        type:
+          type: string
+        message:
+          type: string
+    Id:
+      type: string
+      format: uuid
+      readOnly: true
+    Meta:
+      type: object
+      properties:
+        currentPage:
+          type: integer
+        lastPage:
+          type: integer
+        size:
+          type: integer
+        total:
+          type: integer
+    House:
+      type: object
+      required:
+        - name
+      properties:
+        id:
+          description: House ID
+          allOf:
+            - $ref: '#/components/schemas/Id'
+        name:
+          description: The name given to a house
+          type: string
+          example: Stark
+    Actor:
+      type: object
+      required:
+        - actorId
+        - name
+      properties:
+        actorId:
+          description: The actor id to identify the actor
+          type: string
+          example: nm1234567
+        name:
+          description: The name given to a actor
+          type: string
+          example: Finn Jones
+        seasonsActive:
+          description: Seasons it has been active
+          type: array
+          example: [1,2]
+    Character:
+      type: object
+      required:
+        - characterId
+        - name
+      properties:
+        characterId:
+          description: The character id to identify the character
+          type: string
+          example: ch1234567
+        name:
+          description: The name given to a character
+          type: string
+          example: Cersei Lannister
+        kingsguard:
+          description: The character belongs to the king's guard
+          type: boolean
+        royal:
+          description: The character belongs to royalty
+          type: boolean
+        nickname:
+          description: nickname name given to a character
+          type: string
+          example: Littlefinger
+        imageFull:
+          description: image full of character
+          type: string
+          format: url
+        imageThumb:
+          description: image thumb of character
+          type: string
+          format: url
+        actors:
+          description: Actors who have played the character
+          type: array
+          example: ['nm1234567']
+        houseId:
+          description: The character belongs to house
+          type: string
+          format: uuid
+    CharacterResponse:
+      type: object
+      properties:
+        characterName:
+          description: The character name
+          type: string
+          example: Cersei Lannister
+        houseName:
+          description: The house name
+          type: string
+          example: Lannister
+        characterImageThumb:
+          description: The image thumb of character
+          type: string
+        characterImageFull:
+          description: The image full of character
+          type: string
+        characterLink:
+          description: Link to retrieve more info about the character
+          type: string
+          example: /character/ch1213779/
+        nickname:
+          description: nickname name given to a character
+          type: string
+          example: Littlefinger
+        kingsguard:
+          description: The character belongs to the king's guard
+          type: boolean
+        royal:
+          description: The character belongs to royalty
+          type: boolean
+        actorName:
+          description: Name of actor
+          type: string
+        actorLink:
+          description: Link to retrieve more info about the actor
+          type: string
+    Relate:
+      type: object
+      required:
+        - relatedId
+        - type
+      properties:
+        relatedId:
+          description: The character Id it is related to
+          type: string
+          example: ch1234567
+        type:
+          description: Relation type
+          type: string
+          enum:
+            - guardianOf
+            - abductedBy
+            - killed
+            - killedBy
+            - marriedEngaged
+            - parentOf
+            - parents
+            - siblings
+    Paginate:
+      type: object
+      properties:
+        page:
+          description: Indicates the page to retrieve
+          type: integer
+          default: 1
+        size:
+          description: Limits the number of objects returned per page
+          type: integer
+          default: 5
+        order:
+          description: Sorts resources in ascending or descending order
+          type: string
+          enum:
+            - asc
+            - desc
+  requestBodies:
+    House:
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: '#/components/schemas/House'
+      description: House object that needs to be created or updated
+      required: true
+    Actor:
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: '#/components/schemas/Actor'
+      description: Actor object that needs to be created
+      required: true
+    Character:
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: '#/components/schemas/Character'
+      description: Character object that needs to be created
+      required: true
+    Paginate:
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: '#/components/schemas/Paginate'
+      description: Optional parameters to list
+      required: true
+    Relate:
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: '#/components/schemas/Relate'
+      description: Data needs to relate characters
+      required: true

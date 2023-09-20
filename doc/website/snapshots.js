@@ -1,7 +1,7 @@
 const urls = [
   {
     name: 'YAML Spec',
-    path: '/examples/using-single-yaml/',
+    path: '/openapi/openapi.yaml/',
   },
   { name: 'URL Spec', path: '/examples/using-remote-url/' },
   { name: 'Nested Example', path: '/docs/nested/nested-1' },

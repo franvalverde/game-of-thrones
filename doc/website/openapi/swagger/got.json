@@ -1,0 +1,406 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is the API Specification of Backend Recruitment Test of Whalar.",
+    "version": "1.0.0",
+    "title": "Game of thrones",
+    "contact": { "email": "franwalverde@gmail.com" }
+  },
+  "host": "localhost:8080",
+  "basePath": "/v1",
+  "tags": [
+    {
+      "name": "House", "description": "Everything about the houses of game of thrones" },
+    { "name": "Actor", "description": "Actors of game of thrones" },
+    { "name": "Character", "description": "Operations about characters of game of thrones" }
+  ],
+  "schemes": ["http"],
+  "paths": {
+    "/houses": {
+      "post": {
+        "tags": ["house"],
+        "summary": "Create a house",
+        "description": "Endpoint to create a new house",
+        "operationId": "create_house",
+        "consumes": ["application/json"],
+        "produces": ["application/json", "application/xml"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Data to create a new house",
+            "required": true,
+            "schema": { "$ref": "#/definitions/House" }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "successful operation",
+            "schema": { "$ref": "#/definitions/HouseCreatedResponse" }
+          },
+          "400": {
+            "description": "Bad request operation",
+            "schema": { "$ref": "#/definitions/ExceptionResponse" }
+          },
+          "409": {
+            "description": "Conflict operation",
+            "schema": { "$ref": "#/definitions/ExceptionResponse" }
+          }
+        }
+      },
+      "get": {
+        "tags": ["house"],
+        "summary": "List houses",
+        "description": "Endpoint to list the houses",
+        "operationId": "list_houses",
+        "consumes": ["application/json"],
+        "produces": ["application/json", "application/xml"],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Indicates the page to retrieve",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "Limits the number of objects returned per page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "Sorts resources in ascending or descending order",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": { "$ref": "#/definitions/HouseCreatedResponse" }
+          },
+          "400": {
+            "description": "Bad request operation",
+            "schema": { "$ref": "#/definitions/ExceptionResponse" }
+          },
+          "409": {
+            "description": "Conflict operation",
+            "schema": { "$ref": "#/definitions/ExceptionResponse" }
+          }
+        }
+      }
+    },
+    "/houses/{houseId}": {
+      "put": {
+        "tags": ["house"],
+        "summary": "Update a house",
+        "description": "Endpoint to update a house",
+        "operationId": "update_house",
+        "consumes": ["application/json"],
+        "produces": ["application/json", "application/xml"],
+        "parameters": [
+          {
+            "name": "houseId",
+            "in": "query",
+            "description": "Search by houseId",
+            "required": false,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Data to update a house",
+            "required": true,
+            "schema": { "$ref": "#/definitions/HouseName" }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "successful operation. \n No Content"
+          },
+          "400": {
+            "description": "Bad request operation",
+            "schema": { "$ref": "#/definitions/ExceptionResponse" }
+          },
+          "404": {
+            "description": "Not found",
+            "schema": { "$ref": "#/definitions/ExceptionResponse" }
+          }
+        }
+      }
+    },
+    "/actors": {
+      "post": {
+        "tags": ["actor"],
+        "summary": "Create an actor",
+        "description": "Endpoint to create a new actor",
+        "operationId": "create_actor",
+        "consumes": ["application/json"],
+        "produces": ["application/json", "application/xml"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Data to create a new actor",
+            "required": true,
+            "schema": { "$ref": "#/definitions/Actor" }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "successful operation",
+            "schema": { "$ref": "#/definitions/ActorCreatedResponse" }
+          },
+          "400": {
+            "description": "Bad request operation",
+            "schema": { "$ref": "#/definitions/ExceptionResponse" }
+          },
+          "409": {
+            "description": "Conflict operation",
+            "schema": { "$ref": "#/definitions/ExceptionResponse" }
+          }
+        }
+      }
+    },
+    "/characters": {
+      "post": {
+        "tags": ["character"],
+        "summary": "Create a character",
+        "description": "Endpoint to create a new character",
+        "operationId": "create_character",
+        "consumes": ["application/json"],
+        "produces": ["application/json", "application/xml"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Data to create a new character",
+            "required": true,
+            "schema": { "$ref": "#/definitions/Character" }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "successful operation",
+            "schema": { "$ref": "#/definitions/CharacterCreatedResponse" }
+          },
+          "400": {
+            "description": "Bad request operation",
+            "schema": { "$ref": "#/definitions/ExceptionResponse" }
+          },
+          "409": {
+            "description": "Conflict operation",
+            "schema": { "$ref": "#/definitions/ExceptionResponse" }
+          }
+        }
+      },
+      "get": {
+        "tags": ["character"],
+        "summary": "List characters",
+        "description": "Endpoint to list the characters filtering by name",
+        "operationId": "list_characters",
+        "consumes": ["application/json"],
+        "produces": ["application/json", "application/xml"],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Filter by name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Indicates the page to retrieve",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "Limits the number of objects returned per page",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "Sorts resources in ascending or descending order",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": { "$ref": "#/definitions/Character" }
+          },
+          "400": {
+            "description": "Bad request operation",
+            "schema": { "$ref": "#/definitions/ExceptionResponse" }
+          }
+        }
+      }
+    },
+    "/characters/{characterId}": {
+      "get": {
+        "tags": ["character"],
+        "summary": "Retrieve a character",
+        "description": "Endpoint to retrieve a character",
+        "operationId": "retrieve_character",
+        "consumes": ["application/json"],
+        "produces": ["application/json", "application/xml"],
+        "parameters": [
+          {
+            "name": "characterId",
+            "in": "query",
+            "description": "Search by characterId",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": { "$ref": "#/definitions/Character" }
+          },
+          "400": {
+            "description": "Bad request operation",
+            "schema": { "$ref": "#/definitions/ExceptionResponse" }
+          },
+          "404": {
+            "description": "Not found operation",
+            "schema": { "$ref": "#/definitions/ExceptionResponse" }
+          }
+        }
+      }
+    },
+    "/characters/{characterId}/relates": {
+      "post": {
+        "tags": ["character"],
+        "summary": "Relate characters",
+        "description": "Endpoint to relate characters",
+        "operationId": "relate_characters",
+        "consumes": ["application/json"],
+        "produces": ["application/json", "application/xml"],
+        "parameters": [
+          {
+            "name": "characterId",
+            "in": "query",
+            "description": "Search by characterId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Data to relate characters",
+            "required": true,
+            "schema": { "$ref": "#/definitions/RelateCharacter" }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "successful operation",
+            "schema": { "$ref": "#/definitions/CharacterCreatedResponse" }
+          },
+          "400": {
+            "description": "Bad request operation",
+            "schema": { "$ref": "#/definitions/ExceptionResponse" }
+          },
+          "409": {
+            "description": "Conflict operation",
+            "schema": { "$ref": "#/definitions/ExceptionResponse" }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "HouseCreatedResponse": {
+      "type": "object",
+      "properties": {
+        "houseId": { "type": "string" }
+      }
+    },
+    "ActorCreatedResponse": {
+      "type": "object",
+      "properties": {
+        "actorId": { "type": "string" }
+      }
+    },
+    "CharacterCreatedResponse": {
+      "type": "object",
+      "properties": {
+        "characterId": { "type": "string" }
+      }
+    },
+    "ExceptionResponse": {
+      "type": "object",
+      "properties": {
+        "status": { "type": "integer" },
+        "title": { "type": "string" },
+        "detail": { "type": "string" },
+        "type": { "type": "string" },
+        "code": { "type": "string" }
+      }
+    },
+    "House": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "id": { "type": "string", "format": "uuid" },
+        "name": { "type": "string" }
+      }
+    },
+    "HouseName": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": { "type": "string" }
+      }
+    },
+    "Actor": {
+      "type": "object",
+      "required": ["actorId", "name"],
+      "properties": {
+        "actorId": { "type": "string", "example": "nm1234567" },
+        "name": { "type": "string" },
+        "seasonsActive": {"type": "array", "example": [1]}
+      }
+    },
+    "Character": {
+      "type": "object",
+      "required": ["characterId", "name"],
+      "properties": {
+        "characterId": { "type": "string", "example": "ch1234567" },
+        "name": { "type": "string" },
+        "kingsguard": { "type": "boolean" },
+        "royal": { "type": "boolean" },
+        "nickname": { "type": "string" },
+        "imageThumb": { "type": "string", "format": "url" },
+        "imageFull": { "type": "string", "format": "url" },
+        "houseId": { "type":  "string", "format":  "uuid" },
+        "actors": { "type":  "array", "example":  ["8b5d9909-2a3e-46d4-8782-4d9c3c834fd4"] }
+      }
+    },
+    "RelateCharacter": {
+      "type": "object",
+      "required": ["relatedTo", "type"],
+      "properties": {
+        "relatedTo": { "type": "string" },
+        "type": {
+          "type": "string",
+          "description": "Relation type",
+          "enum": ["guardianOf", "abductedBy", "killed", "killedBy", "marriedEngaged", "parentOf", "parents", "siblings"]
+        }
+      }
+    }
+  }
+}

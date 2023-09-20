@@ -7,44 +7,8 @@ import styles from './styles.module.css';
 
 const sections = [
   {
-    title: <>Using ApiDoc Component</>,
-    link: '/examples/custom-page/',
-    description: (
-      <>
-        A page using ApiDoc component in{' '}
-        <a href="https://github.com/rohit-gohri/redocusaurus/blob/main/packages/docusaurus-theme-redoc">
-          docusaurus-theme-redoc
-        </a>
-      </>
-    ),
-  },
-  {
-    title: <>Using Redoc Component</>,
-    link: '/examples/custom-layout/',
-    description: (
-      <>
-        A page with custom Layout using Redoc component in{' '}
-        <a href="https://github.com/rohit-gohri/redocusaurus/blob/main/packages/docusaurus-theme-redoc">
-          docusaurus-theme-redoc
-        </a>
-      </>
-    ),
-  },
-  {
-    title: <>Using Spec URL</>,
-    link: '/examples/using-remote-url/',
-    description: (
-      <>
-        A page made automatically with{' '}
-        <a href="https://github.com/rohit-gohri/redocusaurus/blob/main/packages/docusaurus-plugin-redoc">
-          docusaurus-plugin-redoc
-        </a>
-      </>
-    ),
-  },
-  {
     title: <>Using YAML Spec</>,
-    link: '/examples/using-single-yaml/',
+    link: '/openapi/openapi.yaml/',
     description: (
       <>
         A build time rendered page (no loading indicator on refresh), made

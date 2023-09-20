@@ -27,37 +27,9 @@ export default {
         "config": "/Users/fvalverde/Documents/personal/whalar/game-of-thrones/doc/website/redocly.yaml",
         "specs": [
           {
-            "id": "using-single-yaml",
-            "spec": "openapi/single-file/openapi.yaml",
-            "route": "/examples/using-single-yaml/"
-          },
-          {
-            "id": "using-multi-file-yaml",
-            "spec": "openapi/multi-file/openapi.yaml",
-            "route": "/examples/using-multi-file-yaml/"
-          },
-          {
             "id": "openapi-got",
-            "spec": "openapi/swagger/swagger.json",
+            "spec": "openapi/openapi.yaml",
             "route": "/openapi/got/"
-          },
-          {
-            "id": "using-swagger-json",
-            "spec": "openapi/swagger/swagger.json",
-            "route": "/examples/using-swagger-json/"
-          },
-          {
-            "id": "using-remote-url",
-            "spec": "https://redocly.github.io/redoc/openapi.yaml",
-            "route": "/examples/using-remote-url/"
-          },
-          {
-            "id": "using-custom-page",
-            "spec": "openapi/single-file/openapi.yaml"
-          },
-          {
-            "id": "using-custom-layout",
-            "spec": "openapi/single-file/openapi.yaml"
           }
         ],
         "theme": {
