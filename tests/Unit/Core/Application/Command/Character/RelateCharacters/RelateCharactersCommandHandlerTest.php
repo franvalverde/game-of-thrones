@@ -44,12 +44,13 @@ final class RelateCharactersCommandHandlerTest extends UnitTestCase
 
         $this->relateCharacters($relateCommand);
 
+        self::assertInstanceOf(InMemoryCharacterRelateRepository::class, $this->relates);
         $relateCreated = $this->relates->ofPrincipalId($this->principalCharacter->internalId());
 
         self::assertNotNull($relateCreated);
         self::assertEquals($relateCreated->id()->id(), $relateCommand->relationId);
-        self::assertTrue($relateCreated->character()->id()->equalsTo($this->principalCharacter->id()));
-        self::assertTrue($relateCreated->relatedTo()->id()->equalsTo($this->relatedTo->id()));
+        self::assertTrue($relateCreated->character()?->id()->equalsTo($this->principalCharacter->id()));
+        self::assertTrue($relateCreated->relatedTo()?->id()->equalsTo($this->relatedTo->id()));
         self::assertTrue($relateCreated->relation()->equalsTo($relation));
 
         $events = DomainEventPublisher::instance()->events();

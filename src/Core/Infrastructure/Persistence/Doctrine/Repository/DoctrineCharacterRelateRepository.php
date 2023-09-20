@@ -15,6 +15,7 @@ final class DoctrineCharacterRelateRepository implements CharacterRelateReposito
     private EntityManagerInterface $entityManager;
 
     /** @var EntityRepository<CharacterRelate>|ObjectRepository<CharacterRelate> */
+    // @phpstan-ignore-next-line
     private ObjectRepository|EntityRepository $relates;
 
     public function __construct(EntityManagerInterface $entityManager)

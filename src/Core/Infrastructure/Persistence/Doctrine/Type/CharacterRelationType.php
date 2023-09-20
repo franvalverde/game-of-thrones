@@ -21,7 +21,6 @@ final class CharacterRelationType extends StringType
         return $value;
     }
 
-    // @phpstan-ignore-next-line
     public function convertToPHPValue($value, AbstractPlatform $platform): ?CharacterRelation
     {
         if (!\is_scalar($value)) {

@@ -8,14 +8,10 @@ use Behat\Gherkin\Node\PyStringNode;
 
 final class Utils
 {
-    /**
-     * Convert a PyStringNode into an array.
-     *
-     * @return array<mixed>
-     */
+
     public static function normalizePyStringNode(PyStringNode $node): array
     {
-        return json_decode($node->getRaw(), true, 512, \JSON_THROW_ON_ERROR);
+        return (array) json_decode($node->getRaw(), true, 512, \JSON_THROW_ON_ERROR);
     }
 
     /**

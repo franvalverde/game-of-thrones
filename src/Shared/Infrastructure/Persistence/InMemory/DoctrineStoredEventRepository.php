@@ -31,9 +31,8 @@ final class DoctrineStoredEventRepository implements StoredEventRepository
 
     public function __construct(EntityManagerInterface $entityManager, UuidGenerator $uuidGenerator)
     {
-        $this->storedEvents = $entityManager->getRepository(StoredEvent::class);
-
         $this->entityManager = $entityManager;
+        $this->storedEvents = $entityManager->getRepository(StoredEvent::class);
         $this->uuidGenerator = $uuidGenerator;
     }
 

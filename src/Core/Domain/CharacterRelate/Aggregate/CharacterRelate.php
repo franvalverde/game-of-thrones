@@ -14,8 +14,8 @@ class CharacterRelate
 {
     private function __construct(
         private readonly AggregateId $id,
-        private readonly Character $character,
-        private readonly Character $relatedTo,
+        private readonly ?Character $character,
+        private readonly ?Character $relatedTo,
         private readonly CharacterRelation $relation,
     ) {
     }
@@ -46,12 +46,12 @@ class CharacterRelate
         return $this->id;
     }
 
-    public function character(): Character
+    public function character(): ?Character
     {
         return $this->character;
     }
 
-    public function relatedTo(): Character
+    public function relatedTo(): ?Character
     {
         return $this->relatedTo;
     }

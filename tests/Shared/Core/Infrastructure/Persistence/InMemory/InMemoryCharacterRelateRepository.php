@@ -30,7 +30,7 @@ final class InMemoryCharacterRelateRepository implements CharacterRelateReposito
     public function ofPrincipalId(CharacterId $characterId): ?CharacterRelate
     {
         foreach ($this->relates as $relate) {
-            if ($relate->character()->internalId()->equalsTo($characterId)) {
+            if (null !== $relate->character() && $relate->character()->internalId()->equalsTo($characterId)) {
                 return $relate;
             }
         }
