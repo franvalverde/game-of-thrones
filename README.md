@@ -78,6 +78,11 @@ make acceptance-test
 make mutant-test
 ```
 
+The code coverage reports are located in the folder report.
+
+Below is an image of the html report:
+![coverage report](./doc/website/static/test-report.png)
+
 ### Documentation
 
 In order to build and download all the dependencies it is necessary to have 'yarn' installed. To build the documentation exposing port "3000".
@@ -88,7 +93,7 @@ make start-doc
 In this documentation you can see the API specifications in the Open API section
 
 this is what it would look like:
-![image info](./doc/website/static/openapi.png)
+![open api](./doc/website/static/openapi.png)
 
 ### More commands
 ```
