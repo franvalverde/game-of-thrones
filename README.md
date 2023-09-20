@@ -81,9 +81,14 @@ make mutant-test
 ### Documentation
 
 In order to build and download all the dependencies it is necessary to have 'yarn' installed. To build the documentation exposing port "3000".
+
 ```
 make start-doc
 ```
+In this documentation you can see the API specifications in the Open API section
+
+this is what it would look like:
+![image info](./doc/website/static/openapi.png)
 
 ### More commands
 ```

@@ -9,7 +9,9 @@
 /public/bundles/
 /var/
 /vendor/
+/doc/.yarn/
 /doc/node_modules/
+/doc/website/node_modules/
 /doc/.docusaurus/
 .env
 .idea
